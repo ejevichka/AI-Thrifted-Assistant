@@ -1,0 +1,29 @@
+{
+  "materials": [
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "description": "Natural fiber, breathable and comfortable"
+    },
+    {
+      "id": "denim",
+      "name": "Denim",
+      "description": "Durable cotton twill fabric, typically blue"
+    },
+    {
+      "id": "leather",
+      "name": "Leather",
+      "description": "Animal hide, durable and stylish"
+    },
+    {
+      "id": "silk",
+      "name": "Silk",
+      "description": "Luxurious natural fiber, smooth and lightweight"
+    },
+    {
+      "id": "wool",
+      "name": "Wool",
+      "description": "Natural fiber from sheep, warm and insulating"
+    }
+  ]
+} 

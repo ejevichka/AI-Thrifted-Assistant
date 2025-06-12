@@ -1,0 +1,124 @@
+{
+  "styles": [
+    {
+      "id": "casual",
+      "name": "Casual",
+      "description": "Relaxed and comfortable everyday wear",
+      "hashtags": ["#minimal", "#everydaystyle", "#normcore", "#cleanfit", "#streetstyle", "#basics"]
+    },
+    {
+      "id": "formal",
+      "name": "Formal",
+      "description": "Professional and business attire",
+      "hashtags": ["#tailored", "#officecore", "#powerdressing", "#quietluxury", "#suitup", "#oldmoney"]
+    },
+    {
+      "id": "sporty",
+      "name": "Sporty",
+      "description": "Athletic and active wear",
+      "hashtags": ["#athleisure", "#techwear", "#gorpcore", "#trackfit", "#sweatszn", "#runnercore"]
+    },
+    {
+      "id": "vintage",
+      "name": "Vintage",
+      "description": "Classic and retro fashion styles",
+      "hashtags": ["#vintagefinds", "#y2k", "#retrocore", "#90sstyle", "#thrifted", "#archivefashion"]
+    },
+    {
+      "id": "bohemian",
+      "name": "Bohemian",
+      "description": "Free-spirited and artistic fashion",
+      "hashtags": ["#boho", "#hippievibes", "#earthtones", "#festivalfit", "#cottagecore", "#flowy"]
+    },
+    {
+      "id": "y2k",
+      "name": "Y2K",
+      "description": "Early 2000s maximalist fashion — shiny, nostalgic, playful",
+      "hashtags": ["#y2k", "#bling", "#cybercore", "#bratzdoll", "#2000s", "#kittenheels"]
+    },
+    {
+      "id": "grunge",
+      "name": "Grunge",
+      "description": "Disheveled, dark, anti-fashion energy from the '90s",
+      "hashtags": ["#grunge", "#darkfashion", "#distressed", "#altgirl", "#oversized", "#flannel"]
+    },
+    {
+      "id": "goth",
+      "name": "Goth",
+      "description": "Dark romanticism, punk rebellion, and mystical aesthetics",
+      "hashtags": ["#gothcore", "#blackonblack", "#witchy", "#industrial", "#cybergoth", "#darkwear"]
+    },
+    {
+      "id": "techwear",
+      "name": "Techwear",
+      "description": "Futuristic urban wear with utility and performance",
+      "hashtags": ["#techwear", "#modular", "#cyberpunk", "#urbanutility", "#stealthcore", "#functional"]
+    },
+    {
+      "id": "gorpcore",
+      "name": "Gorpcore",
+      "description": "Hiking-meets-fashion — practical, outdoorsy, ironic",
+      "hashtags": ["#gorpcore", "#patagonia", "#salomon", "#trailfit", "#northface", "#functionalwear"]
+    },
+    {
+      "id": "academia",
+      "name": "Dark Academia",
+      "description": "Romantic intellectual aesthetic — tweed, books, gloom",
+      "hashtags": ["#darkacademia", "#tweedcore", "#scholarvibes", "#oxfordstyle", "#moodyfit", "#preppy"]
+    },
+    {
+      "id": "avantgarde",
+      "name": "Avant-Garde",
+      "description": "Experimental, sculptural, high-concept fashion",
+      "hashtags": ["#avantgarde", "#conceptualfashion", "#runwayenergy", "#deconstructed", "#brutalistwear", "#artwear"]
+    },
+    {
+      "id": "streetwear",
+      "name": "Streetwear",
+      "description": "Urban youth style driven by hype, drops, and brand culture",
+      "hashtags": ["#streetwear", "#hypebeast", "#sneakerhead", "#boxlogo", "#supreme", "#bape"]
+    },
+    {
+      "id": "cottagecore",
+      "name": "Cottagecore",
+      "description": "Soft, pastoral aesthetic inspired by countryside life",
+      "hashtags": ["#cottagecore", "#laceblouse", "#prairieskirt", "#romanticcore", "#picnicfit", "#softgirl"]
+    },
+    {
+      "id": "clubkid",
+      "name": "Club Kid",
+      "description": "Loud, theatrical rave looks from queer & underground nightlife",
+      "hashtags": ["#clubkid", "#freakwear", "#berlinclubscene", "#latexfit", "#genderfluid", "#artclub"]
+    },
+    {
+      "id": "balletcore",
+      "name": "Balletcore",
+      "description": "Delicate, dance-inspired looks with an ethereal vibe",
+      "hashtags": ["#balletcore", "#wraptop", "#legwarmers", "#coquette", "#pastelvibes", "#softaesthetic"]
+    },
+    {
+      "id": "kfashion",
+      "name": "K-Fashion",
+      "description": "Trendy, curated, and clean silhouettes influenced by Korean street style and idol culture",
+      "hashtags": ["#kfashion", "#seoulstyle", "#cleanfit", "#koreanootd", "#idolaesthetic", "#softminimal"]
+    },
+    {
+      "id": "harajuku",
+      "name": "Harajuku",
+      "description": "Eclectic and colorful street style from Tokyo known for its mix of vintage, DIY, and cosplay elements",
+      "hashtags": ["#harajukustyle", "#kawaii", "#jfashion", "#maximalism", "#depopvibes", "#visualriot"]
+    },
+    {
+      "id": "gyaru",
+      "name": "Gyaru",
+      "description": "Early 2000s glam from Japan: fake lashes, tanned skin, platform heels, and bold looks",
+      "hashtags": ["#gyaru", "#galstyle", "#tokyoglam", "#y2kjapan", "#eggmagazine", "#blingcore"]
+    },
+    {
+      "id": "minimaljapan",
+      "name": "Japanese Minimalism",
+      "description": "Sophisticated neutral-toned fashion with precise cuts and natural materials, rooted in wabi-sabi aesthetics",
+      "hashtags": ["#japaneseminimal", "#muji", "#wabisabiwear", "#linenlook", "#monkcore", "#slowfashion"]
+    }
+  ]
+}
