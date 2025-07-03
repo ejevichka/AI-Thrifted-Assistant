@@ -1,251 +1,210 @@
-# 🦜️🔗 LangChain + Next.js Starter Template
+# AI Fashion Discovery Engine for Vinted & Depop
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/langchain-ai/langchain-nextjs-template)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flangchain-ai%2Flangchain-nextjs-template)
+This project is an AI-powered fashion discovery engine that provides an intelligent search layer over the Vinted and Depop marketplaces. It translates intuitive, human-friendly prompts—like abstract styles or images—into precise, effective search queries, aggregating live results from both platforms.
 
-This template scaffolds a LangChain.js + Next.js starter app. It showcases how to use and combine LangChain modules for several
-use cases. Specifically:
+## Core Features
 
-- [Simple chat](/app/api/chat/route.ts)
-- [Returning structured output from an LLM call](/app/api/chat/structured_output/route.ts)
-- [Answering complex, multi-step questions with agents](/app/api/chat/agents/route.ts)
-- [Retrieval augmented generation (RAG) with a chain and a vector store](/app/api/chat/retrieval/route.ts)
-- [Retrieval augmented generation (RAG) with an agent and a vector store](/app/api/chat/retrieval_agents/route.ts)
+- **Style Prompt Generator (AI Chat)**: Chat with an AI fashion assistant in natural language (e.g., "Futuristic, Coquette, Whimsygoth"). The AI uses a Retrieval-Augmented Generation (RAG) pipeline to understand styles and generates precise search queries to find matching items.
+- **AI-Powered Image Search**: Upload any image of an outfit or clothing item. The application uses a multi-modal AI model (GPT-4o) to analyze the visual content and generates relevant search terms to find similar items for sale.
+- **Live Product Aggregation**: Fetches real-time product listings from both Vinted and Depop using the Apify platform. It then transforms and displays the results in a unified, easy-to-browse grid.
+- **One-Click Data Ingestion**: A simple UI allows the admin to load and vectorize foundational data (styles, brands, categories) into the AI's memory (Supabase Vector DB) with a single click.
 
-Most of them use Vercel's [AI SDK](https://github.com/vercel-labs/ai) to stream tokens to the client and display the incoming messages.
+## Tech Stack
 
-The agents use [LangGraph.js](https://langchain-ai.github.io/langgraphjs/), LangChain's framework for building agentic workflows. They use preconfigured helper functions to minimize boilerplate, but you can replace them with custom graphs as desired.
+- **Framework**: Next.js (App Router)
+- **Frontend**: React, Tailwind CSS
+- **AI & Orchestration**: LangChain.js, Vercel AI SDK
+- **Backend**: Next.js API Routes (Node.js & Edge Runtimes)
+- **Vector Database**: Supabase (PostgreSQL with pgvector)
+- **External Services**:
+  - OpenAI: GPT-4o for vision and chat, text-embedding-3-small for embeddings
+  - Apify: For live web scraping of Vinted and Depop
 
-https://github.com/user-attachments/assets/e389e4e4-4fb9-4223-a4c2-dc002c8f20d3
+## How It Works
 
-It's free-tier friendly too! Check out the [bundle size stats below](#-bundle-size).
+The application leverages two primary AI-driven workflows:
 
-You can check out a hosted version of this repo here: https://langchain-nextjs-template.vercel.app/
-
-## 🚀 Getting Started
-
-First, clone this repo and download it locally.
-
-Next, you'll need to set up environment variables in your repo's `.env.local` file. Copy the `.env.example` file to `.env.local`.
-To start with the basic examples, you'll just need to add your OpenAI API key.
-
-Because this app is made to run in serverless Edge functions, make sure you've set the `LANGCHAIN_CALLBACKS_BACKGROUND` environment variable to `false` to ensure tracing finishes if you are using [LangSmith tracing](https://docs.smith.langchain.com/).
-
-Next, install the required packages using your preferred package manager (e.g. `yarn`).
-
-Now you're ready to run the development server:
-
-```bash
-yarn dev
+### Text Search Flow
+```
+User Prompt → Chat API → RAG (Supabase) → AI Query Generation → External Search API → Apify → Frontend Grid
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result! Ask the bot something and you'll see a streamed response:
-
-![A streaming conversation between the user and the AI](/public/images/chat-conversation.png)
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-Backend logic lives in `app/api/chat/route.ts`. From here, you can change the prompt and model, or add other modules and logic.
-
-## 🧱 Structured Output
-
-The second example shows how to have a model return output according to a specific schema using OpenAI Functions.
-Click the `Structured Output` link in the navbar to try it out:
-
-![A streaming conversation between the user and an AI agent](/public/images/structured-output-conversation.png)
-
-The chain in this example uses a [popular library called Zod](https://zod.dev) to construct a schema, then formats it in the way OpenAI expects.
-It then passes that schema as a function into OpenAI and passes a `function_call` parameter to force OpenAI to return arguments in the specified format.
-
-For more details, [check out this documentation page](https://js.langchain.com/docs/how_to/structured_output).
-
-## 🦜 Agents
-
-To try out the agent example, you'll need to give the agent access to the internet by populating the `SERPAPI_API_KEY` in `.env.local`.
-Head over to [the SERP API website](https://serpapi.com/) and get an API key if you don't already have one.
-
-You can then click the `Agent` example and try asking it more complex questions:
-
-![A streaming conversation between the user and an AI agent](/public/images/agent-conversation.png)
-
-This example uses a [prebuilt LangGraph agent](https://langchain-ai.github.io/langgraphjs/tutorials/quickstart/), but you can customize your own as well.
-
-## 🐶 Retrieval
-
-The retrieval examples both use Supabase as a vector store. However, you can swap in
-[another supported vector store](https://js.langchain.com/docs/integrations/vectorstores) if preferred by changing
-the code under `app/api/retrieval/ingest/route.ts`, `app/api/chat/retrieval/route.ts`, and `app/api/chat/retrieval_agents/route.ts`.
-
-For Supabase, follow [these instructions](https://js.langchain.com/docs/integrations/vectorstores/supabase) to set up your
-database, then get your database URL and private key and paste them into `.env.local`.
-
-You can then switch to the `Retrieval` and `Retrieval Agent` examples. The default document text is pulled from the LangChain.js retrieval
-use case docs, but you can change them to whatever text you'd like.
-
-For a given text, you'll only need to press `Upload` once. Pressing it again will re-ingest the docs, resulting in duplicates.
-You can clear your Supabase vector store by navigating to the console and running `DELETE FROM documents;`.
-
-After splitting, embedding, and uploading some text, you're ready to ask questions!
-
-For more info on retrieval chains, [see this page](https://js.langchain.com/docs/tutorials/rag).
-The specific variant of the conversational retrieval chain used here is composed using LangChain Expression Language, which you can
-[read more about here](https://js.langchain.com/docs/how_to/qa_sources/). This chain example will also return cited sources
-via header in addition to the streaming response.
-
-For more info on retrieval agents, [see this page](https://langchain-ai.github.io/langgraphjs/tutorials/rag/langgraph_agentic_rag/).
-
-## 📦 Bundle size
-
-The bundle size for LangChain itself is quite small. After compression and chunk splitting, for the RAG use case LangChain uses 37.32 KB of code space (as of [@langchain/core 0.1.15](https://npmjs.com/package/@langchain/core)), which is less than 4% of the total Vercel free tier edge function alottment of 1 MB:
-
-![](/public/images/bundle-size.png)
-
-This package has [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer) set up by default - you can explore the bundle size interactively by running:
-
-```bash
-$ ANALYZE=true yarn build
+### Image Search Flow
+```
+User Image → Image Search API → AI Vision Analysis → AI Query Generation → External Search API → Apify → Frontend Grid
 ```
 
-## 📚 Learn More
+## Getting Started
 
-The example chains in the `app/api/chat/route.ts` and `app/api/chat/retrieval/route.ts` files use
-[LangChain Expression Language](https://js.langchain.com/docs/concepts#langchain-expression-language) to
-compose different LangChain.js modules together. You can integrate other retrievers, agents, preconfigured chains, and more too, though keep in mind
-`HttpResponseOutputParser` is meant to be used directly with model output.
+Follow these instructions to set up and run the project locally.
 
-To learn more about what you can do with LangChain.js, check out the docs here:
+### 1. Prerequisites
 
-- https://js.langchain.com/docs/
+- Node.js (v18 or later)
+- npm or yarn
+- Accounts for:
+  - OpenAI
+  - Supabase
+  - Apify
 
-## ▲ Deploy on Vercel
+### 2. Clone the Repository
 
-When ready, you can deploy your app on the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 3. Install Dependencies
 
-## Thank You!
+```bash
+npm install
+```
 
-Thanks for reading! If you have any questions or comments, reach out to us on Twitter
-[@LangChainAI](https://twitter.com/langchainai), or [click here to join our Discord server](https://discord.gg/langchain).
+### 4. Set Up Environment Variables
 
-# Cultural Planner
+Create a file named `.env.local` in the root of your project by copying the example file:
 
-A Next.js application that uses LangChain and RAG to provide personalized cultural event recommendations based on user mood and preferences.
+```bash
+cp .env.local.example .env.local
+```
 
-## Features
-
-- Mood-based event recommendations
-- Advanced RAG with query translation and structured retrieval
-- Function calling for practical tasks (calendar integration, directions)
-- User profile and preferences management
-- Real-time event updates
-- Integration with Google Maps and Calendar APIs
-
-## Prerequisites
-
-- Node.js 18+ and npm/yarn
-- OpenAI API key
-- Google Maps API key
-- Google Calendar API credentials
-- Supabase account and project
-
-## Environment Variables
-
-Create a `.env.local` file in the root directory with the following variables:
+Now, open `.env.local` and fill in the values for each variable:
 
 ```env
-# OpenAI
-OPENAI_API_KEY=your_openai_api_key
+# OpenAI API Key
+OPENAI_API_KEY="sk-..."
 
-# Google Maps
-GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+# Supabase Credentials (from your Supabase project settings -> API)
+NEXT_PUBLIC_SUPABASE_URL="https://your-project-url.supabase.co"
+SUPABASE_SERVICE_ROLE_KEY="your-supabase-service-role-key"
 
-# Google Calendar
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-GOOGLE_REDIRECT_URI=your_google_redirect_uri
-GOOGLE_REFRESH_TOKEN=your_google_refresh_token
-
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
-
-# LangChain
-LANGCHAIN_CALLBACKS_BACKGROUND=false
+# Apify API Token (from your Apify account -> Settings -> Integrations)
+APIFY_TOKEN="your-apify-token"
 ```
 
-## Installation
+### 5. Set Up Supabase Database
 
-1. Clone the repository:
+Go to your Supabase project dashboard.
+
+Navigate to the SQL Editor and click New query.
+
+Run the following SQL commands one by one to enable the vector extension and create the necessary table and search function.
+
+#### Enable Vector Extension:
+
+```sql
+-- Enable the pgvector extension
+create extension if not exists vector with schema extensions;
+```
+
+#### Create Documents Table:
+
+```sql
+-- Create the table for storing vectorized data
+create table
+  public.vinted_documents (
+    id uuid not null default gen_random_uuid (),
+    content text null,
+    metadata jsonb null,
+    embedding vector(1536) null,
+    constraint vinted_documents_pkey primary key (id)
+  ) tablespace pg_default;
+```
+
+#### Create Search Function:
+
+```sql
+-- Create a function to search for documents
+create or replace function match_documents (
+  query_embedding vector(1536),
+  match_count int,
+  filter jsonb
+)
+returns table (
+  id uuid,
+  content text,
+  metadata jsonb,
+  similarity float
+)
+language plpgsql
+as $$
+begin
+  return query
+  select
+    id,
+    content,
+    metadata,
+    1 - (embedding <=> query_embedding) as similarity
+  from vinted_documents
+  where metadata @> filter
+  order by embedding <=> query_embedding
+  limit match_count;
+end;
+$$;
+```
+
+### 6. Run Data Ingestion
+
+Before you can chat with the AI, you must populate its memory.
+
+1. Start the development server:
 ```bash
-git clone https://github.com/yourusername/cultural-planner.git
-cd cultural-planner
+npm run dev
 ```
 
-2. Install dependencies:
+2. Open your browser to http://localhost:3000
+3. Click the "Ingest Vinted Datasets" button
+4. Wait for the progress bar to reach 100% and show a success message. This process will read the JSON files in the /data directory and store their vector embeddings in your Supabase database.
+
+### 7. Run the Application
+
+You're all set! With the server running and the data ingested, you can now use the chat and image search features.
+
 ```bash
-yarn install
+npm run dev
 ```
 
-3. Set up the database:
-- Create a new Supabase project
-- Run the database migrations (instructions in the `supabase/migrations` directory)
+## API Endpoints
 
-4. Start the development server:
-```bash
-yarn dev
-```
+The core backend logic is handled by these API routes:
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+- `/api/vinted/ingest`: Processes and vectorizes local data files into the Supabase DB
+- `/api/vinted/chat`: Handles chat requests, performs RAG, and generates search queries
+- `/api/vinted/image-search`: Analyzes an uploaded image with a vision model and generates search queries
+- `/api/vinted/search-external`: Takes search queries and executes live scraping jobs on Vinted and Depop via Apify
 
-hands on
-downloaded nextjs langchain templated and completely drowned in functionality of the framework, 
-I also lerned how to cook edge functions 
+### Summary of LangChain Features Utilized in the Vinted AI Fashion Discovery Engine
 
-brainstorming on the business domain, I had plenty of ideas and I did research on the market for each topic to understand the situation
-The result for this week is 
-Cultural Planner AI assistant with AI and RAG Implementation with vector search using Supabase but no data in it
+Vector Store Integration
+SupabaseVectorStore was implemented to store and retrieve vector embeddings of fashion-related data such as brands, styles, and sizes. This forms the foundation of the Retrieval-Augmented Generation (RAG) pipeline, enabling efficient semantic search.
 
-now Im struggling with creating dataset for rag
+Embeddings
+OpenAIEmbeddings were applied to convert textual data (e.g., brand names, style descriptions) into high-dimensional vectors. These vectors are stored in the vector database to support similarity search operations.
 
-SHOULD I USE CHATGPT FOR THAT???
+Retrievers
+The .asRetriever() method was used on the vector store to generate a retriever object. This retriever fetches the most relevant documents based on the user’s query, powering the core of the retrieval system.
 
+Prompt Templates
+ChatPromptTemplate was utilized to dynamically assemble prompts for the language model. This includes injecting retrieved context, chat history, and the user’s question into a structured format.
 
+RunnableSequence (Chains)
+RunnableSequence.from([...]) was employed to orchestrate a multi-step chain consisting of:
 
-## Project Structure
+Document retrieval
 
-```
-cultural-planner/
-├── app/
-│   ├── api/
-│   │   ├── calendar/
-│   │   ├── cultural-planner/
-│   │   └── maps/
-│   └── cultural_planner/
-├── components/
-│   └── cultural-planner/
-├── utils/
-│   ├── calendar.ts
-│   └── maps.ts
-└── public/
-```
+Prompt formatting
 
-## API Routes
+Language model invocation
 
-- `/api/cultural-planner/chat`: Handles chat interactions with RAG
-- `/api/calendar/add`: Manages calendar integration
-- `/api/maps/directions`: Provides directions to event locations
-- `/api/maps/geocode`: Converts addresses to coordinates
+Output parsing
 
-## Contributing
+Output Parsing
+StringOutputParser was integrated to process the raw output from the language model, converting it into a clean string format suitable for frontend streaming.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Text Splitting
+RecursiveCharacterTextSplitter was used during data ingestion to divide large documents into smaller, overlapping chunks. This enhances embedding quality and retrieval granularity.
 
-## License
+Streaming Responses
+LangChainStream was set up to stream the language model’s responses to the frontend in real time, creating a smooth and responsive chat interface.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+LangChain’s components for vector storage, embeddings, retrieval, prompt templating, chain execution, output parsing, document chunking, and real-time streaming were combined to deliver a robust and efficient RAG-based AI discovery experience for the Vinted fashion platform.

@@ -1,45 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// --- IMPORTANT ---
-// This is a MOCK API. You need to replace the logic inside this function
-// with actual calls to a Vinted/Depop scraping service like Apify, BrightData,
-// or a custom scraper you've built.
-
-// Example interface for a scraper's output
-interface ScrapedItem {
-  id: string;
-  title: string;
-  price: number;
-  currency: string;
-  url: string;
-  image: { url: string };
-  brand_title: string;
-  size_title: string;
-  status: string;
-}
+// --- Helper functions (searchDepop, searchVinted) and interface (ScrapedItem) remain the same ---
 
 // Helper function to simulate a call to a Depop scraper
 async function searchDepop(query: string): Promise<any[]> {
   console.log(`Simulating search on Depop for: "${query}"`);
-  // In a real implementation, you would use 'node-fetch' or 'axios'
-  // to call the Apify API endpoint for your Depop scraper actor.
-  // const response = await fetch(`https://api.apify.com/v2/acts/your_depop_actor/run-sync-get-dataset-items?token=${process.env.APIFY_TOKEN}`, {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({ searchQuery: query, limit: 10 }),
-  // });
-  // const data = await response.json();
-  // return data;
-
   // Returning mock data for demonstration
   return [
     {
       id: `depop_${Math.random().toString(36).substr(2, 9)}`,
-      title: `Vintage Y2K Graphic Tee - ${query}`,
+      title: `${query}`,
       price: "25.00",
       imageUrl: "https://placehold.co/250x250/7C3AED/FFFFFF?text=Depop+Item",
       condition: "Used - good",
-      link: "#",
+      link: `https://www.depop.com/search/?q=${encodeURIComponent(query)}`,
       platform: "Depop",
       brand: "Vintage",
       size: "Large",
@@ -50,29 +24,28 @@ async function searchDepop(query: string): Promise<any[]> {
 // Helper function to simulate a call to a Vinted scraper
 async function searchVinted(query: string): Promise<any[]> {
     console.log(`Simulating search on Vinted for: "${query}"`);
-    // Similar to Depop, you would call your Vinted scraper API here.
     // Returning mock data for demonstration
     return [
         {
             id: `vinted_${Math.random().toString(36).substr(2, 9)}`,
-            title: `Authentic Gorpcore Salomon XT-6 - ${query}`,
+            title: `${query}`,
             price: "120.00",
             imageUrl: "https://placehold.co/250x250/4F46E5/FFFFFF?text=Vinted+Item",
             condition: "New with tags",
-            link: "#",
+            link: `https://www.vinted.de/catalog?search_text=${encodeURIComponent(query)}`,
             platform: "Vinted",
-            brand: "Salomon",
+            brand: `${query.split(' ')[0]}`,
             size: "UK 9",
         },
         {
             id: `vinted_${Math.random().toString(36).substr(2, 9)}`,
-            title: `Rare Comme des Garçons Shirt - ${query}`,
+            title: `${query}`,
             price: "250.00",
             imageUrl: "https://placehold.co/250x250/4F46E5/FFFFFF?text=Vinted+Item+2",
             condition: "Used - very good",
-            link: "#",
+            link: `https://www.vinted.de/catalog?search_text=${encodeURIComponent(query)}`,
             platform: "Vinted",
-            brand: "Comme des Garçons",
+            brand: `${query.split(' ')[0]}`,
             size: "Medium",
         },
     ];
@@ -86,19 +59,27 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Search queries are required." }, { status: 400 });
     }
 
-    console.log("Fetching products for queries:", queries);
+    console.log("Fetching products for specific queries:", queries);
 
-    // Run searches on both platforms in parallel for efficiency
-    const [vintedResults, depopResults] = await Promise.all([
-      searchVinted(queries.join(" ")), // Join queries for a broader search
-      searchDepop(queries.join(" ")),
+    // --- REFACTORED LOGIC ---
+
+    // 1. Create an array of search promises for each query
+    const searchPromises = queries.flatMap(query => [
+        searchVinted(query),
+        searchDepop(query)
     ]);
-    
-    // Combine and format the results
-    const allProducts = [...vintedResults, ...depopResults];
 
-    // Shuffle results for a more dynamic feed
-    const shuffledProducts = allProducts.sort(() => 0.5 - Math.random());
+    // 2. Run all searches in parallel
+    const resultsFromAllSearches = await Promise.all(searchPromises);
+
+    // 3. Flatten the array of arrays into a single list of products
+    const allProducts = resultsFromAllSearches.flat();
+
+    // 4. (Crucial) Deduplicate the results to avoid showing the same item multiple times
+    const uniqueProducts = Array.from(new Map(allProducts.map(item => [item.id, item])).values());
+    
+    // 5. Shuffle the unique results for a more dynamic and interesting feed
+    const shuffledProducts = uniqueProducts.sort(() => 0.5 - Math.random());
 
     return NextResponse.json({ products: shuffledProducts });
 

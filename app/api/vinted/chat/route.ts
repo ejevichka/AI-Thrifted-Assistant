@@ -1,88 +1,198 @@
-import { StreamingTextResponse, LangChainStream, Message as VercelChatMessage } from 'ai';
+import { StreamingTextResponse, Message as VercelChatMessage } from 'ai';
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
 import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase';
 import { createClient } from '@supabase/supabase-js';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
-import { RunnableSequence } from '@langchain/core/runnables';
 import { StringOutputParser } from '@langchain/core/output_parsers';
+import { Document } from '@langchain/core/documents';
+import { StateGraph, END, START } from "@langchain/langgraph";
+import { HumanMessage } from '@langchain/core/messages'; // <-- Import HumanMessage
 
 export const runtime = "edge";
 
+// --- Helper Functions (Unchanged) ---
 const formatVercelMessages = (messages: VercelChatMessage[]) => {
-  return messages.map(msg => `${msg.role}: ${msg.content}`).join('\n');
+  return messages
+    .filter(msg => msg.role === 'user' || msg.role === 'assistant')
+    .map(msg => `${msg.role}: ${msg.content}`)
+    .join('\n');
 };
 
-// --- Initialize Supabase client and vector store ---
+const formatDocs = (docs: Document[]) => {
+    return docs.map(doc => doc.pageContent).join('\n\n');
+};
+
+// --- Initializations (Unchanged) ---
 const supabaseClient = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!,
   { auth: { persistSession: false } }
 );
 
-const vectorStore = new SupabaseVectorStore(
-  new OpenAIEmbeddings(), { 
-    client: supabaseClient, 
+const embeddings = new OpenAIEmbeddings({ modelName: "text-embedding-3-small" });
+const vectorStore = new SupabaseVectorStore(embeddings, {
+    client: supabaseClient,
     tableName: "vinted_documents",
     queryName: "match_documents"
-  }
-);
+});
+const retriever = vectorStore.asRetriever(15);
+const model = new ChatOpenAI({ modelName: "gpt-4o-mini", temperature: 0.5, streaming: true });
 
-const FASHION_ASSISTANT_TEMPLATE = `You are a Vinted and Depop fashion expert. Your goal is to help users find clothing by turning their requests into precise search queries.
+const FASHION_ASSISTANT_TEMPLATE = `You are an AI fashion assistant for Vinted and Depop.
+Your SOLE PURPOSE is to translate user requests and the provided context into a list of precise, comma-separated search queries.
+Do not engage in conversation. Do not offer advice. Do not ask questions. Only generate search queries.
 
-**Instructions:**
-1.  **Analyze the User's Request:** Understand the user's desired style, brand, or item from their question and the chat history.
-2.  **Use Context:** Use the retrieved context about brands, styles, and categories to make your search queries more accurate.
-3.  **Generate Search Queries:** If the user is looking for items, you MUST respond with a list of search terms.
-    * **Start your response with the exact phrase:** \`Searching Vinted and Depop for:\`
-    * **Provide comma-separated queries:** e.g., "vintage denim jacket, oversized jean jacket, 90s Levi's jacket"
-    * **Be specific:** Include brands, styles (Y2K, Gorpcore), and item types mentioned.
-4.  **Answer Directly if Not a Search:** If the user asks a direct question (e.g., "What is Gorpcore?"), answer it using the context. Do not use the "Searching..." prefix.
-5.  **Context Limitations:** If you cannot find relevant information in the context, state that you don't have information on that topic. Do not invent information.
-
+Use the following CONTEXT to find relevant brands, styles, and item types.
 ---
-**Chat History:**
-{chat_history}
-
----
-**Retrieved Context (Styles, Brands, Categories):**
+CONTEXT:
 {context}
-
 ---
-**User Question:** {question}
+USER'S REQUEST:
+{question}
+---
+Based on the user's request and the provided context, generate a list of search queries.
+You MUST start your response with the exact phrase "Searching Vinted and Depop for:" and nothing else.
+Then, provide a comma-separated list of 3-5 specific and diverse search terms.
 
-**Assistant:**`;
+Assistant:`;
+
+// ===================================================================================
+// --- 1. Define the State for the Graph using a TypeScript interface ---
+// ===================================================================================
+interface GraphState {
+  question: string;
+  chat_history: string;
+  context?: string;
+  generation?: string;
+  decision?: "standard_search" | "brand_suggestion";
+}
+
+// ===================================================================================
+// --- 2. Define the Nodes for the Graph ---
+// ===================================================================================
+
+// --- Node: Retrieve Documents ---
+async function retrieveContext(state: GraphState): Promise<Partial<GraphState>> {
+    
+    const { question } = state;
+    const docs = await retriever.invoke(question);
+    const formattedContext = formatDocs(docs);
+    console.log("--- NODE: retrieveContext with DOCS ---");
+    return { context: formattedContext };
+}
+
+// --- Node: Generate Standard Search Response ---
+async function generateStandardSearch(state: GraphState): Promise<Partial<GraphState>> {
+    console.log("--- NODE: generateStandardSearch ---");
+    const { question, context, chat_history } = state;
+    const prompt = ChatPromptTemplate.fromTemplate(FASHION_ASSISTANT_TEMPLATE);
+    const chain = prompt.pipe(model).pipe(new StringOutputParser());
+    const generation = await chain.invoke({ question, context, chat_history });
+    return { generation };
+}
+
+// --- ✨ MODIFIED NODE: Generate Brand Suggestion Response ✨ ---
+// This node now directly uses the detailed prompt sent from the frontend.
+async function generateBrandSuggestion(state: GraphState): Promise<Partial<GraphState>> {
+    console.log("--- NODE: generateBrandSuggestion (Specific Brands) ---");
+    const { question } = state; // The 'question' contains the full prompt from the frontend.
+    
+    // We pass the prompt directly to the model as a HumanMessage
+    const chain = model.pipe(new StringOutputParser());
+    const generation = await chain.invoke([
+        new HumanMessage(question)
+    ]);
+
+    return { generation };
+}
+
+
+// --- Router Node ---
+async function routerNode(state: GraphState): Promise<Partial<GraphState>> {
+    console.log("--- NODE: routerNode ---");
+    const { question } = state;
+    if (question.startsWith("You are a fashion expert and personal shopper.")) {
+        console.log("--- ROUTE: Brand Suggestion ---");
+        return { decision: "brand_suggestion" };
+    }
+    console.log("--- ROUTE: Standard Search ---");
+    return { decision: "standard_search" };
+}
+
+// --- Conditional Edge Function ---
+function routeDecision(state: GraphState): "retrieveContext" | "generateBrandSuggestion" | "__end__" {
+    if (state.decision === "standard_search") {
+        return "retrieveContext";
+    } else if (state.decision === "brand_suggestion") {
+        return "generateBrandSuggestion";
+    }
+    return "__end__";
+}
+
+// ===================================================================================
+// --- 3. Define and Compile the Graph ---
+// ===================================================================================
+
+const workflow = new StateGraph<GraphState>({
+  channels: {
+    question: { value: (x, y) => y, default: () => "" },
+    chat_history: { value: (x, y) => y, default: () => "" },
+    context: { value: (x, y) => y, default: () => undefined },
+    generation: { value: (x, y) => y, default: () => undefined },
+    decision: { value: (x, y) => y, default: () => undefined },
+  },
+});
+
+// Add nodes
+workflow.addNode("routerNode", routerNode);
+workflow.addNode("retrieveContext", retrieveContext);
+workflow.addNode("generateStandardSearch", generateStandardSearch);
+workflow.addNode("generateBrandSuggestion", generateBrandSuggestion);
+
+// Define workflow edges
+workflow.addEdge(START, "routerNode");
+workflow.addConditionalEdges("routerNode", routeDecision);
+workflow.addEdge("retrieveContext", "generateStandardSearch");
+workflow.addEdge("generateStandardSearch", END);
+workflow.addEdge("generateBrandSuggestion", END);
+
+// Compile the graph
+const app = workflow.compile();
+
+
+// ===================================================================================
+// --- 4. The API Handler using the Compiled Graph (Unchanged) ---
+// ===================================================================================
 
 export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
-    if (!messages || messages.length === 0) {
-      return new Response(JSON.stringify({ error: "Invalid messages format." }), { status: 400 });
-    }
-
     const lastMessage = messages[messages.length - 1];
-    const currentQuestion = lastMessage.content;
-    const chatHistory = formatVercelMessages(messages.slice(0, -1));
+    const initialState: GraphState = {
+        question: lastMessage.content,
+        chat_history: formatVercelMessages(messages.slice(0, -1)),
+    };
+    
+    const stream = await app.stream(initialState, { recursionLimit: 15 });
 
-    const prompt = ChatPromptTemplate.fromTemplate(FASHION_ASSISTANT_TEMPLATE);
-    const model = new ChatOpenAI({ modelName: "gpt-4o-mini", temperature: 0.5, streaming: true });
-
-    const retriever = vectorStore.asRetriever(15); // Retrieve 15 relevant documents
-
-    const chain = RunnableSequence.from([
-      {
-        context: retriever.pipe((docs) => docs.map(d => d.pageContent).join('\n\n')),
-        question: () => currentQuestion,
-        chat_history: () => chatHistory,
+    const transformStream = new ReadableStream({
+      async start(controller) {
+        for await (const chunk of stream) {
+            // The last key in the chunk is the node that just executed.
+            const nodeName = Object.keys(chunk).pop();
+            if(nodeName) {
+                const finalState = chunk[nodeName];
+                if (finalState && finalState.generation) {
+                    controller.enqueue(finalState.generation);
+                }
+            }
+        }
+        controller.close();
       },
-      prompt,
-      model,
-      new StringOutputParser(),
-    ]);
+    });
 
-    const { stream, handlers } = LangChainStream();
-    chain.invoke({}, { callbacks: [handlers] }).catch(console.error);
+    return new StreamingTextResponse(transformStream);
 
-    return new StreamingTextResponse(stream);
   } catch (e: any) {
     console.error('Error in chat route:', e);
     return new Response(JSON.stringify({ error: e.message || "An unexpected error occurred." }), { status: 500 });

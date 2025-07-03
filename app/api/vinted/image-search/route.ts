@@ -27,29 +27,45 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "No image file provided." }, { status: 400 });
     }
 
-    // Convert the image to a base64 string
     const imageBuffer = await imageFile.arrayBuffer();
     const imageBase64 = Buffer.from(imageBuffer).toString("base64");
 
+    //TODO Latency & Cost: GPT-4o calls incur API latency and token costs. 
+    // For massive batch-processing, you may offload simple OCR to open-source tools and reserve GPT-4o for style/query generation.
     const model = new ChatOpenAI({
-      modelName: "gpt-4o", // gpt-4o is excellent for this
+      modelName: "gpt-4o",
       maxTokens: 512,
     });
 
+    // IMAGE PARSE
+    
     const message = new HumanMessage({
       content: [
         { type: "text", text: IMAGE_ANALYSIS_PROMPT },
         {
           type: "image_url",
-          image_url: `data:${imageFile.type};base64,${imageBase64}`,
+          image_url: {
+            url: `data:${imageFile.type};base64,${imageBase64}`
+          },
         },
       ],
     });
 
     const response = await model.invoke([message]);
-    
-    // The response content should be a JSON string, so we parse it
-    const jsonResponse = JSON.parse(response.content as string);
+    const rawContent = response.content as string;
+
+
+    const jsonStartIndex = rawContent.indexOf('{');
+    const jsonEndIndex = rawContent.lastIndexOf('}');
+
+    if (jsonStartIndex === -1 || jsonEndIndex === -1) {
+      throw new Error(`AI response did not contain valid JSON. Response: ${rawContent}`);
+    }
+
+    const jsonString = rawContent.substring(jsonStartIndex, jsonEndIndex + 1);
+
+    const jsonResponse = JSON.parse(jsonString);
+
 
     if (!jsonResponse.generatedSearchQueries || jsonResponse.generatedSearchQueries.length === 0) {
         throw new Error("AI failed to generate search queries from the image.");

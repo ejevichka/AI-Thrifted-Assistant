@@ -3,7 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+
+  @font-face {
+    font-family: 'Ashborn';
+    src: url('/fonts/Ashborn.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root {
+     /* Primary gradient stops */
+  --color-primary-1: #8b6fc3;
+  --color-primary-2: #ab88cf;
+  --color-primary-3: #cb9ee1;
+  --color-primary-4: #ebb4f2;
+  --color-primary-5: #f9d0fa;
+  /* Accent */
+  --color-accent-1: #ff776e;
+  /* Neutrals */
+  --gray-90: #23232b;
+  --gray-10: #f5f5f7;
+  --gray-60: #737373;
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
