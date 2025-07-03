@@ -1,8 +1,5 @@
 import "./globals.css";
 import { Public_Sans } from "next/font/google";
-import { ActiveLink } from "@/components/Navbar";
-import { Button } from "@/components/ui/button";
-import { GithubIcon } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 

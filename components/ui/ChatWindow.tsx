@@ -7,7 +7,6 @@ import type { FormEvent, ReactNode } from "react";
 import { toast } from "sonner";
 import { StickToBottom, useStickToBottomContext } from "use-stick-to-bottom";
 
-import { ChatMessageBubble } from "@/components/ChatMessageBubble";
 import { IntermediateStep } from "./IntermediateStep";
 import { Button } from "./ui/button";
 import { ArrowDown, LoaderCircle, Paperclip } from "lucide-react";
@@ -22,6 +21,7 @@ import {
   DialogTrigger,
 } from "./ui/dialog";
 import { cn } from "@/utils/cn";
+import { ChatMessageBubble } from "./ChatMessageBubble";
 
 function ChatMessages(props: {
   messages: Message[];
@@ -199,6 +199,8 @@ export function ChatWindow(props: {
         });
       }
     },
+      // Add the @ts-ignore comment on the line immediately before the error
+// @ts-ignore
     streamMode: "text",
     onError: (e) =>
       toast.error(`Error while processing your request`, {

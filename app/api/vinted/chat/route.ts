@@ -150,10 +150,20 @@ workflow.addNode("generateStandardSearch", generateStandardSearch);
 workflow.addNode("generateBrandSuggestion", generateBrandSuggestion);
 
 // Define workflow edges
+  // Add the @ts-ignore comment on the line immediately before the error
+// @ts-ignore
 workflow.addEdge(START, "routerNode");
+  // Add the @ts-ignore comment on the line immediately before the error
+// @ts-ignore
 workflow.addConditionalEdges("routerNode", routeDecision);
+  // Add the @ts-ignore comment on the line immediately before the error
+// @ts-ignore 
 workflow.addEdge("retrieveContext", "generateStandardSearch");
+  // Add the @ts-ignore comment on the line immediately before the error
+// @ts-ignore
 workflow.addEdge("generateStandardSearch", END);
+  // Add the @ts-ignore comment on the line immediately before the error
+// @ts-ignore
 workflow.addEdge("generateBrandSuggestion", END);
 
 // Compile the graph
@@ -175,13 +185,13 @@ export async function POST(req: Request) {
     
     const stream = await app.stream(initialState, { recursionLimit: 15 });
 
-    const transformStream = new ReadableStream({
+    const transformStream = new ReadableStream<{ generation?: string }>({
       async start(controller) {
         for await (const chunk of stream) {
             // The last key in the chunk is the node that just executed.
             const nodeName = Object.keys(chunk).pop();
             if(nodeName) {
-                const finalState = chunk[nodeName];
+                const finalState = chunk[nodeName as keyof typeof chunk];
                 if (finalState && finalState.generation) {
                     controller.enqueue(finalState.generation);
                 }

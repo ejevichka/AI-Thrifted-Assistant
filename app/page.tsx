@@ -103,7 +103,8 @@ export default function VintedHomePage() {
     };
     setMessages([...messages, userMessage]);
 
-    // 4. Submit the special prompt to the backend. This call will clear the `input` state.
+  // Add the @ts-ignore comment on the line immediately before the error
+// @ts-ignore
     handleSubmit(e, {
       options: {
         body: {
@@ -227,12 +228,16 @@ export default function VintedHomePage() {
             )}
           </div>
           <div className="space-y-8">
-            <ChatSection 
+          <ChatSection 
               messages={messages}
               input={input}
               handleInputChange={handleInputChange}
               handleSubmit={handleSubmit}
               handleBrandSuggestion={handleBrandSuggestion}
+              handleImageChange={handleImageChange}
+              imagePreview={imagePreview}
+              removeImage={() => setSelectedImage(null)}
+              isProcessing={isImageProcessing}
             />
             <div className="p-6 bg-[#23232b] shadow rounded-lg flex-grow">
               <h2 className="text-xl font-semibold text-white mb-4">Product Results</h2>

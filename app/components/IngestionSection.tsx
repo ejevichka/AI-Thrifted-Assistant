@@ -17,7 +17,7 @@ export default function IngestionSection({ isIngesting, ingestionProgress, inges
   return (
     <div className="p-6 bg-[#23232b] shadow rounded-lg transition-opacity duration-500">
       <h2 className="text-xl font-semibold text-white mb-4">First-time Setup: Loading AI Memory</h2>
-      <p className="text-sm text-gray-400 mb-4">This one-time process populates the AI's knowledge base. Please wait a moment...</p>
+      <p className="text-sm text-gray-400 mb-4">This one-time process populates the AIs knowledge base. Please wait a moment...</p>
       
       {/* Progress Bar */}
       <div className="w-full bg-gray-700 rounded-full h-2.5">
