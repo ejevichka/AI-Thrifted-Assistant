@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import styleVibes from "@/data/vinted/styles.json";
@@ -32,6 +33,7 @@ export default function StyleSidebar({ setMessages, handleSubmit, setInput }: St
               className="pinterest-item group"
               onClick={() => handleStyleClick(style.name, style.hashtags)}
             >
+              
               <img
                 src={`/images/styles/${style.id}.jpg`}
                 alt={style.name}

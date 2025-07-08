@@ -143,6 +143,7 @@ const workflow = new StateGraph<GraphState>({
   },
 });
 
+
 // Add nodes
 workflow.addNode("routerNode", routerNode);
 workflow.addNode("retrieveContext", retrieveContext);

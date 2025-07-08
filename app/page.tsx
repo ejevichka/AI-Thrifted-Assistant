@@ -32,6 +32,8 @@ export default function VintedHomePage() {
   const [isImageProcessing, setIsImageProcessing] = useState(false);
   const [generatedImageSearchQueries, setGeneratedImageSearchQueries] = useState<string[]>([]);
 
+
+
   // --- Chat Logic ---
   const { messages, input, handleInputChange, handleSubmit, setMessages, setInput } = useChat({
     api: '/api/vinted/chat',
@@ -217,6 +219,17 @@ export default function VintedHomePage() {
       </header>
       <main className="flex-1 max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 w-full">
          <StyleSidebar setMessages={setMessages} handleSubmit={handleSubmit} setInput={setInput} />
+         <ChatSection 
+              messages={messages}
+              input={input}
+              handleInputChange={handleInputChange}
+              handleSubmit={handleSubmit}
+              handleBrandSuggestion={handleBrandSuggestion}
+              handleImageChange={handleImageChange}
+              imagePreview={imagePreview}
+              removeImage={() => setSelectedImage(null)}
+              isProcessing={isImageProcessing}
+            />
         <div className="px-4 py-6 sm:px-0">
           <div className="space-y-8">
              {ingestionNeeded && (
@@ -228,16 +241,13 @@ export default function VintedHomePage() {
             )}
           </div>
           <div className="space-y-8">
-          <ChatSection 
-              messages={messages}
-              input={input}
-              handleInputChange={handleInputChange}
-              handleSubmit={handleSubmit}
-              handleBrandSuggestion={handleBrandSuggestion}
+          <ImageSearchSection 
               handleImageChange={handleImageChange}
+              handleImageSearch={handleImageSearch}
+              selectedImage={selectedImage}
+              isImageProcessing={isImageProcessing}
               imagePreview={imagePreview}
-              removeImage={() => setSelectedImage(null)}
-              isProcessing={isImageProcessing}
+              generatedImageSearchQueries={generatedImageSearchQueries}
             />
             <div className="p-6 bg-[#23232b] shadow rounded-lg flex-grow">
               <h2 className="text-xl font-semibold text-white mb-4">Product Results</h2>
