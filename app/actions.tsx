@@ -3,8 +3,6 @@
 import { streamUI } from 'ai/rsc';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
-import { readFileSync } from 'fs';
-import { join } from 'path';
 import Papa from 'papaparse';
 
 const LoadingComponent = () => (
@@ -37,23 +35,27 @@ interface FashionAnalysisResult {
   };
 }
 
-const analyzeFashionDataset = async (datasetPath: string): Promise<FashionAnalysisResult> => {
+const analyzeFashionDataset = async (csvContent: string): Promise<FashionAnalysisResult> => {
   // Simulate processing time
-  await new Promise(resolve => setTimeout(resolve, 3000));
+  await new Promise(resolve => setTimeout(resolve, 2000));
   
   try {
-    // Read CSV file from the public directory or data directory
-    const csvPath = join(process.cwd(), 'public', 'data', datasetPath);
-    const csvContent = readFileSync(csvPath, 'utf-8');
-    
-    // Parse CSV
+    // Parse CSV content directly
     const parseResult = Papa.parse(csvContent, {
       header: true,
       dynamicTyping: true,
       skipEmptyLines: true,
     });
     
+    if (parseResult.errors.length > 0) {
+      console.warn('CSV parsing warnings:', parseResult.errors);
+    }
+    
     const rawData = parseResult.data as any[];
+    
+    if (!rawData || rawData.length === 0) {
+      throw new Error('No data found in CSV file');
+    }
     
     // Fashion-related keywords for filtering
     const fashionKeywords = [
@@ -72,22 +74,25 @@ const analyzeFashionDataset = async (datasetPath: string): Promise<FashionAnalys
       return fashionKeywords.some(keyword => rowText.includes(keyword));
     });
     
+    // If no fashion data found, use all data
+    const dataToAnalyze = fashionData.length > 0 ? fashionData : rawData;
+    
     // Find relevant columns dynamically
     const sampleRow = rawData[0] || {};
     const columns = Object.keys(sampleRow);
     
     const trendCol = columns.find(col => 
-      ['trend', 'title', 'content', 'description', 'name', 'topic'].some(keyword => 
+      ['trend', 'title', 'content', 'description', 'name', 'topic', 'text'].some(keyword => 
         col.toLowerCase().includes(keyword)
       )
-    );
+    ) || columns[0]; // Fallback to first column
     
     const platformCol = columns.find(col => 
       col.toLowerCase().includes('platform')
     );
     
     const engagementCol = columns.find(col => 
-      ['engagement', 'rate', 'score', 'likes', 'views', 'shares'].some(keyword => 
+      ['engagement', 'rate', 'score', 'likes', 'views', 'shares', 'count'].some(keyword => 
         col.toLowerCase().includes(keyword)
       )
     );
@@ -103,27 +108,34 @@ const analyzeFashionDataset = async (datasetPath: string): Promise<FashionAnalys
     );
     
     // Extract top fashion trends
-    const trends: FashionTrend[] = fashionData
+    const trends: FashionTrend[] = dataToAnalyze
+      .filter(row => {
+        // Filter out rows with empty trend content
+        const trendValue = trendCol ? row[trendCol] : '';
+        return trendValue && String(trendValue).trim().length > 0;
+      })
       .filter(row => engagementCol ? !isNaN(parseFloat(row[engagementCol])) : true)
       .sort((a, b) => {
         if (engagementCol) {
-          return parseFloat(b[engagementCol]) - parseFloat(a[engagementCol]);
+          const aVal = parseFloat(a[engagementCol]) || 0;
+          const bVal = parseFloat(b[engagementCol]) || 0;
+          return bVal - aVal;
         }
         return 0;
       })
       .slice(0, 10)
       .map(row => ({
-        trend: trendCol ? String(row[trendCol]).substring(0, 60) + (String(row[trendCol]).length > 60 ? '...' : '') : 'N/A',
-        platform: platformCol ? row[platformCol] : 'N/A',
+        trend: trendCol ? String(row[trendCol]).substring(0, 80) + (String(row[trendCol]).length > 80 ? '...' : '') : 'N/A',
+        platform: platformCol ? String(row[platformCol]) : 'Unknown',
         engagement: engagementCol ? parseFloat(row[engagementCol]).toFixed(1) : 'N/A',
-        category: categoryCol ? row[categoryCol] : undefined,
-        hashtags: hashtagCol ? row[hashtagCol] : undefined,
+        category: categoryCol ? String(row[categoryCol]) : undefined,
+        hashtags: hashtagCol ? String(row[hashtagCol]) : undefined,
       }));
     
     // Calculate platform distribution
     const platformCounts: Record<string, number> = {};
-    fashionData.forEach(row => {
-      const platform = platformCol ? row[platformCol] : 'Unknown';
+    dataToAnalyze.forEach(row => {
+      const platform = platformCol ? String(row[platformCol]) : 'Unknown';
       platformCounts[platform] = (platformCounts[platform] || 0) + 1;
     });
     
@@ -133,19 +145,19 @@ const analyzeFashionDataset = async (datasetPath: string): Promise<FashionAnalys
       .map(([platform, count]) => ({
         platform,
         count,
-        percentage: `${((count / fashionData.length) * 100).toFixed(1)}%`
+        percentage: `${((count / dataToAnalyze.length) * 100).toFixed(1)}%`
       }));
     
     // Extract top hashtags
     const hashtagCounts: Record<string, number> = {};
     if (hashtagCol) {
-      fashionData.forEach(row => {
+      dataToAnalyze.forEach(row => {
         const hashtags = row[hashtagCol];
         if (hashtags && typeof hashtags === 'string') {
           const tags = hashtags.replace(/#/g, '').split(/[,\s]+/);
           tags.forEach(tag => {
             const cleanTag = tag.trim().toLowerCase();
-            if (cleanTag && fashionKeywords.some(keyword => cleanTag.includes(keyword))) {
+            if (cleanTag && cleanTag.length > 2) {
               hashtagCounts[cleanTag] = (hashtagCounts[cleanTag] || 0) + 1;
             }
           });
@@ -163,9 +175,9 @@ const analyzeFashionDataset = async (datasetPath: string): Promise<FashionAnalys
     
     // Calculate engagement statistics
     const engagementValues = engagementCol ? 
-      fashionData
+      dataToAnalyze
         .map(row => parseFloat(row[engagementCol]))
-        .filter(val => !isNaN(val))
+        .filter(val => !isNaN(val) && val > 0)
       : [];
     
     const engagementStats = {
@@ -178,7 +190,7 @@ const analyzeFashionDataset = async (datasetPath: string): Promise<FashionAnalys
     return {
       trends,
       totalRecords: rawData.length,
-      fashionRecords: fashionData.length,
+      fashionRecords: dataToAnalyze.length,
       topPlatforms,
       topHashtags,
       engagementStats
@@ -186,7 +198,7 @@ const analyzeFashionDataset = async (datasetPath: string): Promise<FashionAnalys
     
   } catch (error) {
     console.error('Error analyzing fashion dataset:', error);
-    throw new Error('Failed to analyze fashion dataset');
+    throw new Error(`Failed to analyze CSV data: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 };
 
@@ -198,9 +210,14 @@ const FashionTableComponent = ({ data }: FashionTableProps) => (
   <div className="max-w-6xl mx-auto p-6 space-y-8">
     {/* Header */}
     <div className="text-center">
-      <h2 className="text-3xl font-bold text-gray-900 mb-2">Fashion Trends Analysis</h2>
+      <h2 className="text-3xl font-bold text-gray-900 mb-2">CSV Data Analysis Results</h2>
       <p className="text-gray-600">
-        Analyzed {data.fashionRecords} fashion trends from {data.totalRecords} total records
+        Analyzed {data.fashionRecords} relevant records from {data.totalRecords} total records
+        {data.fashionRecords !== data.totalRecords && (
+          <span className="text-sm text-blue-600 ml-2">
+            (Filtered for fashion/trend content)
+          </span>
+        )}
       </p>
     </div>
 
@@ -208,7 +225,7 @@ const FashionTableComponent = ({ data }: FashionTableProps) => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
       <div className="bg-blue-50 p-4 rounded-lg text-center">
         <div className="text-2xl font-bold text-blue-600">{data.fashionRecords}</div>
-        <div className="text-sm text-gray-600">Fashion Trends</div>
+        <div className="text-sm text-gray-600">Records Analyzed</div>
       </div>
       <div className="bg-green-50 p-4 rounded-lg text-center">
         <div className="text-2xl font-bold text-green-600">{data.engagementStats.average.toFixed(1)}</div>
@@ -216,24 +233,24 @@ const FashionTableComponent = ({ data }: FashionTableProps) => (
       </div>
       <div className="bg-purple-50 p-4 rounded-lg text-center">
         <div className="text-2xl font-bold text-purple-600">{data.topPlatforms.length}</div>
-        <div className="text-sm text-gray-600">Active Platforms</div>
+        <div className="text-sm text-gray-600">Data Sources</div>
       </div>
     </div>
 
-    {/* Top Fashion Trends Table */}
+    {/* Top Trends/Content Table */}
     <div className="bg-white rounded-lg shadow overflow-hidden">
       <div className="px-6 py-4 bg-gray-50 border-b">
-        <h3 className="text-lg font-semibold text-gray-900">🔥 Top Fashion Trends</h3>
+        <h3 className="text-lg font-semibold text-gray-900">🔥 Top Content/Trends</h3>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Trend
+                Content
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Platform
+                Source
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Engagement
@@ -265,17 +282,17 @@ const FashionTableComponent = ({ data }: FashionTableProps) => (
       </div>
     </div>
 
-    {/* Platform Distribution */}
+    {/* Platform/Source Distribution */}
     <div className="bg-white rounded-lg shadow overflow-hidden">
       <div className="px-6 py-4 bg-gray-50 border-b">
-        <h3 className="text-lg font-semibold text-gray-900">📱 Platform Distribution</h3>
+        <h3 className="text-lg font-semibold text-gray-900">📊 Data Source Distribution</h3>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Platform
+                Source
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Count
@@ -312,14 +329,14 @@ const FashionTableComponent = ({ data }: FashionTableProps) => (
     {data.topHashtags.length > 0 && (
       <div className="bg-white rounded-lg shadow overflow-hidden">
         <div className="px-6 py-4 bg-gray-50 border-b">
-          <h3 className="text-lg font-semibold text-gray-900">🏷️ Top Fashion Hashtags</h3>
+          <h3 className="text-lg font-semibold text-gray-900">🏷️ Top Tags/Keywords</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Hashtag
+                  Tag
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Frequency
@@ -340,76 +357,50 @@ const FashionTableComponent = ({ data }: FashionTableProps) => (
     )}
 
     {/* Engagement Statistics */}
-    <div className="bg-white rounded-lg shadow overflow-hidden">
-      <div className="px-6 py-4 bg-gray-50 border-b">
-        <h3 className="text-lg font-semibold text-gray-900">📊 Engagement Statistics</h3>
-      </div>
-      <div className="p-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-blue-600">{data.engagementStats.average.toFixed(1)}</div>
-            <div className="text-sm text-gray-600">Average</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-green-600">{data.engagementStats.highest.toFixed(1)}</div>
-            <div className="text-sm text-gray-600">Highest</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-orange-600">{data.engagementStats.lowest.toFixed(1)}</div>
-            <div className="text-sm text-gray-600">Lowest</div>
+    {data.engagementStats.average > 0 && (
+      <div className="bg-white rounded-lg shadow overflow-hidden">
+        <div className="px-6 py-4 bg-gray-50 border-b">
+          <h3 className="text-lg font-semibold text-gray-900">📈 Engagement Statistics</h3>
+        </div>
+        <div className="p-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-blue-600">{data.engagementStats.average.toFixed(1)}</div>
+              <div className="text-sm text-gray-600">Average</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-green-600">{data.engagementStats.highest.toFixed(1)}</div>
+              <div className="text-sm text-gray-600">Highest</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-orange-600">{data.engagementStats.lowest.toFixed(1)}</div>
+              <div className="text-sm text-gray-600">Lowest</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    )}
   </div>
 );
 
-export async function streamComponent() {
-  const result = await streamUI({
-    model: openai('gpt-4o'),
-    prompt: 'Analyze fashion trends from the viral social media dataset',
-    text: ({ content }) => <div>{content}</div>,
-    tools: {
-      analyzeFashionDataset: {
-        description: 'Analyze fashion trends from CSV dataset and extract insights into tables',
-        parameters: z.object({
-          datasetPath: z.string().describe('Path to the CSV dataset file'),
-        }),
-        generate: async function* ({ datasetPath }) {
-          yield <LoadingComponent />;
-          const analysisResult = await analyzeFashionDataset(datasetPath);
-          return <FashionTableComponent data={analysisResult} />;
-        },
-      },
-    },
-  });
-
-  return result.value;
+export async function streamComponent(csvContent: string) {
+  // Directly analyze the CSV content and return the result
+  try {
+    const analysisResult = await analyzeFashionDataset(csvContent);
+    return <FashionTableComponent data={analysisResult} />;
+  } catch (error) {
+    return (
+      <div className="max-w-4xl mx-auto p-6">
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <h3 className="text-lg font-semibold text-red-800 mb-2">Analysis Error</h3>
+          <p className="text-red-700">
+            {error instanceof Error ? error.message : 'Failed to analyze the CSV file'}
+          </p>
+          <p className="text-sm text-red-600 mt-2">
+            Please check that your CSV file has proper headers and contains valid data.
+          </p>
+        </div>
+      </div>
+    );
+  }
 }
-
-// Usage in your component:
-// const result = await streamComponent();
-
-// File structure expected:
-// public/
-//   data/
-//     viral-social-media-trends.csv
-
-// You can call it like this in your page:
-// import { streamComponent } from './actions';
-// 
-// export default function FashionPage() {
-//   const [result, setResult] = useState(null);
-//   
-//   const handleAnalyze = async () => {
-//     const analysisResult = await streamComponent();
-//     setResult(analysisResult);
-//   };
-//   
-//   return (
-//     <div>
-//       <button onClick={handleAnalyze}>Analyze Fashion Trends</button>
-//       {result}
-//     </div>
-//   );
-// }
