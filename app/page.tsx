@@ -5,7 +5,7 @@ import { useChat, Message } from 'ai/react';
 import IngestionSection from './components/IngestionSection';
 import ImageSearchSection from './components/ImageSearchSection';
 import StyleSidebar from './components/StyleSidebar';
-import ChatSection from './components/ChatSection';
+import{ ChatWindow } from './components/ChatSection';
 import ProductResults from './components/ProductResults';
 import './styles/pinterest.css';
 import { useProductFetcher } from './components/hooks/useProductFetcher';
@@ -219,7 +219,8 @@ export default function VintedHomePage() {
       </header>
       <main className="flex-1 max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 w-full">
          <StyleSidebar setMessages={setMessages} handleSubmit={handleSubmit} setInput={setInput} />
-         <ChatSection 
+
+        {/*  <ChatSection 
               messages={messages}
               input={input}
               handleInputChange={handleInputChange}
@@ -229,7 +230,7 @@ export default function VintedHomePage() {
               imagePreview={imagePreview}
               removeImage={() => setSelectedImage(null)}
               isProcessing={isImageProcessing}
-            />
+            /> */}
         <div className="px-4 py-6 sm:px-0">
           <div className="space-y-8">
              {ingestionNeeded && (
@@ -241,6 +242,14 @@ export default function VintedHomePage() {
             )}
           </div>
           <div className="space-y-8">
+          <ChatWindow
+      endpoint="api/vinted/chat"
+      emoji="🏴‍☠️"
+      placeholder="I'm an LLM pretending to be a pirate! Ask me about the pirate life!"
+      emptyStateComponent={<></>}
+    />
+          </div>
+          <div className="space-y-8">
           <ImageSearchSection 
               handleImageChange={handleImageChange}
               handleImageSearch={handleImageSearch}
@@ -249,6 +258,7 @@ export default function VintedHomePage() {
               imagePreview={imagePreview}
               generatedImageSearchQueries={generatedImageSearchQueries}
             />
+           
             <div className="p-6 bg-[#23232b] shadow rounded-lg flex-grow">
               <h2 className="text-xl font-semibold text-white mb-4">Product Results</h2>
               <ProductResults 
