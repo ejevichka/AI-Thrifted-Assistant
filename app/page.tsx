@@ -8,6 +8,7 @@ import StyleSidebar from './components/StyleSidebar';
 import ChatSection from './components/ChatSection';
 import ProductResults from './components/ProductResults';
 import './styles/pinterest.css';
+import { toast } from "sonner";
 import { useProductFetcher } from './components/hooks/useProductFetcher';
 
 export default function VintedHomePage() {
@@ -32,9 +33,13 @@ export default function VintedHomePage() {
   const [isImageProcessing, setIsImageProcessing] = useState(false);
   const [generatedImageSearchQueries, setGeneratedImageSearchQueries] = useState<string[]>([]);
 
+  const [sourcesForMessages, setSourcesForMessages] = useState<
+    Record<string, any>
+  >({});
 
 
-  // --- Chat Logic ---
+
+ /*  // --- Chat Logic ---
   const { messages, input, handleInputChange, handleSubmit, setMessages, setInput } = useChat({
     api: '/api/vinted/chat',
     onFinish: (message) => {
@@ -49,7 +54,42 @@ export default function VintedHomePage() {
         }
       }
     },
-  });
+  }); */
+
+  const { messages, input, handleInputChange, handleSubmit, setMessages, setInput } = useChat({
+    api: '/api/vinted/chat',
+    onResponse(response) {
+      const sourcesHeader = response.headers.get("x-sources");
+      const sources = sourcesHeader
+        ? JSON.parse(Buffer.from(sourcesHeader, "base64").toString("utf8"))
+        : [];
+
+      const messageIndexHeader = response.headers.get("x-message-index");
+      if (sources.length && messageIndexHeader !== null) {
+        setSourcesForMessages({
+          ...sourcesForMessages,
+          [messageIndexHeader]: sources,
+        });
+      }
+    },
+    streamMode: "text",
+    onError: (e) =>
+      toast.error(`Error while processing your request`, {
+        description: e.message,
+      }),
+    onFinish: (message) => {
+        console.log('AI Chat Response:', message.content);
+        const searchTrigger = "Searching Vinted and Depop for:";
+        if (message.content.startsWith(searchTrigger)) {
+          const queryPart = message.content.substring(searchTrigger.length).trim();
+          const queries = queryPart.split(',').map(q => q.trim()).filter(q => q.length > 0);
+          if (queries.length > 0) {
+            console.log("AI suggested search queries, triggering product search:", queries);
+            fetchProducts(queries);
+          }
+        }
+      },
+  }); 
 
    // --- AUTOMATED INGESTION LOGIC ---
 

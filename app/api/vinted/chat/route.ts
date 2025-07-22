@@ -1,4 +1,5 @@
-import { StreamingTextResponse, Message as VercelChatMessage } from 'ai';
+//import { HttpResponseOutputParser } from "langchain/output_parsers";
+import { Message as VercelChatMessage, StreamingTextResponse } from "ai";
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
 import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase';
 import { createClient } from '@supabase/supabase-js';
@@ -6,11 +7,10 @@ import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import { Document } from '@langchain/core/documents';
 import { StateGraph, END, START } from "@langchain/langgraph";
-import { HumanMessage } from '@langchain/core/messages'; // <-- Import HumanMessage
 
 export const runtime = "edge";
 
-// --- Helper Functions (Unchanged) ---
+// --- Helper Functions ---
 const formatVercelMessages = (messages: VercelChatMessage[]) => {
   return messages
     .filter(msg => msg.role === 'user' || msg.role === 'assistant')
@@ -22,7 +22,7 @@ const formatDocs = (docs: Document[]) => {
     return docs.map(doc => doc.pageContent).join('\n\n');
 };
 
-// --- Initializations (Unchanged) ---
+// --- Initializations ---
 const supabaseClient = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!,
@@ -35,7 +35,7 @@ const vectorStore = new SupabaseVectorStore(embeddings, {
     tableName: "vinted_documents",
     queryName: "match_documents"
 });
-const retriever = vectorStore.asRetriever(15);
+const retriever = vectorStore.asRetriever(3);
 const model = new ChatOpenAI({ modelName: "gpt-4o-mini", temperature: 0.5, streaming: true });
 
 const FASHION_ASSISTANT_TEMPLATE = `You are an AI fashion assistant for Vinted and Depop.
@@ -54,158 +54,168 @@ Based on the user's request and the provided context, generate a list of search 
 You MUST start your response with the exact phrase "Searching Vinted and Depop for:" and nothing else.
 Then, provide a comma-separated list of 3-5 specific and diverse search terms.
 
-Assistant:`;
+A:`;
 
 // ===================================================================================
-// --- 1. Define the State for the Graph using a TypeScript interface ---
+// --- Simplified State Interface ---
 // ===================================================================================
-interface GraphState {
+interface SimpleGraphState {
   question: string;
   chat_history: string;
   context?: string;
   generation?: string;
-  decision?: "standard_search" | "brand_suggestion";
 }
 
 // ===================================================================================
-// --- 2. Define the Nodes for the Graph ---
+// --- Simplified Node Functions ---
 // ===================================================================================
 
-// --- Node: Retrieve Documents ---
-async function retrieveContext(state: GraphState): Promise<Partial<GraphState>> {
-    
-    const { question } = state;
-    const docs = await retriever.invoke(question);
-    const formattedContext = formatDocs(docs);
-    console.log("--- NODE: retrieveContext with DOCS ---");
-    return { context: formattedContext };
-}
-
-// --- Node: Generate Standard Search Response ---
-async function generateStandardSearch(state: GraphState): Promise<Partial<GraphState>> {
-    console.log("--- NODE: generateStandardSearch ---");
-    const { question, context, chat_history } = state;
-    const prompt = ChatPromptTemplate.fromTemplate(FASHION_ASSISTANT_TEMPLATE);
-    const chain = prompt.pipe(model).pipe(new StringOutputParser());
-    const generation = await chain.invoke({ question, context, chat_history });
-    return { generation };
-}
-
-// --- ✨ MODIFIED NODE: Generate Brand Suggestion Response ✨ ---
-// This node now directly uses the detailed prompt sent from the frontend.
-async function generateBrandSuggestion(state: GraphState): Promise<Partial<GraphState>> {
-    console.log("--- NODE: generateBrandSuggestion (Specific Brands) ---");
-    const { question } = state; // The 'question' contains the full prompt from the frontend.
-    
-    // We pass the prompt directly to the model as a HumanMessage
-    const chain = model.pipe(new StringOutputParser());
-    const generation = await chain.invoke([
-        new HumanMessage(question)
-    ]);
-
-    return { generation };
-}
-
-
-// --- Router Node ---
-async function routerNode(state: GraphState): Promise<Partial<GraphState>> {
-    console.log("--- NODE: routerNode ---");
-    const { question } = state;
-    if (question.startsWith("You are a fashion expert and personal shopper.")) {
-        console.log("--- ROUTE: Brand Suggestion ---");
-        return { decision: "brand_suggestion" };
+async function retrieveContext(state: SimpleGraphState): Promise<Partial<SimpleGraphState>> {
+    console.log("--- NODE: retrieveContext START ---");
+    try {
+        const { question } = state;
+        console.log("Retrieving docs for question:", question?.slice(0, 100) + "...");
+        
+        const docs = await retriever.invoke(question);
+        const formattedContext = formatDocs(docs);
+        
+        console.log("--- NODE: retrieveContext SUCCESS - Context length:", formattedContext.length);
+        console.log("Context preview:", formattedContext.slice(0, 200) + "...");
+        
+        return { context: formattedContext };
+    } catch (error) {
+        console.error("--- NODE: retrieveContext ERROR ---", error);
+        return { context: "No relevant context found." };
     }
-    console.log("--- ROUTE: Standard Search ---");
-    return { decision: "standard_search" };
 }
 
-// --- Conditional Edge Function ---
-function routeDecision(state: GraphState): "retrieveContext" | "generateBrandSuggestion" | "__end__" {
-    if (state.decision === "standard_search") {
-        return "retrieveContext";
-    } else if (state.decision === "brand_suggestion") {
-        return "generateBrandSuggestion";
+async function generateSearchQueries(state: SimpleGraphState): Promise<Partial<SimpleGraphState>> {
+    console.log("--- NODE: generateSearchQueries START ---");
+    try {
+        const { question, context, chat_history } = state;
+        console.log("Generating with context length:", context?.length || 0);
+        
+        const prompt = ChatPromptTemplate.fromTemplate(FASHION_ASSISTANT_TEMPLATE);
+        const chain = prompt.pipe(model).pipe(new StringOutputParser());
+        
+        console.log("Invoking chain for search query generation...");
+        const result = await chain.invoke({ 
+            question, 
+            context: context || "No additional context available.", 
+            chat_history: chat_history || "" 
+        });
+        
+        console.log("--- NODE: generateSearchQueries SUCCESS ---");
+        console.log("Generated result:", result?.slice(0, 200) + "...");
+        
+        return { generation: result };
+    } catch (error) {
+        console.error("--- NODE: generateSearchQueries ERROR ---", error);
+        return { generation: "Error generating search queries. Please try again." };
     }
-    return "__end__";
 }
 
 // ===================================================================================
-// --- 3. Define and Compile the Graph ---
+// --- Simplified Graph Setup ---
 // ===================================================================================
 
-const workflow = new StateGraph<GraphState>({
+const workflow = new StateGraph<SimpleGraphState>({
   channels: {
-    question: { value: (x, y) => y, default: () => "" },
-    chat_history: { value: (x, y) => y, default: () => "" },
-    context: { value: (x, y) => y, default: () => undefined },
-    generation: { value: (x, y) => y, default: () => undefined },
-    decision: { value: (x, y) => y, default: () => undefined },
+    question: { value: (x, y) => y ?? x, default: () => "" },
+    chat_history: { value: (x, y) => y ?? x, default: () => "" },
+    context: { value: (x, y) => y ?? x, default: () => undefined },
+    generation: { value: (x, y) => y ?? x, default: () => undefined },
   },
 });
 
-
 // Add nodes
-workflow.addNode("routerNode", routerNode);
 workflow.addNode("retrieveContext", retrieveContext);
-workflow.addNode("generateStandardSearch", generateStandardSearch);
-workflow.addNode("generateBrandSuggestion", generateBrandSuggestion);
+workflow.addNode("generateSearchQueries", generateSearchQueries);
 
-// Define workflow edges
-  // Add the @ts-ignore comment on the line immediately before the error
-// @ts-ignore
-workflow.addEdge(START, "routerNode");
-  // Add the @ts-ignore comment on the line immediately before the error
-// @ts-ignore
-workflow.addConditionalEdges("routerNode", routeDecision);
-  // Add the @ts-ignore comment on the line immediately before the error
-// @ts-ignore 
-workflow.addEdge("retrieveContext", "generateStandardSearch");
-  // Add the @ts-ignore comment on the line immediately before the error
-// @ts-ignore
-workflow.addEdge("generateStandardSearch", END);
-  // Add the @ts-ignore comment on the line immediately before the error
-// @ts-ignore
-workflow.addEdge("generateBrandSuggestion", END);
+// Simple linear workflow: START → retrieve context → generate queries → END
+workflow.addEdge(START, "retrieveContext");
+workflow.addEdge("retrieveContext", "generateSearchQueries");
+workflow.addEdge("generateSearchQueries", END);
 
 // Compile the graph
 const app = workflow.compile();
 
-
 // ===================================================================================
-// --- 4. The API Handler using the Compiled Graph (Unchanged) ---
+// --- Simplified API Handler ---
 // ===================================================================================
 
 export async function POST(req: Request) {
+  console.log("=== SIMPLIFIED API HANDLER START ===");
   try {
     const { messages } = await req.json();
     const lastMessage = messages[messages.length - 1];
-    const initialState: GraphState = {
-        question: lastMessage.content,
-        chat_history: formatVercelMessages(messages.slice(0, -1)),
+    
+    console.log("Processing message:", lastMessage?.content?.slice(0, 100) + "...");
+
+    const inputs = {
+      question: lastMessage.content,
+      chat_history: formatVercelMessages(messages.slice(0, -1)),
     };
     
-    const stream = await app.stream(initialState, { recursionLimit: 15 });
+    console.log("Starting simplified graph execution...");
+    console.log("Input state:", JSON.stringify(inputs, null, 2));
 
-    const transformStream = new ReadableStream<{ generation?: string }>({
-      async start(controller) {
-        for await (const chunk of stream) {
-            // The last key in the chunk is the node that just executed.
-            const nodeName = Object.keys(chunk).pop();
-            if(nodeName) {
-                const finalState = chunk[nodeName as keyof typeof chunk];
-                if (finalState && finalState.generation) {
-                    controller.enqueue(finalState.generation);
-                }
-            }
-        }
-        controller.close();
-      },
-    });
+    // Run the graph to completion
+    const finalState = await app.invoke(inputs);
+    console.log("Final state:", JSON.stringify(finalState, null, 2));
 
-    return new StreamingTextResponse(transformStream);
+    if (finalState.generation) {
+      console.log("Returning successful response");
+      return new Response(finalState.generation, {
+        headers: { 
+          'Content-Type': 'text/plain',
+          'Cache-Control': 'no-cache'
+        },
+      });
+    } else {
+      console.log("No generation in final state - returning fallback");
+      return new Response("No search queries generated. Please try again.", {
+        status: 200,
+        headers: { 'Content-Type': 'text/plain' },
+      });
+    }
 
   } catch (e: any) {
-    console.error('Error in chat route:', e);
-    return new Response(JSON.stringify({ error: e.message || "An unexpected error occurred." }), { status: 500 });
+    console.error('Error in simplified chat route:', e);
+    return new Response(JSON.stringify({ 
+      error: e.message || "An unexpected error occurred.",
+      stack: process.env.NODE_ENV === 'development' ? e.stack : undefined
+    }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+}
+
+// ===================================================================================
+// --- Optional: Direct function for testing without graph ---
+// ===================================================================================
+
+export async function directSearchQuery(question: string, chatHistory: string = '') {
+  console.log("=== DIRECT SEARCH FUNCTION ===");
+  try {
+    // Retrieve context
+    const docs = await retriever.invoke(question);
+    const context = formatDocs(docs);
+    
+    // Generate response
+    const prompt = ChatPromptTemplate.fromTemplate(FASHION_ASSISTANT_TEMPLATE);
+    const chain = prompt.pipe(model).pipe(new StringOutputParser());
+    
+    const result = await chain.invoke({ 
+      question, 
+      context, 
+      chat_history: chatHistory 
+    });
+    
+    return result;
+  } catch (error) {
+    console.error('Direct search error:', error);
+    throw error;
   }
 }

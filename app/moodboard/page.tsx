@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, FormEvent, ChangeEvent, ReactNode } from 'react';
-import { streamComponent } from '../actions';
+import { analyzeAndGetReport } from '../actions';
 import { UploadCloud, File as FileIcon, X, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export default function Page() {
@@ -107,7 +107,7 @@ export default function Page() {
           );
           
           // Pass the file's text content to the server action
-          const result = await streamComponent(csvContent);
+          const result = await analyzeAndGetReport(csvContent);
           setComponent(result);
         } catch (err) {
           console.error('Analysis error:', err);
@@ -266,7 +266,7 @@ export default function Page() {
               💡 Tips for best results
             </summary>
             <div className="text-sm text-gray-500 space-y-2 mt-3 p-4 bg-gray-800 rounded-lg">
-              <p>• <strong>Column Headers:</strong> Include clear headers like "title", "engagement", "platform", "category", etc.</p>
+              <p>• <strong>Column Headers:</strong> Include clear headers like `&quot;`title`&quot;`, `&quot;`engagement`&quot;`, `&quot;`platform`&quot;`, `&quot;`category`&quot;`, etc.</p>
               <p>• <strong>Fashion Content:</strong> The analyzer will automatically detect fashion and trend-related content</p>
               <p>• <strong>Engagement Data:</strong> Include numeric columns with engagement metrics (likes, views, shares)</p>
               <p>• <strong>File Format:</strong> Standard CSV format with comma separators works best</p>
