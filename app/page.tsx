@@ -32,31 +32,13 @@ export default function VintedHomePage() {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [isImageProcessing, setIsImageProcessing] = useState(false);
   const [generatedImageSearchQueries, setGeneratedImageSearchQueries] = useState<string[]>([]);
+  const [isGeneratingImage, setIsGeneratingImage] = useState(false); // New state
 
   const [sourcesForMessages, setSourcesForMessages] = useState<
     Record<string, any>
   >({});
 
-
-
- /*  // --- Chat Logic ---
-  const { messages, input, handleInputChange, handleSubmit, setMessages, setInput } = useChat({
-    api: '/api/vinted/chat',
-    onFinish: (message) => {
-      console.log('AI Chat Response:', message.content);
-      const searchTrigger = "Searching Vinted and Depop for:";
-      if (message.content.startsWith(searchTrigger)) {
-        const queryPart = message.content.substring(searchTrigger.length).trim();
-        const queries = queryPart.split(',').map(q => q.trim()).filter(q => q.length > 0);
-        if (queries.length > 0) {
-          console.log("AI suggested search queries, triggering product search:", queries);
-          fetchProducts(queries);
-        }
-      }
-    },
-  }); */
-
-  const { messages, input, handleInputChange, handleSubmit, setMessages, setInput } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, setMessages, setInput, append } = useChat({
     api: '/api/vinted/chat',
     onResponse(response) {
       const sourcesHeader = response.headers.get("x-sources");
@@ -89,7 +71,73 @@ export default function VintedHomePage() {
           }
         }
       },
-  }); 
+  });
+
+  // --- Image Generation Handler ---
+  const handleImageGeneration = async (prompt: string) => {
+    setIsGeneratingImage(true);
+    try {
+      const response = await fetch('/api/vinted/image-generation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to generate image');
+      }
+
+      const { imageUrl } = await response.json();
+      const imageMessage: Message = {
+        id: Date.now().toString(),
+        role: 'assistant',
+        content: `Heres the image I generated for you:\n![Generated Outfit](${imageUrl})`,
+      };
+      setMessages([...messages, imageMessage]);
+
+      // Follow-up message to ask if the user wants to search for these items
+      const followUpMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: 'Would you like me to find items similar to this image?'
+      };
+      setMessages(currentMessages => [...currentMessages, followUpMessage]);
+
+
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      toast.error('Image Generation Failed', { description: errorMessage });
+    } finally {
+      setIsGeneratingImage(false);
+    }
+  };
+
+  // --- User Choice Handler for Image Gen ---
+  const handleUserChoice = async (choice: 'yes' | 'no') => {
+    const lastMessage = messages[messages.length - 1];
+    if (!lastMessage || lastMessage.role !== 'assistant') return;
+
+    if (choice === 'yes') {
+      // Add user's "Yes" to chat
+      append({ role: 'user', content: 'Yes, please generate the image.' });
+      // Extract the outfit description from the assistant's question
+      const outfitDescription = lastMessage.content
+        .replace("I'm thinking of a ", "")
+        .replace("Would you like me to create an image of that for you?", "")
+        .trim();
+      
+      await handleImageGeneration(outfitDescription);
+
+    } else { // 'no'
+      // Add user's "No" to chat and ask the assistant to proceed with the search
+      append({
+        role: 'user',
+        content: 'No, thanks. Just find the items for me.'
+      });
+    }
+  };
+
 
    // --- AUTOMATED INGESTION LOGIC ---
 
@@ -224,9 +272,9 @@ export default function VintedHomePage() {
     try {
       const formData = new FormData();
       formData.append('image', selectedImage);
-      const response = await fetch('/api/vinted/image-search', { 
-        method: 'POST', 
-        body: formData 
+      const response = await fetch('/api/vinted/image-search', {
+        method: 'POST',
+        body: formData
       });
 
       if (!response.ok) {
@@ -268,7 +316,9 @@ export default function VintedHomePage() {
               handleImageChange={handleImageChange}
               imagePreview={imagePreview}
               removeImage={() => setSelectedImage(null)}
-              isProcessing={isImageProcessing}
+              isProcessing={isImageProcessing || isGeneratingImage} // Updated prop
+              handleImageGeneration={handleImageGeneration} // New prop
+              handleUserChoice={handleUserChoice} // New prop
             />
         <div className="px-4 py-6 sm:px-0">
           <div className="space-y-8">

@@ -19,7 +19,7 @@ export default function StyleSidebar({ setMessages, handleSubmit, setInput }: St
     const formRef = useRef<HTMLFormElement>(null);
 
     const handleStyleClick = (styleName: string, hashtags: string[]) => {
-      const prompt = `Find me items with a ${styleName} aesthetic. List brands with this vibe: ${hashtags.join(', ')}.`;
+      const prompt = `Moodboard items with a ${styleName} aesthetic. List brands with this vibe: ${hashtags.join(', ')}.`;
       setInput(prompt);
       
     };
