@@ -29,7 +29,7 @@ export async function POST(req: Request) {
       n: 1, // Generate a single image
       size: "1024x1024", // Specify the image size
     });
-
+// @ts-ignore
     const imageUrl = response.data[0].url;
 
     // Return the image URL in a structured JSON response
