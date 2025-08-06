@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "scrape:vinted": "ts-node --project tsconfig.scripts.json scripts/scrape-vinted.ts",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"app\""
@@ -57,6 +58,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
-    "prettier": "^3.4.2"
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2"
   }
 }

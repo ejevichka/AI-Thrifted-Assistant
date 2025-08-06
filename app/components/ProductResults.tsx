@@ -46,15 +46,15 @@ export default function ProductResults({ isLoading, error, products, searchIniti
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {products.map((item) => (
           <div key={item.id} className="border border-gray-200 p-4 rounded-lg shadow-sm flex flex-col h-full bg-white transition-shadow hover:shadow-md">
-            <div className="relative w-full h-48 mb-3 rounded-md overflow-hidden">
-              <Image
+            {/*<div className="relative w-full h-48 mb-3 rounded-md overflow-hidden">
+               <Image
                 src={item.imageUrl || `https://placehold.co/250x250/E2E8F0/1A202C?text=No+Image`}
                 alt={item.title}
                 fill
                 style={{objectFit: "cover"}}
                 className="transition-transform duration-300 hover:scale-105"
               />
-            </div>
+            </div> */}
             <h3 className="font-semibold text-gray-900 mb-1 line-clamp-2" title={item.title}>{item.title}</h3>
             {item.brand && <p className="text-sm text-gray-500 mb-1">Brand: {item.brand}</p>}
             {item.size && <p className="text-sm text-gray-500 mb-1">Size: {item.size}</p>}

@@ -208,3 +208,6 @@ Streaming Responses
 LangChainStream was set up to stream the language model’s responses to the frontend in real time, creating a smooth and responsive chat interface.
 
 LangChain’s components for vector storage, embeddings, retrieval, prompt templating, chain execution, output parsing, document chunking, and real-time streaming were combined to deliver a robust and efficient RAG-based AI discovery experience for the Vinted fashion platform.
+
+TODO:
+scrap the brands and hashtags, map them to teach the model
