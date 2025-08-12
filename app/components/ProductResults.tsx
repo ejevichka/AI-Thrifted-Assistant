@@ -19,7 +19,7 @@ export default function ProductResults({ isLoading, error, products, searchIniti
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg>
-          <span>Searching for items on Vinted and Depop...</span>
+          <span>Searching for items on Vinted...</span>
         </div>
       </div>
     );
@@ -41,12 +41,14 @@ export default function ProductResults({ isLoading, error, products, searchIniti
     );
   }
 
+  console.log("HERERERERERERER:", products);
+
   if (products.length > 0) {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {products.map((item) => (
           <div key={item.id} className="border border-gray-200 p-4 rounded-lg shadow-sm flex flex-col h-full bg-white transition-shadow hover:shadow-md">
-            {/*<div className="relative w-full h-48 mb-3 rounded-md overflow-hidden">
+            <div className="relative w-full h-48 mb-3 rounded-md overflow-hidden">
                <Image
                 src={item.imageUrl || `https://placehold.co/250x250/E2E8F0/1A202C?text=No+Image`}
                 alt={item.title}
@@ -54,7 +56,7 @@ export default function ProductResults({ isLoading, error, products, searchIniti
                 style={{objectFit: "cover"}}
                 className="transition-transform duration-300 hover:scale-105"
               />
-            </div> */}
+            </div>
             <h3 className="font-semibold text-gray-900 mb-1 line-clamp-2" title={item.title}>{item.title}</h3>
             {item.brand && <p className="text-sm text-gray-500 mb-1">Brand: {item.brand}</p>}
             {item.size && <p className="text-sm text-gray-500 mb-1">Size: {item.size}</p>}

@@ -13,14 +13,16 @@ interface StyleSidebarProps {
         } | undefined;
     } | undefined) => void;
     setInput: (input: string) => void;
+    scrollToChatInput: () => void;
 }
 
-export default function StyleSidebar({ setMessages, handleSubmit, setInput }: StyleSidebarProps) {
+export default function StyleSidebar({ setMessages, handleSubmit, setInput, scrollToChatInput }: StyleSidebarProps) {
     const formRef = useRef<HTMLFormElement>(null);
 
     const handleStyleClick = (styleName: string, hashtags: string[]) => {
       const prompt = `Moodboard items with a ${styleName} aesthetic. List brands with this vibe: ${hashtags.join(', ')}.`;
       setInput(prompt);
+      scrollToChatInput();
       
     };
 

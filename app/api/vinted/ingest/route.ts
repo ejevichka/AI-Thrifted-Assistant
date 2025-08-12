@@ -56,6 +56,8 @@ export async function POST(req: NextRequest) {
                     dataset: 'style_vibes', 
                     style_name: style.name, 
                     id: style.id, 
+                    brands: style.brands,
+                    hashtags: style.hashtags,
                     source: 'styles.json' 
                 };
                 

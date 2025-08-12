@@ -21,10 +21,22 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images1.vinted.net',
+        port: '',
+        pathname: '/**',
+      },
       // Rule for real Depop images
       {
         protocol: 'https',
         hostname: 'depop-res.cloudinary.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images1.vinted.net',
         port: '',
         pathname: '/**',
       },

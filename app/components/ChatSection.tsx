@@ -1,7 +1,5 @@
-'use client';
-
 import { Message } from 'ai/react';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, forwardRef } from 'react';
 import Image from 'next/image';
 import { Paperclip, XCircle, ArrowUpCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown'; // Import ReactMarkdown
@@ -20,7 +18,7 @@ interface ChatSectionProps {
   handleUserChoice: (choice: 'yes' | 'no') => void; // New prop
 }
 
-export default function ChatSection({ 
+const ChatSection = forwardRef<HTMLTextAreaElement, ChatSectionProps>(({ 
   messages, 
   input, 
   handleInputChange, 
@@ -32,7 +30,7 @@ export default function ChatSection({
   isProcessing,
   handleImageGeneration,
   handleUserChoice
-}: ChatSectionProps) {
+}, ref) => {
 
   const latestMessage = messages[messages.length - 1];
   const showImageGenButtons = latestMessage?.role === 'assistant' && latestMessage.content.includes('Would you like me to create an image');
@@ -83,6 +81,7 @@ export default function ChatSection({
               <Paperclip className="w-7 h-7" strokeWidth={2} />
             </label>
             <textarea 
+              ref={ref}
               value={input} 
               onChange={handleInputChange} 
               placeholder={imagePreview ? "Add a comment... (optional)" : "Describe the style you want..."}
@@ -117,4 +116,8 @@ export default function ChatSection({
       )}
     </div>
   );
-}
+});
+
+ChatSection.displayName = 'ChatSection';
+
+export default ChatSection;

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent, useEffect } from 'react';
+import { useState, FormEvent, useEffect, useRef } from 'react';
 import { useChat, Message } from 'ai/react';
 import IngestionSection from './components/IngestionSection';
 import ImageSearchSection from './components/ImageSearchSection';
@@ -33,6 +33,12 @@ export default function VintedHomePage() {
   const [isImageProcessing, setIsImageProcessing] = useState(false);
   const [generatedImageSearchQueries, setGeneratedImageSearchQueries] = useState<string[]>([]);
   const [isGeneratingImage, setIsGeneratingImage] = useState(false); // New state
+  const chatInputRef = useRef<HTMLTextAreaElement>(null);
+
+  const scrollToChatInput = () => {
+    chatInputRef.current?.focus();
+    chatInputRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const [sourcesForMessages, setSourcesForMessages] = useState<
     Record<string, any>
@@ -302,12 +308,14 @@ export default function VintedHomePage() {
     <div className="flex flex-col min-h-screen bg-[#18181b] text-gray-100 font-sans">
       <header className="bg-[#23232b] shadow-sm">
         <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-ashborn text-white">Vinted / Depop AI Fashion Assistant</h1>
+          <h1 className="text-5xl font-ashborn text-white">Hey, I&apos;m DIGGY  ^^</h1>
+          <h2 className="text-3xl font-ashborn text-white mt-4">Your Vinted AI Assistant</h2>
         </div>
       </header>
       <main className="flex-1 max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 w-full">
-         <StyleSidebar setMessages={setMessages} handleSubmit={handleSubmit} setInput={setInput} />
+         <StyleSidebar setMessages={setMessages} handleSubmit={handleSubmit} setInput={setInput} scrollToChatInput={scrollToChatInput} />
          <ChatSection 
+              ref={chatInputRef}
               messages={messages}
               input={input}
               handleInputChange={handleInputChange}
@@ -331,14 +339,14 @@ export default function VintedHomePage() {
             )}
           </div>
           <div className="space-y-8">
-          <ImageSearchSection 
+         {/*  <ImageSearchSection 
               handleImageChange={handleImageChange}
               handleImageSearch={handleImageSearch}
               selectedImage={selectedImage}
               isImageProcessing={isImageProcessing}
               imagePreview={imagePreview}
               generatedImageSearchQueries={generatedImageSearchQueries}
-            />
+            /> */}
             <div className="p-6 bg-[#23232b] shadow rounded-lg flex-grow">
               <h2 className="text-xl font-semibold text-white mb-4">Product Results</h2>
               <ProductResults 
