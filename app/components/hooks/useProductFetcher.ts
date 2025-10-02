@@ -1,7 +1,7 @@
 // hooks/useProductFetcher.ts
 import { Product } from '@/app/types';
 import { useState, useCallback } from 'react';
-
+import { FilterState } from '../ProductFilters';
 
 interface UseProductFetcherReturn {
   // State
@@ -11,7 +11,7 @@ interface UseProductFetcherReturn {
   searchInitiated: boolean;
   
   // Actions
-  fetchProducts: (queries: string[]) => Promise<void>;
+  fetchProducts: (queries: string[], filters?: FilterState) => Promise<void>;
   clearProducts: () => void;
   clearError: () => void;
 }
@@ -22,8 +22,9 @@ export const useProductFetcher = (): UseProductFetcherReturn => {
   const [error, setError] = useState<string | null>(null);
   const [searchInitiated, setSearchInitiated] = useState(false);
 
-  const fetchProducts = useCallback(async (queries: string[]) => {
+  const fetchProducts = useCallback(async (queries: string[], filters?: FilterState) => {
     console.log("Starting product fetch with queries:", queries);
+    console.log("With filters:", filters);
     
     setIsLoading(true);
     setSearchInitiated(true);
@@ -34,7 +35,7 @@ export const useProductFetcher = (): UseProductFetcherReturn => {
       const response = await fetch('/api/vinted/search-external', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ queries }),
+        body: JSON.stringify({ queries, filters }),
       });
 
       console.log("Product search response status:", response.status);

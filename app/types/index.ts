@@ -2,6 +2,7 @@ export interface Product {
   id: string;
   title: string;
   price: string;
+  priceNumeric?: number;
   imageUrl: string;
   condition: string;
   link: string;

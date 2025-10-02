@@ -1,12 +1,10 @@
-//import { HttpResponseOutputParser } from "langchain/output_parsers";
 import { Message as VercelChatMessage, StreamingTextResponse } from "ai";
-import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
-import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase';
-import { createClient } from '@supabase/supabase-js';
+import { ChatOpenAI } from '@langchain/openai';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { StringOutputParser } from '@langchain/core/output_parsers';
-import { Document } from '@langchain/core/documents';
 import { StateGraph, END, START } from "@langchain/langgraph";
+import { AestheticService } from './aesthetic-service';
+import stylesData from '../../../../data/vinted/styles.json';
 
 export const runtime = "edge";
 
@@ -18,56 +16,48 @@ const formatVercelMessages = (messages: VercelChatMessage[]) => {
     .join('\n');
 };
 
-const formatDocs = (docs: Document[]) => {
-    return docs.map(doc => doc.pageContent).join('\n\n');
-};
 
 // --- Initializations ---
-const supabaseClient = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-  { auth: { persistSession: false } }
-);
-
-const embeddings = new OpenAIEmbeddings({ modelName: "text-embedding-3-small" });
-const vectorStore = new SupabaseVectorStore(embeddings, {
-    client: supabaseClient,
-    tableName: "vinted_documents",
-    queryName: "match_documents"
-});
-const retriever = vectorStore.asRetriever(3);
 const model = new ChatOpenAI({ modelName: "gpt-4o-mini", temperature: 0.5, streaming: true });
 
 const FASHION_ASSISTANT_TEMPLATE = `You are a conversational AI fashion assistant for Vinted and Depop. Your goal is to help users find the perfect clothing items by creating an outfit idea and then finding it.
 
 **IMPORTANT: First, check if the user's request starts with the phrase "Moodboard items with a".**
-- **IF IT DOES:**** Your main goal is to generate a list of 3-5 diverse and specific search queries based on the user's request and the provided CONTEXT.
+- **IF IT DOES:** Your main goal is to generate a list of 3-5 diverse and specific search queries based on the user's request and the provided CONTEXT.
 
 Follow this logic:
-1.  **Identify the core aesthetic style** from the user's request (e.g., Sporty, Y2K, Grunge).
-2.  **Consult the CONTEXT** to find the brands and hashtags associated with that style. The CONTEXT is your primary source of truth for these associations.
-3.  **Extract any item types** (e.g., hoodie, dress) mentioned by the user. If no item is mentioned, infer common item types from the style description in the CONTEXT.
-4.  **Construct search queries by combining a brand and an item type** from the CONTEXT that are relevant to the user's request. For example, if the CONTEXT links the 'Gorpcore' style to the brand 'Arc'teryx' and items like 'jackets', a good query is 'Arc'teryx gorpcore jacket'.
-5.  **Do NOT invent associations** that are not present in the CONTEXT.
-6.  **Do NOT generate generic queries** like 'size small' or 'summer hoodie'.
-7.  **Immediately start your response with the exact phrase "Searching Vinted and Depop for:"** followed by the comma-separated list of search terms.
+1.  **Identify the core aesthetic style** from the user's request (e.g., Y2K, Grunge, Minimalist, Streetwear).
+2.  **Consult the FASHION AESTHETIC GUIDE** in the CONTEXT to find the brands and items associated with that style. This guide provides:
+    - Style descriptions and key characteristics
+    - Specific clothing items for each aesthetic
+    - Recommended brands that match the aesthetic
+    - Alternative names for the style
+3.  **Extract any item types** mentioned by the user. If none mentioned, use the "Key Items" from the aesthetic guide.
+4.  **Construct search queries by combining recommended brands with relevant items** from the aesthetic guide. For example: "Arc'teryx fleece jacket" or "Supreme streetwear hoodie".
+5.  **Use ONLY the brands and items listed in the FASHION AESTHETIC GUIDE** - do not invent associations.
+6.  **Prioritize specific, searchable terms** over generic ones.
+7.  **Start your response with "Searching Vinted and Depop for:"** followed by the comma-separated search terms.
 - **IF IT DOES NOT:** Follow the logic below.
 
 Follow this logic:
-1.  **Analyze the user's request, the provided context, and the chat history.**
-2.  **Assess if the request is specific enough.** A specific request includes a style, item type, and other details (e.g., "90s grunge plaid skirt," "bohemian floral maxi dress").
-3.  **Engage in a helpful conversation. Ask clarifying questions about their style, occasion, personal attributes (height, size) to gather details. Use the chat history to see what has already been discussed.
-4.  **Once you have enough detail to form a concrete outfit idea, your next step is to suggest generating an image.**
-    *   First, summarize the outfit you've envisioned based on their preferences.
-    *   Then, ask if they would like you to generate an image of this outfit. For example: "I'm thinking of a [description of the outfit]. Would you like me to create an image of that for you?"
-    *   You MUST frame this as a question. Your response should end with a question mark.
-    *   Do NOT generate search queries yet.
-5.  **If the user agrees to image generation, your response MUST start with the exact phrase "Generating image of:"** followed by a detailed description of the outfit.
-6.  **Only after the user agrees to the image generation, or if they decline the suggestion, should you generate search queries.** If they decline, generate queries based on the outfit you described.
-    *   To generate search queries, you MUST start your response with the exact phrase "Searching Vinted and Depop for:" and nothing else.
-    *   Then, provide a comma-separated list of 3-5 specific and diverse search terms.
+1.  **Analyze the user's request using the FASHION AESTHETIC GUIDE** to understand style preferences.
+2.  **Assess specificity:** A specific request includes style + item type + details (e.g., "minimalist cashmere sweater," "Y2K low-rise jeans").
+3.  **For vague requests:** Ask clarifying questions about:
+    - **Style preference** (reference the aesthetics in the guide: minimalist, streetwear, bohemian, etc.)
+    - **Specific items needed** (use the key items from relevant aesthetics)
+    - **Occasion and fit preferences**
+4.  **When enough details are gathered:**
+    - Summarize the outfit using terminology from the aesthetic guide
+    - Ask: "I'm thinking of a [detailed outfit description]. Would you like me to create an image of this look?"
+    - **Must end with a question mark**
+5.  **For image generation:** Start with "Generating image of:" + detailed description
+6.  **For search queries:** Use "Searching Vinted and Depop for:" + 3-5 specific terms combining:
+    - Brands from the aesthetic guide
+    - Key items from the aesthetic guide
+    - User-specified details
 
-Use the following CONTEXT to inform your decision and find relevant brands or styles if needed.
+**Use the FASHION AESTHETIC GUIDE as your primary reference for style associations, brands, and terminology.**
+
 ---
 CONTEXT:
 {context}
@@ -99,15 +89,24 @@ async function retrieveContext(state: SimpleGraphState): Promise<Partial<SimpleG
     console.log("--- NODE: retrieveContext START ---");
     try {
         const { question } = state;
-        console.log("Retrieving docs for question:", question?.slice(0, 100) + "...");
+        console.log("Retrieving context for question:", question?.slice(0, 100) + "...");
         
-        const docs = await retriever.invoke(question);
-        const formattedContext = formatDocs(docs);
+        // Get aesthetic context
+        const aestheticContext = AestheticService.generateEnhancedContext(question);
         
-        console.log("--- NODE: retrieveContext SUCCESS - Context length:", formattedContext.length);
-        console.log("Context preview:", formattedContext.slice(0, 200) + "...");
+        // Use styles data as additional context
+        const stylesContext = JSON.stringify(stylesData).slice(0, 1000); // Limit size
         
-        return { context: formattedContext };
+        // Combine contexts
+        let combinedContext = aestheticContext;
+        if (stylesContext) {
+            combinedContext = `${aestheticContext}\n\nADDITIONAL STYLES DATA:\n${stylesContext}`;
+        }
+        
+        console.log("--- NODE: retrieveContext SUCCESS - Context length:", combinedContext.length);
+        console.log("Aesthetic context preview:", aestheticContext.slice(0, 200) + "...");
+        
+        return { context: combinedContext };
     } catch (error) {
         console.error("--- NODE: retrieveContext ERROR ---", error);
         return { context: "No relevant context found." };
@@ -228,9 +227,17 @@ export async function POST(req: Request) {
 async function directSearchQuery(question: string, chatHistory: string = '') {
   console.log("=== DIRECT SEARCH FUNCTION ===");
   try {
-    // Retrieve context
-    const docs = await retriever.invoke(question);
-    const context = formatDocs(docs);
+    // Get aesthetic context
+    const aestheticContext = AestheticService.generateEnhancedContext(question);
+    
+    // Use styles data as context
+    const stylesContext = JSON.stringify(stylesData).slice(0, 1000);
+    
+    // Combine contexts
+    let combinedContext = aestheticContext;
+    if (stylesContext) {
+      combinedContext = `${aestheticContext}\n\nADDITIONAL STYLES DATA:\n${stylesContext}`;
+    }
     
     // Generate response
     const prompt = ChatPromptTemplate.fromTemplate(FASHION_ASSISTANT_TEMPLATE);
@@ -238,7 +245,7 @@ async function directSearchQuery(question: string, chatHistory: string = '') {
     
     const result = await chain.invoke({ 
       question, 
-      context, 
+      context: combinedContext, 
       chat_history: chatHistory 
     });
     

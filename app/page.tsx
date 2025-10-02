@@ -7,6 +7,7 @@ import ImageSearchSection from './components/ImageSearchSection';
 import StyleSidebar from './components/StyleSidebar';
 import ChatSection from './components/ChatSection';
 import ProductResults from './components/ProductResults';
+import ProductFilters, { FilterState } from './components/ProductFilters';
 import './styles/pinterest.css';
 import { toast } from "sonner";
 import { useProductFetcher } from './components/hooks/useProductFetcher';
@@ -21,6 +22,13 @@ export default function VintedHomePage() {
     fetchProducts,
     clearProducts,
   } = useProductFetcher();
+
+  // --- Filter State ---
+  const [filters, setFilters] = useState<FilterState>({
+    priceRange: { min: null, max: null },
+    sizes: []
+  });
+  const [lastSearchQueries, setLastSearchQueries] = useState<string[]>([]);
 
   // --- Other State Management ---
   const [isIngesting, setIsIngesting] = useState(false);
@@ -73,7 +81,8 @@ export default function VintedHomePage() {
           const queries = queryPart.split(',').map(q => q.trim()).filter(q => q.length > 0);
           if (queries.length > 0) {
             console.log("AI suggested search queries, triggering product search:", queries);
-            fetchProducts(queries);
+            setLastSearchQueries(queries);
+            fetchProducts(queries, filters);
           }
         }
       },
@@ -293,7 +302,8 @@ export default function VintedHomePage() {
 
       if (data.generatedSearchQueries && data.generatedSearchQueries.length > 0) {
         setGeneratedImageSearchQueries(data.generatedSearchQueries);
-        await fetchProducts(data.generatedSearchQueries);
+        setLastSearchQueries(data.generatedSearchQueries);
+        await fetchProducts(data.generatedSearchQueries, filters);
       } else {
         throw new Error("Could not generate any search terms from the image. Please try another.");
       }
@@ -349,6 +359,16 @@ export default function VintedHomePage() {
             /> */}
             <div className="p-6 bg-[#23232b] shadow rounded-lg flex-grow">
               <h2 className="text-xl font-semibold text-white mb-4">Product Results</h2>
+              {searchInitiated && (
+                <ProductFilters 
+                  onFiltersChange={(newFilters) => {
+                    setFilters(newFilters);
+                    if (lastSearchQueries.length > 0) {
+                      fetchProducts(lastSearchQueries, newFilters);
+                    }
+                  }}
+                />
+              )}
               <ProductResults 
                 isLoading={isLoadingProducts}
                 error={productSearchError}

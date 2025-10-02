@@ -4,6 +4,7 @@ interface ScrapedItem {
     id: string;
     title: string;
     price: string;
+    priceNumeric?: number;
     imageUrl: string;
     condition: string;
     link: string;
@@ -171,6 +172,7 @@ async function searchVinted(query: string): Promise<ScrapedItem[]> {
               photo: item.photo?.thumbnails?.[3]?.url || item.photo?.url || "https://placehold.co/250x250/4F46E5/FFFFFF?text=Vinted+Item",
               title: item.title || "Untitled",
               price: item.price?.amount ? `${item.price.amount} ${item.price.currency_code}` : "N/A",
+              priceNumeric: item.price?.amount ? parseFloat(item.price.amount) : undefined,
               imageUrl: item.photo?.url || "https://placehold.co/250x250/4F46E5/FFFFFF?text=Vinted+Item",
               condition: item.status || "N/A",
               link: item.url || `https://www.vinted.de/items/${item.id}`,
@@ -206,12 +208,13 @@ async function searchVinted(query: string): Promise<ScrapedItem[]> {
 
 export async function POST(req: NextRequest) {
   try {
-    const { queries } = await req.json();
+    const { queries, filters } = await req.json();
     if (!queries || !Array.isArray(queries) || queries.length === 0) {
       return NextResponse.json({ error: "Search queries are required." }, { status: 400 });
     }
 
     console.log("Fetching products sequentially for queries:", queries);
+    console.log("With filters:", filters);
 
     // --- REFACTORED LOGIC ---
     
@@ -226,9 +229,35 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. (Crucial) Deduplicate the results
-    const uniqueProducts = Array.from(new Map(allProducts.map(item => [item.id, item])).values());
+    let uniqueProducts = Array.from(new Map(allProducts.map(item => [item.id, item])).values());
     
-    // 3. Shuffle the unique results
+    // 3. Apply filters if provided
+    if (filters) {
+      // Filter by price range
+      if (filters.priceRange) {
+        const { min, max } = filters.priceRange;
+        uniqueProducts = uniqueProducts.filter(product => {
+          if (!product.priceNumeric) return true; // Include items without numeric price
+          if (min !== null && min !== undefined && product.priceNumeric < min) return false;
+          if (max !== null && max !== undefined && product.priceNumeric > max) return false;
+          return true;
+        });
+      }
+
+      // Filter by sizes
+      if (filters.sizes && filters.sizes.length > 0) {
+        uniqueProducts = uniqueProducts.filter(product => {
+          if (!product.size) return false;
+          // Check if product size matches any of the selected sizes
+          return filters.sizes.some((size: string) => 
+            product.size.toLowerCase().includes(size.toLowerCase()) ||
+            size.toLowerCase().includes(product.size.toLowerCase())
+          );
+        });
+      }
+    }
+    
+    // 4. Shuffle the filtered results
     const shuffledProducts = uniqueProducts.sort(() => 0.5 - Math.random());
 
     return NextResponse.json({ products: shuffledProducts });

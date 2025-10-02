@@ -1,13 +1,12 @@
-# AI Fashion Discovery Engine for Vinted & Depop
+  
 
-This project is an AI-powered fashion discovery engine that provides an intelligent search layer over the Vinted and Depop marketplaces. It translates intuitive, human-friendly prompts—like abstract styles or images—into precise, effective search queries, aggregating live results from both platforms.
+## New Features
 
-## Core Features
-
-- **Style Prompt Generator (AI Chat)**: Chat with an AI fashion assistant in natural language (e.g., "Futuristic, Coquette, Whimsygoth"). The AI uses a Retrieval-Augmented Generation (RAG) pipeline to understand styles and generates precise search queries to find matching items.
-- **AI-Powered Image Search**: Upload any image of an outfit or clothing item. The application uses a multi-modal AI model (GPT-4o) to analyze the visual content and generates relevant search terms to find similar items for sale.
-- **Live Product Aggregation**: Fetches real-time product listings from both Vinted and Depop using the Apify platform. It then transforms and displays the results in a unified, easy-to-browse grid.
-- **One-Click Data Ingestion**: A simple UI allows the admin to load and vectorize foundational data (styles, brands, categories) into the AI's memory (Supabase Vector DB) with a single click.
+### Product Filters
+- **Price Range Filter**: Set minimum and maximum price to filter search results
+- **Size Filter**: Select one or multiple sizes to filter products
+- Filters are applied dynamically and update search results in real-time
+- Clear all filters with one click
 
 ## Tech Stack
 

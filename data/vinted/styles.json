@@ -4,141 +4,221 @@
       "id": "casual",
       "name": "Casual",
       "description": "Relaxed and comfortable everyday wear",
-      "hashtags": ["#minimal", "#everydaystyle", "#normcore", "#cleanfit", "#streetstyle", "#basics"],
-      "brands": ["Uniqlo", "Carhartt WIP", "COS", "Levi's", "A.P.C.", "Everlane", "Acne Studios"]
+      "hashtags": ["#minimal", "#everydaystyle", "#normcore"],
+      "brands": [
+        "Acne Studios", "A.P.C.", "Ami Paris", "Jacquemus", "Sunnei",
+        "Lemaire", "Maison Kitsuné", "Officine Générale", "Carhartt WIP", "Levi's",
+        "Uniqlo", "COS", "Everlane", "Arket", "Norse Projects"
+      ]
     },
     {
       "id": "formal",
       "name": "Formal",
       "description": "Professional and business attire",
-      "hashtags": ["#tailored", "#officecore", "#powerdressing", "#quietluxury", "#suitup", "#oldmoney"],
-      "brands": ["Hugo Boss", "Theory", "The Row", "Brunello Cucinelli", "Loro Piana", "Armani", "Ralph Lauren"]
+      "hashtags": ["#tailored", "#officecore", "#quietluxury"],
+      "brands": [
+        "The Row", "Loro Piana", "Brunello Cucinelli", "Khaite", "Jil Sander",
+        "Zegna", "Tom Ford", "Brioni", "Armani", "Ralph Lauren",
+        "Hugo Boss", "Theory", "Suitsupply", "Reiss", "Massimo Dutti"
+      ]
     },
     {
       "id": "sporty",
       "name": "Sporty",
       "description": "Athletic and active wear",
-      "hashtags": ["#athleisure", "#arcteryx", "#techwear", "#gorpcore", "#trackfit", "#sweatszn", "#runnercore"],
-      "brands": ["Nike", "Adidas", "Lululemon", "Under Armour", "Puma", "Reebok", "New Balance"]
+      "hashtags": ["#athleisure", "#techwear", "#gorpcore"],
+      "brands": [
+        "Nike", "Adidas", "Lululemon", "Salomon", "Arc'teryx",
+        "Y-3", "Marine Serre", "Stone Island", "Fear of God Essentials", "Aimé Leon Dore",
+        "New Balance", "Reebok", "Puma", "Asics", "Under Armour"
+      ]
     },
     {
       "id": "vintage",
       "name": "Vintage",
       "description": "Classic and retro fashion styles",
-      "hashtags": ["#vintagefinds", "#y2k", "#retrocore", "#90sstyle", "#thrifted", "#archivefashion"],
-      "brands": ["Vintage Levi's", "Vintage Champion", "Pendleton", "OshKosh B'gosh", "Gunne Sax", "Betsey Johnson (90s)", "Tommy Hilfiger (90s)"]
+      "hashtags": ["#vintagefinds", "#y2k", "#90sstyle", "#archivefashion"],
+      "brands": [
+        "Vintage Levi's", "Vintage Champion", "Polo Sport", "Tommy Hilfiger (90s)", "Naf Naf",
+        "Kookai", "Guess (80s/90s)", "Gunne Sax", "Laura Ashley", "Betsey Johnson (90s)",
+        "OshKosh B'gosh", "Pendleton", "Vintage Nike", "Vintage Adidas", "Members Only"
+      ]
     },
     {
       "id": "bohemian",
       "name": "Bohemian",
       "description": "Free-spirited and artistic fashion",
-      "hashtags": ["#boho", "#hippievibes", "#earthtones", "#festivalfit", "#cottagecore", "#flowy"],
-      "brands": ["Miu Miu", "Anthropologie", "Isabel Marant", "Etro", "Chloé", "Ulla Johnson", "Spell & The Gypsy Collective"]
+      "hashtags": ["#boho", "#hippievibes", "#festivalfit"],
+      "brands": [
+        "Chloé", "Isabel Marant", "Etro", "Ulla Johnson", "Zimmermann",
+        "Jacquemus", "Saint Laurent", "Missoni", "Alanui", "Spell & The Gypsy Collective",
+        "Anthropologie", "Free People", "Vintage Cacharel", "Antik Batik", "Mes Demoiselles"
+      ]
     },
     {
       "id": "y2k",
       "name": "Y2K",
       "description": "Early 2000s maximalist fashion — shiny, nostalgic, playful",
-      "hashtags": ["#y2k", "#bling", "#cybercore", "#bratzdoll", "#2000s", "#kittenheels"],
-      "brands": ["Juicy Couture", "Von Dutch", "Ed Hardy", "Baby Phat", "Blumarine", "Diesel (early 2000s)", "Miss Sixty"]
+      "hashtags": ["#bling", "#cybercore", "#bratzdoll"],
+      "brands": [
+        "KNWLS", "Blumarine", "Abra", "Ottolinger", "Courrèges",
+        "Mugler", "Diesel (modern)", "GCDS", "Jean Paul Gaultier", "Miss Sixty",
+        "Morgan de Toi", "Cop Copine", "Fornarina", "Ed Hardy", "Juicy Couture", "Hysteric Glamour"
+      ]
     },
     {
       "id": "grunge",
       "name": "Grunge",
       "description": "Disheveled, dark, anti-fashion energy from the '90s",
-      "hashtags": ["#grunge", "#darkfashion", "#distressed", "#darkfashion", "#oversized", "#flannel"],
-      "brands": ["Dr. Martens", "AllSaints", "R13", "Vintage Nirvana (band merch)", "Marc Jacobs (Perry Ellis '93)", "Vivienne Westwood", "Rick Owens DRKSHDW"]
+      "hashtags": ["#darkfashion", "#distressed", "#oversized"],
+      "brands": [
+        "Rick Owens", "Ann Demeulemeester", "R13", "Balenciaga", "Vetements",
+        "Vivienne Westwood", "Yohji Yamamoto", "Maison Margiela", "Dr. Martens", "AllSaints",
+        "Helmut Lang (archive)", "Marc Jacobs (Perry Ellis '93')", "Number (N)ine", "Undercover", "Diesel"
+      ]
     },
     {
       "id": "goth",
       "name": "Goth",
       "description": "Dark romanticism, punk rebellion, and mystical aesthetics",
-      "hashtags": ["#gothcore", "#blackonblack", "#witchy", "#industrial", "#cybergoth", "#darkwear"],
-      "brands": ["Killstar", "Demonia", "Lip Service", "Rick Owens", "Ann Demeulemeester", "The Vampire's Wife", " Tripp NYC"]
+      "hashtags": ["#gothcore", "#witchy", "#darkwear"],
+      "brands": [
+        "Rick Owens", "Ann Demeulemeester", "Yohji Yamamoto", "The Vampire's Wife", "Simone Rocha",
+        "Comme des Garçons", "Junya Watanabe", "Vivienne Westwood", "Jean Paul Gaultier", "Helmut Lang (archive)",
+        "Demonia", "Killstar", "Lip Service", "Tripp NYC", "Dr. Martens"
+      ]
     },
     {
       "id": "techwear",
       "name": "Techwear",
       "description": "Futuristic urban wear with utility and performance",
-      "hashtags": ["#techwear", "#modular", "#cyberpunk", "#urbanutility", "#stealthcore", "#functional", "#sansangear"],
-      "brands": ["Acronym", "Stone Island", "Arc'teryx Veilance", "Nike ACG", "Y-3", "Guerilla Group", " enfin levé"]
+      "hashtags": ["#modular", "#cyberpunk", "#urbanutility"],
+      "brands": [
+        "Acronym", "Stone Island", "Arc'teryx Veilance", "Junya Watanabe", "Ottolinger",
+        "Marine Serre", "A-Cold-Wall", "Heron Preston", "Y-3", "Nike ACG",
+        "Salomon", "Guerilla Group", "Cop Copine", "Post Archive Faction", "enfin levé"
+      ]
     },
     {
       "id": "gorpcore",
       "name": "Gorpcore",
       "description": "Hiking-meets-fashion — practical, outdoorsy, ironic",
-      "hashtags": ["#gorpcore", "#arcteryx", "#patagonia", "#salomon", "#trailfit", "#northface", "#functionalwear"],
-      "brands": ["Arc'teryx", "Patagonia", "The North Face", "Salomon", "and Wander", "Gramicci", "Hoka One One"]
+      "hashtags": ["#salomon", "#trailfit", "#functionalwear"],
+      "brands": [
+        "Arc'teryx", "and Wander", "ROA", "Stone Island", "Acronym",
+        "Junya Watanabe", "Visvim", "Salomon", "The North Face", "Patagonia",
+        "Gramicci", "Hoka One One", "Merrell", "Oakley", "Carhartt WIP"
+      ]
     },
     {
       "id": "academia",
       "name": "Dark Academia",
       "description": "Romantic intellectual aesthetic — tweed, books, gloom",
-      "hashtags": ["#darkacademia", "#tweedcore", "#scholarvibes", "#oxfordstyle", "#moodyfit", "#preppy"],
-      "brands": ["Ralph Lauren", "Brooks Brothers", "Barbour", "G.H. Bass & Co.", "Burberry", "J.Crew", "Thom Browne"]
+      "hashtags": ["#tweedcore", "#scholarvibes", "#preppy"],
+      "brands": [
+        "Thom Browne", "Burberry", "Ralph Lauren", "Loro Piana", "Brunello Cucinelli",
+        "Gucci", "A.P.C.", "Maison Kitsuné", "Brooks Brothers", "J.Crew",
+        "Barbour", "G.H. Bass & Co.", "Sandro", "The Cambridge Satchel Company", "Margaret Howell"
+      ]
     },
     {
       "id": "avantgarde",
       "name": "Avant-Garde",
       "description": "Experimental, sculptural, high-concept fashion",
-      "hashtags": ["#avantgarde", "#conceptualfashion", "#runwayenergy", "#deconstructed", "#brutalistwear", "#artwear"],
-      "brands": ["Comme des Garçons", "Yohji Yamamoto", "Maison Margiela", "Issey Miyake", "Rick Owens", "Ann Demeulemeester", "Iris van Herpen"]
+      "hashtags": ["#conceptualfashion", "#deconstructed", "#artwear"],
+      "brands": [
+        "Comme des Garçons", "Yohji Yamamoto", "Maison Margiela", "Rick Owens", "Junya Watanabe",
+        "Ottolinger", "Ann Demeulemeester", "Issey Miyake", "Iris van Herpen", "Craig Green",
+        "Walter Van Beirendonck", "Marine Serre", "Jean Paul Gaultier", "Helmut Lang (archive)", "Vivienne Westwood"
+      ]
     },
     {
       "id": "streetwear",
       "name": "Streetwear",
       "description": "Urban youth style driven by hype, drops, and brand culture",
-      "hashtags": ["#streetwear", "#hypebeast", "#sneakerhead", "#boxlogo", "#supreme", "#bape"],
-      "brands": ["Supreme", "BAPE (A Bathing Ape)", "Off-White", "Stüssy", "Palace", "Kith", "Carhartt WIP"]
+      "hashtags": ["#hypebeast", "#sneakerhead", "#boxlogo"],
+      "brands": [
+        "Supreme", "Palace", "Off-White", "Kith", "A-Cold-Wall",
+        "Ader Error", "Corteiz", "Aimé Leon Dore", "Fear of God Essentials", "Stüssy",
+        "BAPE", "Carhartt WIP", "Patta", "Noah", "Stone Island"
+      ]
     },
     {
       "id": "cottagecore",
       "name": "Cottagecore",
       "description": "Soft, pastoral aesthetic inspired by countryside life",
-      "hashtags": ["#cottagecore", "#laceblouse", "#prairieskirt", "#romanticcore", "#picnicfit", "#softgirl"],
-      "brands": ["Christy Dawn", "Doen", "LoveShackFancy", "Batsheva", "Gunne Sax (Vintage)", "Laura Ashley (Vintage)", "Hill House Home"]
+      "hashtags": ["#laceblouse", "#prairieskirt", "#romanticcore"],
+      "brands": [
+        "Doen", "LoveShackFancy", "Batsheva", "Simone Rocha", "Cecilie Bahnsen",
+        "Shrimps", "Molly Goddard", "Zimmermann", "Christy Dawn", "Hill House Home",
+        "Gunne Sax (Vintage)", "Laura Ashley (Vintage)", "Meadows", "Sézane", "Faithfull the Brand"
+      ]
     },
     {
       "id": "clubkid",
       "name": "Club Kid",
       "description": "Loud, theatrical rave looks from queer & underground nightlife",
-      "hashtags": ["#clubkid", "#freakwear", "#berlinclubscene", "#latexfit", "#genderfluid", "#artclub"],
-      "brands": ["Walter Van Beirendonck", "Cyberdog", "Jean Paul Gaultier (90s)", "Manish Arora", "House of Harlot", "Namilia", "Jeremy Scott"]
+      "hashtags": ["#freakwear", "#berlinclubscene", "#latexfit"],
+      "brands": [
+        "Walter Van Beirendonck", "Namilia", "Jeremy Scott", "Area", "Mugler",
+        "Manish Arora", "GCDS", "Luar", "VFiles", "Jean Paul Gaultier (90s)",
+        "Cyberdog", "House of Harlot", "Patrick Church", "SXY Sinner", "Discount Universe"
+      ]
     },
     {
       "id": "balletcore",
       "name": "Balletcore",
       "description": "Delicate, dance-inspired looks with an ethereal vibe",
-      "hashtags": ["#balletcore", "#wraptop", "#legwarmers", "#coquette", "#pastelvibes", "#softaesthetic"],
-      "brands": ["Repetto", "Miu Miu", "Simone Rocha", "Cecilie Bahnsen", "Sandy Liang", "Bloch", "Capezio"]
+      "hashtags": ["#wraptop", "#legwarmers", "#coquette"],
+      "brands": [
+        "Miu Miu", "Simone Rocha", "Cecilie Bahnsen", "Sandy Liang", "Jacquemus",
+        "Bode", "Molly Goddard", "The Row", "Khaite", "Alaïa",
+        "Repetto", "Bloch", "Capezio", "Wolford", "Falke"
+      ]
     },
     {
       "id": "kfashion",
       "name": "K-Fashion",
-      "description": "Trendy, curated, and clean silhouettes influenced by Korean street style and idol culture",
-      "hashtags": ["#kfashion", "#seoulstyle", "#cleanfit", "#koreanootd", "#idolaesthetic", "#softminimal"],
-      "brands": ["Ader Error", "Gentle Monster", "Wooyoungmi", "Andersson Bell", "thisisneverthat", "Mardi Mercredi", "Stylenanda"]
+      "description": "Trendy, curated, and clean silhouettes influenced by Korean street style",
+      "hashtags": ["#seoulstyle", "#cleanfit", "#idolaesthetic"],
+      "brands": [
+        "Ader Error", "Gentle Monster", "Wooyoungmi", "Andersson Bell", "Post Archive Faction",
+        "Junn.J", "Kanghyuk", "thisisneverthat", "Mardi Mercredi", "Stylenanda",
+        "Acmé De La Vie (ADLV)", "pushBUTTON", "MSCHF", "We11done", "Low Classic"
+      ]
     },
     {
       "id": "harajuku",
       "name": "Harajuku",
-      "description": "Eclectic and colorful street style from Tokyo known for its mix of vintage, DIY, and cosplay elements",
-      "hashtags": ["#harajukustyle", "#kawaii", "#jfashion", "#maximalism", "#depopvibes", "#visualriot"],
-      "brands": ["Hysteric Glamour", "Angelic Pretty", "6%DOKIDOKI", "Super Lovers", "W< (Walter Van Beirendonck)", "FRUiTS (as a concept)", "VIVIENNE WESTWOOD"]
+      "description": "Eclectic and colorful street style from Tokyo",
+      "hashtags": ["#kawaii", "#jfashion", "#maximalism"],
+      "brands": [
+        "Comme des Garçons", "Vivienne Westwood", "Walter Van Beirendonck", "Junya Watanabe", "Yohji Yamamoto",
+        "Undercover", "BAPE", "Sacai", "Hysteric Glamour", "Angelic Pretty",
+        "6%DOKIDOKI", "Super Lovers", "FRUiTS (as concept)", "Dr. Martens", "Mercibeaucoup,"
+      ]
     },
     {
       "id": "minimaljapan",
       "name": "Japanese Minimalism",
-      "description": "Sophisticated neutral-toned fashion with precise cuts and natural materials, rooted in wabi-sabi aesthetics",
-      "hashtags": ["#japaneseminimal", "#muji", "#wabisabiwear", "#linenlook", "#monkcore", "#slowfashion"],
-      "brands": ["Muji", "Uniqlo", "COS", "Comme des Garçons PLAY", "Issey Miyake", "Yohji Yamamoto", "Beams"]
+      "description": "Sophisticated fashion with precise cuts and natural materials",
+      "hashtags": ["#wabisabiwear", "#linenlook", "#monkcore"],
+      "brands": [
+        "Yohji Yamamoto", "Issey Miyake", "Comme des Garçons", "Lemaire", "The Row",
+        "Jil Sander", "Auralee", "Nanamica", "Visvim", "Margaret Howell",
+        "Muji", "Uniqlo", "COS", "Beams Plus", "Studio Nicholson"
+      ]
     },
     {
       "id": "deconstructed",
       "name": "Deconstruction Fashion",
-      "description": "An anti-fashion aesthetic that takes clothes apart to rebuild them. Celebrates raw edges, exposed seams, and upcycled, handmade modifications.",
-      "hashtags": ["#deconstructed", "#recycledfashion", "#upcycledfashion", "#diyfashion", "#reworked", "#exposedseams", "#avantgarde", "#rawcore"],
-      "brands": ["Maison Margiela", "Comme des Garçons", "Yohji Yamamoto", "Helmut Lang (archive)", "Vetements", "Marine Serre", "Sacai"]
+      "description": "Anti-fashion aesthetic celebrating raw edges and upcycled modifications.",
+      "hashtags": ["#reworked", "#exposedseams", "#avantgarde"],
+      "brands": [
+        "Maison Margiela", "Ottolinger", "Junya Watanabe", "Comme des Garçons", "Yohji Yamamoto",
+        "Rick Owens", "Marine Serre", "Sacai", "Vetements", "Ader Error",
+        "Helmut Lang (archive)", "Ann Demeulemeester", "Jean Paul Gaultier", "Cop Copine", "Vivienne Westwood"
+      ]
     }
   ]
 }
