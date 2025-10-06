@@ -7,6 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "scrape:vinted": "ts-node --project tsconfig.scripts.json scripts/scrape-vinted.ts",
+    "curate:brands": "ts-node --project tsconfig.scripts.json scripts/curate-brands.ts",
+    "test:brand-matcher": "ts-node --project tsconfig.scripts.json scripts/test-brand-matcher.ts",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"app\""
@@ -35,6 +37,7 @@
     "clsx": "^2.1.1",
     "googleapis": "^133.0.0",
     "langchain": "latest",
+    "lenis": "^1.3.11",
     "lucide-react": "^0.473.0",
     "next": "14.1.0",
     "next-themes": "^0.4.4",

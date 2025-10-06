@@ -1,3 +1,5 @@
+'use client';
+
 import "./globals.css";
 import { Public_Sans } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
@@ -57,7 +59,7 @@ export default function RootLayout({
       </head>
       <body className={publicSans.className}>
         <NuqsAdapter>
-          <div className="bg-secondary grid grid-rows-[auto,1fr] h-[100dvh]">
+          <div className="grid grid-rows-[auto,1fr] h-[100dvh]">
             <div className="bg-background mx-4 relative grid rounded-t-2xl border border-input border-b-0">
               <div className="absolute inset-0">{children}</div>
             </div>

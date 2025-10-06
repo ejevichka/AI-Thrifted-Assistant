@@ -315,14 +315,14 @@ export default function VintedHomePage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#18181b] text-gray-100 font-sans">
-      <header className="bg-[#23232b] shadow-sm">
-        <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-ashborn text-white">Hey, I&apos;m DIGGY  ^^</h1>
-          <h2 className="text-3xl font-ashborn text-white mt-4">Your Vinted AI Assistant</h2>
+    <div className="flex flex-col min-h-screen bg-row-white text-row-black font-sans">
+      <header>
+        <div className="max-w-row mx-auto py-8 px-6 sm:px-8 lg:px-12">
+          <h1 className="text-display-md font-serif text-row-black tracking-tight">Hey, I&apos;m DIGGY</h1>
+          <h2 className="text-h3 font-sans mt-2 text-row-black">Your Vinted AI Assistant</h2>
         </div>
       </header>
-      <main className="flex-1 max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 w-full">
+      <main className="flex-1 max-w-row mx-auto py-12 sm:px-8 lg:px-12 w-full">
          <StyleSidebar setMessages={setMessages} handleSubmit={handleSubmit} setInput={setInput} scrollToChatInput={scrollToChatInput} />
          <ChatSection 
               ref={chatInputRef}
@@ -357,8 +357,8 @@ export default function VintedHomePage() {
               imagePreview={imagePreview}
               generatedImageSearchQueries={generatedImageSearchQueries}
             /> */}
-            <div className="p-6 bg-[#23232b] shadow rounded-lg flex-grow">
-              <h2 className="text-xl font-semibold text-white mb-4">Product Results</h2>
+            <div className="p-10 bg-row-white border-1 border-row-black flex-grow">
+              <h2 className="text-h3 font-serif text-row-black mb-6 tracking-tight">Product Results</h2>
               {searchInitiated && (
                 <ProductFilters 
                   onFiltersChange={(newFilters) => {

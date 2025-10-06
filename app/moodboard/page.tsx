@@ -99,7 +99,7 @@ export default function Page() {
           setComponent(
             <div className="animate-pulse p-8 text-center">
               <div className="flex items-center justify-center space-x-2 mb-4">
-                <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-6 h-6 border-1 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                 <span className="text-lg">Analyzing your CSV data...</span>
               </div>
               <p className="text-gray-400">This may take a few moments</p>
@@ -173,7 +173,7 @@ export default function Page() {
         <div className="rounded-lg border border-gray-700 bg-gray-800 p-4 md:p-6 shadow-lg">
           <form onSubmit={handleSubmit} className="flex flex-col items-start gap-4">
             <div
-              className={`flex flex-col items-center justify-center w-full h-40 border-2 border-dashed rounded-lg cursor-pointer transition-all duration-200 ${
+              className={`flex flex-col items-center justify-center w-full h-40 border-1 border-dashed rounded-lg cursor-pointer transition-all duration-200 ${
                 dragActive
                   ? 'border-blue-400 bg-blue-900/20'
                   : file
@@ -235,7 +235,7 @@ export default function Page() {
               className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-sm font-medium text-white shadow-lg transition-all duration-200 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading && (
-                <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-solid border-white border-r-transparent"></div>
+                <div className="mr-2 h-4 w-4 animate-spin rounded-full border-1 border-solid border-white border-r-transparent"></div>
               )}
               {isLoading ? 'Analyzing CSV Data...' : 'Analyze CSV File'}
             </button>

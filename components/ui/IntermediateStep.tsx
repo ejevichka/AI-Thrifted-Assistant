@@ -9,7 +9,7 @@ export function IntermediateStep(props: { message: Message }) {
   const observation = parsedInput.observation;
   const [expanded, setExpanded] = useState(false);
   return (
-    <div className="mr-auto bg-secondary border border-input rounded p-3 max-w-[80%] mb-8 whitespace-pre-wrap flex flex-col">
+    <div className="mr-auto border border-input rounded p-3 max-w-[80%] mb-8 whitespace-pre-wrap flex flex-col">
       <button
         type="button"
         className={cn(

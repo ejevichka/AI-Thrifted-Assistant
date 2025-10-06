@@ -1,0 +1,217 @@
+{
+  "vibeTagVocabulary": {
+    "core_aesthetics": {
+      "minimalist": {
+        "name": "Minimalist",
+        "description": "Clean lines, neutral colors, simplicity",
+        "keywords": ["clean", "simple", "neutral", "understated", "refined"]
+      },
+      "maximalist": {
+        "name": "Maximalist",
+        "description": "Bold patterns, vibrant colors, eclectic mix",
+        "keywords": ["bold", "colorful", "eclectic", "ornate", "excessive"]
+      },
+      "avant_garde": {
+        "name": "Avant-Garde",
+        "description": "Experimental, unconventional, artistic",
+        "keywords": ["experimental", "artistic", "unconventional", "innovative", "conceptual"]
+      },
+      "bohemian": {
+        "name": "Bohemian",
+        "description": "Free-spirited, earthy, flowing fabrics",
+        "keywords": ["boho", "earthy", "flowing", "natural", "relaxed"]
+      },
+      "preppy": {
+        "name": "Preppy",
+        "description": "Collegiate, polished, classic American",
+        "keywords": ["collegiate", "polished", "classic", "tailored", "refined"]
+      },
+      "streetwear": {
+        "name": "Streetwear",
+        "description": "Urban, casual, hype-driven",
+        "keywords": ["urban", "casual", "hypebeast", "logo", "oversized"]
+      },
+      "goth": {
+        "name": "Goth",
+        "description": "Dark, moody, dramatic",
+        "keywords": ["dark", "black", "dramatic", "moody", "alternative"]
+      },
+      "grunge": {
+        "name": "Grunge",
+        "description": "Raw, distressed, 90s Seattle-inspired",
+        "keywords": ["distressed", "raw", "flannel", "layered", "rebellious"]
+      },
+      "punk": {
+        "name": "Punk",
+        "description": "Rebellious, DIY, edgy",
+        "keywords": ["rebellious", "edgy", "DIY", "studs", "leather"]
+      }
+    },
+    "era_specific": {
+      "y2k": {
+        "name": "Y2K",
+        "description": "Early 2000s aesthetic - low-rise, metallic, futuristic",
+        "keywords": ["2000s", "metallic", "low-rise", "velour", "rhinestones"],
+        "years": "1998-2005"
+      },
+      "90s": {
+        "name": "90s",
+        "description": "1990s style - grunge, minimalism, sportswear",
+        "keywords": ["1990s", "slip dress", "choker", "platform", "baggy"],
+        "years": "1990-1999"
+      },
+      "80s": {
+        "name": "80s",
+        "description": "1980s aesthetic - power shoulders, neon, bold",
+        "keywords": ["1980s", "power shoulders", "neon", "bold patterns", "excess"],
+        "years": "1980-1989"
+      },
+      "vintage_classic": {
+        "name": "Vintage Classic",
+        "description": "Timeless vintage pieces from various eras",
+        "keywords": ["vintage", "retro", "classic", "timeless", "heritage"]
+      }
+    },
+    "micro_trends": {
+      "gorpcore": {
+        "name": "Gorpcore",
+        "description": "Outdoor/hiking gear as everyday fashion",
+        "keywords": ["outdoor", "technical", "hiking", "functional", "fleece"]
+      },
+      "techwear": {
+        "name": "Techwear",
+        "description": "Functional, technical fabrics, urban utility",
+        "keywords": ["technical", "functional", "utility", "waterproof", "modular"]
+      },
+      "dark_academia": {
+        "name": "Dark Academia",
+        "description": "Scholarly, moody, vintage collegiate",
+        "keywords": ["scholarly", "tweed", "library", "vintage", "intellectual"]
+      },
+      "cottagecore": {
+        "name": "Cottagecore",
+        "description": "Rural, romantic, pastoral",
+        "keywords": ["rural", "floral", "pastoral", "romantic", "handmade"]
+      },
+      "balletcore": {
+        "name": "Balletcore",
+        "description": "Ballet-inspired, delicate, romantic",
+        "keywords": ["ballet", "delicate", "tulle", "pink", "ethereal"]
+      },
+      "coquette": {
+        "name": "Coquette",
+        "description": "Feminine, playful, ribbon and lace details",
+        "keywords": ["feminine", "ribbons", "lace", "bows", "romantic"]
+      },
+      "feral_chic": {
+        "name": "Feral Chic",
+        "description": "Untamed elegance, raw sensuality",
+        "keywords": ["raw", "sensual", "untamed", "edgy", "sexy"]
+      },
+      "moto_glam": {
+        "name": "Moto Glam",
+        "description": "Motorcycle-inspired, leather, hardware",
+        "keywords": ["leather", "motorcycle", "hardware", "zippers", "edgy"]
+      },
+      "space_age": {
+        "name": "Space Age",
+        "description": "Futuristic, metallic, 60s sci-fi inspired",
+        "keywords": ["futuristic", "metallic", "mod", "space", "silver"]
+      },
+      "quiet_luxury": {
+        "name": "Quiet Luxury",
+        "description": "Understated wealth, quality over logos",
+        "keywords": ["understated", "quality", "subtle", "refined", "cashmere"]
+      },
+      "old_money": {
+        "name": "Old Money",
+        "description": "Inherited wealth aesthetic, classic, preppy",
+        "keywords": ["preppy", "classic", "tailored", "heritage", "refined"]
+      },
+      "deconstructed": {
+        "name": "Deconstructed",
+        "description": "Taken apart and reassembled, raw edges",
+        "keywords": ["raw edges", "unfinished", "reconstructed", "avant-garde", "experimental"]
+      },
+      "bodycon": {
+        "name": "Bodycon",
+        "description": "Body-conscious, curve-hugging silhouettes",
+        "keywords": ["tight", "sculpted", "sexy", "curves", "fitted"]
+      },
+      "futurism": {
+        "name": "Futurism",
+        "description": "Forward-thinking, space-age, innovative",
+        "keywords": ["futuristic", "innovative", "space-age", "metallic", "tech"]
+      },
+      "clubkid": {
+        "name": "Club Kid",
+        "description": "90s NYC club scene, outrageous, creative",
+        "keywords": ["outrageous", "creative", "bold", "platform", "neon"]
+      },
+      "darkwear": {
+        "name": "Darkwear",
+        "description": "All-black, technical fabrics, urban ninja",
+        "keywords": ["all-black", "technical", "ninja", "minimal", "functional"]
+      }
+    },
+    "origin_style": {
+      "italian_vintage": {
+        "name": "Italian Vintage",
+        "description": "Classic Italian brands and styling",
+        "keywords": ["Italian", "luxury", "craftsmanship", "heritage", "chic"]
+      },
+      "french_chic": {
+        "name": "French Chic",
+        "description": "Parisian style, effortless elegance",
+        "keywords": ["Parisian", "effortless", "elegant", "classic", "refined"]
+      },
+      "scandi_minimalism": {
+        "name": "Scandinavian Minimalism",
+        "description": "Nordic simplicity, clean design, functional",
+        "keywords": ["Nordic", "simple", "clean", "functional", "monochrome"]
+      },
+      "japanese_streetwear": {
+        "name": "Japanese Streetwear",
+        "description": "Tokyo street style, Harajuku influence",
+        "keywords": ["Tokyo", "Harajuku", "innovative", "layered", "bold"]
+      },
+      "japanese_minimalism": {
+        "name": "Japanese Minimalism",
+        "description": "Zen simplicity, wabi-sabi, monochrome",
+        "keywords": ["zen", "wabi-sabi", "simple", "black", "architectural"]
+      },
+      "harajuku": {
+        "name": "Harajuku",
+        "description": "Tokyo's Harajuku district style, eclectic, playful",
+        "keywords": ["Tokyo", "eclectic", "playful", "colorful", "street"]
+      },
+      "kfashion": {
+        "name": "K-Fashion",
+        "description": "Korean fashion, oversized, layered, street",
+        "keywords": ["Korean", "oversized", "layered", "street", "trendy"]
+      },
+      "denim_couture": {
+        "name": "Denim Couture",
+        "description": "Denim expertise, innovative denim pieces",
+        "keywords": ["denim", "jeans", "innovative", "washes", "cuts"]
+      },
+      "luxury_leather": {
+        "name": "Luxury Leather",
+        "description": "High-end leather goods and garments",
+        "keywords": ["leather", "luxury", "craftsmanship", "quality", "investment"]
+      }
+    },
+    "basics": {
+      "basics": {
+        "name": "Basics",
+        "description": "Foundational wardrobe essentials",
+        "keywords": ["essential", "staple", "basic", "versatile", "everyday"]
+      },
+      "sporty": {
+        "name": "Sporty",
+        "description": "Athletic-inspired, performance fabrics",
+        "keywords": ["athletic", "performance", "activewear", "sporty", "functional"]
+      }
+    }
+  }
+}

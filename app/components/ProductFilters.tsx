@@ -58,29 +58,29 @@ export default function ProductFilters({
   const hasActiveFilters = priceRange.min !== null || priceRange.max !== null || selectedSizes.length > 0;
 
   return (
-    <div className="bg-[#23232b] p-4 rounded-lg shadow-sm mb-4">
-      <div className="flex flex-wrap gap-4 items-center">
+    <div className="bg-row-white p-6 border-1 border-row-black mb-6">
+      <div className="flex flex-wrap gap-6 items-center">
         <div className="flex-1 min-w-[200px]">
-          <label className="block text-sm font-medium text-gray-300 mb-1">
+          <label className="block font-sans text-caption font-medium text-row-black mb-2 uppercase tracking-wider">
             Price Range (€)
           </label>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <input
               type="number"
               placeholder="Min"
               value={priceRange.min || ''}
               onChange={(e) => handlePriceChange('min', e.target.value)}
-              className="w-24 px-3 py-1.5 bg-[#18181b] border border-gray-600 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-28 px-0 py-2 bg-transparent border-b-2 border-row-black text-row-black placeholder-row-gray-400 focus:outline-none font-sans text-body transition-all duration-400"
               min={minPrice}
               max={priceRange.max || maxPrice}
             />
-            <span className="text-gray-400">-</span>
+            <span className="text-row-black">—</span>
             <input
               type="number"
               placeholder="Max"
               value={priceRange.max || ''}
               onChange={(e) => handlePriceChange('max', e.target.value)}
-              className="w-24 px-3 py-1.5 bg-[#18181b] border border-gray-600 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-28 px-0 py-2 bg-transparent border-b-2 border-row-black text-row-black placeholder-row-gray-400 focus:outline-none font-sans text-body transition-all duration-400"
               min={priceRange.min || minPrice}
               max={maxPrice}
             />
@@ -88,39 +88,39 @@ export default function ProductFilters({
         </div>
 
         <div className="flex-1 min-w-[200px] relative">
-          <label className="block text-sm font-medium text-gray-300 mb-1">
+          <label className="block font-sans text-caption font-medium text-row-black mb-2 uppercase tracking-wider">
             Size
           </label>
           <button
             onClick={() => setShowSizeDropdown(!showSizeDropdown)}
-            className="w-full px-3 py-1.5 bg-[#18181b] border border-gray-600 rounded-md text-left text-white focus:outline-none focus:ring-2 focus:ring-purple-500 flex justify-between items-center"
+            className="w-full px-0 py-2 bg-transparent border-b-2 border-row-black text-left text-row-black focus:outline-none flex justify-between items-center font-sans text-body transition-all duration-400"
           >
             <span className="truncate">
-              {selectedSizes.length === 0 
-                ? 'All sizes' 
-                : selectedSizes.length === 1 
+              {selectedSizes.length === 0
+                ? 'All sizes'
+                : selectedSizes.length === 1
                   ? selectedSizes[0]
                   : `${selectedSizes.length} sizes selected`}
             </span>
-            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-row-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          
+
           {showSizeDropdown && (
-            <div className="absolute z-10 mt-1 w-full bg-[#23232b] border border-gray-600 rounded-md shadow-lg max-h-60 overflow-auto">
+            <div className="absolute z-10 mt-1 w-full bg-row-white border-1 border-row-black shadow-lg max-h-60 overflow-auto">
               {COMMON_SIZES.map((size) => (
                 <label
                   key={size}
-                  className="flex items-center px-3 py-2 hover:bg-[#2a2a35] cursor-pointer"
+                  className="flex items-center px-4 py-3 hover:bg-row-black hover:text-row-white cursor-pointer transition-colors duration-200"
                 >
                   <input
                     type="checkbox"
                     checked={selectedSizes.includes(size)}
                     onChange={() => toggleSize(size)}
-                    className="w-4 h-4 text-purple-600 bg-[#18181b] border-gray-600 rounded focus:ring-purple-500"
+                    className="w-4 h-4 text-row-black bg-row-white border-row-black focus:ring-row-black"
                   />
-                  <span className="ml-2 text-white text-sm">{size}</span>
+                  <span className="ml-3 font-sans text-body-sm">{size}</span>
                 </label>
               ))}
             </div>
@@ -130,7 +130,7 @@ export default function ProductFilters({
         {hasActiveFilters && (
           <button
             onClick={clearFilters}
-            className="px-4 py-1.5 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors text-sm"
+            className="px-6 py-2 bg-row-white border-1 border-row-black text-row-black hover:bg-row-black hover:text-row-white transition-all duration-400 font-sans text-caption font-medium uppercase tracking-wider"
           >
             Clear filters
           </button>
@@ -138,19 +138,19 @@ export default function ProductFilters({
       </div>
 
       {hasActiveFilters && (
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2">
           {priceRange.min !== null && (
-            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-purple-900/30 text-purple-300 border border-purple-700">
+            <span className="inline-flex items-center px-3 py-1 bg-row-black text-row-white font-sans text-caption uppercase tracking-wider">
               Min: €{priceRange.min}
             </span>
           )}
           {priceRange.max !== null && (
-            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-purple-900/30 text-purple-300 border border-purple-700">
+            <span className="inline-flex items-center px-3 py-1 bg-row-black text-row-white font-sans text-caption uppercase tracking-wider">
               Max: €{priceRange.max}
             </span>
           )}
           {selectedSizes.map((size) => (
-            <span key={size} className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-purple-900/30 text-purple-300 border border-purple-700">
+            <span key={size} className="inline-flex items-center px-3 py-1 bg-row-black text-row-white font-sans text-caption uppercase tracking-wider">
               Size: {size}
             </span>
           ))}

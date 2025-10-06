@@ -36,76 +36,77 @@ const ChatSection = forwardRef<HTMLTextAreaElement, ChatSectionProps>(({
   const showImageGenButtons = latestMessage?.role === 'assistant' && latestMessage.content.includes('Would you like me to create an image');
 
   return (
-    <div className="bg-[#23232b] shadow rounded-lg p-6 flex flex-col h-full max-h-[700px] min-h-[500px]">
-      <h2 className="text-xl font-semibold text-white mb-4">AI Fashion Assistant</h2>
-      
-      <div className="flex-1 overflow-y-auto border border-gray-700 p-4 rounded-t-lg bg-gray-900 flex flex-col-reverse custom-scrollbar">
+    <div className="bg-row-white border-1 border-row-black p-8 flex flex-col h-full max-h-[700px] min-h-[500px]">
+      <h2 className="text-h3 font-serif text-row-black mb-6 tracking-tight">AI Fashion Assistant</h2>
+
+      <div className="flex-1 overflow-y-auto border-1 border-row-black p-6 bg-row-white flex flex-col-reverse custom-scrollbar">
         {[...messages].reverse().map((message) => (
-          <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'} mb-2`}>
-            <div className={`rounded-lg px-4 py-2 max-w-[80%] break-words ${message.role === 'user' ? 'bg-blue-700 text-white' : 'bg-gray-700 text-gray-200'}`}>
-              <ReactMarkdown>{message.content}</ReactMarkdown> 
+          <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'} mb-3`}>
+            <div className={`px-5 py-3 max-w-[80%] break-words font-sans text-body ${message.role === 'user' ? 'bg-row-black text-row-white' : 'bg-row-white border-1 border-row-black text-row-black'}`}>
+              <ReactMarkdown>{message.content}</ReactMarkdown>
             </div>
           </div>
         ))}
         {messages.length === 0 && (
-            <div className="text-center text-gray-400 italic flex-grow flex items-center justify-center">
-              <p>Describe a style, an item, or upload an image to start your search.</p>
+            <div className="text-center text-row-gray-400 flex-grow flex items-center justify-center">
+              <p className="font-sans text-body">Describe a style, an item, or upload an image to start your search.</p>
             </div>
         )}
       </div>
 
       {showImageGenButtons ? (
-        <div className="flex justify-center p-4 bg-[#23232b] border-t-0 border-gray-700 rounded-b-lg">
-          <button onClick={() => handleUserChoice('yes')} className="bg-green-500 text-white px-6 py-2 rounded-lg mr-4 hover:bg-green-600">Yes, please!</button>
-          <button onClick={() => handleUserChoice('no')} className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600">No, thanks</button>
+        <div className="flex justify-center p-6 bg-row-white border-t-2 border-row-black">
+          <button onClick={() => handleUserChoice('yes')} className="bg-row-black text-row-white px-8 py-3 mr-4 hover:bg-row-gray-800 uppercase tracking-wider text-caption font-medium transition-all duration-400">Yes, please!</button>
+          <button onClick={() => handleUserChoice('no')} className="bg-row-white border-1 border-row-black text-row-black px-8 py-3 hover:bg-row-black hover:text-row-white uppercase tracking-wider text-caption font-medium transition-all duration-400">No, thanks</button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="border border-t-0 border-gray-700 rounded-b-lg p-3 bg-[#23232b] flex flex-col gap-3">
+        <form onSubmit={handleSubmit} className="border-1 border-t-0 border-row-black p-4 bg-row-white flex flex-col gap-3">
           {imagePreview && (
-            <div className="relative w-28 h-28 group">
-              <Image src={imagePreview} alt="Selected preview" layout="fill" objectFit="cover" className="rounded-md border-2 border-gray-600" />
-              <button 
-                type="button" 
-                onClick={removeImage} 
-                className="absolute -top-2 -right-2 bg-gray-800 rounded-full text-white transform transition-transform group-hover:scale-110"
+            <div className="relative w-32 h-32 group">
+              <Image src={imagePreview} alt="Selected preview" layout="fill" objectFit="cover" className="border-1 border-row-black" />
+              <button
+                type="button"
+                onClick={removeImage}
+                className="absolute -top-2 -right-2 bg-row-black text-row-white transform transition-transform group-hover:scale-110"
                 aria-label="Remove image"
               >
-                <XCircle className="w-8 h-8" />
+                <XCircle className="w-7 h-7" />
               </button>
             </div>
           )}
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <input id="image-upload" type="file" accept="image/*" onChange={handleImageChange} className="hidden" />
-            <label htmlFor="image-upload" className="p-2 text-gray-400 hover:text-icu-2 cursor-pointer transition-all duration-200 hover:scale-110">
-              <Paperclip className="w-7 h-7" strokeWidth={2} />
+            <label htmlFor="image-upload" className="p-2 text-row-black hover:opacity-70 cursor-pointer transition-all duration-400">
+              <Paperclip className="w-6 h-6" strokeWidth={2} />
             </label>
-            <textarea 
+            <textarea
               ref={ref}
-              value={input} 
-              onChange={handleInputChange} 
+              value={input}
+              onChange={handleInputChange}
               placeholder={imagePreview ? "Add a comment... (optional)" : "Describe the style you want..."}
-              className="flex-1 rounded-lg border border-gray-600 bg-gray-800 text-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-icu-2 placeholder-gray-400"
+              className="flex-1 border-row-black bg-transparent text-row-black px-0 py-3 font-sans text-body focus:outline-none placeholder-row-gray-400 resize-none transition-all duration-400"
+              rows={1}
             />
-            <button 
-              type="submit"  
+            <button
+              type="submit"
               disabled={isProcessing || (!input.trim() && !imagePreview)}
-              className="p-1 text-white bg-icu-2 rounded-full hover:bg-icu-1 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:scale-105"
+              className="p-2 text-row-white bg-row-black hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-400"
               aria-label="Find Items or Analyze Image"
             >
-              {isProcessing ? 
-                <div className="w-9 h-9 border-4 border-white border-t-transparent rounded-full animate-spin"></div> 
-                : 
-                <ArrowUpCircle className="w-10 h-10" strokeWidth={1.5} />
+              {isProcessing ?
+                <div className="w-6 h-6 border-1 border-row-white border-t-transparent rounded-full animate-spin"></div>
+                :
+                <ArrowUpCircle className="w-6 h-6" strokeWidth={2} />
               }
             </button>
           </div>
-           <div className="flex justify-end pr-14">
-              <button 
+           <div className="flex justify-end">
+              <button
                   type="button"
                   onClick={handleBrandSuggestion}
                   disabled={!input.trim() || isProcessing}
-                  className="text-gray-400 hover:text-white text-xs font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="text-row-black hover:opacity-70 text-caption font-medium uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-400"
                   aria-label="Suggest Brands"
                   title="Suggest Brands"
               >

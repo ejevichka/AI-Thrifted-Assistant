@@ -8,7 +8,6 @@
   width: 100%;
   max-width: 100%;
   padding: 1rem;
-  background: #18181b;
 }
 
 /* Адаптивность: 3 колонки на больших экранах */
@@ -29,18 +28,15 @@
 
   /* Стилизация карточки */
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
   overflow: hidden; /* Обрезаем все, что выходит за скругленные углы */
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   min-height: 320px;
-  background: #23232b;
 }
 
 .pinterest-item:hover {
-  box-shadow: 0 10px 24px rgba(0,0,0,0.8);
   transform: translateY(-4px);
 }
 
@@ -62,6 +58,5 @@
 }
 
 .pinterest-item .bg-white\/30 {
-  background: rgba(255,255,255,0.12) !important;
   color: #fff !important;
 } 

@@ -1,0 +1,441 @@
+{
+  "brandDatabase": [
+    {
+      "brand": "KNWLS",
+      "category": "Trendy/Designer",
+      "vibeTags": ["y2k", "feral_chic", "moto_glam", "luxury_leather", "bodycon"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Acne Studios",
+      "category": "Trendy/Designer",
+      "vibeTags": ["scandi_minimalism", "avant_garde", "minimalist"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Mugler",
+      "category": "Trendy/Designer",
+      "vibeTags": ["bodycon", "futurism", "avant_garde", "space_age"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Ganni",
+      "category": "Trendy/Designer",
+      "vibeTags": ["scandi_minimalism", "maximalist", "coquette"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Khaite",
+      "category": "Trendy/Designer",
+      "vibeTags": ["quiet_luxury", "minimalist", "old_money"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Sandro",
+      "category": "Trendy/Designer",
+      "vibeTags": ["french_chic", "preppy", "minimalist"],
+      "priceRange": "medium-high",
+      "searchPriority": 4
+    },
+    {
+      "brand": "Marine Serre",
+      "category": "Trendy/Designer",
+      "vibeTags": ["avant_garde", "futurism", "y2k", "techwear"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Jacquemus",
+      "category": "Trendy/Designer",
+      "vibeTags": ["french_chic", "minimalist", "coquette"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Rick Owens",
+      "category": "Trendy/Designer",
+      "vibeTags": ["goth", "avant_garde", "minimalist", "darkwear"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "The Row",
+      "category": "Trendy/Designer",
+      "vibeTags": ["quiet_luxury", "minimalist", "old_money"],
+      "priceRange": "luxury",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Loro Piana",
+      "category": "Trendy/Designer",
+      "vibeTags": ["quiet_luxury", "old_money", "italian_vintage"],
+      "priceRange": "luxury",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Arc'teryx",
+      "category": "Trendy/Designer",
+      "vibeTags": ["gorpcore", "techwear", "sporty"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Ottolinger",
+      "category": "Trendy/Designer",
+      "vibeTags": ["deconstructed", "avant_garde", "techwear", "y2k"],
+      "priceRange": "high",
+      "searchPriority": 4
+    },
+    {
+      "brand": "Yohji Yamamoto",
+      "category": "Trendy/Designer",
+      "vibeTags": ["avant_garde", "japanese_minimalism", "deconstructed", "goth"],
+      "priceRange": "luxury",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Junya Watanabe",
+      "category": "Trendy/Designer",
+      "vibeTags": ["avant_garde", "deconstructed", "japanese_minimalism", "techwear"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Maison Margiela",
+      "category": "Trendy/Designer",
+      "vibeTags": ["deconstructed", "avant_garde", "minimalist"],
+      "priceRange": "luxury",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Comme des Garçons",
+      "category": "Trendy/Designer",
+      "vibeTags": ["avant_garde", "deconstructed", "japanese_minimalism"],
+      "priceRange": "luxury",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Isabel Marant",
+      "category": "Trendy/Designer",
+      "vibeTags": ["bohemian", "french_chic"],
+      "priceRange": "high",
+      "searchPriority": 4
+    },
+    {
+      "brand": "Simone Rocha",
+      "category": "Trendy/Designer",
+      "vibeTags": ["coquette", "balletcore", "maximalist"],
+      "priceRange": "high",
+      "searchPriority": 4
+    },
+    {
+      "brand": "Ader Error",
+      "category": "Trendy/Designer",
+      "vibeTags": ["kfashion", "deconstructed", "streetwear"],
+      "priceRange": "medium-high",
+      "searchPriority": 4
+    },
+    {
+      "brand": "Blumarine",
+      "category": "Trendy/Designer",
+      "vibeTags": ["y2k", "maximalist", "italian_vintage", "coquette"],
+      "priceRange": "high",
+      "searchPriority": 4
+    },
+    {
+      "brand": "Stone Island",
+      "category": "Trendy/Designer",
+      "vibeTags": ["techwear", "streetwear", "italian_vintage"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Vivienne Westwood",
+      "category": "Trendy/Designer",
+      "vibeTags": ["punk", "avant_garde", "grunge", "harajuku"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Supreme",
+      "category": "Trendy/Designer",
+      "vibeTags": ["streetwear"],
+      "priceRange": "medium-high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "A Bathing Ape",
+      "category": "Trendy/Designer",
+      "vibeTags": ["streetwear", "japanese_streetwear"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "BAPE",
+      "category": "Trendy/Designer",
+      "vibeTags": ["streetwear", "japanese_streetwear"],
+      "priceRange": "high",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Corteiz",
+      "category": "Trendy/Designer",
+      "vibeTags": ["streetwear"],
+      "priceRange": "medium",
+      "searchPriority": 5
+    },
+    {
+      "brand": "Miss Sixty",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["y2k", "italian_vintage", "denim_couture", "moto_glam"],
+      "priceRange": "low",
+      "searchPriority": 4,
+      "matchesTrendy": ["KNWLS", "Diesel", "Mugler"]
+    },
+    {
+      "brand": "Morgan de Toi",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["y2k", "french_chic", "coquette"],
+      "priceRange": "low",
+      "searchPriority": 4,
+      "matchesTrendy": ["Jacquemus", "Sandro", "Ganni"]
+    },
+    {
+      "brand": "Cop Copine",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["y2k", "techwear", "french_chic", "futurism"],
+      "priceRange": "low",
+      "searchPriority": 4,
+      "matchesTrendy": ["Marine Serre", "Mugler", "Ottolinger"]
+    },
+    {
+      "brand": "Kookai",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["90s", "y2k", "french_chic", "minimalist"],
+      "priceRange": "low",
+      "searchPriority": 4,
+      "matchesTrendy": ["Jacquemus", "Sandro", "Khaite"]
+    },
+    {
+      "brand": "Diesel",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["y2k", "denim_couture", "moto_glam", "grunge"],
+      "priceRange": "low-medium",
+      "searchPriority": 5,
+      "matchesTrendy": ["KNWLS", "Rick Owens"]
+    },
+    {
+      "brand": "Fornarina",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["y2k", "italian_vintage", "maximalist"],
+      "priceRange": "low",
+      "searchPriority": 3,
+      "matchesTrendy": ["Blumarine", "Ganni"]
+    },
+    {
+      "brand": "JC de Castelbajac",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["80s", "maximalist", "avant_garde", "clubkid"],
+      "priceRange": "low-medium",
+      "searchPriority": 4,
+      "matchesTrendy": ["Marine Serre", "Comme des Garçons"]
+    },
+    {
+      "brand": "Stüssy",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["streetwear", "90s"],
+      "priceRange": "low-medium",
+      "searchPriority": 5,
+      "matchesTrendy": ["Supreme", "Corteiz"]
+    },
+    {
+      "brand": "Carhartt WIP",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["streetwear", "gorpcore", "basics"],
+      "priceRange": "low-medium",
+      "searchPriority": 5,
+      "matchesTrendy": ["Supreme", "Arc'teryx"]
+    },
+    {
+      "brand": "The North Face",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["gorpcore", "streetwear", "90s"],
+      "priceRange": "medium",
+      "searchPriority": 5,
+      "matchesTrendy": ["Arc'teryx", "Stone Island"]
+    },
+    {
+      "brand": "Dr. Martens",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["grunge", "punk", "90s"],
+      "priceRange": "medium",
+      "searchPriority": 5,
+      "matchesTrendy": ["Rick Owens", "Vivienne Westwood"]
+    },
+    {
+      "brand": "Jean Paul Gaultier",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["avant_garde", "deconstructed", "y2k", "maximalist"],
+      "priceRange": "medium",
+      "searchPriority": 5,
+      "matchesTrendy": ["Mugler", "Marine Serre", "Comme des Garçons"]
+    },
+    {
+      "brand": "Helmut Lang",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["minimalist", "90s", "deconstructed"],
+      "priceRange": "medium",
+      "searchPriority": 5,
+      "matchesTrendy": ["Acne Studios", "Khaite", "The Row"]
+    },
+    {
+      "brand": "Levi's",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["basics", "denim_couture", "vintage_classic"],
+      "priceRange": "low-medium",
+      "searchPriority": 5,
+      "matchesTrendy": ["Diesel", "KNWLS"]
+    },
+    {
+      "brand": "Salomon",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["gorpcore", "sporty", "techwear"],
+      "priceRange": "medium",
+      "searchPriority": 5,
+      "matchesTrendy": ["Arc'teryx", "Stone Island"]
+    },
+    {
+      "brand": "Uniqlo",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["basics", "minimalist", "japanese_minimalism"],
+      "priceRange": "low",
+      "searchPriority": 3,
+      "matchesTrendy": ["Acne Studios", "COS"]
+    },
+    {
+      "brand": "COS",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["minimalist", "scandi_minimalism"],
+      "priceRange": "low-medium",
+      "searchPriority": 4,
+      "matchesTrendy": ["Acne Studios", "Khaite", "The Row"]
+    },
+    {
+      "brand": "Hysteric Glamour",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["harajuku", "y2k", "maximalist", "punk"],
+      "priceRange": "medium",
+      "searchPriority": 4,
+      "matchesTrendy": ["Vivienne Westwood", "Blumarine"]
+    },
+    {
+      "brand": "Walter Van Beirendonck",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["clubkid", "avant_garde", "maximalist"],
+      "priceRange": "medium",
+      "searchPriority": 4,
+      "matchesTrendy": ["Comme des Garçons", "Marine Serre"]
+    },
+    {
+      "brand": "Naf Naf",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["y2k", "french_chic", "90s"],
+      "priceRange": "low",
+      "searchPriority": 4,
+      "matchesTrendy": ["Sandro", "Jacquemus"]
+    },
+    {
+      "brand": "Guess",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["80s", "90s", "y2k", "denim_couture"],
+      "priceRange": "low",
+      "searchPriority": 4,
+      "matchesTrendy": ["Diesel", "Miss Sixty"]
+    },
+    {
+      "brand": "Tommy Hilfiger",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["90s", "preppy", "streetwear"],
+      "priceRange": "low-medium",
+      "searchPriority": 4,
+      "matchesTrendy": ["Supreme", "Sandro"]
+    },
+    {
+      "brand": "Polo Ralph Lauren",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["preppy", "old_money", "vintage_classic"],
+      "priceRange": "low-medium",
+      "searchPriority": 4,
+      "matchesTrendy": ["Loro Piana", "The Row"]
+    },
+    {
+      "brand": "Patagonia",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["gorpcore", "sporty", "90s"],
+      "priceRange": "medium",
+      "searchPriority": 5,
+      "matchesTrendy": ["Arc'teryx", "The North Face"]
+    },
+    {
+      "brand": "Champion",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["90s", "streetwear", "sporty"],
+      "priceRange": "low",
+      "searchPriority": 4,
+      "matchesTrendy": ["Supreme", "Carhartt WIP"]
+    },
+    {
+      "brand": "Everlane",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["minimalist", "basics", "quiet_luxury"],
+      "priceRange": "low-medium",
+      "searchPriority": 3,
+      "matchesTrendy": ["COS", "Khaite"]
+    },
+    {
+      "brand": "Arket",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["scandi_minimalism", "minimalist", "basics"],
+      "priceRange": "low-medium",
+      "searchPriority": 3,
+      "matchesTrendy": ["Acne Studios", "COS"]
+    },
+    {
+      "brand": "Reiss",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["minimalist", "preppy", "old_money"],
+      "priceRange": "medium",
+      "searchPriority": 3,
+      "matchesTrendy": ["Sandro", "Khaite"]
+    },
+    {
+      "brand": "Maje",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["french_chic", "coquette", "preppy"],
+      "priceRange": "medium",
+      "searchPriority": 4,
+      "matchesTrendy": ["Sandro", "Jacquemus"]
+    },
+    {
+      "brand": "Ba&sh",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["french_chic", "bohemian", "coquette"],
+      "priceRange": "medium",
+      "searchPriority": 4,
+      "matchesTrendy": ["Isabel Marant", "Ganni"]
+    },
+    {
+      "brand": "Free People",
+      "category": "Vintage/Affordable",
+      "vibeTags": ["bohemian", "cottagecore", "70s"],
+      "priceRange": "medium",
+      "searchPriority": 4,
+      "matchesTrendy": ["Isabel Marant"]
+    }
+  ]
+}
