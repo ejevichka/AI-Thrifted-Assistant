@@ -13,9 +13,9 @@
     },
     {
       "id": "formal",
-      "name": "Formal",
+      "name": "Office Fashion",
       "description": "Professional and business attire",
-      "hashtags": ["#tailored", "#officecore", "#quietluxury"],
+      "hashtags": ["#tailored", "#officecore", "#quietluxury, #powershoulder, #pencilskirt, #waistcoat, #kneegrazingskirt"],
       "brands": [
         "The Row", "Loro Piana", "Brunello Cucinelli", "Khaite", "Jil Sander",
         "Zegna", "Tom Ford", "Brioni", "Armani", "Ralph Lauren",
@@ -79,14 +79,15 @@
     },
     {
       "id": "goth",
-      "name": "Goth",
-      "description": "Dark romanticism, punk rebellion, and mystical aesthetics",
+      "name": "Dark Romance",
+      "description": "A moody and dramatic style blending gothic and punk influences with romantic, historical details like lace, ruffles, and high collars. A form of radical escapism and self-empowerment",
       "hashtags": ["#gothcore", "#witchy", "#darkwear"],
       "brands": [
         "Rick Owens", "Ann Demeulemeester", "Yohji Yamamoto", "The Vampire's Wife", "Simone Rocha",
         "Comme des Garçons", "Junya Watanabe", "Vivienne Westwood", "Jean Paul Gaultier", "Helmut Lang (archive)",
         "Demonia", "Killstar", "Lip Service", "Tripp NYC", "Dr. Martens"
-      ]
+      ],
+      "materials": ["#fauxfur"]
     },
     {
       "id": "techwear",
@@ -213,11 +214,11 @@
       "id": "deconstructed",
       "name": "Deconstruction Fashion",
       "description": "Anti-fashion aesthetic celebrating raw edges and upcycled modifications.",
-      "hashtags": ["#reworked", "#exposedseams", "#avantgarde"],
+      "hashtags": ["#reworked", "#exposedseams", "#avantgarde", "#drapedtop", "#layeredlook", "#reconstructed"],
       "brands": [
         "Maison Margiela", "Ottolinger", "Junya Watanabe", "Comme des Garçons", "Yohji Yamamoto",
         "Rick Owens", "Marine Serre", "Sacai", "Vetements", "Ader Error",
-        "Helmut Lang (archive)", "Ann Demeulemeester", "Jean Paul Gaultier", "Cop Copine", "Vivienne Westwood"
+        "Helmut Lang", "Ann Demeulemeester", "Jean Paul Gaultier", "Cop Copine", "Vivienne Westwood"
       ]
     }
   ]

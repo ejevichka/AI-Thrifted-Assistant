@@ -50,12 +50,15 @@ export const useProductFetcher = (): UseProductFetcherReturn => {
 
       // Check if we have products in the expected format
       if (data && Array.isArray(data.products)) {
-        console.log(`Found ${data.products.length} products`);
+        const productCount = data.products.length;
+        console.log(`Received ${productCount} products from API`);
+
+        // Store all products (we'll handle pagination in the component)
         setProducts(data.products);
-        
-        // Log first few products for debugging
+
+        // Log first product for debugging
         if (data.products.length > 0) {
-          console.log("First product example:", data.products[0]);
+          console.log("First product:", data.products[0]);
         }
       } else {
         console.warn("API returned unexpected data format:", data);

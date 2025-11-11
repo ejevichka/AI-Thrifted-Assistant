@@ -14,6 +14,17 @@ interface ScrapedItem {
     photo: string;
 }
 
+interface VintedFilters {
+    priceRange?: { min: number | null; max: number | null };
+    sizes?: string[];
+    brands?: string[];
+    categories?: string[];
+    materials?: string[];
+    colors?: string[];
+    conditions?: string[];
+    order?: 'relevance' | 'newest_first' | 'price_low_to_high' | 'price_high_to_low';
+}
+
 // Helper function to simulate a call to a Depop scraper
 /* async function searchDepop(query: string): Promise<any[]> {
   console.log(`Simulating search on Depop for: "${query}"`);
@@ -33,18 +44,105 @@ interface ScrapedItem {
   ];
 }
  */
-async function searchVinted(query: string): Promise<ScrapedItem[]> {
+/**
+ * Build Vinted API URL with advanced filters
+ * Based on URL pattern: catalog?search_text=...&catalog[]=...&size_ids[]=...&brand_ids[]=...
+ */
+function buildVintedUrl(query: string, filters?: VintedFilters): string {
+    const cleanedQuery = query.replace(/\n/g, " ").replace(/, let me find some great options for you!/g, "").trim();
+
+    const params = new URLSearchParams();
+    params.append('page', '1');
+    params.append('per_page', '50'); // 50 items per query for good initial load
+    params.append('search_text', cleanedQuery);
+
+    // Order/Sort
+    const orderMap: Record<string, string> = {
+        'newest_first': 'newest_first',
+        'price_low_to_high': 'price_low_to_high',
+        'price_high_to_low': 'price_high_to_low',
+        'relevance': 'relevance'
+    };
+    params.append('order', orderMap[filters?.order || 'newest_first'] || 'newest_first');
+
+    // Price Range
+    if (filters?.priceRange) {
+        if (filters.priceRange.min !== null && filters.priceRange.min !== undefined) {
+            params.append('price_from', filters.priceRange.min.toString());
+        }
+        if (filters.priceRange.max !== null && filters.priceRange.max !== undefined) {
+            params.append('price_to', filters.priceRange.max.toString());
+        }
+        params.append('currency', 'EUR');
+    }
+
+    // Categories (catalog[])
+    // ALWAYS filter by clothing & accessories categories to avoid toys, home items, etc.
+    const clothingCategories = ['1953', '16', '12', '15', '13', '14', '18', '1904'];
+
+    if (filters?.categories && filters.categories.length > 0) {
+        // Use user-provided categories
+        filters.categories.forEach(cat => {
+            params.append('catalog[]', cat);
+        });
+    } else {
+        // Default: add all clothing & accessory categories
+        clothingCategories.forEach(cat => {
+            params.append('catalog[]', cat);
+        });
+    }
+
+    // Sizes (size_ids[])
+    if (filters?.sizes && filters.sizes.length > 0) {
+        filters.sizes.forEach(size => {
+            params.append('size_ids[]', size);
+        });
+    }
+
+    // Brands (brand_ids[])
+    if (filters?.brands && filters.brands.length > 0) {
+        filters.brands.forEach(brand => {
+            params.append('brand_ids[]', brand);
+        });
+    }
+
+    // Materials (material_ids[])
+    if (filters?.materials && filters.materials.length > 0) {
+        filters.materials.forEach(material => {
+            params.append('material_ids[]', material);
+        });
+    }
+
+    // Colors (color_ids[])
+    if (filters?.colors && filters.colors.length > 0) {
+        filters.colors.forEach(color => {
+            params.append('color_ids[]', color);
+        });
+    }
+
+    // Conditions (status_ids[])
+    if (filters?.conditions && filters.conditions.length > 0) {
+        filters.conditions.forEach(condition => {
+            params.append('status_ids[]', condition);
+        });
+    }
+
+    return `https://www.vinted.de/api/v2/catalog/items?${params.toString()}`;
+}
+
+async function searchVinted(query: string, filters?: VintedFilters): Promise<ScrapedItem[]> {
   const cleanedQuery = query.replace(/\n/g, " ").replace(/, let me find some great options for you!/g, "").trim();
-  console.log(`Searching Vinted for: "${cleanedQuery}"`);
+  console.log(`Searching Vinted for: "${cleanedQuery}"`, filters ? `with filters: ${JSON.stringify(filters)}` : '');
 
   const maxRetries = 3;
-  const baseDelay = 5000; // 2 seconds base delay
-  
+  const baseDelay = 5000;
+
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
           console.log(`Attempt ${attempt}/${maxRetries} for query: "${cleanedQuery}"`);
-          
-          const url = `https://www.vinted.de/api/v2/catalog/items?page=1&per_page=24&search_text=${encodeURIComponent(cleanedQuery)}&order=relevance`;
+
+          const url = buildVintedUrl(cleanedQuery, filters);
+          console.log("HERERERRE", url)
           
           // Fetch cookies with improved headers
           console.log("Fetching cookies from Vinted homepage...");
@@ -216,51 +314,61 @@ export async function POST(req: NextRequest) {
     console.log("Fetching products sequentially for queries:", queries);
     console.log("With filters:", filters);
 
-    // --- REFACTORED LOGIC ---
-    
+    // Transform filters to VintedFilters format
+    const vintedFilters: VintedFilters = {
+      priceRange: filters?.priceRange,
+      sizes: filters?.sizes,
+      brands: filters?.brands,
+      categories: filters?.categories,
+      materials: filters?.materials,
+      colors: filters?.colors,
+      conditions: filters?.conditions,
+      order: filters?.order || 'newest_first' // Default to newest first for best items
+    };
+
     let allProducts: ScrapedItem[] = [];
-    
-    // 1. Run all searches sequentially
+
+    // 1. Run all searches sequentially with Vinted API filters
     for (const query of queries) {
-        const products = await searchVinted(query);
+        const products = await searchVinted(query, vintedFilters);
         allProducts.push(...products);
         // Add a small delay between each query to be less aggressive
         await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 1000));
     }
 
-    // 2. (Crucial) Deduplicate the results
+    // 2. Deduplicate the results
     let uniqueProducts = Array.from(new Map(allProducts.map(item => [item.id, item])).values());
-    
-    // 3. Apply filters if provided
-    if (filters) {
-      // Filter by price range
-      if (filters.priceRange) {
-        const { min, max } = filters.priceRange;
-        uniqueProducts = uniqueProducts.filter(product => {
-          if (!product.priceNumeric) return true; // Include items without numeric price
-          if (min !== null && min !== undefined && product.priceNumeric < min) return false;
-          if (max !== null && max !== undefined && product.priceNumeric > max) return false;
-          return true;
-        });
-      }
 
-      // Filter by sizes
-      if (filters.sizes && filters.sizes.length > 0) {
-        uniqueProducts = uniqueProducts.filter(product => {
-          if (!product.size) return false;
-          // Check if product size matches any of the selected sizes
-          return filters.sizes.some((size: string) => 
-            product.size.toLowerCase().includes(size.toLowerCase()) ||
-            size.toLowerCase().includes(product.size.toLowerCase())
-          );
-        });
-      }
+    console.log(`Found ${uniqueProducts.length} unique products before filtering`);
+
+    // 3. Additional client-side filtering (if needed for compatibility with legacy filters)
+    // Note: Most filtering is now done via Vinted API, but we keep this for backward compatibility
+    if (filters?.sizes && filters.sizes.length > 0) {
+      uniqueProducts = uniqueProducts.filter(product => {
+        if (!product.size) return false;
+        return filters.sizes.some((size: string) =>
+          product.size.toLowerCase().includes(size.toLowerCase()) ||
+          size.toLowerCase().includes(product.size.toLowerCase())
+        );
+      });
     }
-    
-    // 4. Shuffle the filtered results
-    const shuffledProducts = uniqueProducts.sort(() => 0.5 - Math.random());
 
-    return NextResponse.json({ products: shuffledProducts });
+    // 4. Limit total results to prevent performance issues
+    const MAX_RESULTS = 200; // Maximum products to return (enough for infinite scroll)
+    if (uniqueProducts.length > MAX_RESULTS) {
+      console.log(`Limiting results from ${uniqueProducts.length} to ${MAX_RESULTS}`);
+      uniqueProducts = uniqueProducts.slice(0, MAX_RESULTS);
+    }
+
+    // 5. Shuffle the filtered results (optional - can be disabled if order is important)
+    const shouldShuffle = !vintedFilters.order || vintedFilters.order === 'relevance';
+    const finalProducts = shouldShuffle
+      ? uniqueProducts.sort(() => 0.5 - Math.random())
+      : uniqueProducts;
+
+    console.log(`Returning ${finalProducts.length} products after filtering and limiting`);
+
+    return NextResponse.json({ products: finalProducts });
 
   } catch (error: any) {
     console.error("Error in external search API:", error);

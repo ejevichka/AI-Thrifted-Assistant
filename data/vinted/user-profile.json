@@ -1,0 +1,91 @@
+{
+  "totalFavorites": 929,
+  "inDatabase": 25,
+  "topVibeTags": [
+    {
+      "tag": "avant_garde",
+      "count": 10
+    },
+    {
+      "tag": "y2k",
+      "count": 9
+    },
+    {
+      "tag": "deconstructed",
+      "count": 7
+    },
+    {
+      "tag": "minimalist",
+      "count": 6
+    },
+    {
+      "tag": "techwear",
+      "count": 6
+    },
+    {
+      "tag": "90s",
+      "count": 5
+    },
+    {
+      "tag": "french_chic",
+      "count": 4
+    },
+    {
+      "tag": "gorpcore",
+      "count": 3
+    },
+    {
+      "tag": "sporty",
+      "count": 3
+    },
+    {
+      "tag": "maximalist",
+      "count": 3
+    }
+  ],
+  "topAesthetics": [
+    {
+      "aesthetic": "Deconstruction Fashion",
+      "count": 20
+    },
+    {
+      "aesthetic": "Avant-Garde",
+      "count": 15
+    },
+    {
+      "aesthetic": "Dark Romance",
+      "count": 13
+    },
+    {
+      "aesthetic": "Harajuku",
+      "count": 9
+    },
+    {
+      "aesthetic": "Grunge",
+      "count": 8
+    }
+  ],
+  "favoritesInMatrix": 115,
+  "notInDatabase": [
+    "BELCCI",
+    "Save the Queen!",
+    "032c",
+    "10 FEET",
+    "1017 ALYX 9SM",
+    "1060",
+    "1060 Clothes",
+    "10sei0otto",
+    "14th Addicion",
+    "2026",
+    "25x",
+    "3 Suisses",
+    "403 Crew",
+    "4Wards",
+    "A-COLD-WALL",
+    "Aakasha",
+    "Abasic",
+    "Abra",
+    "Abracadabra",
+    "Abro"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "clothingAndAccessories": {
+    "description": "Main clothing and accessory categories to filter out toys, home items, etc.",
+    "categories": [
+      "1953",
+      "16",
+      "12",
+      "15",
+      "13",
+      "14",
+      "18",
+      "1904",
+      "1163"
+    ],
+    "categoryNames": {
+      "1953": "Kleidung & Accessoires",
+      "16": "Damen",
+      "12": "Herren",
+      "15": "Kinder",
+      "13": "Schuhe",
+      "14": "Taschen",
+      "18": "Accessoires",
+      "1904": "Schmuck",
+      "1163": "Vintage & Sammlerstücke (clothing only)"
+    }
+  },
+  "excludeCategories": {
+    "description": "Categories to EXCLUDE (toys, home, etc.)",
+    "categories": [
+      "1239",
+      "1269",
+      "1242"
+    ],
+    "categoryNames": {
+      "1239": "Unterhaltung",
+      "1269": "Haushalt",
+      "1242": "Kosmetik"
+    }
+  }
+}

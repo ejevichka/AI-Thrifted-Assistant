@@ -6,24 +6,57 @@ import { FormEvent, useRef } from "react";
 import { Message, useChat } from "ai/react";
 
 interface StyleSidebarProps {
-    setMessages: (messages: Message[]) => void;
-    handleSubmit: (e: FormEvent<HTMLFormElement>, options?: {
+    setMessages?: (messages: Message[]) => void;
+    handleSubmit?: (e: FormEvent<HTMLFormElement>, options?: {
         options?: {
             body?: Record<string, any>;
         } | undefined;
     } | undefined) => void;
-    setInput: (input: string) => void;
-    scrollToChatInput: () => void;
+    setInput?: (input: string) => void;
+    scrollToChatInput?: () => void;
+    messages?: Message[];
+    onStyleClick?: (styleName: string, hashtags: string[]) => void;
 }
 
-export default function StyleSidebar({ setMessages, handleSubmit, setInput, scrollToChatInput }: StyleSidebarProps) {
+export default function StyleSidebar({ setMessages, handleSubmit, setInput, scrollToChatInput, messages = [], onStyleClick }: StyleSidebarProps) {
     const formRef = useRef<HTMLFormElement>(null);
 
     const handleStyleClick = (styleName: string, hashtags: string[]) => {
-      const prompt = `Moodboard items with a ${styleName} aesthetic. List brands with this vibe: ${hashtags.join(', ')}.`;
+      // If custom handler provided (from DigByMoodboardScreen), use it
+      if (onStyleClick) {
+        onStyleClick(styleName, hashtags);
+        return;
+      }
+
+      // Fallback to old chat-based behavior
+      if (!setMessages || !setInput || !handleSubmit) return;
+
+      const prompt = `Find me ${styleName} style items from Vinted. Search for: ${hashtags.slice(0, 3).join(', ')}.`;
+
+      const userMessage: Message = {
+        id: Date.now().toString(),
+        content: prompt,
+        role: 'user',
+      };
+
+      const updatedMessages = [...messages, userMessage];
+      setMessages(updatedMessages);
       setInput(prompt);
-      scrollToChatInput();
-      
+
+      setTimeout(() => {
+        const syntheticEvent = {
+          preventDefault: () => {},
+          currentTarget: formRef.current,
+        } as FormEvent<HTMLFormElement>;
+
+        handleSubmit(syntheticEvent, {
+          options: {
+            body: {
+              messages: updatedMessages,
+            },
+          },
+        });
+      }, 100);
     };
 
     return (

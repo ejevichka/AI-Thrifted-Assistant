@@ -70,7 +70,7 @@ export default function ProductFilters({
               placeholder="Min"
               value={priceRange.min || ''}
               onChange={(e) => handlePriceChange('min', e.target.value)}
-              className="w-28 px-0 py-2 bg-transparent border-b-2 border-row-black text-row-black placeholder-row-gray-400 focus:outline-none font-sans text-body transition-all duration-400"
+              className="w-28 px-0 py-2 bg-transparent border-b-1 border-row-black text-row-black placeholder-row-gray-400 focus:outline-none font-sans text-body transition-all duration-400"
               min={minPrice}
               max={priceRange.max || maxPrice}
             />
@@ -80,7 +80,7 @@ export default function ProductFilters({
               placeholder="Max"
               value={priceRange.max || ''}
               onChange={(e) => handlePriceChange('max', e.target.value)}
-              className="w-28 px-0 py-2 bg-transparent border-b-2 border-row-black text-row-black placeholder-row-gray-400 focus:outline-none font-sans text-body transition-all duration-400"
+              className="w-28 px-0 py-2 bg-transparent border-b-1 border-row-black text-row-black placeholder-row-gray-400 focus:outline-none font-sans text-body transition-all duration-400"
               min={priceRange.min || minPrice}
               max={maxPrice}
             />
@@ -93,7 +93,7 @@ export default function ProductFilters({
           </label>
           <button
             onClick={() => setShowSizeDropdown(!showSizeDropdown)}
-            className="w-full px-0 py-2 bg-transparent border-b-2 border-row-black text-left text-row-black focus:outline-none flex justify-between items-center font-sans text-body transition-all duration-400"
+            className="w-full px-0 py-2 bg-transparent border-b-1 border-row-black text-left text-row-black focus:outline-none flex justify-between items-center font-sans text-body transition-all duration-400"
           >
             <span className="truncate">
               {selectedSizes.length === 0

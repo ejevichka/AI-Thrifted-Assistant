@@ -8,6 +8,7 @@ import StyleSidebar from './components/StyleSidebar';
 import ChatSection from './components/ChatSection';
 import ProductResults from './components/ProductResults';
 import ProductFilters, { FilterState } from './components/ProductFilters';
+import { DigsHub } from './components/DigsHub';
 import './styles/pinterest.css';
 import { toast } from "sonner";
 import { useProductFetcher } from './components/hooks/useProductFetcher';
@@ -323,31 +324,12 @@ export default function VintedHomePage() {
         </div>
       </header>
       <main className="flex-1 max-w-row mx-auto py-12 sm:px-8 lg:px-12 w-full">
-         <StyleSidebar setMessages={setMessages} handleSubmit={handleSubmit} setInput={setInput} scrollToChatInput={scrollToChatInput} />
-         <ChatSection 
-              ref={chatInputRef}
-              messages={messages}
-              input={input}
-              handleInputChange={handleInputChange}
-              handleSubmit={handleSubmit}
-              handleBrandSuggestion={handleBrandSuggestion}
-              handleImageChange={handleImageChange}
-              imagePreview={imagePreview}
-              removeImage={() => setSelectedImage(null)}
-              isProcessing={isImageProcessing || isGeneratingImage} // Updated prop
-              handleImageGeneration={handleImageGeneration} // New prop
-              handleUserChoice={handleUserChoice} // New prop
-            />
-        <div className="px-4 py-6 sm:px-0">
-          <div className="space-y-8">
-             {ingestionNeeded && (
-              <IngestionSection 
-                isIngesting={isIngesting}
-                ingestionProgress={ingestionProgress}
-                ingestionStatus={ingestionStatus}
-              />
-            )}
-          </div>
+         {/* Digs Hub - Three Category Cards */}
+         <div className="mb-12">
+           <DigsHub />
+          
+             <div className="px-4 py-6 sm:px-0">
+        
           <div className="space-y-8">
          {/*  <ImageSearchSection 
               handleImageChange={handleImageChange}
@@ -378,6 +360,10 @@ export default function VintedHomePage() {
             </div>
           </div>
         </div>
+         </div>
+
+        
+       
       </main>
       <style jsx global>{`
         .custom-scrollbar::-webkit-scrollbar { width: 8px; }

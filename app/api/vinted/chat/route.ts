@@ -5,6 +5,7 @@ import { StringOutputParser } from '@langchain/core/output_parsers';
 import { StateGraph, END, START } from "@langchain/langgraph";
 import { AestheticService } from './aesthetic-service';
 import { brandMatcher } from './brand-matcher';
+import { aestheticMatcher } from '@/app/services/aesthetic-matcher';
 import stylesData from '../../../../data/vinted/styles.json';
 
 export const runtime = "edge";
@@ -26,7 +27,15 @@ const FASHION_ASSISTANT_TEMPLATE = `You are DIGGY, a smart fashion discovery AI 
 **🎯 YOUR MISSION:**
 Help users find fashion items that match their style, but make it AFFORDABLE. Always mix expensive + cheap options in your searches.
 
-**💡 THE VIBE-ALIKE SYSTEM (Your Secret Weapon):**
+**🎨 THE AI AESTHETIC MATRIX (Your Primary Weapon):**
+
+When you see AI AESTHETIC MATRIX in CONTEXT, it means:
+1. A luxury brand was detected (e.g., "Rick Owens", "KNWLS")
+2. AI has decomposed their style into aesthetic keywords (e.g., "draped silhouette", "asymmetric cut")
+3. AI has found AFFORDABLE ALTERNATIVES with match scores (e.g., Aakasha 85%, Imperial 75%)
+4. YOU MUST prioritize these AI-curated alternatives - they're specifically trained to match aesthetics
+
+**💡 THE VIBE-ALIKE SYSTEM (Your Secondary Weapon):**
 
 When you see BRAND DATABASE MATCHES in the CONTEXT below, it means:
 1. The user mentioned a specific brand (e.g., "KNWLS")
@@ -170,6 +179,44 @@ async function retrieveContext(state: SimpleGraphState): Promise<Partial<SimpleG
         let brandContext = '';
         let suggestedQueries: string[] = [];
 
+        // === AESTHETIC MATRIX INTEGRATION ===
+        // Use AI-generated aesthetic-brand matrix for luxury → affordable alternatives
+        const expandedQuery = aestheticMatcher.expandQuery(question);
+        let aestheticMatrixContext = '';
+
+        if (expandedQuery.detectedBrands.length > 0) {
+            console.log("Aesthetic Matrix - Detected brands:", expandedQuery.detectedBrands);
+            aestheticMatrixContext = '\n\n=== 🎨 AI AESTHETIC MATRIX (Luxury → Affordable Alternatives) ===\n';
+
+            expandedQuery.detectedBrands.forEach(brandName => {
+                const results = aestheticMatcher.findAlternativesForBrand(brandName);
+
+                if (results.length > 0) {
+                    results.forEach(result => {
+                        aestheticMatrixContext += `\n🏷️  ${result.luxuryBrand} (${result.aesthetic} aesthetic):\n`;
+                        aestheticMatrixContext += `   Style Keywords: ${result.aestheticKeywords.join(', ')}\n`;
+                        aestheticMatrixContext += `\n   💰 AFFORDABLE ALTERNATIVES (AI-curated):\n`;
+
+                        result.alternatives.forEach((alt, index) => {
+                            aestheticMatrixContext += `     ${index + 1}. ${alt.name} (${alt.matchScore}% match)\n`;
+                            aestheticMatrixContext += `        Shared: ${alt.sharedKeywords.join(', ')}\n`;
+                            aestheticMatrixContext += `        Search: ${alt.searchTerms.slice(0, 2).join(', ')}\n`;
+                        });
+
+                        // Add search terms to suggested queries
+                        result.alternatives.forEach(alt => {
+                            suggestedQueries.push(...alt.searchTerms.slice(0, 2));
+                        });
+                    });
+                }
+            });
+        }
+
+        // Add aesthetic keywords if detected
+        if (expandedQuery.aestheticKeywords.length > 0) {
+            aestheticMatrixContext += `\n🔑 Aesthetic Keywords: ${expandedQuery.aestheticKeywords.slice(0, 5).join(', ')}\n`;
+        }
+
         if (extractedBrands.length > 0) {
             console.log("Found brands in query:", extractedBrands);
             brandContext = '\n\n=== BRAND DATABASE MATCHES ===\n';
@@ -299,6 +346,11 @@ async function retrieveContext(state: SimpleGraphState): Promise<Partial<SimpleG
 
         if (aestheticContext) {
             combinedContext += '=== AESTHETIC GUIDE ===\n' + aestheticContext + '\n';
+        }
+
+        // Add AI-generated aesthetic matrix first (priority)
+        if (aestheticMatrixContext) {
+            combinedContext += aestheticMatrixContext + '\n';
         }
 
         if (brandContext) {

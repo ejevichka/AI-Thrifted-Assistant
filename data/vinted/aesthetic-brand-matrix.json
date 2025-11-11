@@ -1,0 +1,4508 @@
+{
+  "generated": "2025-11-07T12:35:20.559Z",
+  "totalAesthetics": 20,
+  "matrices": [
+    {
+      "aesthetic": "Casual",
+      "aestheticId": "casual",
+      "description": "Relaxed and comfortable everyday wear",
+      "globalSearchKeywords": [
+        "minimal",
+        "everyday",
+        "comfortable",
+        "relaxed fit",
+        "neutral tones",
+        "chic",
+        "casual"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Acne Studios",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "scandi minimalism",
+            "avant-garde",
+            "clean lines"
+          ],
+          "searchTerms": [
+            "scandi minimal jacket",
+            "clean line sweater",
+            "minimalist trousers"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Weekday",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "minimalism",
+                "clean lines"
+              ],
+              "searchTerms": [
+                "weekday minimal",
+                "clean line tee"
+              ]
+            },
+            {
+              "name": "COS",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "scandi minimalism",
+                "clean lines"
+              ],
+              "searchTerms": [
+                "cos minimalist",
+                "scandi style coat"
+              ]
+            },
+            {
+              "name": "Monki",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "relaxed fit",
+                "casual"
+              ],
+              "searchTerms": [
+                "monki relaxed",
+                "casual wear"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Jacquemus",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "french chic",
+            "minimalist",
+            "coquette"
+          ],
+          "searchTerms": [
+            "french chic dress",
+            "jacquemus coquette",
+            "minimalist blouse"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Rouje",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "french chic",
+                "coquette"
+              ],
+              "searchTerms": [
+                "rouje chic",
+                "french style dress"
+              ]
+            },
+            {
+              "name": "Sézane",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "french chic",
+                "minimalist"
+              ],
+              "searchTerms": [
+                "sézane chic",
+                "minimalist top"
+              ]
+            },
+            {
+              "name": "Mango",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimalist",
+                "everyday"
+              ],
+              "searchTerms": [
+                "mango minimalist",
+                "everyday chic"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Office Fashion",
+      "aestheticId": "formal",
+      "description": "Professional and business attire",
+      "globalSearchKeywords": [
+        "tailored",
+        "minimalist",
+        "quiet luxury",
+        "old money",
+        "professional",
+        "elegant",
+        "structured"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Khaite",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "minimalist",
+            "tailored",
+            "neutral palette"
+          ],
+          "searchTerms": [
+            "minimalist blazer",
+            "tailored trousers",
+            "neutral dress"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "COS",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "minimalist",
+                "tailored"
+              ],
+              "searchTerms": [
+                "COS blazer",
+                "COS trousers"
+              ]
+            },
+            {
+              "name": "Everlane",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "neutral palette",
+                "minimalist"
+              ],
+              "searchTerms": [
+                "Everlane dress",
+                "Everlane pants"
+              ]
+            },
+            {
+              "name": "Mexx",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "tailored",
+                "neutral palette"
+              ],
+              "searchTerms": [
+                "Mexx skirt",
+                "Mexx shirt"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "The Row",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "quiet luxury",
+            "understated elegance",
+            "timeless"
+          ],
+          "searchTerms": [
+            "luxury cashmere",
+            "understated coat",
+            "timeless dress"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Arket",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "quiet luxury",
+                "understated elegance"
+              ],
+              "searchTerms": [
+                "Arket coat",
+                "Arket cashmere"
+              ]
+            },
+            {
+              "name": "Mango",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "timeless",
+                "understated elegance"
+              ],
+              "searchTerms": [
+                "blazer",
+                "skirt"
+              ]
+            },
+            {
+              "name": "Theory",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "quiet luxury",
+                "timeless"
+              ],
+              "searchTerms": [
+                "Theory dress",
+                "Theory pants"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Loro Piana",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "italian vintage",
+            "luxurious fabrics",
+            "sophisticated"
+          ],
+          "searchTerms": [
+            "luxury wool coat",
+            "italian vintage skirt",
+            "sophisticated cardigan"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Max Mara",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "luxurious fabrics",
+                "sophisticated"
+              ],
+              "searchTerms": [
+                "Max Mara coat",
+                "Max Mara wool"
+              ]
+            },
+            {
+              "name": "Jigsaw",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "italian vintage",
+                "sophisticated"
+              ],
+              "searchTerms": [
+                "Jigsaw skirt",
+                "Jigsaw cardigan"
+              ]
+            },
+            {
+              "name": "Reiss",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "luxurious fabrics",
+                "sophisticated"
+              ],
+              "searchTerms": [
+                "Reiss coat",
+                "Reiss dress"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Sporty",
+      "aestheticId": "sporty",
+      "description": "Athletic and active wear",
+      "globalSearchKeywords": [
+        "athleisure",
+        "techwear",
+        "sporty",
+        "futuristic",
+        "utilitarian",
+        "performance fabrics",
+        "layered"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Marine Serre",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "futuristic",
+            "moon print",
+            "upcycled"
+          ],
+          "searchTerms": [
+            "moon print",
+            "futuristic activewear",
+            "Marine Serre style"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Collina Strada",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "avant-garde",
+                "upcycled"
+              ],
+              "searchTerms": [
+                "upcycled activewear",
+                "Collina Strada print"
+              ]
+            },
+            {
+              "name": "Ganni",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "futuristic",
+                "sustainable"
+              ],
+              "searchTerms": [
+                "Ganni sporty",
+                "futuristic Ganni"
+              ]
+            },
+            {
+              "name": "Paloma Wool",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "avant-garde",
+                "unique prints"
+              ],
+              "searchTerms": [
+                "Paloma Wool sport",
+                "unique print activewear"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Arc'teryx",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "technical",
+            "outdoor",
+            "performance",
+            "minimalist"
+          ],
+          "searchTerms": [
+            "technical jacket",
+            "Arc'teryx style",
+            "outdoor performance"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Patagonia",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "technical",
+                "outdoor"
+              ],
+              "searchTerms": [
+                "Patagonia jacket",
+                "Patagonia outdoor"
+              ]
+            },
+            {
+              "name": "The North Face",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "performance",
+                "outdoor"
+              ],
+              "searchTerms": [
+                "The North Face jacket",
+                "performance outerwear"
+              ]
+            },
+            {
+              "name": "Columbia",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimalist",
+                "technical"
+              ],
+              "searchTerms": [
+                "Columbia sport",
+                "minimalist outerwear"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Stone Island",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "techwear",
+            "streetwear",
+            "innovative fabrics"
+          ],
+          "searchTerms": [
+            "Stone Island style",
+            "streetwear techwear",
+            "innovative fabrics"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "C.P. Company",
+              "matchScore": 90,
+              "sharedKeywords": [
+                "techwear",
+                "innovative fabrics"
+              ],
+              "searchTerms": [
+                "C.P. Company jacket",
+                "C.P. Company techwear"
+              ]
+            },
+            {
+              "name": "Nike ACG",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "streetwear",
+                "techwear"
+              ],
+              "searchTerms": [
+                "Nike ACG techwear",
+                "streetwear Nike"
+              ]
+            },
+            {
+              "name": "Riot Division",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "techwear",
+                "innovative"
+              ],
+              "searchTerms": [
+                "Riot Division techwear",
+                "innovative streetwear"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Vintage",
+      "aestheticId": "vintage",
+      "description": "Classic and retro fashion styles",
+      "globalSearchKeywords": [
+        "retro",
+        "classic",
+        "nostalgic",
+        "timeless",
+        "throwback",
+        "heritage",
+        "vintage-inspired"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Vintage Levi's",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "denim",
+            "rugged",
+            "classic fit",
+            "timeless",
+            "authentic"
+          ],
+          "searchTerms": [
+            "vintage Levi's jeans",
+            "classic denim",
+            "Levi's 501",
+            "Levi's trucker jacket"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Lee",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "denim",
+                "classic fit"
+              ],
+              "searchTerms": [
+                "vintage Lee jeans",
+                "Lee denim jacket"
+              ]
+            },
+            {
+              "name": "Wrangler",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "rugged",
+                "authentic"
+              ],
+              "searchTerms": [
+                "vintage Wrangler jeans",
+                "Wrangler denim shirt"
+              ]
+            },
+            {
+              "name": "Rustler",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "denim",
+                "timeless"
+              ],
+              "searchTerms": [
+                "Rustler jeans",
+                "Rustler denim"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Vintage Champion",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "sportswear",
+            "logo-centric",
+            "casual",
+            "heritage",
+            "comfort"
+          ],
+          "searchTerms": [
+            "vintage Champion sweatshirt",
+            "Champion logo tee",
+            "Champion hoodie"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Russell Athletic",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "sportswear",
+                "casual"
+              ],
+              "searchTerms": [
+                "Russell Athletic sweatshirt",
+                "Russell logo tee"
+              ]
+            },
+            {
+              "name": "Starter",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "logo-centric",
+                "comfort"
+              ],
+              "searchTerms": [
+                "Starter jacket",
+                "Starter hoodie"
+              ]
+            },
+            {
+              "name": "Pro Player",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "heritage",
+                "casual"
+              ],
+              "searchTerms": [
+                "Pro Player vintage",
+                "Pro Player sweatshirt"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Polo Sport",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "preppy",
+            "sporty",
+            "nautical",
+            "classic",
+            "American"
+          ],
+          "searchTerms": [
+            "vintage Polo Sport jacket",
+            "Polo Sport shirt",
+            "Polo Sport logo"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Nautica",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "nautical",
+                "preppy"
+              ],
+              "searchTerms": [
+                "Nautica vintage",
+                "Nautica jacket"
+              ]
+            },
+            {
+              "name": "Izod",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "preppy",
+                "classic"
+              ],
+              "searchTerms": [
+                "Izod polo",
+                "Izod vintage"
+              ]
+            },
+            {
+              "name": "Tommy Jeans",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "sporty",
+                "American"
+              ],
+              "searchTerms": [
+                "Tommy Jeans vintage",
+                "Tommy Jeans jacket"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tommy Hilfiger (90s)",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "bold colors",
+            "logo-driven",
+            "preppy",
+            "American",
+            "youthful"
+          ],
+          "searchTerms": [
+            "90s Tommy Hilfiger",
+            "Tommy flag logo",
+            "Tommy Hilfiger jacket"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Guess (90s)",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "bold colors",
+                "logo-driven"
+              ],
+              "searchTerms": [
+                "Guess 90s",
+                "Guess logo tee"
+              ]
+            },
+            {
+              "name": "FUBU",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "bold colors",
+                "youthful"
+              ],
+              "searchTerms": [
+                "FUBU vintage",
+                "FUBU jacket"
+              ]
+            },
+            {
+              "name": "Cross Colours",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "bold colors",
+                "American"
+              ],
+              "searchTerms": [
+                "Cross Colours vintage",
+                "Cross Colours jacket"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Naf Naf",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "playful",
+            "colorful",
+            "French chic",
+            "youthful",
+            "bold patterns"
+          ],
+          "searchTerms": [
+            "vintage Naf Naf",
+            "Naf Naf dress",
+            "Naf Naf top"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Morgan de Toi",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "French chic",
+                "playful"
+              ],
+              "searchTerms": [
+                "Morgan de Toi vintage",
+                "Morgan dress"
+              ]
+            },
+            {
+              "name": "Etam",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "colorful",
+                "youthful"
+              ],
+              "searchTerms": [
+                "Etam vintage",
+                "Etam top"
+              ]
+            },
+            {
+              "name": "Promod",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "bold patterns",
+                "French chic"
+              ],
+              "searchTerms": [
+                "Promod vintage",
+                "Promod dress"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kookai",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "chic",
+            "feminine",
+            "minimal",
+            "French",
+            "elegant"
+          ],
+          "searchTerms": [
+            "vintage Kookai dress",
+            "Kookai top",
+            "Kookai skirt"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Camaieu",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "feminine",
+                "chic"
+              ],
+              "searchTerms": [
+                "Camaieu vintage",
+                "Camaieu dress"
+              ]
+            },
+            {
+              "name": "1.2.3 Paris",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "elegant",
+                "French"
+              ],
+              "searchTerms": [
+                "1.2.3 Paris vintage",
+                "1.2.3 Paris skirt"
+              ]
+            },
+            {
+              "name": "Comptoir des Cotonniers",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimal",
+                "elegant"
+              ],
+              "searchTerms": [
+                "Comptoir des Cotonniers vintage",
+                "Comptoir dress"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Guess (80s/90s)",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "denim",
+            "bold logo",
+            "glam",
+            "American",
+            "youthful"
+          ],
+          "searchTerms": [
+            "vintage Guess jeans",
+            "Guess logo tee",
+            "Guess denim jacket"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Calvin Klein Jeans",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "denim",
+                "bold logo"
+              ],
+              "searchTerms": [
+                "Calvin Klein Jeans vintage",
+                "CK denim jacket"
+              ]
+            },
+            {
+              "name": "Lee Cooper",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "denim",
+                "American"
+              ],
+              "searchTerms": [
+                "Lee Cooper vintage",
+                "Lee Cooper jeans"
+              ]
+            },
+            {
+              "name": "Pepe Jeans",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "denim",
+                "youthful"
+              ],
+              "searchTerms": [
+                "Pepe Jeans vintage",
+                "Pepe denim"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gunne Sax",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "romantic",
+            "lace",
+            "prairie",
+            "vintage",
+            "feminine"
+          ],
+          "searchTerms": [
+            "Gunne Sax dress",
+            "vintage prairie dress",
+            "Gunne Sax lace"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Laura Ashley",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "romantic",
+                "lace"
+              ],
+              "searchTerms": [
+                "Laura Ashley vintage",
+                "Laura Ashley lace dress"
+              ]
+            },
+            {
+              "name": "Jessica McClintock",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "prairie",
+                "feminine"
+              ],
+              "searchTerms": [
+                "Jessica McClintock vintage",
+                "Jessica McClintock dress"
+              ]
+            },
+            {
+              "name": "Victorian Maiden",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "romantic",
+                "vintage"
+              ],
+              "searchTerms": [
+                "Victorian Maiden vintage",
+                "Victorian Maiden dress"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Laura Ashley",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "floral",
+            "feminine",
+            "country",
+            "romantic",
+            "vintage"
+          ],
+          "searchTerms": [
+            "Laura Ashley floral dress",
+            "vintage Laura Ashley",
+            "Laura Ashley blouse"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Cath Kidston",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "floral",
+                "country"
+              ],
+              "searchTerms": [
+                "Cath Kidston vintage",
+                "Cath Kidston floral"
+              ]
+            },
+            {
+              "name": "Liberty of London",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "floral",
+                "romantic"
+              ],
+              "searchTerms": [
+                "Liberty of London vintage",
+                "Liberty floral dress"
+              ]
+            },
+            {
+              "name": "Monsoon",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "feminine",
+                "vintage"
+              ],
+              "searchTerms": [
+                "Monsoon vintage",
+                "Monsoon dress"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Betsey Johnson (90s)",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "playful",
+            "bold prints",
+            "punk",
+            "feminine",
+            "whimsical"
+          ],
+          "searchTerms": [
+            "Betsey Johnson dress",
+            "90s Betsey Johnson",
+            "Betsey Johnson floral"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Anna Sui",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "bold prints",
+                "whimsical"
+              ],
+              "searchTerms": [
+                "Anna Sui vintage",
+                "Anna Sui dress"
+              ]
+            },
+            {
+              "name": "Vivienne Tam",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "playful",
+                "punk"
+              ],
+              "searchTerms": [
+                "Vivienne Tam vintage",
+                "Vivienne Tam top"
+              ]
+            },
+            {
+              "name": "Tracy Feith",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "feminine",
+                "bold prints"
+              ],
+              "searchTerms": [
+                "Tracy Feith vintage",
+                "Tracy Feith dress"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Bohemian",
+      "aestheticId": "bohemian",
+      "description": "Free-spirited and artistic fashion",
+      "globalSearchKeywords": [
+        "free-spirited",
+        "artistic",
+        "natural fabrics",
+        "earth tones",
+        "layered",
+        "embroidered",
+        "flowy"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Jacquemus",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "minimalist",
+            "natural tones",
+            "airy fabrics"
+          ],
+          "searchTerms": [
+            "Jacquemus dress",
+            "minimalist boho",
+            "airy blouse"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Mango",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "minimalist",
+                "natural tones"
+              ],
+              "searchTerms": [
+                "simple boho dress",
+                "neutral blouse"
+              ]
+            },
+            {
+              "name": "& Other Stories",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "airy fabrics",
+                "minimalist"
+              ],
+              "searchTerms": [
+                "lightweight dress",
+                "neutral top"
+              ]
+            },
+            {
+              "name": "Free People",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "natural tones",
+                "airy fabrics"
+              ],
+              "searchTerms": [
+                "boho chic dress",
+                "flowy top"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Isabel Marant",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "bohemian",
+            "layered",
+            "textured"
+          ],
+          "searchTerms": [
+            "Isabel Marant boho",
+            "textured blouse",
+            "layered skirt"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Zara",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "bohemian",
+                "layered"
+              ],
+              "searchTerms": [
+                "boho textured dress",
+                "layered top"
+              ]
+            },
+            {
+              "name": "Anthropologie",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "bohemian",
+                "textured"
+              ],
+              "searchTerms": [
+                "boho embroidered top",
+                "textured skirt"
+              ]
+            },
+            {
+              "name": "Urban Outfitters",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "layered",
+                "bohemian"
+              ],
+              "searchTerms": [
+                "boho layered dress",
+                "textured blouse"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Y2K",
+      "aestheticId": "y2k",
+      "description": "Early 2000s maximalist fashion — shiny, nostalgic, playful",
+      "globalSearchKeywords": [
+        "y2k fashion",
+        "shiny fabrics",
+        "nostalgic style",
+        "playful design",
+        "maximalist",
+        "cybercore",
+        "bratz doll"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "KNWLS",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "y2k",
+            "feral chic",
+            "moto glam",
+            "bodycon",
+            "leather"
+          ],
+          "searchTerms": [
+            "leather crop top",
+            "y2k bodycon dress",
+            "moto jacket",
+            "feral chic"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Daisy Street",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "y2k",
+                "moto glam"
+              ],
+              "searchTerms": [
+                "moto jacket",
+                "y2k leather top"
+              ]
+            },
+            {
+              "name": "Bershka",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "bodycon",
+                "y2k"
+              ],
+              "searchTerms": [
+                "bodycon dress",
+                "y2k leather"
+              ]
+            },
+            {
+              "name": "Urban Outfitters",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "feral chic",
+                "leather"
+              ],
+              "searchTerms": [
+                "leather crop top",
+                "feral chic dress"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mugler",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "bodycon",
+            "futurism",
+            "avant-garde",
+            "space age"
+          ],
+          "searchTerms": [
+            "futuristic bodycon",
+            "space age dress",
+            "Mugler style"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Missguided",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "bodycon",
+                "futurism"
+              ],
+              "searchTerms": [
+                "futuristic dress",
+                "bodycon space"
+              ]
+            },
+            {
+              "name": "ASOS Design",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "avant-garde",
+                "bodycon"
+              ],
+              "searchTerms": [
+                "avant-garde dress",
+                "bodycon futuristic"
+              ]
+            },
+            {
+              "name": "Nasty Gal",
+              "matchScore": 65,
+              "sharedKeywords": [
+                "space age",
+                "bodycon"
+              ],
+              "searchTerms": [
+                "space age top",
+                "bodycon futuristic"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ottolinger",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "deconstructed",
+            "avant-garde",
+            "techwear",
+            "y2k"
+          ],
+          "searchTerms": [
+            "deconstructed top",
+            "techwear dress",
+            "Ottolinger style"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Collusion",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "techwear",
+                "deconstructed"
+              ],
+              "searchTerms": [
+                "deconstructed jacket",
+                "techwear top"
+              ]
+            },
+            {
+              "name": "Monki",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "avant-garde",
+                "y2k"
+              ],
+              "searchTerms": [
+                "avant-garde shirt",
+                "y2k deconstructed"
+              ]
+            },
+            {
+              "name": "Weekday",
+              "matchScore": 65,
+              "sharedKeywords": [
+                "deconstructed",
+                "techwear"
+              ],
+              "searchTerms": [
+                "techwear dress",
+                "deconstructed pants"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Blumarine",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "y2k",
+            "maximalist",
+            "Italian vintage",
+            "coquette"
+          ],
+          "searchTerms": [
+            "maximalist top",
+            "Italian vintage dress",
+            "Blumarine style"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Morgan de Toi",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "Italian vintage",
+                "coquette"
+              ],
+              "searchTerms": [
+                "Italian vintage blouse",
+                "coquette dress"
+              ]
+            },
+            {
+              "name": "Zara",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "y2k",
+                "maximalist"
+              ],
+              "searchTerms": [
+                "maximalist top",
+                "y2k dress"
+              ]
+            },
+            {
+              "name": "Stradivarius",
+              "matchScore": 65,
+              "sharedKeywords": [
+                "coquette",
+                "maximalist"
+              ],
+              "searchTerms": [
+                "coquette top",
+                "maximalist skirt"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Grunge",
+      "aestheticId": "grunge",
+      "description": "Disheveled, dark, anti-fashion energy from the '90s",
+      "globalSearchKeywords": [
+        "disheveled",
+        "dark",
+        "anti-fashion",
+        "distressed",
+        "oversized",
+        "grunge",
+        "deconstructed"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Rick Owens",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "gothic",
+            "minimalist",
+            "darkwear"
+          ],
+          "searchTerms": [
+            "gothic jacket",
+            "minimalist coat",
+            "darkwear boots"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Aakasha",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "draped silhouettes",
+                "dark palette"
+              ],
+              "searchTerms": [
+                "draped dress",
+                "asymmetric tunic"
+              ]
+            },
+            {
+              "name": "Imperial",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "elongated proportions",
+                "minimal aesthetic"
+              ],
+              "searchTerms": [
+                "elongated sweater",
+                "minimalist pants"
+              ]
+            },
+            {
+              "name": "AnnaRita N",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "architectural draping",
+                "monochrome"
+              ],
+              "searchTerms": [
+                "architectural top",
+                "monochrome blazer"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Yohji Yamamoto",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "deconstructed",
+            "japanese minimalism",
+            "gothic"
+          ],
+          "searchTerms": [
+            "deconstructed cardigan",
+            "japanese minimalism coat",
+            "gothic trousers"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Uniqlo U",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "minimalist",
+                "clean lines"
+              ],
+              "searchTerms": [
+                "minimalist shirt",
+                "clean line coat"
+              ]
+            },
+            {
+              "name": "Comme des Garçons Play",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "deconstructed",
+                "minimalist"
+              ],
+              "searchTerms": [
+                "deconstructed vest",
+                "minimalist pullover"
+              ]
+            },
+            {
+              "name": "Muji",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "japanese minimalism",
+                "simple design"
+              ],
+              "searchTerms": [
+                "simple tee",
+                "minimalist scarf"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Maison Margiela",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "deconstructed",
+            "minimalist"
+          ],
+          "searchTerms": [
+            "deconstructed blazer",
+            "avant-garde sweater",
+            "minimalist dress"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "COS",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "minimalist",
+                "clean aesthetic"
+              ],
+              "searchTerms": [
+                "clean cut coat",
+                "minimalist top"
+              ]
+            },
+            {
+              "name": "Weekday",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "deconstructed",
+                "contemporary"
+              ],
+              "searchTerms": [
+                "contemporary jacket",
+                "deconstructed tee"
+              ]
+            },
+            {
+              "name": "H&M Studio",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "avant-garde",
+                "structured"
+              ],
+              "searchTerms": [
+                "structured blazer",
+                "avant-garde trousers"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Vivienne Westwood",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "punk",
+            "grunge",
+            "avant-garde"
+          ],
+          "searchTerms": [
+            "punk skirt",
+            "grunge top",
+            "avant-garde boots"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Killstar",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "gothic",
+                "punk"
+              ],
+              "searchTerms": [
+                "gothic dress",
+                "punk boots"
+              ]
+            },
+            {
+              "name": "Disturbia",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "grunge",
+                "alternative"
+              ],
+              "searchTerms": [
+                "grunge jacket",
+                "alternative leggings"
+              ]
+            },
+            {
+              "name": "Blackcraft Cult",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "dark fashion",
+                "edgy"
+              ],
+              "searchTerms": [
+                "dark top",
+                "edgy skirt"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Dark Romance",
+      "aestheticId": "goth",
+      "description": "A moody and dramatic style blending gothic and punk influences with romantic, historical details like lace, ruffles, and high collars. A form of radical escapism and self-empowerment",
+      "globalSearchKeywords": [
+        "gothic",
+        "romantic",
+        "lace",
+        "ruffles",
+        "moody",
+        "punk",
+        "historical"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Rick Owens",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "gothic minimalism",
+            "avant-garde",
+            "dark tones"
+          ],
+          "searchTerms": [
+            "draped jacket",
+            "asymmetric coat",
+            "Rick Owens style"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Aakasha",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "draped silhouette",
+                "dark palette"
+              ],
+              "searchTerms": [
+                "draped dress",
+                "asymmetric top"
+              ]
+            },
+            {
+              "name": "Imperial",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimal aesthetic",
+                "elongated proportions"
+              ],
+              "searchTerms": [
+                "minimal coat",
+                "elongated tee"
+              ]
+            },
+            {
+              "name": "AnnaRita N",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "architectural draping",
+                "monochrome"
+              ],
+              "searchTerms": [
+                "architectural jacket",
+                "monochrome dress"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Yohji Yamamoto",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "deconstructed",
+            "japanese minimalism",
+            "gothic"
+          ],
+          "searchTerms": [
+            "deconstructed coat",
+            "Yohji style",
+            "minimalist black"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "COS",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "minimalism",
+                "black"
+              ],
+              "searchTerms": [
+                "minimalist dress",
+                "black coat"
+              ]
+            },
+            {
+              "name": "Muji",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "japanese minimalism",
+                "simple lines"
+              ],
+              "searchTerms": [
+                "simple black dress",
+                "minimalist shirt"
+              ]
+            },
+            {
+              "name": "Uniqlo U",
+              "matchScore": 65,
+              "sharedKeywords": [
+                "minimalist",
+                "dark tones"
+              ],
+              "searchTerms": [
+                "dark turtleneck",
+                "minimalist jacket"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Junya Watanabe",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "techwear",
+            "deconstructed"
+          ],
+          "searchTerms": [
+            "techwear jacket",
+            "deconstructed skirt",
+            "Junya style"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Helmut Lang",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "deconstructed",
+                "avant-garde"
+              ],
+              "searchTerms": [
+                "deconstructed pants",
+                "avant-garde top"
+              ]
+            },
+            {
+              "name": "Acne Studios",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "techwear",
+                "minimalist"
+              ],
+              "searchTerms": [
+                "techwear coat",
+                "minimalist sweater"
+              ]
+            },
+            {
+              "name": "Our Legacy",
+              "matchScore": 65,
+              "sharedKeywords": [
+                "avant-garde",
+                "simple lines"
+              ],
+              "searchTerms": [
+                "avant-garde shirt",
+                "simple jacket"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Comme des Garçons",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "japanese minimalism",
+            "deconstructed"
+          ],
+          "searchTerms": [
+            "Comme style",
+            "deconstructed shirt",
+            "avant-garde coat"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Issey Miyake",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "avant-garde",
+                "deconstructed"
+              ],
+              "searchTerms": [
+                "pleated dress",
+                "avant-garde coat"
+              ]
+            },
+            {
+              "name": "Kenzo",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "japanese minimalism",
+                "bold patterns"
+              ],
+              "searchTerms": [
+                "bold patterned coat",
+                "japanese style dress"
+              ]
+            },
+            {
+              "name": "Pleats Please",
+              "matchScore": 65,
+              "sharedKeywords": [
+                "minimalism",
+                "deconstructed"
+              ],
+              "searchTerms": [
+                "deconstructed pleats",
+                "minimalist top"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Simone Rocha",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "romantic",
+            "lace",
+            "ruffles"
+          ],
+          "searchTerms": [
+            "lace dress",
+            "ruffled blouse",
+            "Simone Rocha style"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Needle & Thread",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "romantic",
+                "lace"
+              ],
+              "searchTerms": [
+                "lace gown",
+                "romantic dress"
+              ]
+            },
+            {
+              "name": "Self-Portrait",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "ruffles",
+                "feminine"
+              ],
+              "searchTerms": [
+                "ruffled dress",
+                "feminine blouse"
+              ]
+            },
+            {
+              "name": "Ghost London",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "romantic",
+                "vintage-inspired"
+              ],
+              "searchTerms": [
+                "vintage style dress",
+                "romantic blouse"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Vivienne Westwood",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "punk",
+            "grunge",
+            "harajuku"
+          ],
+          "searchTerms": [
+            "punk jacket",
+            "Westwood style",
+            "grunge skirt"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Disturbia",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "punk",
+                "grunge"
+              ],
+              "searchTerms": [
+                "punk dress",
+                "grunge top"
+              ]
+            },
+            {
+              "name": "Killstar",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "dark",
+                "gothic"
+              ],
+              "searchTerms": [
+                "gothic coat",
+                "dark dress"
+              ]
+            },
+            {
+              "name": "The Ragged Priest",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "grunge",
+                "alternative"
+              ],
+              "searchTerms": [
+                "grunge jeans",
+                "alternative top"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Techwear",
+      "aestheticId": "techwear",
+      "description": "Futuristic urban wear with utility and performance",
+      "globalSearchKeywords": [
+        "futuristic",
+        "utility",
+        "performance",
+        "urban",
+        "cyberpunk",
+        "modular",
+        "high-tech"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Marine Serre",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "futurism",
+            "y2k",
+            "techwear",
+            "sustainable"
+          ],
+          "searchTerms": [
+            "moon print",
+            "futuristic design",
+            "sustainable techwear"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Public Space",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "futurism",
+                "y2k"
+              ],
+              "searchTerms": [
+                "cyber shirt",
+                "futuristic tee"
+              ]
+            },
+            {
+              "name": "Collina Strada",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "sustainable",
+                "avant-garde"
+              ],
+              "searchTerms": [
+                "eco-friendly fashion",
+                "avant-garde print"
+              ]
+            },
+            {
+              "name": "Cyberdog",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "futurism",
+                "y2k"
+              ],
+              "searchTerms": [
+                "neon tech",
+                "cyberpunk fashion"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Arc'teryx",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "gorpcore",
+            "techwear",
+            "performance",
+            "sporty",
+            "functional"
+          ],
+          "searchTerms": [
+            "technical jacket",
+            "performance wear",
+            "outdoor tech"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Uniqlo",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "sporty",
+                "functional"
+              ],
+              "searchTerms": [
+                "heattech",
+                "functional outerwear"
+              ]
+            },
+            {
+              "name": "Columbia",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "performance",
+                "outdoor"
+              ],
+              "searchTerms": [
+                "technical coat",
+                "outdoor gear"
+              ]
+            },
+            {
+              "name": "Quechua",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "gorpcore",
+                "functional"
+              ],
+              "searchTerms": [
+                "hiking jacket",
+                "techwear outfit"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ottolinger",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "deconstructed",
+            "avant-garde",
+            "y2k",
+            "experimental",
+            "techwear"
+          ],
+          "searchTerms": [
+            "deconstructed top",
+            "avant-garde dress",
+            "experimental fashion"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Miaou",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "y2k",
+                "deconstructed"
+              ],
+              "searchTerms": [
+                "cutout top",
+                "y2k pants"
+              ]
+            },
+            {
+              "name": "ASOS White",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "avant-garde",
+                "experimental"
+              ],
+              "searchTerms": [
+                "minimalist techwear",
+                "experimental cut"
+              ]
+            },
+            {
+              "name": "Weekday",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "deconstructed",
+                "techwear"
+              ],
+              "searchTerms": [
+                "contemporary jacket",
+                "urban techwear"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Junya Watanabe",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "deconstructed",
+            "minimalism",
+            "japanese",
+            "techwear"
+          ],
+          "searchTerms": [
+            "japanese minimalism",
+            "deconstructed coat",
+            "avant-garde jacket"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Comme des Garçons Vintage",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "avant-garde",
+                "japanese"
+              ],
+              "searchTerms": [
+                "vintage japanese",
+                "avant-garde shirt"
+              ]
+            },
+            {
+              "name": "Pleats Please by Issey Miyake",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimalism",
+                "japanese"
+              ],
+              "searchTerms": [
+                "pleated design",
+                "minimal techwear"
+              ]
+            },
+            {
+              "name": "Muji",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "minimalism",
+                "functional"
+              ],
+              "searchTerms": [
+                "functional wear",
+                "minimalist fashion"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Stone Island",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "techwear",
+            "streetwear",
+            "vintage",
+            "italian",
+            "experimental"
+          ],
+          "searchTerms": [
+            "stone island jacket",
+            "italian streetwear",
+            "vintage tech"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "CP Company",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "italian",
+                "techwear"
+              ],
+              "searchTerms": [
+                "goggle jacket",
+                "italian outerwear"
+              ]
+            },
+            {
+              "name": "Napapijri",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "streetwear",
+                "vintage"
+              ],
+              "searchTerms": [
+                "anorak jacket",
+                "vintage streetwear"
+              ]
+            },
+            {
+              "name": "Helly Hansen",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "techwear",
+                "functional"
+              ],
+              "searchTerms": [
+                "technical gear",
+                "weatherproof jacket"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Gorpcore",
+      "aestheticId": "gorpcore",
+      "description": "Hiking-meets-fashion — practical, outdoorsy, ironic",
+      "globalSearchKeywords": [
+        "technical fabrics",
+        "outdoor gear",
+        "functional fashion",
+        "utility style",
+        "layering pieces",
+        "urban hiking"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Arc'teryx",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "technical fabrics",
+            "minimalist design",
+            "performance wear"
+          ],
+          "searchTerms": [
+            "technical jacket",
+            "Arc'teryx style",
+            "minimalist outerwear"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Columbia",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "technical fabrics",
+                "performance wear"
+              ],
+              "searchTerms": [
+                "Columbia jacket",
+                "outdoor gear"
+              ]
+            },
+            {
+              "name": "Mammut",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "technical fabrics",
+                "performance wear"
+              ],
+              "searchTerms": [
+                "Mammut jacket",
+                "hiking gear"
+              ]
+            },
+            {
+              "name": "Quechua",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "technical fabrics",
+                "functional fashion"
+              ],
+              "searchTerms": [
+                "Quechua jacket",
+                "affordable hiking gear"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Junya Watanabe",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "deconstructed",
+            "technical details"
+          ],
+          "searchTerms": [
+            "deconstructed coat",
+            "Junya Watanabe style",
+            "avant-garde jacket"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Issey Miyake",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "avant-garde",
+                "technical details"
+              ],
+              "searchTerms": [
+                "Issey Miyake jacket",
+                "deconstructed fashion"
+              ]
+            },
+            {
+              "name": "Yohji Yamamoto",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "deconstructed",
+                "avant-garde"
+              ],
+              "searchTerms": [
+                "Yohji Yamamoto coat",
+                "deconstructed style"
+              ]
+            },
+            {
+              "name": "Comme des Garçons",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "avant-garde",
+                "deconstructed"
+              ],
+              "searchTerms": [
+                "Comme des Garçons jacket",
+                "avant-garde coat"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Stone Island",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "techwear",
+            "streetwear",
+            "innovative textiles"
+          ],
+          "searchTerms": [
+            "Stone Island jacket",
+            "techwear coat",
+            "streetwear outerwear"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "CP Company",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "techwear",
+                "innovative textiles"
+              ],
+              "searchTerms": [
+                "CP Company jacket",
+                "techwear fashion"
+              ]
+            },
+            {
+              "name": "Napapijri",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "streetwear",
+                "innovative textiles"
+              ],
+              "searchTerms": [
+                "Napapijri jacket",
+                "streetwear coat"
+              ]
+            },
+            {
+              "name": "The North Face",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "techwear",
+                "streetwear"
+              ],
+              "searchTerms": [
+                "The North Face jacket",
+                "urban outerwear"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Dark Academia",
+      "aestheticId": "academia",
+      "description": "Romantic intellectual aesthetic — tweed, books, gloom",
+      "globalSearchKeywords": [
+        "tweed",
+        "vintage",
+        "preppy",
+        "scholarly",
+        "romantic",
+        "intellectual",
+        "gloom"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Sandro",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "french chic",
+            "preppy",
+            "minimalist"
+          ],
+          "searchTerms": [
+            "tweed blazer",
+            "preppy coat",
+            "minimalist knit"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Sézane",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "french chic",
+                "preppy"
+              ],
+              "searchTerms": [
+                "french blazer",
+                "preppy knit"
+              ]
+            },
+            {
+              "name": "And Other Stories",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "minimalist",
+                "elegant"
+              ],
+              "searchTerms": [
+                "minimalist coat",
+                "chic blazer"
+              ]
+            },
+            {
+              "name": "Mango",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "preppy",
+                "chic"
+              ],
+              "searchTerms": [
+                "tweed jacket",
+                "preppy dress"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Loro Piana",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "quiet luxury",
+            "old money",
+            "italian vintage"
+          ],
+          "searchTerms": [
+            "cashmere sweater",
+            "italian blazer",
+            "luxury coat"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Massimo Dutti",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "quiet luxury",
+                "elegant"
+              ],
+              "searchTerms": [
+                "luxury knit",
+                "elegant coat"
+              ]
+            },
+            {
+              "name": "Uniqlo U",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimalist",
+                "quality"
+              ],
+              "searchTerms": [
+                "cashmere sweater",
+                "minimalist coat"
+              ]
+            },
+            {
+              "name": "COS",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "minimalist",
+                "quality"
+              ],
+              "searchTerms": [
+                "italian style",
+                "luxury knit"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Avant-Garde",
+      "aestheticId": "avantgarde",
+      "description": "Experimental, sculptural, high-concept fashion",
+      "globalSearchKeywords": [
+        "deconstructed",
+        "asymmetric",
+        "architectural",
+        "draped",
+        "sculptural",
+        "oversized",
+        "raw edges"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Marine Serre",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "futuristic",
+            "moon prints",
+            "upcycled",
+            "cyberpunk"
+          ],
+          "searchTerms": [
+            "moon print",
+            "upcycled dress",
+            "futuristic top"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Collina Strada",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "upcycled",
+                "futuristic"
+              ],
+              "searchTerms": [
+                "upcycled shirt",
+                "sustainable fashion"
+              ]
+            },
+            {
+              "name": "GCDS",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "futuristic",
+                "bold prints"
+              ],
+              "searchTerms": [
+                "bold print sweatshirt",
+                "futuristic jacket"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Rick Owens",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "draped silhouette",
+            "asymmetric cut",
+            "elongated proportions",
+            "monochrome",
+            "raw edges"
+          ],
+          "searchTerms": [
+            "draped jacket",
+            "asymmetric coat",
+            "elongated tee",
+            "Rick Owens style"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Aakasha",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "draped silhouettes",
+                "asymmetric cuts"
+              ],
+              "searchTerms": [
+                "draped dress",
+                "asymmetric tunic"
+              ]
+            },
+            {
+              "name": "Imperial",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "elongated proportions",
+                "minimal aesthetic"
+              ],
+              "searchTerms": [
+                "elongated cardigan",
+                "minimalist coat"
+              ]
+            },
+            {
+              "name": "AnnaRita N",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "architectural draping",
+                "monochrome"
+              ],
+              "searchTerms": [
+                "architectural dress",
+                "monochrome skirt"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ottolinger",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "deconstructed",
+            "artistic distress",
+            "techwear",
+            "bold colors"
+          ],
+          "searchTerms": [
+            "deconstructed top",
+            "bold color dress",
+            "artistic distress"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Asai",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "deconstructed",
+                "bold colors"
+              ],
+              "searchTerms": [
+                "deconstructed knit",
+                "bold print blouse"
+              ]
+            },
+            {
+              "name": "LRS Studio",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "artistic distress",
+                "techwear"
+              ],
+              "searchTerms": [
+                "distressed jacket",
+                "techwear pants"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Yohji Yamamoto",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "japanese minimalism",
+            "flowing forms",
+            "dark palette",
+            "layering"
+          ],
+          "searchTerms": [
+            "flowing coat",
+            "layered dress",
+            "japanese minimalism"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Uniqlo x Lemaire",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "japanese minimalism",
+                "layering"
+              ],
+              "searchTerms": [
+                "minimalist tunic",
+                "layered sweater"
+              ]
+            },
+            {
+              "name": "Issey Miyake Pleats Please",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "flowing forms",
+                "dark palette"
+              ],
+              "searchTerms": [
+                "pleated top",
+                "flowing skirt"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Junya Watanabe",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant_garde",
+            "deconstructed",
+            "techwear",
+            "unexpected materials"
+          ],
+          "searchTerms": [
+            "avant garde coat",
+            "deconstructed jacket",
+            "techwear pants"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Comme des Garçons Homme Plus",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "deconstructed",
+                "avant_garde"
+              ],
+              "searchTerms": [
+                "deconstructed blazer",
+                "avant garde top"
+              ]
+            },
+            {
+              "name": "Sacai",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "unexpected materials",
+                "techwear"
+              ],
+              "searchTerms": [
+                "layered jacket",
+                "techwear shorts"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Maison Margiela",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "deconstructed",
+            "minimalist",
+            "conceptual",
+            "neutral tones"
+          ],
+          "searchTerms": [
+            "deconstructed trench",
+            "minimalist sweater",
+            "neutral tones"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "COS",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "minimalist",
+                "neutral tones"
+              ],
+              "searchTerms": [
+                "minimalist dress",
+                "neutral sweater"
+              ]
+            },
+            {
+              "name": "Muji",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimalist",
+                "conceptual"
+              ],
+              "searchTerms": [
+                "conceptual shirt",
+                "minimalist trousers"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Comme des Garçons",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant_garde",
+            "deconstructed",
+            "playful shapes",
+            "japanese minimalism"
+          ],
+          "searchTerms": [
+            "avant garde dress",
+            "playful shapes",
+            "deconstructed shirt"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Issey Miyake",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "avant_garde",
+                "japanese minimalism"
+              ],
+              "searchTerms": [
+                "avant garde top",
+                "japanese minimalism skirt"
+              ]
+            },
+            {
+              "name": "Tsumori Chisato",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "playful shapes",
+                "deconstructed"
+              ],
+              "searchTerms": [
+                "playful print dress",
+                "deconstructed top"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Vivienne Westwood",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "punk",
+            "avant_garde",
+            "grunge",
+            "rebellious"
+          ],
+          "searchTerms": [
+            "punk jacket",
+            "grunge skirt",
+            "rebellious top"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Dr. Martens Apparel",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "punk",
+                "rebellious"
+              ],
+              "searchTerms": [
+                "punk boots",
+                "rebellious shirt"
+              ]
+            },
+            {
+              "name": "Killstar",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "grunge",
+                "avant_garde"
+              ],
+              "searchTerms": [
+                "grunge hoodie",
+                "avant garde dress"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Streetwear",
+      "aestheticId": "streetwear",
+      "description": "Urban youth style driven by hype, drops, and brand culture",
+      "globalSearchKeywords": [
+        "urban streetwear",
+        "hype culture",
+        "sneakerhead",
+        "logo-centric",
+        "drop culture",
+        "deconstructed"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Ader Error",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "kfashion",
+            "deconstructed",
+            "oversized",
+            "playful graphics",
+            "experimental"
+          ],
+          "searchTerms": [
+            "deconstructed hoodie",
+            "Ader Error style",
+            "oversized streetwear"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Stylenanda",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "kfashion",
+                "playful graphics"
+              ],
+              "searchTerms": [
+                "korean streetwear",
+                "graphic tee"
+              ]
+            },
+            {
+              "name": "Unif",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "oversized",
+                "experimental"
+              ],
+              "searchTerms": [
+                "oversized sweatshirt",
+                "Unif style"
+              ]
+            },
+            {
+              "name": "Monki",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "oversized",
+                "playful"
+              ],
+              "searchTerms": [
+                "Monki sweatshirt",
+                "playful streetwear"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Stone Island",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "techwear",
+            "functional",
+            "garment dye",
+            "innovative fabrics",
+            "military-inspired"
+          ],
+          "searchTerms": [
+            "Stone Island jacket",
+            "techwear coat",
+            "functional streetwear"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "C.P. Company",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "garment dye",
+                "military-inspired"
+              ],
+              "searchTerms": [
+                "C.P. Company jacket",
+                "dyed outerwear"
+              ]
+            },
+            {
+              "name": "Alpha Industries",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "military-inspired",
+                "functional"
+              ],
+              "searchTerms": [
+                "Alpha bomber",
+                "military jacket"
+              ]
+            },
+            {
+              "name": "Carhartt WIP",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "functional",
+                "innovative fabrics"
+              ],
+              "searchTerms": [
+                "Carhartt workwear",
+                "Carhartt jacket"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Supreme",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "logo-centric",
+            "hype",
+            "limited edition",
+            "skate culture",
+            "collaborative"
+          ],
+          "searchTerms": [
+            "Supreme box logo",
+            "Supreme tee",
+            "hype streetwear"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Obey",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "logo-centric",
+                "skate culture"
+              ],
+              "searchTerms": [
+                "Obey hoodie",
+                "Obey streetwear"
+              ]
+            },
+            {
+              "name": "HUF",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "skate culture",
+                "limited edition"
+              ],
+              "searchTerms": [
+                "HUF tee",
+                "skate streetwear"
+              ]
+            },
+            {
+              "name": "Stussy",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "hype",
+                "logo-centric"
+              ],
+              "searchTerms": [
+                "Stussy logo",
+                "Stussy streetwear"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BAPE",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "Japanese streetwear",
+            "camo",
+            "bold graphics",
+            "ape head",
+            "hype"
+          ],
+          "searchTerms": [
+            "BAPE camo",
+            "BAPE hoodie",
+            "Japanese streetwear"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "A Bathing Ape x Uniqlo",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "camo",
+                "bold graphics"
+              ],
+              "searchTerms": [
+                "BAPE Uniqlo collab",
+                "graphic streetwear"
+              ]
+            },
+            {
+              "name": "Neighborhood",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "Japanese streetwear",
+                "bold graphics"
+              ],
+              "searchTerms": [
+                "Neighborhood jacket",
+                "Japanese graphic"
+              ]
+            },
+            {
+              "name": "Superdry",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "bold graphics",
+                "hype"
+              ],
+              "searchTerms": [
+                "Superdry hoodie",
+                "graphic streetwear"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Corteiz",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "bold graphics",
+            "community-driven",
+            "limited drops",
+            "urban wear",
+            "youth culture"
+          ],
+          "searchTerms": [
+            "Corteiz tee",
+            "limited drop streetwear",
+            "youth culture wear"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Daily Paper",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "bold graphics",
+                "urban wear"
+              ],
+              "searchTerms": [
+                "Daily Paper jacket",
+                "graphic streetwear"
+              ]
+            },
+            {
+              "name": "Patta",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "community-driven",
+                "limited drops"
+              ],
+              "searchTerms": [
+                "Patta limited",
+                "Patta tee"
+              ]
+            },
+            {
+              "name": "10.Deep",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "urban wear",
+                "youth culture"
+              ],
+              "searchTerms": [
+                "10.Deep hoodie",
+                "streetwear youth"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Cottagecore",
+      "aestheticId": "cottagecore",
+      "description": "Soft, pastoral aesthetic inspired by countryside life",
+      "globalSearchKeywords": [
+        "romantic",
+        "pastoral",
+        "whimsical",
+        "floral",
+        "vintage-inspired",
+        "lace",
+        "soft silhouettes"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Simone Rocha",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "coquette",
+            "balletcore",
+            "ruffles",
+            "feminine",
+            "romantic"
+          ],
+          "searchTerms": [
+            "ruffled blouse",
+            "lace dress",
+            "tulle skirt",
+            "pearl detail",
+            "floral embroidery"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Sister Jane",
+              "matchScore": 90,
+              "sharedKeywords": [
+                "coquette",
+                "feminine"
+              ],
+              "searchTerms": [
+                "puff sleeve blouse",
+                "lacy dress"
+              ]
+            },
+            {
+              "name": "For Love & Lemons",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "romantic",
+                "lace"
+              ],
+              "searchTerms": [
+                "lace crop top",
+                "floral midi dress"
+              ]
+            },
+            {
+              "name": "Ulla Johnson",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "feminine",
+                "ruffles"
+              ],
+              "searchTerms": [
+                "ruffled blouse",
+                "embroidered dress"
+              ]
+            },
+            {
+              "name": "Reformation",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "vintage-inspired",
+                "floral"
+              ],
+              "searchTerms": [
+                "floral midi dress",
+                "vintage style blouse"
+              ]
+            },
+            {
+              "name": "Zara (specific collections)",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "romantic",
+                "pastoral"
+              ],
+              "searchTerms": [
+                "romantic dress",
+                "lace top"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Club Kid",
+      "aestheticId": "clubkid",
+      "description": "Loud, theatrical rave looks from queer & underground nightlife",
+      "globalSearchKeywords": [
+        "theatrical",
+        "futuristic",
+        "bodycon",
+        "latex",
+        "avant-garde",
+        "rave",
+        "underground"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Mugler",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "bodycon",
+            "futurism",
+            "avant-garde",
+            "space-age",
+            "bold"
+          ],
+          "searchTerms": [
+            "bodycon dress",
+            "futuristic outfit",
+            "structured bodysuit"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "I AM GIA",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "bodycon",
+                "futurism"
+              ],
+              "searchTerms": [
+                "I AM GIA dress",
+                "structured top"
+              ]
+            },
+            {
+              "name": "The Ragged Priest",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "bold",
+                "avant-garde"
+              ],
+              "searchTerms": [
+                "Ragged Priest top",
+                "avant-garde jacket"
+              ]
+            },
+            {
+              "name": "Dolls Kill",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "bold",
+                "space-age"
+              ],
+              "searchTerms": [
+                "Dolls Kill futuristic",
+                "bold rave"
+              ]
+            },
+            {
+              "name": "Collusion",
+              "matchScore": 65,
+              "sharedKeywords": [
+                "futurism",
+                "bold"
+              ],
+              "searchTerms": [
+                "Collusion bodycon",
+                "bold outfit"
+              ]
+            },
+            {
+              "name": "UNIF",
+              "matchScore": 60,
+              "sharedKeywords": [
+                "avant-garde",
+                "bold"
+              ],
+              "searchTerms": [
+                "UNIF rave",
+                "bold aesthetic"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Balletcore",
+      "aestheticId": "balletcore",
+      "description": "Delicate, dance-inspired looks with an ethereal vibe",
+      "globalSearchKeywords": [
+        "ethereal",
+        "dance-inspired",
+        "delicate",
+        "romantic",
+        "soft layers",
+        "pastel tones",
+        "feminine"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Khaite",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "quiet luxury",
+            "minimalist",
+            "ethereal",
+            "soft textures",
+            "romantic"
+          ],
+          "searchTerms": [
+            "Khaite wrap top",
+            "Khaite sweater",
+            "Khaite ballet flats"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Everlane",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "quiet luxury",
+                "minimalist"
+              ],
+              "searchTerms": [
+                "Everlane cardigan",
+                "Everlane ballet flats"
+              ]
+            },
+            {
+              "name": "Uniqlo",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "soft textures",
+                "minimalist"
+              ],
+              "searchTerms": [
+                "Uniqlo soft sweater",
+                "Uniqlo wrap top"
+              ]
+            },
+            {
+              "name": "Arket",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "minimalist",
+                "ethereal"
+              ],
+              "searchTerms": [
+                "Arket wrap top",
+                "Arket ballet flats"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Jacquemus",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "french chic",
+            "minimalist",
+            "coquette",
+            "playful",
+            "feminine"
+          ],
+          "searchTerms": [
+            "Jacquemus dress",
+            "Jacquemus wrap top",
+            "Jacquemus skirt"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Rouje",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "french chic",
+                "feminine"
+              ],
+              "searchTerms": [
+                "Rouje dress",
+                "Rouje wrap top"
+              ]
+            },
+            {
+              "name": "Sézane",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "french chic",
+                "coquette"
+              ],
+              "searchTerms": [
+                "Sézane skirt",
+                "Sézane blouse"
+              ]
+            },
+            {
+              "name": "Mango",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimalist",
+                "playful"
+              ],
+              "searchTerms": [
+                "Mango dress",
+                "Mango wrap top"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "The Row",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "quiet luxury",
+            "minimalist",
+            "old money",
+            "sophisticated",
+            "elegant"
+          ],
+          "searchTerms": [
+            "The Row wrap top",
+            "The Row sweater",
+            "The Row skirt"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "COS",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "minimalist",
+                "sophisticated"
+              ],
+              "searchTerms": [
+                "COS sweater",
+                "COS wrap top"
+              ]
+            },
+            {
+              "name": "Massimo Dutti",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "elegant",
+                "old money"
+              ],
+              "searchTerms": [
+                "Massimo Dutti skirt",
+                "Massimo Dutti sweater"
+              ]
+            },
+            {
+              "name": "Everlane",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "quiet luxury",
+                "minimalist"
+              ],
+              "searchTerms": [
+                "Everlane wrap top",
+                "Everlane skirt"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Simone Rocha",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "coquette",
+            "balletcore",
+            "maximalist",
+            "romantic",
+            "embellished"
+          ],
+          "searchTerms": [
+            "Simone Rocha dress",
+            "Simone Rocha skirt",
+            "Simone Rocha top"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Sister Jane",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "coquette",
+                "embellished"
+              ],
+              "searchTerms": [
+                "Sister Jane dress",
+                "Sister Jane top"
+              ]
+            },
+            {
+              "name": "Needle & Thread",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "romantic",
+                "embellished"
+              ],
+              "searchTerms": [
+                "Needle & Thread skirt",
+                "Needle & Thread dress"
+              ]
+            },
+            {
+              "name": "Ganni",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "balletcore",
+                "maximalist"
+              ],
+              "searchTerms": [
+                "Ganni top",
+                "Ganni dress"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "K-Fashion",
+      "aestheticId": "kfashion",
+      "description": "Trendy, curated, and clean silhouettes influenced by Korean street style",
+      "globalSearchKeywords": [
+        "deconstructed",
+        "minimalist",
+        "streetwear",
+        "clean silhouettes",
+        "urban chic",
+        "layered",
+        "innovative"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Ader Error",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "deconstructed",
+            "playful",
+            "oversized",
+            "minimalist",
+            "abstract"
+          ],
+          "searchTerms": [
+            "deconstructed jacket",
+            "oversized t-shirt",
+            "Ader Error style sweater"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Unif",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "oversized",
+                "playful"
+              ],
+              "searchTerms": [
+                "oversized hoodie",
+                "graphic t-shirt"
+              ]
+            },
+            {
+              "name": "Stylenanda",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimalist",
+                "streetwear"
+              ],
+              "searchTerms": [
+                "minimalist shirt",
+                "layered streetwear"
+              ]
+            },
+            {
+              "name": "YesStyle",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "abstract",
+                "urban chic"
+              ],
+              "searchTerms": [
+                "abstract print",
+                "urban chic jacket"
+              ]
+            },
+            {
+              "name": "Rocket x Lunch",
+              "matchScore": 78,
+              "sharedKeywords": [
+                "deconstructed",
+                "innovative"
+              ],
+              "searchTerms": [
+                "deconstructed top",
+                "innovative knitwear"
+              ]
+            },
+            {
+              "name": "Chuu",
+              "matchScore": 72,
+              "sharedKeywords": [
+                "playful",
+                "clean silhouettes"
+              ],
+              "searchTerms": [
+                "playful dress",
+                "clean silhouette skirt"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Harajuku",
+      "aestheticId": "harajuku",
+      "description": "Eclectic and colorful street style from Tokyo",
+      "globalSearchKeywords": [
+        "eclectic",
+        "colorful",
+        "street style",
+        "Tokyo fashion",
+        "kawaii",
+        "maximalism",
+        "layered"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Yohji Yamamoto",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "deconstructed",
+            "goth",
+            "minimalism"
+          ],
+          "searchTerms": [
+            "Yohji style coat",
+            "deconstructed jacket",
+            "minimalist black dress"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Issey Miyake",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "avant-garde",
+                "minimalism"
+              ],
+              "searchTerms": [
+                "pleated dress",
+                "minimalist top"
+              ]
+            },
+            {
+              "name": "Uniqlo U",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimalism",
+                "black"
+              ],
+              "searchTerms": [
+                "black oversized shirt",
+                "minimalist trousers"
+              ]
+            },
+            {
+              "name": "COS",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "minimalism",
+                "deconstructed"
+              ],
+              "searchTerms": [
+                "deconstructed coat",
+                "minimalist dress"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Junya Watanabe",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "techwear",
+            "deconstructed",
+            "avant-garde"
+          ],
+          "searchTerms": [
+            "Junya style jacket",
+            "deconstructed pants",
+            "techwear coat"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Homme Plissé Issey Miyake",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "techwear",
+                "avant-garde"
+              ],
+              "searchTerms": [
+                "pleated techwear",
+                "avant-garde jacket"
+              ]
+            },
+            {
+              "name": "Muji",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "minimalism",
+                "techwear"
+              ],
+              "searchTerms": [
+                "minimalist jacket",
+                "techwear backpack"
+              ]
+            },
+            {
+              "name": "ALAND",
+              "matchScore": 65,
+              "sharedKeywords": [
+                "techwear",
+                "streetwear"
+              ],
+              "searchTerms": [
+                "techwear pants",
+                "streetwear jacket"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Comme des Garçons",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "deconstructed",
+            "quirky"
+          ],
+          "searchTerms": [
+            "Comme style jacket",
+            "quirky dress",
+            "deconstructed shirt"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Y's by Yohji Yamamoto",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "avant-garde",
+                "deconstructed"
+              ],
+              "searchTerms": [
+                "avant-garde dress",
+                "deconstructed blazer"
+              ]
+            },
+            {
+              "name": "H&M Studio",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "quirky",
+                "deconstructed"
+              ],
+              "searchTerms": [
+                "quirky print shirt",
+                "deconstructed skirt"
+              ]
+            },
+            {
+              "name": "Mango",
+              "matchScore": 65,
+              "sharedKeywords": [
+                "avant-garde",
+                "quirky"
+              ],
+              "searchTerms": [
+                "quirky jacket",
+                "avant-garde top"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Vivienne Westwood",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "punk",
+            "grunge",
+            "avant-garde"
+          ],
+          "searchTerms": [
+            "Westwood punk jacket",
+            "grunge dress",
+            "avant-garde corset"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Dr. Martens",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "punk",
+                "grunge"
+              ],
+              "searchTerms": [
+                "punk boots",
+                "grunge shoes"
+              ]
+            },
+            {
+              "name": "Killstar",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "goth",
+                "punk"
+              ],
+              "searchTerms": [
+                "punk dress",
+                "gothic top"
+              ]
+            },
+            {
+              "name": "Dolls Kill",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "punk",
+                "grunge"
+              ],
+              "searchTerms": [
+                "grunge skirt",
+                "punk jacket"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BAPE",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "streetwear",
+            "camouflage",
+            "bold"
+          ],
+          "searchTerms": [
+            "BAPE hoodie",
+            "camo jacket",
+            "streetwear tee"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Supreme",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "streetwear",
+                "bold"
+              ],
+              "searchTerms": [
+                "bold hoodie",
+                "streetwear cap"
+              ]
+            },
+            {
+              "name": "Stüssy",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "streetwear",
+                "bold"
+              ],
+              "searchTerms": [
+                "streetwear shirt",
+                "bold logo tee"
+              ]
+            },
+            {
+              "name": "HUF",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "streetwear",
+                "camouflage"
+              ],
+              "searchTerms": [
+                "camo hat",
+                "streetwear shorts"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Japanese Minimalism",
+      "aestheticId": "minimaljapan",
+      "description": "Sophisticated fashion with precise cuts and natural materials",
+      "globalSearchKeywords": [
+        "minimalist",
+        "natural materials",
+        "sophisticated",
+        "precise cuts",
+        "wabi-sabi",
+        "Japanese aesthetics",
+        "understated elegance"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "The Row",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "quiet luxury",
+            "minimalist",
+            "natural materials",
+            "elegant",
+            "timeless"
+          ],
+          "searchTerms": [
+            "minimalist dress",
+            "cashmere sweater",
+            "silk blouse",
+            "The Row style"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "COS",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "minimalist",
+                "timeless"
+              ],
+              "searchTerms": [
+                "minimalist coat",
+                "wool sweater"
+              ]
+            },
+            {
+              "name": "Everlane",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "natural materials",
+                "elegant"
+              ],
+              "searchTerms": [
+                "silk blouse",
+                "cashmere jumper"
+              ]
+            },
+            {
+              "name": "Arket",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "minimalist",
+                "natural materials"
+              ],
+              "searchTerms": [
+                "linen dress",
+                "wool coat"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Yohji Yamamoto",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "deconstructed",
+            "gothic",
+            "monochrome",
+            "layered"
+          ],
+          "searchTerms": [
+            "deconstructed jacket",
+            "Yohji Yamamoto style",
+            "layered skirt",
+            "monochrome coat"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Muji",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimalist",
+                "monochrome"
+              ],
+              "searchTerms": [
+                "black dress",
+                "layered top"
+              ]
+            },
+            {
+              "name": "Uniqlo U",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "avant-garde",
+                "monochrome"
+              ],
+              "searchTerms": [
+                "deconstructed shirt",
+                "dark coat"
+              ]
+            },
+            {
+              "name": "Issey Miyake Pleats Please",
+              "matchScore": 65,
+              "sharedKeywords": [
+                "deconstructed",
+                "layered"
+              ],
+              "searchTerms": [
+                "pleated skirt",
+                "avant-garde dress"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Comme des Garçons",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant-garde",
+            "deconstructed",
+            "playful",
+            "artistic",
+            "Japanese minimalism"
+          ],
+          "searchTerms": [
+            "Comme des Garçons style",
+            "deconstructed dress",
+            "artistic jacket",
+            "playful blouse"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Issey Miyake",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "artistic",
+                "deconstructed"
+              ],
+              "searchTerms": [
+                "artistic top",
+                "deconstructed coat"
+              ]
+            },
+            {
+              "name": "Tsumori Chisato",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "playful",
+                "artistic"
+              ],
+              "searchTerms": [
+                "playful dress",
+                "artistic knit"
+              ]
+            },
+            {
+              "name": "Uniqlo",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "Japanese minimalism",
+                "playful"
+              ],
+              "searchTerms": [
+                "minimalist tee",
+                "playful cardigan"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aesthetic": "Deconstruction Fashion",
+      "aestheticId": "deconstructed",
+      "description": "Anti-fashion aesthetic celebrating raw edges and upcycled modifications.",
+      "globalSearchKeywords": [
+        "deconstructed",
+        "asymmetric",
+        "upcycled",
+        "layered",
+        "raw edges",
+        "avant garde",
+        "reconstructed"
+      ],
+      "luxuryBrands": [
+        {
+          "name": "Marine Serre",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant garde",
+            "futurism",
+            "upcycled",
+            "techwear"
+          ],
+          "searchTerms": [
+            "crescent moon print",
+            "upcycled dress",
+            "futuristic top"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Collina Strada",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "upcycled",
+                "avant garde"
+              ],
+              "searchTerms": [
+                "upcycled top",
+                "sustainable fashion"
+              ]
+            },
+            {
+              "name": "Eckhaus Latta",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "futurism",
+                "avant garde"
+              ],
+              "searchTerms": [
+                "experimental design",
+                "textured knit"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Rick Owens",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "draped silhouette",
+            "asymmetric cut",
+            "elongated proportions",
+            "monochrome",
+            "raw edges"
+          ],
+          "searchTerms": [
+            "draped jacket",
+            "asymmetric coat",
+            "elongated tee"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Aakasha",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "draped silhouettes",
+                "asymmetric cuts"
+              ],
+              "searchTerms": [
+                "draped dress",
+                "asymmetric tunic"
+              ]
+            },
+            {
+              "name": "Damir Doma",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "monochrome",
+                "elongated proportions"
+              ],
+              "searchTerms": [
+                "minimalist coat",
+                "elongated shirt"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ottolinger",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "deconstructed",
+            "avant garde",
+            "techwear",
+            "y2k"
+          ],
+          "searchTerms": [
+            "deconstructed top",
+            "techwear pants",
+            "avant garde dress"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Namilia",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "deconstructed",
+                "y2k"
+              ],
+              "searchTerms": [
+                "y2k top",
+                "deconstructed outfit"
+              ]
+            },
+            {
+              "name": "Raf Simons",
+              "matchScore": 70,
+              "sharedKeywords": [
+                "techwear",
+                "avant garde"
+              ],
+              "searchTerms": [
+                "techwear jacket",
+                "avant garde pants"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Yohji Yamamoto",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant garde",
+            "japanese minimalism",
+            "deconstructed",
+            "goth"
+          ],
+          "searchTerms": [
+            "japanese minimalism",
+            "deconstructed coat",
+            "gothic fashion"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Issey Miyake",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "japanese minimalism",
+                "avant garde"
+              ],
+              "searchTerms": [
+                "pleated dress",
+                "minimalist tunic"
+              ]
+            },
+            {
+              "name": "Comme des Garçons",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "deconstructed",
+                "avant garde"
+              ],
+              "searchTerms": [
+                "avant garde top",
+                "deconstructed skirt"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Junya Watanabe",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant garde",
+            "deconstructed",
+            "japanese minimalism",
+            "techwear"
+          ],
+          "searchTerms": [
+            "japanese techwear",
+            "deconstructed jacket",
+            "avant garde pants"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Sacai",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "deconstructed",
+                "japanese minimalism"
+              ],
+              "searchTerms": [
+                "hybrid jacket",
+                "deconstructed skirt"
+              ]
+            },
+            {
+              "name": "Undercover",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "techwear",
+                "avant garde"
+              ],
+              "searchTerms": [
+                "techwear coat",
+                "avant garde hoodie"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Maison Margiela",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "deconstructed",
+            "avant garde",
+            "minimalist"
+          ],
+          "searchTerms": [
+            "deconstructed blazer",
+            "minimalist top",
+            "avant garde dress"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "MM6 Maison Margiela",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "deconstructed",
+                "minimalist"
+              ],
+              "searchTerms": [
+                "minimalist jacket",
+                "deconstructed shirt"
+              ]
+            },
+            {
+              "name": "Helmut Lang",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "minimalist",
+                "avant garde"
+              ],
+              "searchTerms": [
+                "minimalist coat",
+                "avant garde top"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Comme des Garçons",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "avant garde",
+            "deconstructed",
+            "japanese minimalism"
+          ],
+          "searchTerms": [
+            "avant garde top",
+            "deconstructed skirt",
+            "japanese minimalism"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Yohji Yamamoto",
+              "matchScore": 85,
+              "sharedKeywords": [
+                "avant garde",
+                "japanese minimalism"
+              ],
+              "searchTerms": [
+                "japanese coat",
+                "avant garde dress"
+              ]
+            },
+            {
+              "name": "Issey Miyake",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "deconstructed",
+                "japanese minimalism"
+              ],
+              "searchTerms": [
+                "pleated top",
+                "deconstructed dress"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ader Error",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "kfashion",
+            "deconstructed",
+            "streetwear"
+          ],
+          "searchTerms": [
+            "deconstructed hoodie",
+            "kfashion jacket",
+            "streetwear shirt"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Ambush",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "deconstructed",
+                "streetwear"
+              ],
+              "searchTerms": [
+                "streetwear top",
+                "deconstructed jacket"
+              ]
+            },
+            {
+              "name": "IISE",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "kfashion",
+                "streetwear"
+              ],
+              "searchTerms": [
+                "kfashion top",
+                "streetwear hoodie"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Vivienne Westwood",
+          "priceRange": "high",
+          "aestheticKeywords": [
+            "punk",
+            "avant garde",
+            "grunge",
+            "harajuku"
+          ],
+          "searchTerms": [
+            "punk jacket",
+            "grunge dress",
+            "harajuku skirt"
+          ],
+          "affordableAlternatives": [
+            {
+              "name": "Alexander McQueen",
+              "matchScore": 80,
+              "sharedKeywords": [
+                "punk",
+                "avant garde"
+              ],
+              "searchTerms": [
+                "punk coat",
+                "avant garde top"
+              ]
+            },
+            {
+              "name": "The Ragged Priest",
+              "matchScore": 75,
+              "sharedKeywords": [
+                "grunge",
+                "punk"
+              ],
+              "searchTerms": [
+                "grunge pants",
+                "punk top"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
