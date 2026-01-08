@@ -90,7 +90,7 @@ const SORT_OPTIONS = [
 
 export const VintedFilters: React.FC<VintedFiltersProps> = ({ onFiltersChange }) => {
   const [filters, setFilters] = useState<VintedFilterState>({
-    order: 'newest_first',
+    order: 'relevance', // Default to relevance for AI-curated searches
     priceRange: { min: null, max: null },
     sizes: [],
     brands: [],

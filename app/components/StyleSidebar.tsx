@@ -1,7 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import styleVibes from "@/data/vinted/styles.json";
+import styleVibesData from "@/data/vinted/styles-enhanced.json";
+
+// Extract styles array from the new format
+const styleVibes = {
+  styles: styleVibesData.styles.map((style: any) => ({
+    id: style.id,
+    name: style.name,
+    description: style.description,
+    hashtags: style.tier1_hashtags || []
+  }))
+};
 import { FormEvent, useRef } from "react";
 import { Message, useChat } from "ai/react";
 
@@ -66,7 +76,7 @@ export default function StyleSidebar({ setMessages, handleSubmit, setInput, scro
             <div
               key={style.id}
               className="pinterest-item group"
-              onClick={() => handleStyleClick(style.name, style.hashtags)}
+              onClick={() => handleStyleClick(style.id, style.hashtags)}
             >
               
               <img

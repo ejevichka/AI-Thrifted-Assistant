@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.40",
+    "@anthropic-ai/sdk": "^0.69.0",
     "@langchain/community": "latest",
     "@langchain/core": "latest",
     "@langchain/langgraph": "latest",

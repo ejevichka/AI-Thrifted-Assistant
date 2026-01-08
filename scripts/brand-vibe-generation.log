@@ -1,0 +1,2829 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+Found 24 style dimensions: [
+  'casual',          'formal',
+  'sporty',          'vintage',
+  'bohemian',        'y2k',
+  'grunge',          'goth',
+  'techwear',        'gorpcore',
+  'academia',        'avantgarde',
+  'streetwear',      'cottagecore',
+  'clubkid',         'balletcore',
+  'kfashion',        'harajuku',
+  'minimaljapan',    'deconstructed',
+  'eclecticgrandpa', 'mobwife',
+  'blokecore',       'officesiren'
+]
+Found 934 brands to process
+
+Generated context block length: 9757
+
+🚀 Starting brand-vibe-matrix generation...
+
+
+[1/934] Processing: BELCCI
+✅ Success! Top scores: 
+
+[2/934] Processing: Save the Queen!
+✅ Success! Top scores: bohemian:0.8, vintage:0.5
+
+[3/934] Processing: 032c
+✅ Success! Top scores: streetwear:0.7, avantgarde:0.5, techwear:0.4
+
+[4/934] Processing: 10 FEET
+✅ Success! Top scores: y2k:0.6, vintage:0.5
+
+[5/934] Processing: 1017 ALYX 9SM
+✅ Success! Top scores: techwear:0.8, avantgarde:0.7, streetwear:0.6
+
+[6/934] Processing: 1060
+✅ Success! Top scores: 
+
+[7/934] Processing: 1060 Clothes
+✅ Success! Top scores: 
+
+[8/934] Processing: 10sei0otto
+✅ Success! Top scores: avantgarde:0.7, deconstructed:0.6
+
+[9/934] Processing: 14th Addicion
+✅ Success! Top scores: 
+
+[10/934] Processing: 2026
+✅ Success! Top scores: 
+
+[11/934] Processing: 25x
+✅ Success! Top scores: 
+
+[12/934] Processing: 3 Suisses
+✅ Success! Top scores: vintage:0.6, casual:0.5, y2k:0.4
+
+[13/934] Processing: 403 Crew
+✅ Success! Top scores: 
+
+[14/934] Processing: 4Wards
+✅ Success! Top scores: 
+
+[15/934] Processing: A-COLD-WALL
+✅ Success! Top scores: techwear:0.8, streetwear:0.7, avantgarde:0.6
+
+[16/934] Processing: Aakasha
+✅ Success! Top scores: deconstructed:0.6, avantgarde:0.5
+
+[17/934] Processing: Abasic
+✅ Success! Top scores: 
+
+[18/934] Processing: Abra
+✅ Success! Top scores: y2k:1
+
+[19/934] Processing: Abracadabra
+✅ Success! Top scores: 
+
+[20/934] Processing: Abro
+✅ Success! Top scores: 
+
+[21/934] Processing: Acne Studios
+✅ Success! Top scores: casual:0.9, streetwear:0.4
+
+[22/934] Processing: Adeam
+✅ Success! Top scores: kfashion:0.5, formal:0.4
+
+[23/934] Processing: adidas
+✅ Success! Top scores: sporty:1, blokecore:0.8, gorpcore:0.6
+
+[24/934] Processing: AFTF Basic
+✅ Success! Top scores: 
+
+[25/934] Processing: Ahsen
+✅ Success! Top scores: 
+
+[26/934] Processing: aiki
+✅ Success! Top scores: 
+
+[27/934] Processing: AKIKOAOKI
+✅ Success! Top scores: avantgarde:0.6, minimaljapan:0.5, kfashion:0.4
+
+[28/934] Processing: Alain Manoukian
+✅ Success! Top scores: vintage:0.6, y2k:0.4
+
+[29/934] Processing: Alain Mikli
+✅ Success! Top scores: 
+
+[30/934] Processing: ALDO
+✅ Success! Top scores: 
+
+[31/934] Processing: Aldo Martins
+✅ Success! Top scores: 
+
+[32/934] Processing: Alexander McQueen
+✅ Success! Top scores: avantgarde:0.9, goth:0.8, deconstructed:0.7
+
+[33/934] Processing: ALEXIA
+✅ Success! Top scores: 
+
+[34/934] Processing: All Saints
+✅ Success! Top scores: grunge:0.8, casual:0.4, goth:0.4
+
+[35/934] Processing: AllSaints
+✅ Success! Top scores: grunge:0.8, casual:0.6, goth:0.5
+
+[36/934] Processing: Alyssa
+✅ Success! Top scores: 
+
+[37/934] Processing: Alyx
+✅ Success! Top scores: techwear:0.8, avantgarde:0.7, streetwear:0.6
+
+[38/934] Processing: amalfi
+✅ Success! Top scores: 
+
+[39/934] Processing: Amant Meat
+✅ Success! Top scores: 
+
+[40/934] Processing: American Apparel
+✅ Success! Top scores: y2k:0.8, casual:0.7, vintage:0.6
+
+[41/934] Processing: Amuleti
+✅ Success! Top scores: 
+
+[42/934] Processing: Amy Gee
+✅ Success! Top scores: y2k:0.8, vintage:0.4
+
+[43/934] Processing: Amy Vermont
+✅ Success! Top scores: formal:0.4
+
+[44/934] Processing: Ana Alcazar
+✅ Success! Top scores: bohemian:0.5, vintage:0.4
+
+[45/934] Processing: Ana Sousa
+✅ Success! Top scores: y2k:0.5, vintage:0.4
+
+[46/934] Processing: Ancuta Sarca
+✅ Success! Top scores: avantgarde:0.7, sporty:0.5, streetwear:0.4
+
+[47/934] Processing: Andrea Conti
+✅ Success! Top scores: 
+
+[48/934] Processing: Andy Wolf
+✅ Success! Top scores: 
+
+[49/934] Processing: Angel Devil Italy
+✅ Success! Top scores: 
+
+[50/934] Processing: ANGELDEVIL
+✅ Success! Top scores: 
+
+[51/934] Processing: Angels Never Die
+✅ Success! Top scores: bohemian:0.7
+
+[52/934] Processing: Angie
+✅ Success! Top scores: 
+
+[53/934] Processing: Animal
+✅ Success! Top scores: 
+
+[54/934] Processing: Animale
+✅ Success! Top scores: bohemian:0.5, vintage:0.4
+
+[55/934] Processing: Ann Demeulemeester
+✅ Success! Top scores: avantgarde:0.9, goth:0.8, deconstructed:0.8
+
+[56/934] Processing: Anna Biagini
+✅ Success! Top scores: 
+
+[57/934] Processing: Anna Molinari
+✅ Success! Top scores: y2k:0.7, mobwife:0.6, vintage:0.5
+
+[58/934] Processing: Anna Scott
+✅ Success! Top scores: 
+
+[59/934] Processing: AnnaRita N
+✅ Success! Top scores: y2k:0.5, mobwife:0.4
+
+[60/934] Processing: Anti-Flirt
+✅ Success! Top scores: y2k:0.8, vintage:0.6, officesiren:0.5
+
+[61/934] Processing: Apart
+✅ Success! Top scores: 
+
+[62/934] Processing: Apocs
+✅ Success! Top scores: 
+
+[63/934] Processing: Apple Bottoms
+✅ Success! Top scores: y2k:0.8, vintage:0.5
+
+[64/934] Processing: Arc'teryx
+✅ Success! Top scores: gorpcore:0.9, techwear:0.8
+
+[65/934] Processing: Arielle
+✅ Success! Top scores: 
+
+[66/934] Processing: Arizona
+✅ Success! Top scores: 
+
+[67/934] Processing: Armando Pollini
+✅ Success! Top scores: 
+
+[68/934] Processing: Armani
+✅ Success! Top scores: formal:0.8, mobwife:0.6, vintage:0.5
+
+[69/934] Processing: Armani Collezioni
+✅ Success! Top scores: formal:0.8, academia:0.4
+
+[70/934] Processing: Armani Exchange
+✅ Success! Top scores: casual:0.7, formal:0.6, streetwear:0.5
+
+[71/934] Processing: Armani Jeans
+✅ Success! Top scores: formal:0.6, casual:0.5, sporty:0.4
+
+[72/934] Processing: Art
+✅ Success! Top scores: 
+
+[73/934] Processing: Articles de Paris
+✅ Success! Top scores: 
+
+[74/934] Processing: Artigli
+✅ Success! Top scores: y2k:0.4
+
+[75/934] Processing: Ashley Williams
+✅ Success! Top scores: clubkid:0.7, y2k:0.6, harajuku:0.6
+
+[76/934] Processing: Asics
+✅ Success! Top scores: sporty:1
+
+[77/934] Processing: ASOS
+✅ Success! Top scores: streetwear:0.8, casual:0.7, sporty:0.6
+
+[78/934] Processing: ASOS Design
+✅ Success! Top scores: streetwear:0.8, casual:0.7, sporty:0.6
+
+[79/934] Processing: ath
+✅ Success! Top scores: 
+
+[80/934] Processing: Atsuro Tayama
+✅ Success! Top scores: avantgarde:0.6, vintage:0.5, minimaljapan:0.5
+
+[81/934] Processing: Audley
+✅ Success! Top scores: 
+
+[82/934] Processing: Avant Garde
+✅ Success! Top scores: avantgarde:1
+
+[83/934] Processing: Avavav
+✅ Success! Top scores: deconstructed:0.8, avantgarde:0.7
+
+[84/934] Processing: Aventures Des Toiles
+✅ Success! Top scores: deconstructed:0.5, vintage:0.4
+
+[85/934] Processing: Azzaro
+✅ Success! Top scores: formal:0.7, mobwife:0.5, vintage:0.4
+
+[86/934] Processing: Baba Nuki
+✅ Success! Top scores: 
+
+[87/934] Processing: Babor
+✅ Success! Top scores: 
+
+[88/934] Processing: Baby Angel
+✅ Success! Top scores: y2k:0.8
+
+[89/934] Processing: Baby Phat
+✅ Success! Top scores: y2k:0.9, vintage:0.6, streetwear:0.5
+
+[90/934] Processing: Balenciaga
+✅ Success! Top scores: avantgarde:0.8, grunge:0.7, streetwear:0.6
+
+[91/934] Processing: Bally
+✅ Success! Top scores: formal:0.7, mobwife:0.5, casual:0.4
+
+[92/934] Processing: Balmain
+✅ Success! Top scores: mobwife:0.8, formal:0.7, avantgarde:0.4
+
+[93/934] Processing: Banana Republic
+✅ Success! Top scores: casual:0.7, formal:0.6, academia:0.4
+
+[94/934] Processing: Bandolera
+✅ Success! Top scores: y2k:0.6, vintage:0.5, officesiren:0.4
+
+[95/934] Processing: Barbara I Gongini
+✅ Success! Top scores: avantgarde:0.8, goth:0.7, deconstructed:0.6
+
+[96/934] Processing: Bäres
+✅ Success! Top scores: 
+
+[97/934] Processing: Barts
+✅ Success! Top scores: gorpcore:0.4
+
+[98/934] Processing: BCBG
+✅ Success! Top scores: y2k:0.7, vintage:0.5, formal:0.4
+
+[99/934] Processing: BCBG Max Azria
+✅ Success! Top scores: y2k:0.6, vintage:0.5, formal:0.4
+
+[100/934] Processing: BCBGMAXAZRIA
+✅ Success! Top scores: y2k:0.6, formal:0.5, officesiren:0.5
+
+[101/934] Processing: Beauty Angel
+✅ Success! Top scores: 
+
+[102/934] Processing: Bebe
+✅ Success! Top scores: vintage:0.8, y2k:0.7
+
+[103/934] Processing: Belmondo
+✅ Success! Top scores: 
+
+[104/934] Processing: Belstaff
+✅ Success! Top scores: gorpcore:0.7, casual:0.6, vintage:0.5
+
+[105/934] Processing: Benetton
+✅ Success! Top scores: casual:0.7, vintage:0.5, y2k:0.4
+
+[106/934] Processing: berkemann
+✅ Success! Top scores: sporty:0.5, gorpcore:0.4
+
+[107/934] Processing: Berlin
+✅ Success! Top scores: 
+
+[108/934] Processing: Bershka
+✅ Success! Top scores: y2k:0.7, casual:0.6, streetwear:0.6
+
+[109/934] Processing: Bettini
+✅ Success! Top scores: 
+
+[110/934] Processing: Bianco
+✅ Success! Top scores: 
+
+[111/934] Processing: BIBA
+✅ Success! Top scores: vintage:0.8, bohemian:0.7
+
+[112/934] Processing: Biche de Bere
+✅ Success! Top scores: y2k:0.6, vintage:0.4
+
+[113/934] Processing: Bilook
+✅ Success! Top scores: 
+
+[114/934] Processing: Bjorg Og Kari
+✅ Success! Top scores: 
+
+[115/934] Processing: black blood
+✅ Success! Top scores: 
+
+[116/934] Processing: Black Pistol
+✅ Success! Top scores: goth:0.8
+
+[117/934] Processing: Black rain
+✅ Success! Top scores: 
+
+[118/934] Processing: Blacky Dress
+✅ Success! Top scores: formal:0.7, vintage:0.4
+
+[119/934] Processing: Blanc Nature
+✅ Success! Top scores: 
+
+[120/934] Processing: Blauer
+✅ Success! Top scores: sporty:0.7, gorpcore:0.5, techwear:0.4
+
+[121/934] Processing: Blind Date
+✅ Success! Top scores: y2k:0.7, vintage:0.5
+
+[122/934] Processing: Blu deise
+✅ Success! Top scores: 
+
+[123/934] Processing: Blue Joint
+✅ Success! Top scores: 
+
+[124/934] Processing: Blue Seven
+✅ Success! Top scores: 
+
+[125/934] Processing: Blugirl
+✅ Success! Top scores: bohemian:0.6, cottagecore:0.4
+
+[126/934] Processing: Blugirl Blumarine
+✅ Success! Top scores: y2k:0.8, vintage:0.5
+
+[127/934] Processing: Blumarine
+✅ Success! Top scores: y2k:1
+
+[128/934] Processing: Bogner
+✅ Success! Top scores: sporty:0.8, gorpcore:0.7
+
+[129/934] Processing: Boom Coeur
+✅ Success! Top scores: 
+
+[130/934] Processing: Booth&bruce
+✅ Success! Top scores: 
+
+[131/934] Processing: Boots
+✅ Success! Top scores: 
+
+[132/934] Processing: Boss
+✅ Success! Top scores: formal:0.8, casual:0.4
+
+[133/934] Processing: Boutique Italiana
+✅ Success! Top scores: 
+
+[134/934] Processing: Boutique Parisienne
+✅ Success! Top scores: 
+
+[135/934] Processing: braune
+✅ Success! Top scores: 
+
+[136/934] Processing: Bray Steve Alan
+✅ Success! Top scores: 
+
+[137/934] Processing: Bright Girl
+✅ Success! Top scores: 
+
+[138/934] Processing: brunch korea
+✅ Success! Top scores: 
+
+[139/934] Processing: Buffalo London
+✅ Success! Top scores: y2k:0.8, vintage:0.5, streetwear:0.4
+
+[140/934] Processing: Bullboxer
+✅ Success! Top scores: 
+
+[141/934] Processing: Burberry
+✅ Success! Top scores: academia:0.8, formal:0.7, vintage:0.6
+
+[142/934] Processing: Burberry London
+✅ Success! Top scores: formal:0.8, academia:0.7, vintage:0.6
+
+[143/934] Processing: Burlington
+✅ Success! Top scores: 
+
+[144/934] Processing: Burton Menswear London
+✅ Success! Top scores: casual:0.6, formal:0.4
+
+[145/934] Processing: Byblos
+✅ Success! Top scores: vintage:0.7, y2k:0.5, mobwife:0.4
+
+[146/934] Processing: C.P. Company
+✅ Success! Top scores: techwear:0.7, gorpcore:0.6, casual:0.5
+
+[147/934] Processing: C'N'C CoStume National
+✅ Success! Top scores: vintage:0.5, y2k:0.4, avantgarde:0.4
+
+[148/934] Processing: Cacharel
+✅ Success! Top scores: vintage:0.6, casual:0.5, bohemian:0.4
+
+[149/934] Processing: Cache Cache
+✅ Success! Top scores: y2k:0.4
+
+[150/934] Processing: Cadet Jeans
+✅ Success! Top scores: 
+
+[151/934] Processing: CafèNoir
+✅ Success! Top scores: 
+
+[152/934] Processing: Camaïeu
+✅ Success! Top scores: casual:0.6, vintage:0.5, y2k:0.4
+
+[153/934] Processing: Camper
+✅ Success! Top scores: casual:0.7, sporty:0.5, blokecore:0.4
+
+[154/934] Processing: CamperLab
+✅ Success! Top scores: avantgarde:0.6, techwear:0.5, casual:0.4
+
+[155/934] Processing: Canyon
+✅ Success! Top scores: 
+
+[156/934] Processing: Cap-clique
+✅ Success! Top scores: 
+
+[157/934] Processing: Cappopera
+✅ Success! Top scores: 
+
+[158/934] Processing: Capri Collection
+✅ Success! Top scores: 
+
+[159/934] Processing: Carhartt
+✅ Success! Top scores: casual:0.8, gorpcore:0.7, streetwear:0.6
+
+[160/934] Processing: Carlopik
+✅ Success! Top scores: 
+
+[161/934] Processing: Carne Bollente
+✅ Success! Top scores: clubkid:0.6, streetwear:0.5
+
+[162/934] Processing: Carvela
+✅ Success! Top scores: 
+
+[163/934] Processing: Casa Moda
+✅ Success! Top scores: 
+
+[164/934] Processing: Casadei
+✅ Success! Top scores: mobwife:0.7, formal:0.4
+
+[165/934] Processing: Cavalli
+✅ Success! Top scores: mobwife:1, vintage:0.4
+
+[166/934] Processing: Cavalli Class
+✅ Success! Top scores: mobwife:0.8
+
+[167/934] Processing: Céline
+✅ Success! Top scores: formal:0.8, casual:0.7, academia:0.6
+
+[168/934] Processing: CELYN b
+✅ Success! Top scores: y2k:0.6, vintage:0.5
+
+[169/934] Processing: Cerise
+✅ Success! Top scores: 
+
+[170/934] Processing: Cerruti
+✅ Success! Top scores: formal:0.8, vintage:0.6, mobwife:0.4
+
+[171/934] Processing: Cerruti 1881
+✅ Success! Top scores: formal:0.8, vintage:0.6
+
+[172/934] Processing: Cesare Paciotti
+✅ Success! Top scores: mobwife:0.6, vintage:0.4
+
+[173/934] Processing: Cesare Paciotti 4US
+✅ Success! Top scores: mobwife:0.4
+
+[174/934] Processing: Chai
+✅ Success! Top scores: 
+
+[175/934] Processing: Chanel
+✅ Success! Top scores: formal:0.9, vintage:0.8, mobwife:0.7
+
+[176/934] Processing: Chantal Rosner
+✅ Success! Top scores: 
+
+[177/934] Processing: Chantal Thomass
+✅ Success! Top scores: 
+
+[178/934] Processing: Charles & Keith
+✅ Success! Top scores: casual:0.6, formal:0.4
+
+[179/934] Processing: Charles Jeffrey Loverboy
+✅ Success! Top scores: clubkid:0.9, avantgarde:0.8, harajuku:0.6
+
+[180/934] Processing: Charles Jourdan
+✅ Success! Top scores: vintage:0.8
+
+[181/934] Processing: Cherry's
+✅ Success! Top scores: 
+
+[182/934] Processing: Cheyenne
+✅ Success! Top scores: 
+
+[183/934] Processing: Chic Lady
+✅ Success! Top scores: 
+
+[184/934] Processing: Chipie
+✅ Success! Top scores: vintage:0.8, y2k:0.6
+
+[185/934] Processing: Chloé
+✅ Success! Top scores: bohemian:0.9
+
+[186/934] Processing: Chose Promise
+✅ Success! Top scores: 
+
+[187/934] Processing: Christian Aujard
+✅ Success! Top scores: vintage:0.5
+
+[188/934] Processing: Christian Berg
+✅ Success! Top scores: formal:0.5
+
+[189/934] Processing: Christian Dior
+✅ Success! Top scores: formal:0.8, vintage:0.7, avantgarde:0.4
+
+[190/934] Processing: Christian Lacroix
+✅ Success! Top scores: bohemian:0.8, vintage:0.7, mobwife:0.6
+
+[191/934] Processing: Christina Gavioli
+✅ Success! Top scores: y2k:0.6, vintage:0.4
+
+[192/934] Processing: ciaopanic
+✅ Success! Top scores: casual:0.7, kfashion:0.6, streetwear:0.5
+
+[193/934] Processing: Class Roberto Cavalli
+✅ Success! Top scores: mobwife:0.8
+
+[194/934] Processing: Coccinelle
+✅ Success! Top scores: formal:0.5
+
+[195/934] Processing: Collectif
+✅ Success! Top scores: bohemian:0.6, goth:0.5
+
+[196/934] Processing: Collina Strada
+✅ Success! Top scores: bohemian:0.8, avantgarde:0.6, cottagecore:0.5
+
+[197/934] Processing: Colors
+✅ Success! Top scores: 
+
+[198/934] Processing: Comme des Garçons
+✅ Success! Top scores: avantgarde:1, deconstructed:0.9, goth:0.7
+
+[199/934] Processing: Comme une Femme
+✅ Success! Top scores: 
+
+[200/934] Processing: Conbipel
+✅ Success! Top scores: formal:0.4
+
+[201/934] Processing: CoolCat
+✅ Success! Top scores: 
+
+[202/934] Processing: Cop Copine
+✅ Success! Top scores: y2k:0.9, vintage:0.8, deconstructed:0.7
+
+[203/934] Processing: Coperni
+✅ Success! Top scores: avantgarde:0.5, techwear:0.4, deconstructed:0.4
+
+[204/934] Processing: COQUETTE
+✅ Success! Top scores: 
+
+[205/934] Processing: COS
+✅ Success! Top scores: casual:0.9, minimaljapan:0.8, formal:0.6
+
+[206/934] Processing: costume italiano
+✅ Success! Top scores: 
+
+[207/934] Processing: Costume National
+✅ Success! Top scores: formal:0.5, vintage:0.4, avantgarde:0.4
+
+[208/934] Processing: Côte anglaise
+✅ Success! Top scores: 
+
+[209/934] Processing: Côté Femme
+✅ Success! Top scores: 
+
+[210/934] Processing: cote sud
+✅ Success! Top scores: 
+
+[211/934] Processing: Cottonade
+✅ Success! Top scores: 
+
+[212/934] Processing: Couleurs Du Monde
+✅ Success! Top scores: 
+
+[213/934] Processing: Courrèges
+✅ Success! Top scores: y2k:0.8, avantgarde:0.4
+
+[214/934] Processing: Coyote girls
+✅ Success! Top scores: 
+
+[215/934] Processing: CPM
+✅ Success! Top scores: 
+
+[216/934] Processing: crackedbone
+✅ Success! Top scores: 
+
+[217/934] Processing: Craig morrison
+✅ Success! Top scores: 
+
+[218/934] Processing: Crème Paris
+✅ Success! Top scores: 
+
+[219/934] Processing: Cristina Gavioli
+✅ Success! Top scores: y2k:0.5, vintage:0.4
+
+[220/934] Processing: Cristinaeffe
+✅ Success! Top scores: y2k:0.5, vintage:0.4
+
+[221/934] Processing: Csc
+✅ Success! Top scores: 
+
+[222/934] Processing: CUIR
+✅ Success! Top scores: 
+
+[223/934] Processing: Custo
+✅ Success! Top scores: bohemian:0.7, vintage:0.6, y2k:0.5
+
+[224/934] Processing: Custo Barcelona
+✅ Success! Top scores: y2k:0.7, bohemian:0.6, harajuku:0.6
+
+[225/934] Processing: Custommade
+✅ Success! Top scores: casual:0.6, formal:0.4, cottagecore:0.4
+
+[226/934] Processing: D&G
+✅ Success! Top scores: mobwife:0.8, vintage:0.4
+
+[227/934] Processing: Daisy Street
+✅ Success! Top scores: y2k:0.7, streetwear:0.5
+
+[228/934] Processing: Danse Lente
+✅ Success! Top scores: formal:0.4
+
+[229/934] Processing: Dansko
+✅ Success! Top scores: casual:0.5, sporty:0.4
+
+[230/934] Processing: Dark Gothic
+✅ Success! Top scores: goth:1
+
+[231/934] Processing: Davida
+✅ Success! Top scores: 
+
+[232/934] Processing: Davos Gomma
+✅ Success! Top scores: 
+
+[233/934] Processing: DDP
+✅ Success! Top scores: y2k:0.7, vintage:0.6
+
+[234/934] Processing: Dead Threads
+✅ Success! Top scores: goth:0.8
+
+[235/934] Processing: Deadstock
+✅ Success! Top scores: 
+
+[236/934] Processing: Decay
+✅ Success! Top scores: 
+
+[237/934] Processing: demna gvasalia
+✅ Success! Top scores: streetwear:0.9, avantgarde:0.8, grunge:0.7
+
+[238/934] Processing: Demonia
+✅ Success! Top scores: goth:1
+
+[239/934] Processing: Dennis Basso
+✅ Success! Top scores: mobwife:0.7, formal:0.5
+
+[240/934] Processing: Denny Rose
+✅ Success! Top scores: y2k:0.7, vintage:0.5
+
+[241/934] Processing: Dept
+✅ Success! Top scores: 
+
+[242/934] Processing: Des Filles à la Vanillé
+✅ Success! Top scores: y2k:0.7, vintage:0.5
+
+[243/934] Processing: Design by ma:Liz
+✅ Success! Top scores: 
+
+[244/934] Processing: Designer
+✅ Success! Top scores: 
+
+[245/934] Processing: Desigual
+✅ Success! Top scores: bohemian:0.6, y2k:0.4, harajuku:0.4
+
+[246/934] Processing: Deus Ex Machina
+✅ Success! Top scores: casual:0.6, gorpcore:0.5, sporty:0.4
+
+[247/934] Processing: Devised Antithetical
+✅ Success! Top scores: 
+
+[248/934] Processing: Diana Bentall's
+✅ Success! Top scores: 
+
+[249/934] Processing: Diesel
+✅ Success! Top scores: vintage:0.8, y2k:0.7, grunge:0.6
+
+[250/934] Processing: Dilara Findikoglu
+✅ Success! Top scores: avantgarde:0.9, goth:0.8, clubkid:0.5
+
+[251/934] Processing: Dina Bar El
+✅ Success! Top scores: 
+
+[252/934] Processing: Ding Dong
+✅ Success! Top scores: 
+
+[253/934] Processing: Dingyun Zhang x Adidas
+✅ Success! Top scores: sporty:0.8, techwear:0.7, streetwear:0.6
+
+[254/934] Processing: Dior
+✅ Success! Top scores: formal:0.8, vintage:0.7
+
+[255/934] Processing: Dividere
+✅ Success! Top scores: 
+
+[256/934] Processing: DKNY
+✅ Success! Top scores: formal:0.7, casual:0.6, vintage:0.5
+
+[257/934] Processing: Dockers
+✅ Success! Top scores: casual:0.8
+
+[258/934] Processing: Dolce & Gabbana
+✅ Success! Top scores: mobwife:1, vintage:0.8
+
+[259/934] Processing: Don Miguel
+✅ Success! Top scores: 
+
+[260/934] Processing: Doris Ulbrich Landhausmode
+✅ Success! Top scores: 
+
+[261/934] Processing: Doublet
+✅ Success! Top scores: streetwear:0.7, avantgarde:0.6, clubkid:0.5
+
+[262/934] Processing: Douglas
+✅ Success! Top scores: 
+
+[263/934] Processing: DPM By Depech Mod
+✅ Success! Top scores: 
+
+[264/934] Processing: Drag strip
+✅ Success! Top scores: 
+
+[265/934] Processing: Drain gang
+✅ Success! Top scores: 
+
+[266/934] Processing: Dsquared2
+✅ Success! Top scores: y2k:0.7, streetwear:0.6, clubkid:0.5
+
+[267/934] Processing: Dutreuil
+✅ Success! Top scores: 
+
+[268/934] Processing: e!xpensive
+✅ Success! Top scores: 
+
+[269/934] Processing: EA7 Emporio Armani
+✅ Success! Top scores: sporty:0.8
+
+[270/934] Processing: ECCO
+✅ Success! Top scores: casual:0.6, sporty:0.4
+
+[271/934] Processing: Eckhaus Latta
+✅ Success! Top scores: avantgarde:0.8, deconstructed:0.7
+
+[272/934] Processing: Ed Hardy
+✅ Success! Top scores: y2k:0.8, vintage:0.6, streetwear:0.5
+
+[273/934] Processing: Edited
+✅ Success! Top scores: 
+
+[274/934] Processing: Effetti
+✅ Success! Top scores: 
+
+[275/934] Processing: EGO
+✅ Success! Top scores: 
+
+[276/934] Processing: Eight Sin
+✅ Success! Top scores: 
+
+[277/934] Processing: El Dantes
+✅ Success! Top scores: 
+
+[278/934] Processing: Elena
+✅ Success! Top scores: 
+
+[279/934] Processing: Eleven Paris
+✅ Success! Top scores: y2k:0.6, streetwear:0.5, casual:0.4
+
+[280/934] Processing: Elisa Cavaletti
+✅ Success! Top scores: bohemian:0.7, vintage:0.5, cottagecore:0.4
+
+[281/934] Processing: ELLE
+✅ Success! Top scores: 
+
+[282/934] Processing: Emanuel Ungaro
+✅ Success! Top scores: vintage:0.7, formal:0.6, mobwife:0.5
+
+[283/934] Processing: Emma Lou
+✅ Success! Top scores: 
+
+[284/934] Processing: Emmanuelle Khanh
+✅ Success! Top scores: vintage:0.7
+
+[285/934] Processing: EMP
+✅ Success! Top scores: 
+
+[286/934] Processing: Emporio Armani
+✅ Success! Top scores: formal:0.8, mobwife:0.6, vintage:0.5
+
+[287/934] Processing: Emporio Italia
+✅ Success! Top scores: 
+
+[288/934] Processing: Enjoy
+✅ Success! Top scores: 
+
+[289/934] Processing: Enzo Loco
+✅ Success! Top scores: 
+
+[290/934] Processing: Equiva
+✅ Success! Top scores: 
+
+[291/934] Processing: ericot chic
+✅ Success! Top scores: 
+
+[292/934] Processing: Escada
+✅ Success! Top scores: vintage:0.8
+
+[293/934] Processing: Escada Sport
+✅ Success! Top scores: vintage:0.7, sporty:0.6, casual:0.4
+
+[294/934] Processing: Esprit
+✅ Success! Top scores: casual:0.6, vintage:0.5, y2k:0.4
+
+[295/934] Processing: Et Compagnie
+✅ Success! Top scores: vintage:0.5, y2k:0.4
+
+[296/934] Processing: Etienne Navarre
+✅ Success! Top scores: 
+
+[297/934] Processing: Evalinka
+✅ Success! Top scores: 
+
+[298/934] Processing: Evangelion
+✅ Success! Top scores: techwear:0.8
+
+[299/934] Processing: EXES
+✅ Success! Top scores: 
+
+[300/934] Processing: Expired Girl
+✅ Success! Top scores: 
+
+[301/934] Processing: Exsy
+✅ Success! Top scores: 
+
+[302/934] Processing: Extreme
+✅ Success! Top scores: 
+
+[303/934] Processing: Extro
+✅ Success! Top scores: 
+
+[304/934] Processing: Facetasm
+✅ Success! Top scores: harajuku:0.8, kfashion:0.7, avantgarde:0.6
+
+[305/934] Processing: Fairly
+✅ Success! Top scores: 
+
+[306/934] Processing: Fait Main
+✅ Success! Top scores: 
+
+[307/934] Processing: Falke
+✅ Success! Top scores: sporty:0.8, balletcore:0.4
+
+[308/934] Processing: fatto a mano
+✅ Success! Top scores: 
+
+[309/934] Processing: Femmes Je Vous Aime
+✅ Success! Top scores: 
+
+[310/934] Processing: Fendi
+✅ Success! Top scores: mobwife:1, vintage:0.4
+
+[311/934] Processing: Ferre
+✅ Success! Top scores: vintage:0.7, formal:0.6
+
+[312/934] Processing: Figure Libre
+✅ Success! Top scores: 
+
+[313/934] Processing: Fille des Sables
+✅ Success! Top scores: 
+
+[314/934] Processing: Flam Mode
+✅ Success! Top scores: 
+
+[315/934] Processing: FLUXÁ
+✅ Success! Top scores: 
+
+[316/934] Processing: fourma
+✅ Success! Top scores: 
+
+[317/934] Processing: Fracomina
+✅ Success! Top scores: y2k:0.7
+
+[318/934] Processing: Frankie Morello
+✅ Success! Top scores: y2k:0.6, vintage:0.5, streetwear:0.4
+
+[319/934] Processing: FranStyle
+✅ Success! Top scores: 
+
+[320/934] Processing: Fred Sabatier
+✅ Success! Top scores: 
+
+[321/934] Processing: FREE LANCE
+✅ Success! Top scores: 
+
+[322/934] Processing: Free Paris
+✅ Success! Top scores: 
+
+[323/934] Processing: Freesoul
+✅ Success! Top scores: y2k:0.5
+
+[324/934] Processing: FRENCH KISS
+✅ Success! Top scores: 
+
+[325/934] Processing: friperie
+✅ Success! Top scores: 
+
+[326/934] Processing: Fugitive de Francesco Rossi
+✅ Success! Top scores: 
+
+[327/934] Processing: Funk
+✅ Success! Top scores: 
+
+[328/934] Processing: Funky Fresh
+✅ Success! Top scores: 
+
+[329/934] Processing: Fus Europ
+✅ Success! Top scores: 
+
+[330/934] Processing: Gabor
+✅ Success! Top scores: 
+
+[331/934] Processing: Gaia
+✅ Success! Top scores: 
+
+[332/934] Processing: Galeries Lafayette
+✅ Success! Top scores: casual:0.6, formal:0.5, vintage:0.4
+
+[333/934] Processing: GAS
+✅ Success! Top scores: y2k:0.6, vintage:0.5, sporty:0.4
+
+[334/934] Processing: Gaudi
+✅ Success! Top scores: y2k:0.5, vintage:0.4
+
+[335/934] Processing: GELCO
+✅ Success! Top scores: 
+
+[336/934] Processing: Gentle Monster
+✅ Success! Top scores: kfashion:1
+
+[337/934] Processing: Georgia
+✅ Success! Top scores: 
+
+[338/934] Processing: GF Ferre
+✅ Success! Top scores: y2k:0.7, vintage:0.6, mobwife:0.5
+
+[339/934] Processing: Gianfranco Ferré
+✅ Success! Top scores: formal:0.7, vintage:0.6, mobwife:0.5
+
+[340/934] Processing: Gianmarco Lorenzi
+✅ Success! Top scores: mobwife:0.8, y2k:0.7
+
+[341/934] Processing: Gianna Meliani
+✅ Success! Top scores: 
+
+[342/934] Processing: Gianni Marra
+✅ Success! Top scores: 
+
+[343/934] Processing: Gianni Versace
+✅ Success! Top scores: mobwife:1, vintage:0.8, y2k:0.5
+
+[344/934] Processing: Gildan Softstyle
+✅ Success! Top scores: casual:0.5
+
+[345/934] Processing: Gipsy
+✅ Success! Top scores: 
+
+[346/934] Processing: Girl Tribu
+✅ Success! Top scores: 
+
+[347/934] Processing: Giuseppe Zanotti
+✅ Success! Top scores: mobwife:0.7, y2k:0.4
+
+[348/934] Processing: Givenchy
+✅ Success! Top scores: formal:0.7, avantgarde:0.6, mobwife:0.6
+
+[349/934] Processing: Glycine
+✅ Success! Top scores: 
+
+[350/934] Processing: Gore Tex
+✅ Success! Top scores: gorpcore:0.9, techwear:0.8
+
+[351/934] Processing: GOSHA
+✅ Success! Top scores: streetwear:0.8
+
+[352/934] Processing: Graceland
+✅ Success! Top scores: 
+
+[353/934] Processing: Grand Step Shoes
+✅ Success! Top scores: 
+
+[354/934] Processing: Greg Lauren
+✅ Success! Top scores: deconstructed:0.7, avantgarde:0.6, grunge:0.4
+
+[355/934] Processing: grinto
+✅ Success! Top scores: 
+
+[356/934] Processing: Grounds
+✅ Success! Top scores: 
+
+[357/934] Processing: Gsus
+✅ Success! Top scores: y2k:0.6, vintage:0.5, streetwear:0.5
+
+[358/934] Processing: Guarapo
+✅ Success! Top scores: 
+
+[359/934] Processing: Gucci
+✅ Success! Top scores: mobwife:0.8, formal:0.6, vintage:0.5
+
+[360/934] Processing: GUESS
+✅ Success! Top scores: y2k:0.8, vintage:0.6, mobwife:0.5
+
+[361/934] Processing: Guitare
+✅ Success! Top scores: 
+
+[362/934] Processing: Hailys
+✅ Success! Top scores: y2k:0.5, bohemian:0.4
+
+[363/934] Processing: Halo
+✅ Success! Top scores: 
+
+[364/934] Processing: Han Kjøbenhavn
+✅ Success! Top scores: streetwear:0.7, casual:0.6, avantgarde:0.4
+
+[365/934] Processing: Hand Knitted
+✅ Success! Top scores: cottagecore:0.6, bohemian:0.5
+
+[366/934] Processing: Handmade
+✅ Success! Top scores: 
+
+[367/934] Processing: Harley Davidson
+✅ Success! Top scores: grunge:0.8, vintage:0.7, casual:0.5
+
+[368/934] Processing: heine
+✅ Success! Top scores: formal:0.4
+
+[369/934] Processing: HELIOT EMIL
+✅ Success! Top scores: techwear:0.8, avantgarde:0.7, streetwear:0.6
+
+[370/934] Processing: Hello Kitty
+✅ Success! Top scores: harajuku:0.7
+
+[371/934] Processing: Helmut Lang
+✅ Success! Top scores: avantgarde:0.7, deconstructed:0.7, grunge:0.5
+
+[372/934] Processing: Hera Collection
+✅ Success! Top scores: 
+
+[373/934] Processing: Hermès
+✅ Success! Top scores: formal:0.9, academia:0.6, vintage:0.5
+
+[374/934] Processing: heybig
+✅ Success! Top scores: 
+
+[375/934] Processing: HFN
+✅ Success! Top scores: 
+
+[376/934] Processing: Hippie
+✅ Success! Top scores: bohemian:0.8
+
+[377/934] Processing: Hoka
+✅ Success! Top scores: gorpcore:0.8, sporty:0.7
+
+[378/934] Processing: Hoka One One
+✅ Success! Top scores: sporty:0.8, gorpcore:0.7
+
+[379/934] Processing: Holly Collection
+✅ Success! Top scores: 
+
+[380/934] Processing: Hot Ice
+✅ Success! Top scores: 
+
+[381/934] Processing: Hugo Boss
+✅ Success! Top scores: formal:0.8, casual:0.4
+
+[382/934] Processing: Hunza
+✅ Success! Top scores: 
+
+[383/934] Processing: Hysteric Glamour
+✅ Success! Top scores: harajuku:0.8, clubkid:0.5, vintage:0.4
+
+[384/934] Processing: I am
+✅ Success! Top scores: 
+
+[385/934] Processing: I.AM.GIA
+✅ Success! Top scores: y2k:0.8, streetwear:0.6, clubkid:0.4
+
+[386/934] Processing: I.QUING
+✅ Success! Top scores: 
+
+[387/934] Processing: Iceberg
+✅ Success! Top scores: y2k:0.7, vintage:0.5, mobwife:0.4
+
+[388/934] Processing: ici et maintenant
+✅ Success! Top scores: 
+
+[389/934] Processing: Iden
+✅ Success! Top scores: 
+
+[390/934] Processing: iEFiEL
+✅ Success! Top scores: 
+
+[391/934] Processing: Image
+✅ Success! Top scores: 
+
+[392/934] Processing: imaginative boy
+✅ Success! Top scores: 
+
+[393/934] Processing: Imperial
+✅ Success! Top scores: 
+
+[394/934] Processing: Indian Rose
+✅ Success! Top scores: 
+
+[395/934] Processing: Indies
+✅ Success! Top scores: 
+
+[396/934] Processing: infiniment belle
+✅ Success! Top scores: 
+
+[397/934] Processing: inspire
+✅ Success! Top scores: 
+
+[398/934] Processing: Intimissimi
+✅ Success! Top scores: balletcore:0.5
+
+[399/934] Processing: Irregular Choice
+✅ Success! Top scores: clubkid:0.8, harajuku:0.7
+
+[400/934] Processing: Isa Boulder
+✅ Success! Top scores: avantgarde:0.6, deconstructed:0.5
+
+[401/934] Processing: Isabel Benenato
+✅ Success! Top scores: avantgarde:0.6, casual:0.5, deconstructed:0.5
+
+[402/934] Processing: Isabel de Pedro
+✅ Success! Top scores: bohemian:0.5
+
+[403/934] Processing: Ischiko
+✅ Success! Top scores: casual:0.6, bohemian:0.5
+
+[404/934] Processing: Issey Miyake
+✅ Success! Top scores: avantgarde:1, minimaljapan:1
+
+[405/934] Processing: Issy
+✅ Success! Top scores: 
+
+[406/934] Processing: Italiano
+✅ Success! Top scores: 
+
+[407/934] Processing: J.W. Anderson
+✅ Success! Top scores: avantgarde:0.7, deconstructed:0.6, streetwear:0.5
+
+[408/934] Processing: Jac Jac
+✅ Success! Top scores: 
+
+[409/934] Processing: Jacquemus
+✅ Success! Top scores: casual:0.6, bohemian:0.5, balletcore:0.5
+
+[410/934] Processing: Jad
+✅ Success! Top scores: 
+
+[411/934] Processing: Jaded London
+✅ Success! Top scores: y2k:0.8, streetwear:0.7, clubkid:0.5
+
+[412/934] Processing: Jane Shilton
+✅ Success! Top scores: vintage:0.4
+
+[413/934] Processing: Janet & Janet
+✅ Success! Top scores: 
+
+[414/934] Processing: Jan JANSEN
+✅ Success! Top scores: 
+
+[415/934] Processing: Japan Style
+✅ Success! Top scores: 
+
+[416/934] Processing: Japanese brand
+✅ Success! Top scores: minimaljapan:0.8, casual:0.6, techwear:0.5
+
+[417/934] Processing: Jasper Conran
+✅ Success! Top scores: formal:0.6, casual:0.4
+
+[418/934] Processing: JB Martin
+✅ Success! Top scores: vintage:0.4
+
+[419/934] Processing: Jean Baptiste Rautureau
+✅ Success! Top scores: 
+
+[420/934] Processing: Jean claude Jitrois
+✅ Success! Top scores: mobwife:0.7, vintage:0.4
+
+[421/934] Processing: Jean Paul Gaultier
+✅ Success! Top scores: avantgarde:0.9, clubkid:0.8, goth:0.7
+
+[422/934] Processing: jean paul gaultier x Knwls
+✅ Success! Top scores: avantgarde:0.9, y2k:0.8, clubkid:0.7
+
+[423/934] Processing: Jean-Charles de Castelbajac
+✅ Success! Top scores: harajuku:0.8, avantgarde:0.7, clubkid:0.6
+
+[424/934] Processing: Jeffrey Campbell
+✅ Success! Top scores: y2k:0.6, clubkid:0.4
+
+[425/934] Processing: Jil Sander
+✅ Success! Top scores: formal:0.9, avantgarde:0.6, minimaljapan:0.5
+
+[426/934] Processing: Jitrois
+✅ Success! Top scores: mobwife:0.7
+
+[427/934] Processing: Jkim
+✅ Success! Top scores: 
+
+[428/934] Processing: Joachim Bosse
+✅ Success! Top scores: 
+
+[429/934] Processing: John Ashfield
+✅ Success! Top scores: 
+
+[430/934] Processing: John Fluevog
+✅ Success! Top scores: 
+
+[431/934] Processing: John Galliano
+✅ Success! Top scores: avantgarde:0.8, y2k:0.7, deconstructed:0.6
+
+[432/934] Processing: John Richmond
+✅ Success! Top scores: y2k:0.6, vintage:0.5, mobwife:0.5
+
+[433/934] Processing: Jones New York
+✅ Success! Top scores: formal:0.7, casual:0.4
+
+[434/934] Processing: Joop!
+✅ Success! Top scores: formal:0.6, vintage:0.5, mobwife:0.4
+
+[435/934] Processing: Joshy
+✅ Success! Top scores: 
+
+[436/934] Processing: Juicy Couture
+✅ Success! Top scores: y2k:0.9, vintage:0.7, sporty:0.6
+
+[437/934] Processing: Julius
+✅ Success! Top scores: avantgarde:0.9, goth:0.8, deconstructed:0.8
+
+[438/934] Processing: Junior Gaultier
+✅ Success! Top scores: vintage:0.7, avantgarde:0.6, y2k:0.5
+
+[439/934] Processing: Junya Watanabe
+✅ Success! Top scores: avantgarde:0.9, techwear:0.8, deconstructed:0.8
+
+[440/934] Processing: Jus d'Orange
+✅ Success! Top scores: 
+
+[441/934] Processing: Just Cavalli
+✅ Success! Top scores: mobwife:0.8, y2k:0.5
+
+[442/934] Processing: Kalisson
+✅ Success! Top scores: 
+
+[443/934] Processing: Kamikaze London
+✅ Success! Top scores: 
+
+[444/934] Processing: Kangol
+✅ Success! Top scores: streetwear:0.6, vintage:0.5, sporty:0.4
+
+[445/934] Processing: Kansai Yamamoto
+✅ Success! Top scores: avantgarde:0.8, harajuku:0.7, clubkid:0.5
+
+[446/934] Processing: Karma
+✅ Success! Top scores: 
+
+[447/934] Processing: Kawasaki
+✅ Success! Top scores: 
+
+[448/934] Processing: Keine
+✅ Success! Top scores: 
+
+[449/934] Processing: Kenzo
+✅ Success! Top scores: harajuku:0.6, avantgarde:0.5, bohemian:0.4
+
+[450/934] Processing: Kenzo Jeans
+✅ Success! Top scores: vintage:0.6, y2k:0.5, streetwear:0.5
+
+[451/934] Processing: Khujo
+✅ Success! Top scores: casual:0.6, gorpcore:0.5, techwear:0.4
+
+[452/934] Processing: Kiabi
+✅ Success! Top scores: casual:0.6, sporty:0.4
+
+[453/934] Processing: KidSuper Studios
+✅ Success! Top scores: streetwear:0.8, clubkid:0.6, avantgarde:0.5
+
+[454/934] Processing: KIKO KOSTADINOV
+✅ Success! Top scores: avantgarde:0.8, techwear:0.6, deconstructed:0.5
+
+[455/934] Processing: Kilyx
+✅ Success! Top scores: 
+
+[456/934] Processing: Kim
+✅ Success! Top scores: 
+
+[457/934] Processing: Kira Plastinina
+✅ Success! Top scores: y2k:0.8, vintage:0.4
+
+[458/934] Processing: KMRii
+✅ Success! Top scores: goth:0.7, avantgarde:0.6, techwear:0.5
+
+[459/934] Processing: knee support
+✅ Success! Top scores: 
+
+[460/934] Processing: Kollyy
+✅ Success! Top scores: 
+
+[461/934] Processing: Koolook
+✅ Success! Top scores: 
+
+[462/934] Processing: KOR@KOR
+✅ Success! Top scores: 
+
+[463/934] Processing: kosamui
+✅ Success! Top scores: 
+
+[464/934] Processing: Kris Van Assche
+✅ Success! Top scores: avantgarde:0.6, formal:0.5
+
+[465/934] Processing: Krizia
+✅ Success! Top scores: vintage:0.6, y2k:0.4
+
+[466/934] Processing: Ksenia Schnaider
+✅ Success! Top scores: deconstructed:0.6, avantgarde:0.5, y2k:0.4
+
+[467/934] Processing: L'Officina Della Moda
+✅ Success! Top scores: 
+
+[468/934] Processing: L33
+✅ Success! Top scores: 
+
+[469/934] Processing: La City
+✅ Success! Top scores: y2k:0.5, formal:0.4
+
+[470/934] Processing: La Fee Maraboutee
+✅ Success! Top scores: bohemian:0.7, casual:0.6, vintage:0.4
+
+[471/934] Processing: La Moda
+✅ Success! Top scores: 
+
+[472/934] Processing: La Mode Est À Vous
+✅ Success! Top scores: y2k:0.6, vintage:0.5
+
+[473/934] Processing: la penderie d'Amélie
+✅ Success! Top scores: 
+
+[474/934] Processing: La Perla
+✅ Success! Top scores: formal:0.6, officesiren:0.5, balletcore:0.4
+
+[475/934] Processing: La Tribu Des Nanas
+✅ Success! Top scores: 
+
+[476/934] Processing: Lady Gaga
+✅ Success! Top scores: clubkid:1, avantgarde:0.8, harajuku:0.6
+
+[477/934] Processing: Lambertozzi
+✅ Success! Top scores: 
+
+[478/934] Processing: Lanvin
+✅ Success! Top scores: formal:0.8, vintage:0.5, avantgarde:0.4
+
+[479/934] Processing: latex
+✅ Success! Top scores: clubkid:0.8
+
+[480/934] Processing: Latitude Femme
+✅ Success! Top scores: 
+
+[481/934] Processing: Laura Biagiotti
+✅ Success! Top scores: vintage:0.5, formal:0.4
+
+[482/934] Processing: Lauren Vidal
+✅ Success! Top scores: vintage:0.4
+
+[483/934] Processing: Laurent Cerrer
+✅ Success! Top scores: 
+
+[484/934] Processing: Lavand
+✅ Success! Top scores: bohemian:0.5, cottagecore:0.4
+
+[485/934] Processing: Le Bourget
+✅ Success! Top scores: 
+
+[486/934] Processing: Le Phare De La Baleine
+✅ Success! Top scores: 
+
+[487/934] Processing: Leather Collection
+✅ Success! Top scores: 
+
+[488/934] Processing: Lefties
+✅ Success! Top scores: casual:0.6, streetwear:0.4
+
+[489/934] Processing: Legatte
+✅ Success! Top scores: 
+
+[490/934] Processing: Leïko
+✅ Success! Top scores: 
+
+[491/934] Processing: Lemaire
+✅ Success! Top scores: casual:0.8, minimaljapan:0.7, formal:0.6
+
+[492/934] Processing: Les Copains
+✅ Success! Top scores: formal:0.6, vintage:0.5
+
+[493/934] Processing: Lewkin
+✅ Success! Top scores: kfashion:0.8, y2k:0.7, streetwear:0.5
+
+[494/934] Processing: Lezilla
+✅ Success! Top scores: 
+
+[495/934] Processing: LFYT
+✅ Success! Top scores: streetwear:0.8
+
+[496/934] Processing: Li-Ning
+✅ Success! Top scores: sporty:0.9, streetwear:0.5, techwear:0.4
+
+[497/934] Processing: liansuran
+✅ Success! Top scores: 
+
+[498/934] Processing: Libertine Libertine
+✅ Success! Top scores: casual:0.7
+
+[499/934] Processing: Life Is Pain
+✅ Success! Top scores: 
+
+[500/934] Processing: LIGHT BEFORE DARK
+✅ Success! Top scores: y2k:0.6, streetwear:0.5, vintage:0.4
+
+[501/934] Processing: Liliane H
+✅ Success! Top scores: 
+
+[502/934] Processing: Lioness
+✅ Success! Top scores: y2k:0.7, streetwear:0.4
+
+[503/934] Processing: Lisa Tucci
+✅ Success! Top scores: 
+
+[504/934] Processing: Lissa
+✅ Success! Top scores: 
+
+[505/934] Processing: Liu Jo
+✅ Success! Top scores: y2k:0.5, formal:0.4
+
+[506/934] Processing: livre
+✅ Success! Top scores: 
+
+[507/934] Processing: Loewe
+✅ Success! Top scores: eclecticgrandpa:0.7, avantgarde:0.4
+
+[508/934] Processing: Lola Espeleta
+✅ Success! Top scores: y2k:0.5, vintage:0.4
+
+[509/934] Processing: London
+✅ Success! Top scores: 
+
+[510/934] Processing: Loona
+✅ Success! Top scores: 
+
+[511/934] Processing: Lost & Found Ria Dunn
+✅ Success! Top scores: avantgarde:0.6, deconstructed:0.5, minimaljapan:0.4
+
+[512/934] Processing: Lost in echo
+✅ Success! Top scores: 
+
+[513/934] Processing: Love Moschino
+✅ Success! Top scores: y2k:0.6, vintage:0.5, streetwear:0.4
+
+[514/934] Processing: Luciano Padovan
+✅ Success! Top scores: mobwife:0.7
+
+[515/934] Processing: Lucy Paris
+✅ Success! Top scores: casual:0.5, bohemian:0.4
+
+[516/934] Processing: Ludmilla
+✅ Success! Top scores: 
+
+[517/934] Processing: Ludovic de Saint Sernin
+✅ Success! Top scores: avantgarde:0.8, clubkid:0.4
+
+[518/934] Processing: Lumina
+✅ Success! Top scores: 
+
+[519/934] Processing: Luna Del Pinal
+✅ Success! Top scores: 
+
+[520/934] Processing: lyda France
+✅ Success! Top scores: 
+
+[521/934] Processing: M Missoni
+✅ Success! Top scores: bohemian:0.6, vintage:0.5, mobwife:0.4
+
+[522/934] Processing: M-Made in Italy
+✅ Success! Top scores: 
+
+[523/934] Processing: M1992
+✅ Success! Top scores: 
+
+[524/934] Processing: Madame Zaza Of Marseille
+✅ Success! Top scores: 
+
+[525/934] Processing: Made
+✅ Success! Top scores: 
+
+[526/934] Processing: Made In Italy
+✅ Success! Top scores: 
+
+[527/934] Processing: Madomorpho
+✅ Success! Top scores: 
+
+[528/934] Processing: Madonna
+✅ Success! Top scores: y2k:0.9, clubkid:0.9, vintage:0.8
+
+[529/934] Processing: MAEVA
+✅ Success! Top scores: 
+
+[530/934] Processing: Maison
+✅ Success! Top scores: 
+
+[531/934] Processing: Maison Margiela
+✅ Success! Top scores: avantgarde:1, deconstructed:1, goth:0.4
+
+[532/934] Processing: Maje
+✅ Success! Top scores: casual:0.6, bohemian:0.4
+
+[533/934] Processing: Mallow
+✅ Success! Top scores: 
+
+[534/934] Processing: Malvin
+✅ Success! Top scores: 
+
+[535/934] Processing: Mango
+✅ Success! Top scores: casual:0.7, formal:0.5, bohemian:0.4
+
+[536/934] Processing: Manoukian
+✅ Success! Top scores: y2k:0.5, vintage:0.4
+
+[537/934] Processing: Manoush
+✅ Success! Top scores: bohemian:0.8
+
+[538/934] Processing: Mansur Gavriel
+✅ Success! Top scores: casual:0.7, formal:0.5
+
+[539/934] Processing: Marc Cain
+✅ Success! Top scores: formal:0.7, casual:0.6, academia:0.4
+
+[540/934] Processing: Marc Le Bihan
+✅ Success! Top scores: avantgarde:0.8, goth:0.7, deconstructed:0.6
+
+[541/934] Processing: Marella
+✅ Success! Top scores: formal:0.6
+
+[542/934] Processing: Marella Sport
+✅ Success! Top scores: sporty:0.6, formal:0.5
+
+[543/934] Processing: Marie Lund
+✅ Success! Top scores: 
+
+[544/934] Processing: Marimekko
+✅ Success! Top scores: casual:0.7, bohemian:0.5, cottagecore:0.4
+
+[545/934] Processing: Marine Serre
+✅ Success! Top scores: avantgarde:0.8, techwear:0.7, deconstructed:0.6
+
+[546/934] Processing: Marithé + François Girbaud
+✅ Success! Top scores: vintage:0.8, y2k:0.7, deconstructed:0.6
+
+[547/934] Processing: Marni
+✅ Success! Top scores: avantgarde:0.6, bohemian:0.5, deconstructed:0.4
+
+[548/934] Processing: Martine Rose
+✅ Success! Top scores: streetwear:0.8, avantgarde:0.5, blokecore:0.5
+
+[549/934] Processing: Masha Popova
+✅ Success! Top scores: y2k:0.7, avantgarde:0.6, deconstructed:0.5
+
+[550/934] Processing: Masnada
+✅ Success! Top scores: deconstructed:0.8, avantgarde:0.7, goth:0.4
+
+[551/934] Processing: Massimo Rebecchi
+✅ Success! Top scores: formal:0.6
+
+[552/934] Processing: Masterpelle
+✅ Success! Top scores: 
+
+[553/934] Processing: Max Azria
+✅ Success! Top scores: y2k:0.6, vintage:0.5, officesiren:0.4
+
+[554/934] Processing: Max Mara
+✅ Success! Top scores: formal:0.9
+
+[555/934] Processing: Maxime
+✅ Success! Top scores: 
+
+[556/934] Processing: MELISSA
+✅ Success! Top scores: clubkid:0.6, streetwear:0.4
+
+[557/934] Processing: Mellow Yellow
+✅ Success! Top scores: 
+
+[558/934] Processing: Menonove
+✅ Success! Top scores: 
+
+[559/934] Processing: mermaidway
+✅ Success! Top scores: 
+
+[560/934] Processing: Meshki
+✅ Success! Top scores: y2k:0.6, officesiren:0.5
+
+[561/934] Processing: Met
+✅ Success! Top scores: 
+
+[562/934] Processing: Mexx
+✅ Success! Top scores: casual:0.6, vintage:0.5, y2k:0.4
+
+[563/934] Processing: Mezzo
+✅ Success! Top scores: 
+
+[564/934] Processing: Mia soana
+✅ Success! Top scores: 
+
+[565/934] Processing: Michael Kors
+✅ Success! Top scores: formal:0.6, casual:0.5, mobwife:0.4
+
+[566/934] Processing: Michiko Koshino
+✅ Success! Top scores: techwear:0.6, vintage:0.5, y2k:0.4
+
+[567/934] Processing: Mihara Yasuhiro
+✅ Success! Top scores: avantgarde:0.6, streetwear:0.5, deconstructed:0.5
+
+[568/934] Processing: Miista
+✅ Success! Top scores: bohemian:0.5, casual:0.4
+
+[569/934] Processing: MilkWhite
+✅ Success! Top scores: 
+
+[570/934] Processing: Mimi la folie
+✅ Success! Top scores: 
+
+[571/934] Processing: Mirasati
+✅ Success! Top scores: 
+
+[572/934] Processing: MISBHV
+✅ Success! Top scores: streetwear:0.7, y2k:0.6, clubkid:0.5
+
+[573/934] Processing: Miss Blumarine
+✅ Success! Top scores: y2k:0.7
+
+[574/934] Processing: Miss Posh
+✅ Success! Top scores: 
+
+[575/934] Processing: Miss Rose
+✅ Success! Top scores: 
+
+[576/934] Processing: Miss Softy
+✅ Success! Top scores: 
+
+[577/934] Processing: Missoni
+✅ Success! Top scores: bohemian:0.6, vintage:0.5, formal:0.4
+
+[578/934] Processing: Miu Miu
+✅ Success! Top scores: balletcore:0.8, cottagecore:0.4
+
+[579/934] Processing: MIZUNO
+✅ Success! Top scores: sporty:0.9
+
+[580/934] Processing: MM6 Maison Margiela
+✅ Success! Top scores: deconstructed:0.8, avantgarde:0.7
+
+[581/934] Processing: MNG Suit
+✅ Success! Top scores: formal:0.8
+
+[582/934] Processing: mode ren
+✅ Success! Top scores: 
+
+[583/934] Processing: Moloko
+✅ Success! Top scores: 
+
+[584/934] Processing: Moma
+✅ Success! Top scores: 
+
+[585/934] Processing: Moovy
+✅ Success! Top scores: 
+
+[586/934] Processing: More & More
+✅ Success! Top scores: y2k:0.5, vintage:0.4
+
+[587/934] Processing: Morgan
+✅ Success! Top scores: y2k:0.9, officesiren:0.8, vintage:0.6
+
+[588/934] Processing: Moschino
+✅ Success! Top scores: mobwife:0.8, vintage:0.7, y2k:0.6
+
+[589/934] Processing: Moshiki
+✅ Success! Top scores: bohemian:0.8, cottagecore:0.5
+
+[590/934] Processing: Mother
+✅ Success! Top scores: casual:0.7
+
+[591/934] Processing: motivi
+✅ Success! Top scores: y2k:0.6, officesiren:0.5, vintage:0.4
+
+[592/934] Processing: MOTYS
+✅ Success! Top scores: 
+
+[593/934] Processing: Mountaineer
+✅ Success! Top scores: gorpcore:0.8
+
+[594/934] Processing: Mulberry
+✅ Success! Top scores: formal:0.7, academia:0.4
+
+[595/934] Processing: Mustang
+✅ Success! Top scores: vintage:0.5
+
+[596/934] Processing: Muubaa
+✅ Success! Top scores: 
+
+[597/934] Processing: MUXART
+✅ Success! Top scores: 
+
+[598/934] Processing: MUXART Barcelona
+✅ Success! Top scores: 
+
+[599/934] Processing: My Design Paris
+✅ Success! Top scores: 
+
+[600/934] Processing: MYKITA
+✅ Success! Top scores: techwear:0.7, avantgarde:0.4
+
+[601/934] Processing: Mythos
+✅ Success! Top scores: 
+
+[602/934] Processing: NA-KD
+✅ Success! Top scores: y2k:0.7, casual:0.6, streetwear:0.5
+
+[603/934] Processing: Nach
+✅ Success! Top scores: 
+
+[604/934] Processing: Naf Naf
+✅ Success! Top scores: y2k:0.7, vintage:0.5
+
+[605/934] Processing: Namilia
+✅ Success! Top scores: clubkid:1
+
+[606/934] Processing: Nana
+✅ Success! Top scores: 
+
+[607/934] Processing: nana baila
+✅ Success! Top scores: 
+
+[608/934] Processing: Naoned
+✅ Success! Top scores: 
+
+[609/934] Processing: Napapijri
+✅ Success! Top scores: gorpcore:0.7
+
+[610/934] Processing: Nathalie Garçon
+✅ Success! Top scores: 
+
+[611/934] Processing: Neil Barrett
+✅ Success! Top scores: formal:0.7, avantgarde:0.6, casual:0.5
+
+[612/934] Processing: New Collection
+✅ Success! Top scores: 
+
+[613/934] Processing: New Girl Order
+✅ Success! Top scores: y2k:0.8, clubkid:0.5, streetwear:0.4
+
+[614/934] Processing: New London
+✅ Success! Top scores: 
+
+[615/934] Processing: New Rock
+✅ Success! Top scores: goth:1, grunge:0.8
+
+[616/934] Processing: Nice Things
+✅ Success! Top scores: casual:0.6, bohemian:0.5, cottagecore:0.4
+
+[617/934] Processing: Nike
+✅ Success! Top scores: sporty:1, streetwear:0.6, gorpcore:0.5
+
+[618/934] Processing: Ninamounah
+✅ Success! Top scores: avantgarde:0.7, deconstructed:0.5
+
+[619/934] Processing: Nine in the Morning
+✅ Success! Top scores: casual:0.7
+
+[620/934] Processing: No Excuse
+✅ Success! Top scores: 
+
+[621/934] Processing: NO LABEL
+✅ Success! Top scores: 
+
+[622/934] Processing: Noa Noa
+✅ Success! Top scores: bohemian:0.7, cottagecore:0.5
+
+[623/934] Processing: Nolita
+✅ Success! Top scores: y2k:0.8, officesiren:0.6, vintage:0.5
+
+[624/934] Processing: Nolita Pocket
+✅ Success! Top scores: 
+
+[625/934] Processing: Norda
+✅ Success! Top scores: sporty:0.8, gorpcore:0.7
+
+[626/934] Processing: Norse Projects
+✅ Success! Top scores: casual:0.8, gorpcore:0.5, techwear:0.4
+
+[627/934] Processing: Northland
+✅ Success! Top scores: 
+
+[628/934] Processing: Novesta
+✅ Success! Top scores: casual:0.7, sporty:0.5, gorpcore:0.4
+
+[629/934] Processing: Nü
+✅ Success! Top scores: 
+
+[630/934] Processing: Number (N)ine
+✅ Success! Top scores: grunge:0.8
+
+[631/934] Processing: Nuna Lie
+✅ Success! Top scores: y2k:0.6, vintage:0.5, casual:0.4
+
+[632/934] Processing: O32c
+✅ Success! Top scores: streetwear:0.8, techwear:0.7, avantgarde:0.6
+
+[633/934] Processing: Oakley
+✅ Success! Top scores: gorpcore:0.6, techwear:0.4
+
+[634/934] Processing: Obey
+✅ Success! Top scores: streetwear:0.8, grunge:0.4
+
+[635/934] Processing: OHDD
+✅ Success! Top scores: 
+
+[636/934] Processing: Ohne
+✅ Success! Top scores: 
+
+[637/934] Processing: Okida
+✅ Success! Top scores: 
+
+[638/934] Processing: Olly Gan
+✅ Success! Top scores: casual:0.5, formal:0.4
+
+[639/934] Processing: ONLY
+✅ Success! Top scores: 
+
+[640/934] Processing: ono koon
+✅ Success! Top scores: 
+
+[641/934] Processing: Opening Ceremony
+✅ Success! Top scores: streetwear:0.7, clubkid:0.6, y2k:0.5
+
+[642/934] Processing: Opium
+✅ Success! Top scores: 
+
+[643/934] Processing: ORSAY
+✅ Success! Top scores: y2k:0.7, vintage:0.6, officesiren:0.5
+
+[644/934] Processing: OTTOLINGER
+✅ Success! Top scores: avantgarde:0.8, techwear:0.7, deconstructed:0.7
+
+[645/934] Processing: oui ou non
+✅ Success! Top scores: 
+
+[646/934] Processing: oXs
+✅ Success! Top scores: 
+
+[647/934] Processing: OXYDO
+✅ Success! Top scores: 
+
+[648/934] Processing: Oyé papaya !
+✅ Success! Top scores: 
+
+[649/934] Processing: Oysho
+✅ Success! Top scores: sporty:0.8, casual:0.6
+
+[650/934] Processing: Paciotti
+✅ Success! Top scores: mobwife:0.5
+
+[651/934] Processing: Paco Gil
+✅ Success! Top scores: 
+
+[652/934] Processing: Paloma Wool
+✅ Success! Top scores: bohemian:0.8, casual:0.7, cottagecore:0.5
+
+[653/934] Processing: Paolo masi
+✅ Success! Top scores: 
+
+[654/934] Processing: PARISI & NADALINI
+✅ Success! Top scores: 
+
+[655/934] Processing: Party 21
+✅ Success! Top scores: 
+
+[656/934] Processing: pas de marque
+✅ Success! Top scores: 
+
+[657/934] Processing: Pastorelli
+✅ Success! Top scores: 
+
+[658/934] Processing: Patagonia
+✅ Success! Top scores: gorpcore:1
+
+[659/934] Processing: Pataugas
+✅ Success! Top scores: sporty:0.6, gorpcore:0.5, casual:0.4
+
+[660/934] Processing: Patrizia Pepe
+✅ Success! Top scores: y2k:0.6, mobwife:0.5, formal:0.4
+
+[661/934] Processing: Paul
+✅ Success! Top scores: 
+
+[662/934] Processing: Paula Canovas Del Val
+✅ Success! Top scores: avantgarde:0.8, deconstructed:0.6, clubkid:0.5
+
+[663/934] Processing: Pause Café
+✅ Success! Top scores: vintage:0.6
+
+[664/934] Processing: Peachoo krejberg
+✅ Success! Top scores: avantgarde:0.6, deconstructed:0.5
+
+[665/934] Processing: Pepe Jeans
+✅ Success! Top scores: casual:0.7, y2k:0.6, vintage:0.5
+
+[666/934] Processing: Personsoul
+✅ Success! Top scores: 
+
+[667/934] Processing: Peter Kaiser
+✅ Success! Top scores: formal:0.6
+
+[668/934] Processing: Pfister
+✅ Success! Top scores: 
+
+[669/934] Processing: PianuraStudio
+✅ Success! Top scores: 
+
+[670/934] Processing: Picard
+✅ Success! Top scores: 
+
+[671/934] Processing: Pierre Cardin
+✅ Success! Top scores: vintage:0.6, avantgarde:0.4
+
+[672/934] Processing: Piferi
+✅ Success! Top scores: 
+
+[673/934] Processing: PINCKON
+✅ Success! Top scores: 
+
+[674/934] Processing: Pinko
+✅ Success! Top scores: y2k:0.7, mobwife:0.6, vintage:0.4
+
+[675/934] Processing: Più & Più
+✅ Success! Top scores: 
+
+[676/934] Processing: Planet Hollywood
+✅ Success! Top scores: y2k:0.6, vintage:0.5
+
+[677/934] Processing: PLANETE INTERDITE
+✅ Success! Top scores: 
+
+[678/934] Processing: Playboy
+✅ Success! Top scores: y2k:0.7, vintage:0.6, mobwife:0.5
+
+[679/934] Processing: Please
+✅ Success! Top scores: y2k:0.7, vintage:0.5
+
+[680/934] Processing: Plein Sud
+✅ Success! Top scores: mobwife:0.5, y2k:0.4
+
+[681/934] Processing: Pois
+✅ Success! Top scores: 
+
+[682/934] Processing: Poizen Industries
+✅ Success! Top scores: goth:0.8
+
+[683/934] Processing: Pollini
+✅ Success! Top scores: mobwife:0.4
+
+[684/934] Processing: PONY
+✅ Success! Top scores: sporty:0.7, vintage:0.4, streetwear:0.4
+
+[685/934] Processing: Poolgirl
+✅ Success! Top scores: 
+
+[686/934] Processing: POPMART
+✅ Success! Top scores: 
+
+[687/934] Processing: Positive
+✅ Success! Top scores: 
+
+[688/934] Processing: positive group
+✅ Success! Top scores: 
+
+[689/934] Processing: Positivo
+✅ Success! Top scores: 
+
+[690/934] Processing: Pourquoi Pas
+✅ Success! Top scores: 
+
+[691/934] Processing: Prada
+✅ Success! Top scores: formal:0.8, vintage:0.6, avantgarde:0.5
+
+[692/934] Processing: Praying
+✅ Success! Top scores: streetwear:0.7, y2k:0.6, clubkid:0.5
+
+[693/934] Processing: prêt-a-porter
+✅ Success! Top scores: 
+
+[694/934] Processing: PrettyLittleThing
+✅ Success! Top scores: y2k:0.8, officesiren:0.6, streetwear:0.5
+
+[695/934] Processing: Pringle of Scotland
+✅ Success! Top scores: casual:0.7, formal:0.6, vintage:0.5
+
+[696/934] Processing: Proenza Schouler
+✅ Success! Top scores: formal:0.6, avantgarde:0.5, casual:0.4
+
+[697/934] Processing: PROGRESS
+✅ Success! Top scores: 
+
+[698/934] Processing: Promod
+✅ Success! Top scores: casual:0.6, y2k:0.4
+
+[699/934] Processing: Pronovias
+✅ Success! Top scores: formal:0.9
+
+[700/934] Processing: Prototype
+✅ Success! Top scores: 
+
+[701/934] Processing: Psy Jeans
+✅ Success! Top scores: 
+
+[702/934] Processing: Psylo
+✅ Success! Top scores: bohemian:0.8, goth:0.5
+
+[703/934] Processing: pucca
+✅ Success! Top scores: 
+
+[704/934] Processing: PUCCI
+✅ Success! Top scores: mobwife:0.7, bohemian:0.5
+
+[705/934] Processing: Puma X KidSuper studios
+✅ Success! Top scores: sporty:0.8, streetwear:0.6, clubkid:0.4
+
+[706/934] Processing: punk org style
+✅ Success! Top scores: 
+
+[707/934] Processing: Punk Rave
+✅ Success! Top scores: goth:0.9, grunge:0.7, deconstructed:0.5
+
+[708/934] Processing: puseline by Draks
+✅ Success! Top scores: 
+
+[709/934] Processing: pushBUTTON
+✅ Success! Top scores: kfashion:1
+
+[710/934] Processing: QED London
+✅ Success! Top scores: y2k:0.5, vintage:0.4
+
+[711/934] Processing: Quelle
+✅ Success! Top scores: 
+
+[712/934] Processing: Racer
+✅ Success! Top scores: 
+
+[713/934] Processing: Racer Worldwide
+✅ Success! Top scores: sporty:0.7, streetwear:0.6, techwear:0.4
+
+[714/934] Processing: Rains
+✅ Success! Top scores: gorpcore:0.8, techwear:0.7, casual:0.6
+
+[715/934] Processing: RAS
+✅ Success! Top scores: 
+
+[716/934] Processing: Ravn Ravn
+✅ Success! Top scores: 
+
+[717/934] Processing: Rayure
+✅ Success! Top scores: 
+
+[718/934] Processing: Real
+✅ Success! Top scores: 
+
+[719/934] Processing: Reclaimed Vintage
+✅ Success! Top scores: vintage:0.8, y2k:0.5, streetwear:0.4
+
+[720/934] Processing: Religion
+✅ Success! Top scores: goth:0.5, grunge:0.4
+
+[721/934] Processing: Renatto Bene
+✅ Success! Top scores: 
+
+[722/934] Processing: Renatto Bene Paris
+✅ Success! Top scores: 
+
+[723/934] Processing: René Derhy
+✅ Success! Top scores: bohemian:0.8, vintage:0.5
+
+[724/934] Processing: René Lezard
+✅ Success! Top scores: formal:0.7, vintage:0.4
+
+[725/934] Processing: Residence Firenze Mondo Albion
+✅ Success! Top scores: 
+
+[726/934] Processing: Review
+✅ Success! Top scores: 
+
+[727/934] Processing: reward
+✅ Success! Top scores: 
+
+[728/934] Processing: Richmond
+✅ Success! Top scores: mobwife:0.5
+
+[729/934] Processing: Rick Owens
+✅ Success! Top scores: grunge:1, goth:1, avantgarde:1
+
+[730/934] Processing: Rinascimento
+✅ Success! Top scores: mobwife:0.5, formal:0.4
+
+[731/934] Processing: RIU
+✅ Success! Top scores: 
+
+[732/934] Processing: ROA
+✅ Success! Top scores: gorpcore:1
+
+[733/934] Processing: Roberta Scarpa
+✅ Success! Top scores: 
+
+[734/934] Processing: Roberto Cavalli
+✅ Success! Top scores: mobwife:1, vintage:0.6
+
+[735/934] Processing: Rocawear
+✅ Success! Top scores: streetwear:0.8, y2k:0.7, vintage:0.6
+
+[736/934] Processing: Rocco Barocco
+✅ Success! Top scores: mobwife:0.7, vintage:0.6, y2k:0.5
+
+[737/934] Processing: roccobarocco
+✅ Success! Top scores: mobwife:0.6, y2k:0.5
+
+[738/934] Processing: ROMBAUT
+✅ Success! Top scores: techwear:0.7, avantgarde:0.5, streetwear:0.4
+
+[739/934] Processing: Romess
+✅ Success! Top scores: 
+
+[740/934] Processing: Rossodisera
+✅ Success! Top scores: 
+
+[741/934] Processing: Royal Elastics
+✅ Success! Top scores: sporty:0.6, streetwear:0.5, y2k:0.4
+
+[742/934] Processing: RUIbuilt
+✅ Success! Top scores: 
+
+[743/934] Processing: Rundholz
+✅ Success! Top scores: deconstructed:0.8, avantgarde:0.7, goth:0.5
+
+[744/934] Processing: rxt
+✅ Success! Top scores: 
+
+[745/934] Processing: S.O.S. By Orza Studio
+✅ Success! Top scores: 
+
+[746/934] Processing: s.Oliver
+✅ Success! Top scores: casual:0.7, sporty:0.4
+
+[747/934] Processing: Sacai
+✅ Success! Top scores: avantgarde:0.8, harajuku:0.7, deconstructed:0.6
+
+[748/934] Processing: Sacha
+✅ Success! Top scores: 
+
+[749/934] Processing: Safilo
+✅ Success! Top scores: 
+
+[750/934] Processing: Saint Galant
+✅ Success! Top scores: 
+
+[751/934] Processing: Saks Potts
+✅ Success! Top scores: mobwife:0.5, avantgarde:0.4
+
+[752/934] Processing: Salomon
+✅ Success! Top scores: gorpcore:0.9, techwear:0.7
+
+[753/934] Processing: Salvatore Ferragamo
+✅ Success! Top scores: formal:0.8, vintage:0.5, mobwife:0.4
+
+[754/934] Processing: Samsøe Samsøe
+✅ Success! Top scores: casual:0.8
+
+[755/934] Processing: San Marina
+✅ Success! Top scores: 
+
+[756/934] Processing: sandwich
+✅ Success! Top scores: 
+
+[757/934] Processing: sans marque
+✅ Success! Top scores: 
+
+[758/934] Processing: Sansangear
+✅ Success! Top scores: 
+
+[759/934] Processing: Santana
+✅ Success! Top scores: 
+
+[760/934] Processing: Sarah Pacini
+✅ Success! Top scores: formal:0.7
+
+[761/934] Processing: SATISFY
+✅ Success! Top scores: sporty:0.8, gorpcore:0.6, techwear:0.5
+
+[762/934] Processing: Savage Culture
+✅ Success! Top scores: bohemian:0.8
+
+[763/934] Processing: Scarpa
+✅ Success! Top scores: 
+
+[764/934] Processing: SCEE
+✅ Success! Top scores: 
+
+[765/934] Processing: Scotch & Soda
+✅ Success! Top scores: casual:0.8, bohemian:0.5, streetwear:0.4
+
+[766/934] Processing: See By Chloé
+✅ Success! Top scores: bohemian:0.8, cottagecore:0.4
+
+[767/934] Processing: Self
+✅ Success! Top scores: 
+
+[768/934] Processing: semantic design
+✅ Success! Top scores: 
+
+[769/934] Processing: senza marca
+✅ Success! Top scores: 
+
+[770/934] Processing: Sepia
+✅ Success! Top scores: 
+
+[771/934] Processing: Sergio Rossi
+✅ Success! Top scores: formal:0.7, mobwife:0.5
+
+[772/934] Processing: Sha Tuo
+✅ Success! Top scores: 
+
+[773/934] Processing: Shadd by Mosdaza
+✅ Success! Top scores: 
+
+[774/934] Processing: SHYX
+✅ Success! Top scores: 
+
+[775/934] Processing: Simply Chic
+✅ Success! Top scores: 
+
+[776/934] Processing: Sisley
+✅ Success! Top scores: y2k:0.6, vintage:0.5
+
+[777/934] Processing: Siste's
+✅ Success! Top scores: y2k:0.6
+
+[778/934] Processing: Skunkfunk
+✅ Success! Top scores: bohemian:0.6, casual:0.5
+
+[779/934] Processing: Sluisleder
+✅ Success! Top scores: 
+
+[780/934] Processing: SMI
+✅ Success! Top scores: 
+
+[781/934] Processing: SOFIA
+✅ Success! Top scores: 
+
+[782/934] Processing: Sogo
+✅ Success! Top scores: 
+
+[783/934] Processing: Sonax
+✅ Success! Top scores: 
+
+[784/934] Processing: Song of Style
+✅ Success! Top scores: casual:0.7, bohemian:0.5, cottagecore:0.4
+
+[785/934] Processing: Sonia Peña
+✅ Success! Top scores: formal:0.5
+
+[786/934] Processing: Sonia Rykiel
+✅ Success! Top scores: vintage:0.6, bohemian:0.4
+
+[787/934] Processing: Sonstiges
+✅ Success! Top scores: 
+
+[788/934] Processing: sophia vespucci
+✅ Success! Top scores: 
+
+[789/934] Processing: Sophie Mode
+✅ Success! Top scores: 
+
+[790/934] Processing: SOVIET
+✅ Success! Top scores: 
+
+[791/934] Processing: spector's paris
+✅ Success! Top scores: 
+
+[792/934] Processing: Spectors
+✅ Success! Top scores: 
+
+[793/934] Processing: Spiral
+✅ Success! Top scores: 
+
+[794/934] Processing: Sportmax
+✅ Success! Top scores: formal:0.8
+
+[795/934] Processing: Sportmax Code
+✅ Success! Top scores: formal:0.7
+
+[796/934] Processing: SSS WORLD CORP.
+✅ Success! Top scores: clubkid:0.8, streetwear:0.7, avantgarde:0.5
+
+[797/934] Processing: Statementcode
+✅ Success! Top scores: 
+
+[798/934] Processing: STAUD
+✅ Success! Top scores: casual:0.7, bohemian:0.5, y2k:0.4
+
+[799/934] Processing: steampunk gothic
+✅ Success! Top scores: goth:0.8
+
+[800/934] Processing: Stefanel
+✅ Success! Top scores: casual:0.6, vintage:0.5, formal:0.4
+
+[801/934] Processing: Stella McCartney
+✅ Success! Top scores: formal:0.7, casual:0.6, bohemian:0.5
+
+[802/934] Processing: Stile Benetton
+✅ Success! Top scores: casual:0.6, vintage:0.5, y2k:0.4
+
+[803/934] Processing: Stitch & Soul
+✅ Success! Top scores: 
+
+[804/934] Processing: story on
+✅ Success! Top scores: 
+
+[805/934] Processing: Strada
+✅ Success! Top scores: 
+
+[806/934] Processing: Strauss Innovation
+✅ Success! Top scores: 
+
+[807/934] Processing: studio1till8
+✅ Success! Top scores: 
+
+[808/934] Processing: Stüssy
+✅ Success! Top scores: streetwear:0.9, casual:0.5
+
+[809/934] Processing: Sublevel
+✅ Success! Top scores: 
+
+[810/934] Processing: Suicoke
+✅ Success! Top scores: gorpcore:0.8, sporty:0.7, casual:0.6
+
+[811/934] Processing: Sumori Chisato
+✅ Success! Top scores: harajuku:0.8, bohemian:0.7, avantgarde:0.5
+
+[812/934] Processing: Sun Light
+✅ Success! Top scores: 
+
+[813/934] Processing: Sun68
+✅ Success! Top scores: casual:0.7, sporty:0.6
+
+[814/934] Processing: Sunlight
+✅ Success! Top scores: 
+
+[815/934] Processing: SuperTrash
+✅ Success! Top scores: y2k:0.6, officesiren:0.4
+
+[816/934] Processing: Supreme
+✅ Success! Top scores: streetwear:1
+
+[817/934] Processing: Supreme x Jean Paul Gaultier
+✅ Success! Top scores: streetwear:0.9, avantgarde:0.5, clubkid:0.4
+
+[818/934] Processing: sushan fashion
+✅ Success! Top scores: 
+
+[819/934] Processing: Swamee
+✅ Success! Top scores: 
+
+[820/934] Processing: sweet chilling
+✅ Success! Top scores: 
+
+[821/934] Processing: Sweet Matilda
+✅ Success! Top scores: 
+
+[822/934] Processing: SWISH JEANS
+✅ Success! Top scores: 
+
+[823/934] Processing: syndeed
+✅ Success! Top scores: 
+
+[824/934] Processing: Tally Weijl
+✅ Success! Top scores: y2k:0.8, vintage:0.4
+
+[825/934] Processing: Tantum
+✅ Success! Top scores: 
+
+[826/934] Processing: Taschen
+✅ Success! Top scores: 
+
+[827/934] Processing: Teddy spa
+✅ Success! Top scores: 
+
+[828/934] Processing: teen spirit
+✅ Success! Top scores: 
+
+[829/934] Processing: Tendenze
+✅ Success! Top scores: 
+
+[830/934] Processing: TERANCE KOLE
+✅ Success! Top scores: y2k:0.6
+
+[831/934] Processing: Terranova
+✅ Success! Top scores: casual:0.6, y2k:0.4
+
+[832/934] Processing: Tex by Max Azria
+✅ Success! Top scores: y2k:0.7, vintage:0.6
+
+[833/934] Processing: The Art Company
+✅ Success! Top scores: 
+
+[834/934] Processing: The Korean Fashion
+✅ Success! Top scores: kfashion:0.9, streetwear:0.4
+
+[835/934] Processing: The Weeknd
+✅ Success! Top scores: 
+
+[836/934] Processing: Thierry Mugler
+✅ Success! Top scores: y2k:0.8, avantgarde:0.7, mobwife:0.7
+
+[837/934] Processing: Thinking MU
+✅ Success! Top scores: casual:0.7, bohemian:0.6
+
+[838/934] Processing: Thomas Sabo
+✅ Success! Top scores: 
+
+[839/934] Processing: thoughtwefriends
+✅ Success! Top scores: 
+
+[840/934] Processing: Tiggers
+✅ Success! Top scores: 
+
+[841/934] Processing: Tintoretto
+✅ Success! Top scores: vintage:0.5, y2k:0.4
+
+[842/934] Processing: Tish & Cash
+✅ Success! Top scores: 
+
+[843/934] Processing: Tony Mora
+✅ Success! Top scores: 
+
+[844/934] Processing: Topshop Moto
+✅ Success! Top scores: y2k:0.8, vintage:0.7, casual:0.6
+
+[845/934] Processing: Totême
+✅ Success! Top scores: casual:0.8, formal:0.7, minimaljapan:0.6
+
+[846/934] Processing: Trasparenze
+✅ Success! Top scores: 
+
+[847/934] Processing: Trend One
+✅ Success! Top scores: 
+
+[848/934] Processing: Tricot Chic
+✅ Success! Top scores: 
+
+[849/934] Processing: Trippen
+✅ Success! Top scores: avantgarde:0.7, deconstructed:0.5
+
+[850/934] Processing: true vintage
+✅ Success! Top scores: vintage:1
+
+[851/934] Processing: Trussardi
+✅ Success! Top scores: formal:0.7, mobwife:0.5
+
+[852/934] Processing: Trussardi Junior
+✅ Success! Top scores: 
+
+[853/934] Processing: Tulipano
+✅ Success! Top scores: 
+
+[854/934] Processing: Tulle
+✅ Success! Top scores: 
+
+[855/934] Processing: Twin Set by Simona Barbieri
+✅ Success! Top scores: bohemian:0.5, mobwife:0.5, formal:0.4
+
+[856/934] Processing: tytm8
+✅ Success! Top scores: 
+
+[857/934] Processing: Ugorosso
+✅ Success! Top scores: 
+
+[858/934] Processing: Umbro
+✅ Success! Top scores: blokecore:0.9, sporty:0.8, vintage:0.4
+
+[859/934] Processing: Un Matin D'été
+✅ Success! Top scores: 
+
+[860/934] Processing: un1deux2trois3
+✅ Success! Top scores: 
+
+[861/934] Processing: Ungaro
+✅ Success! Top scores: vintage:0.6, formal:0.5, mobwife:0.4
+
+[862/934] Processing: Ungaro Fever
+✅ Success! Top scores: vintage:0.6, y2k:0.5
+
+[863/934] Processing: Unikat
+✅ Success! Top scores: 
+
+[864/934] Processing: Unique
+✅ Success! Top scores: 
+
+[865/934] Processing: United Colors of Benetton
+✅ Success! Top scores: casual:0.7, vintage:0.5
+
+[866/934] Processing: United Nude
+✅ Success! Top scores: avantgarde:0.7, clubkid:0.4
+
+[867/934] Processing: UnLace
+✅ Success! Top scores: 
+
+[868/934] Processing: UNOde50
+✅ Success! Top scores: 
+
+[869/934] Processing: unoffizal
+✅ Success! Top scores: 
+
+[870/934] Processing: Upcycled
+✅ Success! Top scores: 
+
+[871/934] Processing: Urban Kiabi
+✅ Success! Top scores: 
+
+[872/934] Processing: Urban Outfitters
+✅ Success! Top scores: casual:0.7, y2k:0.6, streetwear:0.6
+
+[873/934] Processing: Uterqüe
+✅ Success! Top scores: formal:0.6, casual:0.5
+
+[874/934] Processing: Vale Genta
+✅ Success! Top scores: 
+
+[875/934] Processing: Valiente
+✅ Success! Top scores: 
+
+[876/934] Processing: Vaquera
+✅ Success! Top scores: avantgarde:0.8, deconstructed:0.7, clubkid:0.6
+
+[877/934] Processing: Venice Beach
+✅ Success! Top scores: 
+
+[878/934] Processing: Vera Pelle
+✅ Success! Top scores: 
+
+[879/934] Processing: Verge Girl
+✅ Success! Top scores: y2k:0.6, bohemian:0.5, casual:0.4
+
+[880/934] Processing: Vero Cuoio
+✅ Success! Top scores: 
+
+[881/934] Processing: Versace
+✅ Success! Top scores: mobwife:1, vintage:0.5
+
+[882/934] Processing: Versace Collection
+✅ Success! Top scores: mobwife:0.8, vintage:0.5
+
+[883/934] Processing: Versace Jeans
+✅ Success! Top scores: y2k:0.7, mobwife:0.7, vintage:0.6
+
+[884/934] Processing: Versace Jeans Couture
+✅ Success! Top scores: mobwife:0.8, y2k:0.7, vintage:0.6
+
+[885/934] Processing: Versace Sport
+✅ Success! Top scores: sporty:0.8, y2k:0.7, vintage:0.6
+
+[886/934] Processing: Versus Versace
+✅ Success! Top scores: y2k:0.7, mobwife:0.6, vintage:0.5
+
+[887/934] Processing: Vetements
+✅ Success! Top scores: grunge:0.8, deconstructed:0.8, avantgarde:0.7
+
+[888/934] Processing: Vibram
+✅ Success! Top scores: gorpcore:0.9, sporty:0.8, techwear:0.6
+
+[889/934] Processing: Vic Matié
+✅ Success! Top scores: avantgarde:0.4
+
+[890/934] Processing: Victoria Beckham
+✅ Success! Top scores: formal:0.8, academia:0.4
+
+[891/934] Processing: Vietnam
+✅ Success! Top scores: 
+
+[892/934] Processing: Vintage
+✅ Success! Top scores: vintage:1
+
+[893/934] Processing: Vintage Chic
+✅ Success! Top scores: vintage:0.8
+
+[894/934] Processing: Vintage Dressing
+✅ Success! Top scores: vintage:0.9
+
+[895/934] Processing: Vintage Love
+✅ Success! Top scores: vintage:0.8
+
+[896/934] Processing: Virginia D
+✅ Success! Top scores: 
+
+[897/934] Processing: Vive Maria
+✅ Success! Top scores: goth:0.7
+
+[898/934] Processing: VIVI fashion
+✅ Success! Top scores: 
+
+[899/934] Processing: Vivienne Westwood
+✅ Success! Top scores: goth:0.9, avantgarde:0.9, grunge:0.8
+
+[900/934] Processing: Vixxsin
+✅ Success! Top scores: goth:0.8
+
+[901/934] Processing: Vogue
+✅ Success! Top scores: 
+
+[902/934] Processing: Waggon Paris
+✅ Success! Top scores: 
+
+[903/934] Processing: Wang
+✅ Success! Top scores: 
+
+[904/934] Processing: WE
+✅ Success! Top scores: 
+
+[905/934] Processing: Weekend Max Mara
+✅ Success! Top scores: formal:0.7, casual:0.6
+
+[906/934] Processing: WeSC
+✅ Success! Top scores: streetwear:0.7, sporty:0.5, grunge:0.4
+
+[907/934] Processing: westward bound
+✅ Success! Top scores: goth:0.8, clubkid:0.7
+
+[908/934] Processing: White
+✅ Success! Top scores: 
+
+[909/934] Processing: Wilsons Leather
+✅ Success! Top scores: vintage:0.5, grunge:0.4
+
+[910/934] Processing: Wolford
+✅ Success! Top scores: officesiren:0.7, balletcore:0.6
+
+[911/934] Processing: Wonder
+✅ Success! Top scores: 
+
+[912/934] Processing: Wood Wood
+✅ Success! Top scores: casual:0.8, streetwear:0.7, gorpcore:0.5
+
+[913/934] Processing: Www.why.it
+✅ Success! Top scores: 
+
+[914/934] Processing: Xanaka
+✅ Success! Top scores: y2k:0.7, vintage:0.6
+
+[915/934] Processing: XDYE
+✅ Success! Top scores: y2k:0.7, vintage:0.6
+
+[916/934] Processing: XOXO
+✅ Success! Top scores: y2k:0.8, vintage:0.5
+
+[917/934] Processing: Y/Project
+✅ Success! Top scores: avantgarde:0.8, deconstructed:0.7, clubkid:0.5
+
+[918/934] Processing: y2k
+✅ Success! Top scores: y2k:1
+
+[919/934] Processing: ybisa
+✅ Success! Top scores: 
+
+[920/934] Processing: Yessica
+✅ Success! Top scores: vintage:0.5, y2k:0.4
+
+[921/934] Processing: Yohji Yamamoto
+✅ Success! Top scores: avantgarde:1, minimaljapan:1, goth:0.8
+
+[922/934] Processing: Yoors
+✅ Success! Top scores: 
+
+[923/934] Processing: YORN
+✅ Success! Top scores: 
+
+[924/934] Processing: YOSHIKI HISHINUMA
+✅ Success! Top scores: avantgarde:0.8, harajuku:0.6, deconstructed:0.5
+
+[925/934] Processing: YS
+✅ Success! Top scores: 
+
+[926/934] Processing: YUME YUME
+✅ Success! Top scores: avantgarde:0.6, deconstructed:0.5, techwear:0.4
+
+[927/934] Processing: Yumi Mazao
+✅ Success! Top scores: 
+
+[928/934] Processing: Yves Calin
+✅ Success! Top scores: 
+
+[929/934] Processing: Yves Saint Laurent
+✅ Success! Top scores: formal:0.8, vintage:0.7, avantgarde:0.5
+
+[930/934] Processing: Yvmin
+✅ Success! Top scores: avantgarde:0.4
+
+[931/934] Processing: Zanotti
+✅ Success! Top scores: mobwife:0.7
+
+[932/934] Processing: zddz
+✅ Success! Top scores: avantgarde:0.7, deconstructed:0.6
+
+[933/934] Processing: zeelool
+✅ Success! Top scores: 
+
+[934/934] Processing: Zodiac
+✅ Success! Top scores: 
+
+
+✅ COMPLETED!
+📊 Processed: 934/934 brands
+💾 Saved to: /Users/nat/projectsNat/FASHION/AI-Thrifted-Assistant/data/vinted/brand-vibe-matrix.json
+❌ Failed: 0 brands

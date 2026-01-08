@@ -13,6 +13,32 @@ import './styles/pinterest.css';
 import { toast } from "sonner";
 import { useProductFetcher } from './components/hooks/useProductFetcher';
 
+// Style detection for AI-Ranker
+const STYLE_KEYWORDS: Record<string, string[]> = {
+  'y2k': ['y2k', '2000s', 'early 2000s', 'millennium'],
+  'gorpcore': ['gorpcore', 'outdoor', 'hiking', 'technical', 'arc\'teryx', 'salomon', 'patagonia'],
+  'grunge': ['grunge', 'nirvana', '90s rock', 'distressed'],
+  'goth': ['goth', 'gothic', 'dark', 'black'],
+  'streetwear': ['streetwear', 'street', 'supreme', 'stussy', 'bape'],
+  'minimalist': ['minimalist', 'minimal', 'clean', 'simple', 'cos', 'arket'],
+  'vintage': ['vintage', 'retro', 'thrift', 'secondhand'],
+  'avantgarde': ['avant-garde', 'avantgarde', 'experimental', 'rick owens', 'comme des garcons'],
+  'techwear': ['techwear', 'tech wear', 'technical', 'acronym'],
+  'cottagecore': ['cottagecore', 'cottage', 'prairie', 'pastoral'],
+  'academia': ['academia', 'dark academia', 'light academia', 'preppy', 'ivy'],
+  'bohemian': ['boho', 'bohemian', 'hippie', 'free people'],
+};
+
+function detectStyleFromText(text: string): string | null {
+  const lowerText = text.toLowerCase();
+  for (const [styleId, keywords] of Object.entries(STYLE_KEYWORDS)) {
+    if (keywords.some(keyword => lowerText.includes(keyword))) {
+      return styleId;
+    }
+  }
+  return null;
+}
+
 export default function VintedHomePage() {
   // --- Product Fetcher Hook ---
   const {
@@ -83,7 +109,17 @@ export default function VintedHomePage() {
           if (queries.length > 0) {
             console.log("AI suggested search queries, triggering product search:", queries);
             setLastSearchQueries(queries);
-            fetchProducts(queries, filters);
+
+            // Detect style from queries for AI-Ranker
+            const detectedStyle = detectStyleFromText(queries.join(' '));
+            if (detectedStyle) {
+              console.log(`🎯 Detected style: ${detectedStyle}, enabling AI-Ranker`);
+              fetchProducts(queries, filters, true, detectedStyle);
+            } else {
+              // No style detected - use TIER_BOOST only (still good quality)
+              console.log('📊 No style detected, using TIER_BOOST ranking');
+              fetchProducts(queries, filters, false);
+            }
           }
         }
       },
@@ -158,15 +194,18 @@ export default function VintedHomePage() {
    // --- AUTOMATED INGESTION LOGIC ---
 
   // 1. Check ingestion status when the component first mounts
+  // DISABLED: Auto-ingestion causes infinite loop
+  // User must manually trigger ingestion if needed
   useEffect(() => {
     const checkStatus = async () => {
       try {
-        const response = await fetch('/api/vinted/ingest-status');
-        const data = await response.json();
-        if (!data.isIngested) {
-          // If data is not ingested, set the flag to trigger the process
-          setIngestionNeeded(true);
-        }
+        // Commented out auto-ingestion to prevent infinite loop
+        // const response = await fetch('/api/vinted/ingest-status');
+        // const data = await response.json();
+        // if (!data.isIngested) {
+        //   setIngestionNeeded(true);
+        // }
+        console.log('Auto-ingestion disabled. VibeDNA is used instead.');
       } catch (error) {
         console.error("Failed to check ingestion status:", error);
         // Optionally handle the error in the UI

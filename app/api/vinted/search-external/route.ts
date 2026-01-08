@@ -25,6 +25,176 @@ interface VintedFilters {
     order?: 'relevance' | 'newest_first' | 'price_low_to_high' | 'price_high_to_low';
 }
 
+// ==========================================
+// TIER_BOOST System
+// ==========================================
+// Configuration: Boost multipliers per tier
+const TIER_BOOST_MULTIPLIERS = {
+  icon: 2.5,      // 🥇 Highest priority - Aesthetic icons (Rick Owens, Balenciaga)
+  luxury: 2.0,    // 💎 High-end brands (Giuseppe Zanotti, Ferragamo)
+  gem: 1.5,       // 💍 Hidden gems for diggers (Cop Copine, Save the Queen!)
+  affordable: 1.0, // 💰 Good basics (COS, Arket)
+  mainstream: 0.7  // 🏪 Lower priority (Esprit, ASOS, H&M)
+};
+
+// Global cache для brand metadata (загружается один раз)
+let brandMetadataCache: Map<string, { tier: string; avg_price: string; context_tags: string[] }> | null = null;
+
+/**
+ * Normalize brand name for consistent matching
+ * Handles: "A-COLD-WALL", "A Cold Wall", "Rick Owens", "rick owens", etc.
+ * Result: lowercase, no special chars, single spaces collapsed, trimmed
+ */
+function normalizeBrandName(brand: string): string {
+  return brand
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, '') // Remove all non-alphanumeric except spaces
+    .replace(/\s+/g, ' ')        // Collapse multiple spaces
+    .trim();
+}
+
+// Load brand metadata from Supabase (cached)
+async function loadBrandMetadata(): Promise<Map<string, { tier: string; avg_price: string; context_tags: string[] }>> {
+  // Return cached data if available
+  if (brandMetadataCache) {
+    console.log('✅ Using cached brand metadata');
+    return brandMetadataCache;
+  }
+
+  console.log('📥 Loading brand metadata from Supabase...');
+  const startTime = Date.now();
+
+  try {
+    const { createClient } = await import('@supabase/supabase-js');
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
+
+    const { data, error } = await supabase
+      .from('vibe_entities')
+      .select('entity_name, metadata')
+      .eq('entity_type', 'brand')
+      .not('metadata->>tier', 'is', null);
+
+    if (error) {
+      console.error('❌ Failed to load brand metadata:', error);
+      return new Map();
+    }
+
+    const cache = new Map<string, { tier: string; avg_price: string; context_tags: string[] }>();
+
+    data?.forEach((brand: any) => {
+      if (brand.metadata?.tier) {
+        // Use consistent normalization for all brand names
+        const normalizedName = normalizeBrandName(brand.entity_name);
+
+        // Store with normalized key
+        cache.set(normalizedName, {
+          tier: brand.metadata.tier,
+          avg_price: brand.metadata.avg_price || 'mid',
+          context_tags: brand.metadata.context_tags || []
+        });
+
+        // Also store without spaces for brands like "A-COLD-WALL" → "acoldwall"
+        const noSpaceName = normalizedName.replace(/\s/g, '');
+        if (noSpaceName !== normalizedName) {
+          cache.set(noSpaceName, {
+            tier: brand.metadata.tier,
+            avg_price: brand.metadata.avg_price || 'mid',
+            context_tags: brand.metadata.context_tags || []
+          });
+        }
+      }
+    });
+
+    console.log(`✅ Loaded ${cache.size / 2} brands with tier metadata in ${Date.now() - startTime}ms`);
+    brandMetadataCache = cache;
+    return cache;
+
+  } catch (error) {
+    console.error('❌ Exception loading brand metadata:', error);
+    return new Map();
+  }
+}
+
+// Apply TIER_BOOST to products
+async function applyTierBoost(products: ScrapedItem[]): Promise<ScrapedItem[]> {
+  if (products.length === 0) {
+    return products;
+  }
+
+  const startTime = Date.now();
+  console.log(`🎯 Applying TIER_BOOST to ${products.length} products...`);
+
+  const brandMetadata = await loadBrandMetadata();
+
+  if (brandMetadata.size === 0) {
+    console.warn('⚠️  No brand metadata loaded, skipping TIER_BOOST');
+    return products;
+  }
+
+  // Calculate diggyScore for each product
+  // NEW FORMULA: 60% tier influence, 40% position influence
+  // This ensures gem/icon brands surface even if they appear later in Vinted results
+  const totalProducts = products.length;
+
+  const productsWithScore = products.map((product, index) => {
+    // Try multiple normalization strategies for best match
+    const normalizedBrand = normalizeBrandName(product.brand);
+    const noSpaceBrand = normalizedBrand.replace(/\s/g, '');
+
+    // Try normalized first, then no-space version
+    const metadata = brandMetadata.get(normalizedBrand) || brandMetadata.get(noSpaceBrand);
+    const tier = metadata?.tier || 'mainstream'; // Default to mainstream if unknown
+
+    // Get boost multiplier
+    const boost = TIER_BOOST_MULTIPLIERS[tier as keyof typeof TIER_BOOST_MULTIPLIERS] || 1.0;
+
+    // Normalize position to 0-1 range (first = 1.0, last = 0.0)
+    const positionFactor = Math.max(0, 1 - (index / totalProducts));
+
+    // Normalize tier boost to 0-1 range (0.7 → 0.0, 2.5 → 1.0)
+    const tierFactor = (boost - 0.7) / (2.5 - 0.7);
+
+    // Combined score: 60% tier influence, 40% position influence
+    // Multiply by 1000 for readable score values
+    const diggyScore = ((positionFactor * 0.4) + (tierFactor * 0.6)) * 1000;
+
+    return {
+      ...product,
+      _metadata: {
+        tier,
+        boost,
+        diggyScore,
+        originalPosition: index,
+        positionFactor: positionFactor.toFixed(2),
+        tierFactor: tierFactor.toFixed(2),
+        avg_price: metadata?.avg_price,
+        context_tags: metadata?.context_tags
+      }
+    };
+  });
+
+  // Sort by diggyScore DESC (highest first)
+  const sortedProducts = productsWithScore.sort((a, b) => b._metadata.diggyScore - a._metadata.diggyScore);
+
+  // Calculate tier distribution for logging
+  const tierCounts = sortedProducts.reduce((acc, p) => {
+    const tier = p._metadata.tier;
+    acc[tier] = (acc[tier] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+
+  const duration = Date.now() - startTime;
+  console.log('🎯 TIER_BOOST complete:');
+  console.log(`   Duration: ${duration}ms`);
+  console.log('   Distribution:', JSON.stringify(tierCounts));
+  console.log(`   Top 5 brands: ${sortedProducts.slice(0, 5).map(p => `${p.brand} (${p._metadata.tier})`).join(', ')}`);
+
+  return sortedProducts;
+}
+
 // Helper function to simulate a call to a Depop scraper
 /* async function searchDepop(query: string): Promise<any[]> {
   console.log(`Simulating search on Depop for: "${query}"`);
@@ -63,7 +233,7 @@ function buildVintedUrl(query: string, filters?: VintedFilters): string {
         'price_high_to_low': 'price_high_to_low',
         'relevance': 'relevance'
     };
-    params.append('order', orderMap[filters?.order || 'newest_first'] || 'newest_first');
+    params.append('order', orderMap[filters?.order || 'relevance'] || 'relevance');
 
     // Price Range
     if (filters?.priceRange) {
@@ -142,7 +312,7 @@ async function searchVinted(query: string, filters?: VintedFilters): Promise<Scr
           console.log(`Attempt ${attempt}/${maxRetries} for query: "${cleanedQuery}"`);
 
           const url = buildVintedUrl(cleanedQuery, filters);
-          console.log("HERERERRE", url)
+          console.log(`🔍 Vinted API URL: ${url.substring(0, 100)}...`);
           
           // Fetch cookies with improved headers
           console.log("Fetching cookies from Vinted homepage...");
@@ -306,13 +476,14 @@ async function searchVinted(query: string, filters?: VintedFilters): Promise<Scr
 
 export async function POST(req: NextRequest) {
   try {
-    const { queries, filters } = await req.json();
+    const { queries, filters, useAiRanker, styleId } = await req.json();
     if (!queries || !Array.isArray(queries) || queries.length === 0) {
       return NextResponse.json({ error: "Search queries are required." }, { status: 400 });
     }
 
     console.log("Fetching products sequentially for queries:", queries);
     console.log("With filters:", filters);
+    console.log("AI-Ranker enabled:", useAiRanker || false);
 
     // Transform filters to VintedFilters format
     const vintedFilters: VintedFilters = {
@@ -323,7 +494,7 @@ export async function POST(req: NextRequest) {
       materials: filters?.materials,
       colors: filters?.colors,
       conditions: filters?.conditions,
-      order: filters?.order || 'newest_first' // Default to newest first for best items
+      order: filters?.order || 'relevance' // Default to relevance for curated results
     };
 
     let allProducts: ScrapedItem[] = [];
@@ -340,6 +511,9 @@ export async function POST(req: NextRequest) {
     let uniqueProducts = Array.from(new Map(allProducts.map(item => [item.id, item])).values());
 
     console.log(`Found ${uniqueProducts.length} unique products before filtering`);
+
+    // 🎯 TIER_BOOST: Re-sort by brand tier (icon/gem/affordable/mainstream)
+    uniqueProducts = await applyTierBoost(uniqueProducts);
 
     // 3. Additional client-side filtering (if needed for compatibility with legacy filters)
     // Note: Most filtering is now done via Vinted API, but we keep this for backward compatibility
@@ -360,13 +534,58 @@ export async function POST(req: NextRequest) {
       uniqueProducts = uniqueProducts.slice(0, MAX_RESULTS);
     }
 
-    // 5. Shuffle the filtered results (optional - can be disabled if order is important)
-    const shouldShuffle = !vintedFilters.order || vintedFilters.order === 'relevance';
-    const finalProducts = shouldShuffle
-      ? uniqueProducts.sort(() => 0.5 - Math.random())
-      : uniqueProducts;
+    // 5. AI-Ranker (optional) - Curate products using LLM scoring
+    let finalProducts = uniqueProducts;
 
-    console.log(`Returning ${finalProducts.length} products after filtering and limiting`);
+    if (useAiRanker && styleId) {
+      console.log(`🎯 AI-Ranker requested for style: ${styleId} (with streaming)`);
+      try {
+        const rankerResponse = await fetch(`${req.nextUrl.origin}/api/diggy/rank-products`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            products: uniqueProducts,
+            styleId: styleId,
+            streamProgress: true, // Enable streaming progress updates
+          }),
+        });
+
+        if (rankerResponse.ok) {
+          const contentType = rankerResponse.headers.get('content-type');
+
+          if (contentType?.includes('text/event-stream')) {
+            // ✅ PROXY SSE STREAM DIRECTLY TO FRONTEND (don't consume it!)
+            console.log(`🔄 Proxying SSE stream from AI-Ranker to frontend`);
+
+            return new Response(rankerResponse.body, {
+              status: 200,
+              headers: {
+                'Content-Type': 'text/event-stream',
+                'Cache-Control': 'no-cache',
+                'Connection': 'keep-alive',
+              },
+            });
+          } else {
+            // Handle standard JSON response (fallback)
+            const rankerData = await rankerResponse.json();
+            finalProducts = rankerData.rankedProducts;
+            console.log(`✅ AI-Ranker complete: ${finalProducts.length} products ranked`);
+            console.log(`📊 Average AI score: ${rankerData.stats?.averageScore?.toFixed(2) || 'N/A'}`);
+          }
+        } else {
+          console.warn(`⚠️  AI-Ranker failed, using Vinted relevance ranking`);
+        }
+      } catch (rankerError) {
+        console.error(`❌ AI-Ranker error:`, rankerError);
+        console.log(`⚠️  Fallback to Vinted relevance ranking`);
+      }
+    } else {
+      // Keep Vinted's relevance sorting - DO NOT shuffle!
+      // Vinted already ranked these by relevance to the search query.
+      console.log(`📊 Using Vinted relevance ranking (AI-Ranker disabled)`);
+    }
+
+    console.log(`Returning ${finalProducts.length} products (sorted by: ${useAiRanker ? 'AI score' : vintedFilters.order})`);
 
     return NextResponse.json({ products: finalProducts });
 

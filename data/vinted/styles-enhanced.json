@@ -1,0 +1,932 @@
+{
+  "$schema": "./styles-schema.json",
+  "metadata": {
+    "version": "2.0",
+    "lastUpdated": "2025-11-11",
+    "methodology": "Digger Manifest - 4-Tier Curated Search System"
+  },
+  "searchStrategies": {
+    "tier1_vibe": "Broad, atmospheric browsing using hashtags and general aesthetic names",
+    "tier2_component": "Specific item search using descriptive keywords, avoiding buzzwords",
+    "tier3_brand_alpha": "Insider BOLO (Be On The Lookout) brand hunting",
+    "tier4_quality_grail": "Material composition and origin-based quality search"
+  },
+  "styles": [
+    {
+      "id": "casual",
+      "name": "Casual",
+      "description": "Elevated casual - quality and cut in basic pieces. Not just 'everyday wear' but curated minimalism",
+      "tier1_hashtags": ["#minimal", "#everydaystyle", "#normcore"],
+      "tier2_components": [
+        "oversized shirt",
+        "straight leg jeans",
+        "crew neck sweater",
+        "oxford shirt",
+        "chino pants"
+      ],
+      "tier3_bolo_brands": [
+        "Acne Studios",
+        "A.P.C.",
+        "Lemaire",
+        "Maison Kitsuné",
+        "Officine Générale",
+        "Carhartt WIP",
+        "Levi's",
+        "COS",
+        "Uniqlo",
+        "Margaret Howell",
+        "Studio Nicholson",
+        "Auralee",
+        "Nanamica",
+        "Beams Plus",
+        "Muji"
+      ],
+      "tier4_grail_keywords": [
+        "100% linen",
+        "100% cotton",
+        "pure wool",
+        "heavyweight cotton",
+        "Made in Japan",
+        "Made in France"
+      ],
+      "digger_note": "Don't search #normcore - search for quality. Judge by what things are made of, not the brand."
+    },
+    {
+      "id": "formal",
+      "name": "Office Fashion",
+      "description": "Quiet Luxury / Corpcore - professional business attire with understated elegance",
+      "tier1_hashtags": [
+        "#quietluxury",
+        "#officecore",
+        "#tailored",
+        "#powershoulder",
+        "#pencilskirt",
+        "#waistcoat"
+      ],
+      "tier2_components": [
+        "tailored trousers",
+        "pencil skirt",
+        "silk blouse",
+        "wool blazer",
+        "cashmere sweater"
+      ],
+      "tier3_bolo_brands": [
+        "The Row",
+        "Loro Piana",
+        "Brunello Cucinelli",
+        "Khaite",
+        "Jil Sander",
+        "Max Mara",
+        "Sportmax",
+        "Marina Rinaldi",
+        "Gunex",
+        "Rivamonti",
+        "Anne Fontaine",
+        "Sarah Pacini",
+        "Theory",
+        "Massimo Dutti"
+      ],
+      "tier4_grail_keywords": [
+        "100% silk blouse",
+        "pure cashmere",
+        "100% wool blazer",
+        "Made in Italy",
+        "vintage Max Mara",
+        "vintage Sportmax"
+      ],
+      "digger_note": "Sportmax and Gunex are Made in Italy highest quality but less known - perfect digger targets sold cheap."
+    },
+    {
+      "id": "sporty",
+      "name": "Sporty / Athleisure",
+      "description": "Athletic and active wear for everyday comfort",
+      "tier1_hashtags": ["#athleisure", "#activewear", "#workout"],
+      "tier2_components": [
+        "leggings",
+        "loungewear",
+        "yoga pants",
+        "performance jacket",
+        "sports bra"
+      ],
+      "tier3_bolo_brands": [
+        "Nike",
+        "Adidas",
+        "Lululemon",
+        "New Balance",
+        "Reebok",
+        "Puma",
+        "Asics",
+        "Athleta",
+        "Alo",
+        "Beyond Yoga",
+        "Girlfriend Collective",
+        "Vintage Champion",
+        "Russell Athletic",
+        "Sergio Tacchini"
+      ],
+      "tier4_grail_keywords": ["vintage nike", "vintage adidas", "deadstock"],
+      "digger_note": "Classic athleisure - see Techwear and Gorpcore for niche variants"
+    },
+    {
+      "id": "vintage",
+      "name": "Vintage",
+      "description": "Authentic period pieces from 80s-90s-Y2K. #vintage tag is spam - search by brand + era",
+      "tier1_hashtags": ["#vintagefinds", "#90sstyle", "#truevintage"],
+      "tier2_components": [
+        "vintage tag",
+        "90s tag",
+        "deadstock",
+        "Penny Lane coat"
+      ],
+      "tier3_bolo_brands": {
+        "80s_power_dressing": ["Escada", "Moschino", "Yves Saint Laurent (vintage)", "Christian Dior (vintage)"],
+        "90s_y2k_eu_tier1": ["Morgan de Toi", "Cop Copine", "Miss Sixty", "Diesel (vintage)"],
+        "90s_y2k_eu_tier2_deep_dig": [
+          "Jane Norman",
+          "Bay Trading",
+          "Etam",
+          "Pilot",
+          "Orsay",
+          "Peruna"
+        ],
+        "90s_y2k_us": ["Bebe", "Custo Barcelona", "Von Dutch", "Ed Hardy", "Baby Phat", "Guess (vintage)"],
+        "classic_american": ["Vintage Levi's", "Polo Sport", "Tommy Hilfiger (90s)", "Vintage Champion"],
+        "european": ["Kookai", "Naf Naf", "Gunne Sax", "Laura Ashley"]
+      },
+      "tier4_grail_keywords": [
+        "deadstock",
+        "vintage tag",
+        "90s tag",
+        "Made in USA",
+        "Made in UK",
+        "true vintage"
+      ],
+      "digger_note": "NEVER search #vintage - pure spam. Search by period brands. EU Tier 2 brands are gold for diggers."
+    },
+    {
+      "id": "bohemian",
+      "name": "Bohemian",
+      "description": "Free-spirited boho-chic with 60s-70s hippie influences",
+      "tier1_hashtags": ["#boho", "#hippievibes", "#festivalfit", "#whimsigoth"],
+      "tier2_components": [
+        "maxi skirt",
+        "flare sleeve blouse",
+        "tassel details",
+        "velvet",
+        "silk dress",
+        "medieval style",
+        "elvish",
+        "fantasy",
+        "lagenlook"
+      ],
+      "tier3_bolo_brands": [
+        "Chloé",
+        "Isabel Marant",
+        "Etro",
+        "Ulla Johnson",
+        "Zimmermann",
+        "Anthropologie",
+        "Free People",
+        "Spell & The Gypsy Collective",
+        "Johnny Was",
+        "Band of Gypsies",
+        "Cleobella",
+        "Tularosa",
+        "Stone Cold Fox",
+        "Lucky Brand",
+        "Show Me Your Mumu",
+        "Vintage Cacharel",
+        "Antik Batik",
+        "Mes Demoiselles"
+      ],
+      "tier4_grail_keywords": ["velvet", "silk", "60s", "70s", "medieval", "witchy"],
+      "digger_note": "Use unusual keywords like 'medieval', 'elvish', 'witchy' to filter out mass market."
+    },
+    {
+      "id": "y2k",
+      "name": "Y2K",
+      "description": "Early 2000s maximalist fashion. #y2k is noise - search components + period brands",
+      "tier1_hashtags": [
+        "#bling",
+        "#cybercore",
+        "#bratzdoll",
+        "#mcbling",
+        "#trashyy2k",
+        "#naughties"
+      ],
+      "tier2_components": [
+        "mesh top",
+        "baby tee",
+        "baguette bag",
+        "city bag",
+        "low rise jeans",
+        "micro mini skirt",
+        "flared jeans",
+        "embroidered",
+        "rhinestones",
+        "sequins"
+      ],
+      "tier3_bolo_brands": {
+        "modern_interpretation": [
+          "KNWLS",
+          "Blumarine",
+          "Abra",
+          "Ottolinger",
+          "Courrèges",
+          "Mugler",
+          "Diesel (modern)",
+          "GCDS"
+        ],
+        "authentic_vintage_eu": [
+          "Miss Sixty",
+          "Morgan de Toi",
+          "Cop Copine",
+          "Jane Norman",
+          "Bay Trading",
+          "Etam",
+          "Fornarina",
+          "Secret Possessions"
+        ],
+        "authentic_vintage_us": [
+          "Juicy Couture",
+          "Ed Hardy",
+          "Bebe",
+          "Custo Barcelona",
+          "Von Dutch",
+          "Baby Phat",
+          "FUBU",
+          "Rocawear"
+        ],
+        "japanese": ["Hysteric Glamour"]
+      },
+      "tier4_grail_keywords": ["y2k tag", "2000s tag", "early 2000s"],
+      "digger_note": "CRITICAL EXAMPLE: #y2k = noise. Search Miss Sixty, Cop Copine, Jane Norman + components (mesh top, low rise)."
+    },
+    {
+      "id": "grunge",
+      "name": "Grunge",
+      "description": "Disheveled 90s anti-fashion with indie sleaze influences",
+      "tier1_hashtags": ["#darkfashion", "#distressed", "#oversized", "#indiesleaze"],
+      "tier2_components": [
+        "distressed denim",
+        "flannel shirt",
+        "mohair sweater",
+        "combat boots",
+        "leather jacket",
+        "ripped jeans"
+      ],
+      "tier3_bolo_brands": [
+        "Rick Owens",
+        "Ann Demeulemeester",
+        "R13",
+        "Balenciaga",
+        "Vetements",
+        "Vivienne Westwood",
+        "Yohji Yamamoto",
+        "Maison Margiela",
+        "Dr. Martens",
+        "AllSaints",
+        "Helmut Lang (archive)",
+        "Marc Jacobs (Perry Ellis '93')",
+        "Number (N)ine",
+        "Undercover",
+        "Diesel (vintage)",
+        "Vintage Levi's",
+        "Vintage Carhartt"
+      ],
+      "tier4_grail_keywords": ["distressed", "flannel", "mohair", "vintage levi's 501"],
+      "digger_note": "'Marc Jacobs (Perry Ellis '93')' is deep insider reference to grunge collection."
+    },
+    {
+      "id": "goth",
+      "name": "Dark Romance",
+      "description": "Gothic punk with romantic historical details - Whimsigoth and Romantic Goth",
+      "tier1_hashtags": ["#gothcore", "#witchy", "#darkwear", "#whimsigoth", "#mallgoth"],
+      "tier2_components": [
+        "velvet dress",
+        "lace details",
+        "corset",
+        "platform boots",
+        "cross jewelry",
+        "skull motifs"
+      ],
+      "tier3_bolo_brands": [
+        "Rick Owens",
+        "Ann Demeulemeester",
+        "Yohji Yamamoto",
+        "The Vampire's Wife",
+        "Simone Rocha",
+        "Comme des Garçons",
+        "Junya Watanabe",
+        "Vivienne Westwood",
+        "Jean Paul Gaultier",
+        "Demonia",
+        "Killstar",
+        "Lip Service",
+        "Tripp NYC",
+        "Hot Topic (vintage)",
+        "Dr. Martens"
+      ],
+      "tier4_grail_keywords": ["velvet", "lace", "corset", "platform"],
+      "digger_note": "Includes Mall Goth, Gothic Lolita, Whimsigoth variants."
+    },
+    {
+      "id": "techwear",
+      "name": "Techwear",
+      "description": "Futuristic urban utility wear with technical fabrics",
+      "tier1_hashtags": ["#modular", "#cyberpunk", "#urbanutility"],
+      "tier2_components": [
+        "cargo pants",
+        "utility vest",
+        "modular jacket",
+        "technical fabric",
+        "waterproof",
+        "Gore-Tex"
+      ],
+      "tier3_bolo_brands": [
+        "Acronym",
+        "Stone Island",
+        "Arc'teryx Veilance",
+        "Junya Watanabe",
+        "Ottolinger",
+        "Marine Serre",
+        "A-Cold-Wall",
+        "Heron Preston",
+        "Y-3",
+        "Nike ACG",
+        "Salomon",
+        "Guerrilla Group",
+        "Post Archive Faction",
+        "enfin levé",
+        "C.P. Company"
+      ],
+      "tier4_grail_keywords": ["Gore-Tex", "technical", "waterproof", "modular"],
+      "digger_note": "Mix of 'hard' techwear (Acronym) and 'fashion' techwear (Marine Serre)."
+    },
+    {
+      "id": "gorpcore",
+      "name": "Gorpcore",
+      "description": "Hiking-meets-fashion - Good Ol' Raisins and Peanuts aesthetic",
+      "tier1_hashtags": ["#salomon", "#trailfit", "#functionalwear", "#gorp", "#granolagirl"],
+      "tier2_components": [
+        "fleece pullover",
+        "cargo pants",
+        "trail shoes",
+        "hiking boots",
+        "utility vest",
+        "earthy tones"
+      ],
+      "tier3_bolo_brands": [
+        "Arc'teryx",
+        "and Wander",
+        "ROA",
+        "Stone Island",
+        "Acronym",
+        "Junya Watanabe",
+        "Visvim",
+        "Salomon",
+        "The North Face",
+        "Patagonia",
+        "Gramicci",
+        "Hoka One One",
+        "Merrell",
+        "Oakley",
+        "Carhartt WIP",
+        "La Sportiva",
+        "Hunter",
+        "Timberland",
+        "L.L. Bean"
+      ],
+      "tier4_grail_keywords": ["hiking", "outdoors", "fleece", "trail", "utility"],
+      "digger_note": "Brand-as-hashtag (#salomon) is common tactic. Gorpcore = ironic outdoors fashion."
+    },
+    {
+      "id": "academia",
+      "name": "Dark Academia",
+      "description": "Romantic intellectual aesthetic - tweed, books, scholarly vibes",
+      "tier1_hashtags": [
+        "#darkacademia",
+        "#lightacademia",
+        "#tweedcore",
+        "#scholarvibes",
+        "#preppy"
+      ],
+      "tier2_components": [
+        "tweed blazer",
+        "wool sweater",
+        "plaid skirt",
+        "trench coat",
+        "knit sweater",
+        "chunky loafers",
+        "oxford shirt"
+      ],
+      "tier3_bolo_brands": [
+        "Thom Browne",
+        "Burberry",
+        "Ralph Lauren",
+        "Loro Piana",
+        "Brunello Cucinelli",
+        "Gucci",
+        "A.P.C.",
+        "Maison Kitsuné",
+        "Brooks Brothers",
+        "J.Crew",
+        "Barbour",
+        "G.H. Bass & Co.",
+        "Sandro",
+        "Margaret Howell",
+        "L.L. Bean",
+        "Lacoste",
+        "Pendleton",
+        "Marc Jacobs"
+      ],
+      "tier4_grail_keywords": ["tweed", "wool", "plaid", "victorian", "edwardian"],
+      "digger_note": "Diggers use 'dark academia' to find Victorian/Edwardian blouses sellers can't classify."
+    },
+    {
+      "id": "avantgarde",
+      "name": "Avant-Garde",
+      "description": "Experimental, sculptural, high-concept art fashion",
+      "tier1_hashtags": ["#conceptualfashion", "#deconstructed", "#artwear", "#arttowear"],
+      "tier2_components": [
+        "asymmetrical cut",
+        "sculptural design",
+        "patchwork",
+        "mixed media",
+        "avant-garde silhouette"
+      ],
+      "tier3_bolo_brands": [
+        "Comme des Garçons",
+        "Yohji Yamamoto",
+        "Maison Margiela",
+        "Rick Owens",
+        "Junya Watanabe",
+        "Ottolinger",
+        "Ann Demeulemeester",
+        "Issey Miyake",
+        "Iris van Herpen",
+        "Craig Green",
+        "Walter Van Beirendonck",
+        "Marine Serre",
+        "Jean Paul Gaultier",
+        "Helmut Lang (archive)",
+        "Vivienne Westwood",
+        "Sacai",
+        "Undercover",
+        "Post Archive Faction",
+        "KUSIKOHC",
+        "Hyein Seo"
+      ],
+      "tier4_grail_keywords": ["asymmetrical", "sculptural", "patchwork", "deconstructed"],
+      "digger_note": "True avant-garde canon with contemporary additions."
+    },
+    {
+      "id": "streetwear",
+      "name": "Streetwear",
+      "description": "Urban youth style driven by hype culture and brand drops",
+      "tier1_hashtags": ["#hypebeast", "#sneakerhead", "#boxlogo", "#streetwear"],
+      "tier2_components": ["graphic tee", "hoodie", "oversized fit", "sneakers", "cargo pants"],
+      "tier3_bolo_brands": [
+        "Supreme",
+        "Palace",
+        "Off-White",
+        "Kith",
+        "A-Cold-Wall",
+        "Ader Error",
+        "Corteiz",
+        "Aimé Leon Dore",
+        "Fear of God Essentials",
+        "Stüssy",
+        "BAPE",
+        "Carhartt WIP",
+        "Patta",
+        "Noah",
+        "Stone Island",
+        "thisisneverthat",
+        "FUBU (vintage)",
+        "Polo Sport (vintage)",
+        "Tommy Hilfiger (vintage)"
+      ],
+      "tier4_grail_keywords": ["deadstock", "archive", "vintage streetwear"],
+      "digger_note": "Hype-driven market - look for vintage pieces before brand inflation."
+    },
+    {
+      "id": "cottagecore",
+      "name": "Cottagecore",
+      "description": "Soft pastoral aesthetic with Victorian/Edwardian influences",
+      "tier1_hashtags": [
+        "#cottagecore",
+        "#prairie",
+        "#laceblouse",
+        "#prairieskirt",
+        "#romanticcore"
+      ],
+      "tier2_components": [
+        "prairie dress",
+        "high neck blouse",
+        "lace details",
+        "puff sleeves",
+        "maxi skirt",
+        "floral print"
+      ],
+      "tier3_bolo_brands": [
+        "Doen",
+        "LoveShackFancy",
+        "Batsheva",
+        "Simone Rocha",
+        "Cecilie Bahnsen",
+        "Shrimps",
+        "Molly Goddard",
+        "Zimmermann",
+        "Christy Dawn",
+        "Hill House Home",
+        "Gunne Sax (Vintage)",
+        "Laura Ashley (Vintage)",
+        "Meadows",
+        "Sézane",
+        "Faithfull the Brand",
+        "Vintage Cacharel",
+        "Antik Batik",
+        "Mes Demoiselles"
+      ],
+      "tier4_grail_keywords": [
+        "victorian",
+        "edwardian",
+        "high neck",
+        "prairie",
+        "woodland",
+        "shabby chic"
+      ],
+      "digger_note": "Like Dark Academia - diggers use this to find authentic Victorian/Edwardian vintage."
+    },
+    {
+      "id": "clubkid",
+      "name": "Club Kid",
+      "description": "Theatrical rave/queer nightlife looks from underground club scene",
+      "tier1_hashtags": ["#freakwear", "#berlinclubscene", "#latexfit", "#rave", "#cybery2k"],
+      "tier2_components": ["latex", "pvc", "mesh", "neon colors", "platform boots", "body harness"],
+      "tier3_bolo_brands": [
+        "Walter Van Beirendonck",
+        "Namilia",
+        "Jeremy Scott",
+        "Area",
+        "Mugler",
+        "Manish Arora",
+        "GCDS",
+        "Luar",
+        "VFiles",
+        "Jean Paul Gaultier (90s)",
+        "Cyberdog",
+        "House of Harlot",
+        "Patrick Church",
+        "Discount Universe"
+      ],
+      "tier4_grail_keywords": ["latex", "pvc", "mesh", "neon", "rave", "festival"],
+      "digger_note": "Very niche insider tags like #berlinclubscene and #latexfit."
+    },
+    {
+      "id": "balletcore",
+      "name": "Balletcore",
+      "description": "Delicate dance-inspired aesthetic with coquette elements",
+      "tier1_hashtags": ["#balletcore", "#dancecore", "#wraptop", "#legwarmers", "#coquette"],
+      "tier2_components": [
+        "wrap top",
+        "ballet flats",
+        "leg warmers",
+        "tulle skirt",
+        "satin ribbon",
+        "lace details"
+      ],
+      "tier3_bolo_brands": [
+        "Miu Miu",
+        "Simone Rocha",
+        "Cecilie Bahnsen",
+        "Sandy Liang",
+        "Jacquemus",
+        "Bode",
+        "Molly Goddard",
+        "The Row",
+        "Khaite",
+        "Alaïa",
+        "Repetto",
+        "Bloch",
+        "Capezio",
+        "Wolford",
+        "Falke"
+      ],
+      "tier4_grail_keywords": ["ballet", "satin", "tulle", "ruffle", "lace"],
+      "digger_note": "Dominant micro-aesthetic. Mix of fashion brands and authentic dance brands."
+    },
+    {
+      "id": "kfashion",
+      "name": "K-Fashion",
+      "description": "Korean street style - clean, curated silhouettes with avant-garde edge",
+      "tier1_hashtags": ["#seoulstyle", "#cleanfit", "#idolaesthetic", "#koreanstreet"],
+      "tier2_components": [
+        "oversized blazer",
+        "clean lines",
+        "graphic prints",
+        "avant-garde eyewear",
+        "minimalist cut"
+      ],
+      "tier3_bolo_brands": [
+        "Ader Error",
+        "Gentle Monster",
+        "Wooyoungmi",
+        "Andersson Bell",
+        "Post Archive Faction",
+        "Junn.J",
+        "Kanghyuk",
+        "thisisneverthat",
+        "Mardi Mercredi",
+        "Stylenanda",
+        "ADLV",
+        "pushBUTTON",
+        "We11done",
+        "Low Classic",
+        "KUSIKOHC",
+        "Hyein Seo",
+        "MINJUKIM",
+        "GOEN.J",
+        "Rokh",
+        "Amomento",
+        "Open YY",
+        "Dunst",
+        "Recto",
+        "Juntae Kim",
+        "Kijun",
+        "Marge Sherwood",
+        "OJOS",
+        "MatinKim",
+        "System"
+      ],
+      "tier4_grail_keywords": ["Made in Korea", "Korean brand", "Seoul"],
+      "digger_note": "Deep insider knowledge - 31 validated Korean brands. Not K-Pop merch but actual Korean fashion."
+    },
+    {
+      "id": "harajuku",
+      "name": "Harajuku",
+      "description": "Eclectic Tokyo street style - Decora, Lolita, and maximalist J-fashion",
+      "tier1_hashtags": ["#kawaii", "#jfashion", "#maximalism", "#decora", "#lolita"],
+      "tier2_components": [
+        "platform shoes",
+        "layered accessories",
+        "kawaii elements",
+        "colorful mix",
+        "street punk"
+      ],
+      "tier3_bolo_brands": [
+        "Comme des Garçons",
+        "Vivienne Westwood",
+        "Walter Van Beirendonck",
+        "Junya Watanabe",
+        "Yohji Yamamoto",
+        "Undercover",
+        "BAPE",
+        "Sacai",
+        "Hysteric Glamour",
+        "Angelic Pretty",
+        "6%DOKIDOKI",
+        "Super Lovers",
+        "FRUiTS (concept)",
+        "Dr. Martens",
+        "Mercibeaucoup,"
+      ],
+      "tier4_grail_keywords": ["japanese brand", "fruits magazine", "shibuya", "harajuku"],
+      "digger_note": "Mix of high-fashion and subculture brands. FRUiTS magazine as style concept."
+    },
+    {
+      "id": "minimaljapan",
+      "name": "Japanese Minimalism",
+      "description": "Wabi-sabi wear - sophisticated precision cuts with natural materials",
+      "tier1_hashtags": ["#wabisabiwear", "#linenlook", "#monkcore", "#japaneseminimalism"],
+      "tier2_components": [
+        "linen pieces",
+        "neutral tones",
+        "asymmetric cut",
+        "natural fabrics",
+        "loose silhouette"
+      ],
+      "tier3_bolo_brands": [
+        "Yohji Yamamoto",
+        "Issey Miyake",
+        "Comme des Garçons",
+        "Lemaire",
+        "The Row",
+        "Jil Sander",
+        "Auralee",
+        "Nanamica",
+        "Visvim",
+        "Margaret Howell",
+        "Muji",
+        "Uniqlo",
+        "COS",
+        "Beams Plus",
+        "Studio Nicholson",
+        "Snow Peak"
+      ],
+      "tier4_grail_keywords": [
+        "Made in Japan",
+        "linen",
+        "wabi sabi",
+        "asymmetric",
+        "neutral tones"
+      ],
+      "digger_note": "Canon minimalism brands. Very specific insider tags like #wabisabiwear and #monkcore."
+    },
+    {
+      "id": "deconstructed",
+      "name": "Deconstruction Fashion",
+      "description": "Anti-fashion celebrating raw edges, exposed seams, and reworked pieces",
+      "tier1_hashtags": [
+        "#reworked",
+        "#exposedseams",
+        "#avantgarde",
+        "#drapedtop",
+        "#layeredlook",
+        "#reconstructed"
+      ],
+      "tier2_components": [
+        "raw hem",
+        "exposed seams",
+        "inside out",
+        "asymmetrical",
+        "draped",
+        "layered"
+      ],
+      "tier3_bolo_brands": [
+        "Maison Margiela",
+        "Ottolinger",
+        "Junya Watanabe",
+        "Comme des Garçons",
+        "Yohji Yamamoto",
+        "Rick Owens",
+        "Marine Serre",
+        "Sacai",
+        "Vetements",
+        "Ader Error",
+        "Helmut Lang",
+        "Ann Demeulemeester",
+        "Jean Paul Gaultier",
+        "Cop Copine",
+        "Vivienne Westwood",
+        "Hyein Seo",
+        "KUSIKOHC"
+      ],
+      "tier4_grail_keywords": ["raw hem", "exposed", "asymmetrical", "subversive", "reworked"],
+      "digger_note": "Technique-as-vibe. Cop Copine is affordable digger brand for this aesthetic."
+    },
+    {
+      "id": "eclecticgrandpa",
+      "name": "Eclectic Grandpa",
+      "description": "Pinterest 2024 trend - eccentric vintage chic, retro streetwear, well-collected pieces",
+      "tier1_hashtags": ["#grandpacore", "#grandadstyle", "#retrostreet", "#eclectic"],
+      "tier2_components": [
+        "tweed jacket",
+        "corduroy pants",
+        "cardigan",
+        "sweater vest",
+        "loafers",
+        "baseball cap",
+        "vintage finds"
+      ],
+      "tier3_bolo_brands": [
+        "Loewe",
+        "Miu Miu",
+        "Bode",
+        "Burberry (vintage)",
+        "Ralph Lauren (vintage)",
+        "Barbour",
+        "Pendleton",
+        "Brooks Brothers"
+      ],
+      "tier4_grail_keywords": ["tweed", "corduroy", "vintage", "retro", "grandpa"],
+      "digger_note": "Successor to Coastal Grandma. Look for quality pieces that look decades-collected."
+    },
+    {
+      "id": "mobwife",
+      "name": "Mob Wife",
+      "description": "Bold Italo-American 80s-90s glam - faux fur, leopard, unapologetic luxury from Sopranos era",
+      "tier1_hashtags": ["#mobwife", "#mobwifeaesthetic", "#italianglam", "#gangstergirl"],
+      "tier2_components": [
+        "faux fur coat",
+        "leopard print",
+        "cheetah print",
+        "animal print",
+        "leather",
+        "gold jewelry",
+        "oversized sunglasses",
+        "stiletto heels"
+      ],
+      "tier3_bolo_brands": [
+        "Versace (vintage)",
+        "Dolce & Gabbana (vintage)",
+        "Gucci (vintage)",
+        "Fendi",
+        "Roberto Cavalli"
+      ],
+      "tier4_grail_keywords": [
+        "faux fur",
+        "leopard",
+        "animal print",
+        "italian",
+        "80s glam",
+        "90s glam"
+      ],
+      "digger_note": "Search 100% cashmere coat, not #mobwife. Let competitors inflate faux fur prices."
+    },
+    {
+      "id": "blokecore",
+      "name": "Blokecore / Blokette",
+      "description": "British 80s-90s football culture - Ladcore aesthetic with retro jerseys",
+      "tier1_hashtags": ["#blokecore", "#ladcore", "#retrofootball", "#soccer"],
+      "tier2_components": [
+        "retro football jersey",
+        "Adidas Samba",
+        "Adidas Gazelle",
+        "straight jeans",
+        "track jacket"
+      ],
+      "tier3_bolo_brands": [
+        "Adidas (vintage)",
+        "Nike (vintage)",
+        "Puma",
+        "Reebok",
+        "Umbro",
+        "Sergio Tacchini"
+      ],
+      "tier4_grail_keywords": ["retro jersey", "football", "soccer", "vintage adidas", "90s sports"],
+      "digger_note": "Blokette is feminized version with bows and lace. Core UK football fan aesthetic."
+    },
+    {
+      "id": "officesiren",
+      "name": "Office Siren",
+      "description": "Provocative secretary-fantasy aesthetic from Y2K-90s - NOT for actual office wear",
+      "tier1_hashtags": ["#officesiren", "#officesirencore", "#schoolgirl", "#corporatechic"],
+      "tier2_components": [
+        "pinstripe",
+        "collared blouse",
+        "pencil skirt",
+        "low-cut blazer",
+        "kitten heels",
+        "tight fit"
+      ],
+      "tier3_bolo_brands": [
+        "Aritzia",
+        "Wolford",
+        "Morgan de Toi (vintage)",
+        "Cop Copine (vintage)",
+        "Jane Norman (vintage)"
+      ],
+      "tier4_grail_keywords": ["pinstripe", "secretary", "pencil skirt", "y2k office"],
+      "digger_note": "Sexualized Corpcore. Authentic Y2K brands (Morgan, Cop Copine, Jane Norman) are perfect."
+    }
+  ],
+  "searchNoiseHeuristics": {
+    "red_flags": [
+      {
+        "id": "tag_spam",
+        "description": "Listing has >5 irrelevant hashtags",
+        "action": "downrank"
+      },
+      {
+        "id": "buzzword_brand_field",
+        "description": "Buzzwords like 'vintage', 'y2k', 'aesthetic' used in brand field",
+        "action": "flag_as_spam"
+      },
+      {
+        "id": "made_in_italy_without_context",
+        "description": "Made in Italy without BOLO brand or premium material",
+        "action": "flag_as_suspicious"
+      }
+    ]
+  },
+  "multilingual_search": {
+    "enabled": true,
+    "materials": {
+      "cashmere": ["cashmere", "cachemire", "cachemir", "kaschmir"],
+      "silk": ["silk", "soie", "seda", "seide"],
+      "wool": ["wool", "laine", "lana", "wolle"],
+      "linen": ["linen", "lin", "lino", "leinen"],
+      "cotton": ["cotton", "coton", "algodón", "baumwolle"]
+    },
+    "origins": {
+      "france": ["Made in France", "Fabriqué en France", "Hecho en Francia"],
+      "italy": ["Made in Italy", "Fatto in Italia", "Hecho en Italia"],
+      "japan": ["Made in Japan", "日本製"],
+      "uk": ["Made in UK", "Made in England"],
+      "usa": ["Made in USA", "Made in America"]
+    }
+  },
+  "archive_search_strategy": {
+    "avoid": ["#archivefashion"],
+    "use_instead": [
+      "Helmut Lang (archive)",
+      "Jean Paul Gaultier (90s)",
+      "Maison Margiela (artisanal)",
+      "Tom Ford (for Gucci)",
+      "vintage Sportmax",
+      "Marc Jacobs (Perry Ellis '93')"
+    ]
+  }
+}

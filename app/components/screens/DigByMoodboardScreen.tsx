@@ -9,6 +9,8 @@ import { VintedFilters, VintedFilterState } from '../VintedFilters';
 import { useProductFetcher } from '../hooks/useProductFetcher';
 import { aestheticMatcher } from '@/app/services/aesthetic-matcher';
 import { toast } from 'sonner';
+import { useVibeDNASearch } from '@/app/hooks/useVibeDNASearch';
+import MagicLoader from '../MagicLoader';
 
 interface DigByMoodboardScreenProps {
   onBack: () => void;
@@ -32,12 +34,20 @@ export const DigByMoodboardScreen: React.FC<DigByMoodboardScreenProps> = ({
     isLoading: isLoadingProducts,
     error: productSearchError,
     searchInitiated,
+    progressMessage,
     fetchProducts,
   } = useProductFetcher();
 
+  // VibeDNA Search Hook
+  const {
+    getStyleBrandQueries,
+    isLoading: isVibeDNALoading,
+    error: vibeDNAError
+  } = useVibeDNASearch();
+
   // Vinted Filter State
   const [vintedFilters, setVintedFilters] = useState<VintedFilterState>({
-    order: 'newest_first',
+    order: 'relevance', // Use relevance for curated, high-quality results
     priceRange: { min: null, max: null },
     sizes: [],
     brands: [],
@@ -97,36 +107,68 @@ export const DigByMoodboardScreen: React.FC<DigByMoodboardScreenProps> = ({
     chatInputRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Direct search handler for style cards
-  const handleStyleClick = (styleName: string, hashtags: string[]) => {
-    console.log(`Direct search for style: ${styleName}`);
+  // Direct search handler for style cards (VibeDNA-powered)
+  const handleStyleClick = async (styleId: string, hashtags: string[]) => {
+    console.log(`🧬 VibeDNA search for style: ${styleId}`);
 
-    // Use AI Aesthetic Matrix to generate smart queries
-    const aiQueries = aestheticMatcher.generateSearchQueries(styleName, {
-      includeAlternatives: true,
-      maxQueries: 10
-    });
+    try {
+      // styleId is already in the correct format (comes from styles-enhanced.json)
 
-    let queries: string[];
+      // Use VibeDNA vector search to get AI-curated brands
+      const brandQueries = await getStyleBrandQueries(styleId, 10);
 
-    if (aiQueries.length > 0) {
-      console.log(`🎨 Using AI Aesthetic Matrix queries for ${styleName}:`, aiQueries);
-      // Mix AI-generated brand queries with aesthetic keywords
-      queries = aiQueries;
-    } else {
-      // Fallback to hashtags if no AI data available
-      console.log(`⚠️  No AI data for ${styleName}, using hashtags:`, hashtags);
-      queries = hashtags.slice(0, 3);
+      if (brandQueries.length > 0) {
+        console.log(`✅ VibeDNA found ${brandQueries.length} brands for ${styleId}:`, brandQueries);
+
+        // Trigger product search with AI-curated brands
+        // AI-Ranker enabled with SSE streaming for real-time progress
+        setLastSearchQueries(brandQueries);
+        fetchProducts(brandQueries, vintedFilters, true, styleId); // ✅ AI-Ranker enabled
+
+        // Scroll to products section
+        setTimeout(() => {
+          productsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      } else {
+        // Fallback 1: Try old aesthetic matcher
+        console.warn(`⚠️  VibeDNA returned no brands for ${styleId}, trying aesthetic matcher...`);
+        const aiQueries = aestheticMatcher.generateSearchQueries(styleId, {
+          includeAlternatives: true,
+          maxQueries: 10
+        });
+
+        if (aiQueries.length > 0) {
+          console.log(`🎨 Using AI Aesthetic Matrix queries:`, aiQueries);
+          setLastSearchQueries(aiQueries);
+          fetchProducts(aiQueries, vintedFilters);
+        } else {
+          // Fallback 2: Use hashtags
+          console.warn(`⚠️  No AI data available, using hashtags:`, hashtags);
+          const fallbackQueries = hashtags.slice(0, 3);
+          setLastSearchQueries(fallbackQueries);
+          fetchProducts(fallbackQueries, vintedFilters);
+        }
+
+        setTimeout(() => {
+          productsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+    } catch (error) {
+      console.error('VibeDNA search error:', error);
+      // Fallback to old behavior on error
+      const aiQueries = aestheticMatcher.generateSearchQueries(styleId, {
+        includeAlternatives: true,
+        maxQueries: 10
+      });
+
+      const fallbackQueries = aiQueries.length > 0 ? aiQueries : hashtags.slice(0, 3);
+      setLastSearchQueries(fallbackQueries);
+      fetchProducts(fallbackQueries, vintedFilters);
+
+      setTimeout(() => {
+        productsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
     }
-
-    // Immediately trigger product search
-    setLastSearchQueries(queries);
-    fetchProducts(queries, vintedFilters);
-
-    // Scroll to products section after a short delay
-    setTimeout(() => {
-      productsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 300);
   };
 
   return (
@@ -198,6 +240,12 @@ export const DigByMoodboardScreen: React.FC<DigByMoodboardScreenProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Magic Loader: Show AI thinking process during ranking */}
+      <MagicLoader
+        isVisible={isLoadingProducts && !!progressMessage}
+        progressMessage={progressMessage}
+      />
     </div>
   );
 };
